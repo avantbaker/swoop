@@ -9,17 +9,23 @@ const theme = {
 		},
 	},
 	colors: {
-		gray: '#505050',
-		textGray: '#959595',
-		orange: '#D78B32',
+		orange: '#FF8B00',
 		black: '#252525',
-		sand: '#D3C69E',
-		tan: '#EBE4CF',
-		brown: '#322E2E',
-		opaqueOrange: 'rgba(215,139,50,0.57)',
-		lightTan: '#fbf9f2',
+		calcite: '#ffffff',
+		lightGray: '#989898',
+		darkGray: 'rgba(152, 152, 152, .25)',
 	},
-	breakpoints: ['26.5625em', '48em', '64em'],
+	space: [0, 4, 8, 16, 20, 32, 64, 128, 256],
+	breakpoints: ['40em', '52em', '64em'],
 };
+
+theme['space' as any].xs = theme.space[1];
+theme['space' as any].sm = theme.space[2];
+theme['space' as any].md = theme.space[3];
+theme['space' as any].lg = theme.space[4];
+theme['space' as any].xl = theme.space[5];
+theme['space' as any].xxl = theme.space[6];
+theme['space' as any].xxxl = theme.space[7];
+theme['space' as any].xxxxl = theme.space[8];
 
 export default theme;
