@@ -1,5 +1,3 @@
-import { rem } from 'polished';
-
 const theme = {
 	logos: {},
 	typography: {
@@ -10,6 +8,7 @@ const theme = {
 	},
 	colors: {
 		orange: '#FF8B00',
+		brown: '#D8D8D8',
 		black: '#252525',
 		calcite: '#ffffff',
 		lightGray: '#989898',

@@ -6,7 +6,7 @@ import Text from 'components/common/text';
 
 const StyledMenuItem = styled(Box)`
 	padding-top: ${({ theme }) => rem(theme.space[1])};
-	padding-bottom: ${({ theme }) => rem(theme.space[1])};
+	padding-bottom: ${({ theme, pb }) => pb || rem(theme.space[1])};
 	&:not(:last-of-type) {
 		margin-right: ${({ theme }) => rem(theme.space[5])};
 	}
@@ -18,6 +18,9 @@ type MenuItem = {
 	children?: string;
 	title?: string;
 	href?: string;
+	pb?: any;
+	textAlign?: any;
+	mr?: any;
 };
 export const MenuItem = ({
 	variant,
@@ -30,6 +33,8 @@ export const MenuItem = ({
 	let textProps = {
 		color: color || theme.colors.calcite,
 		variant: 'link1',
+		textAlign: rest.textAlign || 'left',
+		mr: rest.mr,
 	};
 
 	if (variant) {
