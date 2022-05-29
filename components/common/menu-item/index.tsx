@@ -52,7 +52,7 @@ export const MenuItem = ({
 };
 
 export const MenuButton = styled(MenuItem)`
-	border: 2px solid ${({ theme }) => theme.colors.orange};
-	border-radius: ${({ theme }) => rem(theme.space.lg)};
-	padding: ${({ theme }) => `${rem(theme.space.sm)} ${rem(theme.space.lg)}`};
+	border: 2px solid ${({ theme, color }) => theme.colors.orange};
+	border-radius: ${({ theme }) => rem(theme.space.xl)};
+	padding: ${({ theme }) => `${rem(theme.space.md)} ${rem(theme.space.lg)}`};
 `;

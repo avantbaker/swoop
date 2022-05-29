@@ -12,6 +12,7 @@ const theme = {
 		black: '#252525',
 		calcite: '#ffffff',
 		lightGray: '#989898',
+		slate: '#505050',
 		darkGray: 'rgba(152, 152, 152, .25)',
 	},
 	space: [0, 4, 8, 16, 20, 32, 64, 128, 256],

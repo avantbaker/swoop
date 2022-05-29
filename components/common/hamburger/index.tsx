@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass/styled-components';
 import styled from 'styled-components';
-import theme from 'styles/theme';
 
 const Container = styled<Box>(Box)`
 	width: 38px;
@@ -16,7 +15,8 @@ const Label = styled.label`
 	border-radius: 100%;
 	width: 38px;
 	height: 38px;
-	border: 1px solid ${theme.colors.orange};
+	border: 1px solid
+		${({ theme, isOpen }) => (isOpen ? theme.colors.black : theme.colors.orange)};
 	margin-left: -20px;
 	position: absolute;
 	color: #ffffff;
@@ -73,7 +73,8 @@ const HiddenInput = styled.input`
 const Line = styled.span`
 	width: 25px;
 	height: 1px;
-	background: ${theme.colors.orange};
+	background: ${({ theme, isOpen }) =>
+		isOpen ? theme.colors.black : theme.colors.orange};
 	display: block;
 	position: absolute;
 	top: 50%;
@@ -107,10 +108,10 @@ export default function HamburgerMenu({
 					checked={isOpen}
 					onChange={toggleMobileNav}
 				/>
-				<Label htmlFor="menu-open">
-					<Line className="line-1"></Line>
-					<Line className="line-2"></Line>
-					<Line className="line-3"></Line>
+				<Label isOpen={isOpen} htmlFor="menu-open">
+					<Line isOpen={isOpen} className="line-1"></Line>
+					<Line isOpen={isOpen} className="line-2"></Line>
+					<Line isOpen={isOpen} className="line-3"></Line>
 				</Label>
 			</Container>
 		</>

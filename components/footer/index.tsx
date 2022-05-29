@@ -92,7 +92,7 @@ export default function Footer({ ...rest }) {
 					justifyContent={['inherit', 'center']}
 				>
 					<Text variant="link2" mr={[0, 5]}>
-						Copyright c 2022 - Swoop App
+						Copyright &copy; 2022 - Swoop App
 					</Text>
 					<Flex alignItems="center" mb={[rem(space.xs)]}>
 						<MenuItem pb={[1, 0]} variant="link2" title="Privacy"></MenuItem>

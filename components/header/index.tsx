@@ -7,34 +7,48 @@ const DesktopMenu = styled(Box)``;
 const Top = styled(Flex)``;
 const Bottom = styled(Flex)``;
 const NavMenuWrapper = styled(Box)``;
+import { PortalWithState } from 'react-portal';
+import { useMobileMenu } from 'components/mobile-menu';
 
 const LogoContainer = styled(Box)`
 	width: 100%;
-	max-width: ${({ maxWidth }) => maxWidth || rem(155)};
+	max-width: ${({ maxWidth }) => maxWidth || rem(150)};
 	img {
 		width: 100%;
 	}
 `;
 
-export const WhiteLogo = ({ ...rest }) => {
+const HeaderWrapper = styled(Flex)`
+	position: absolute;
+	z-index: 10000;
+	left: 0;
+	right: 0;
+`;
+
+export const WhiteLogo = ({ isDark = false, ...rest }) => {
+	const logoType = isDark ? 'Black' : 'White';
 	return (
 		<LogoContainer position="relative" {...rest}>
-			<img src="/logos/Swoop-Logo-White@3x.svg" />
+			<img src={`/logos/Swoop-Logo-${logoType}@3x.svg`} />
 		</LogoContainer>
 	);
 };
 export const Header = () => {
 	const { space } = useTheme();
-
+	const { isOpen, toggleIsOpen } = useMobileMenu();
 	return (
-		<Flex
+		<HeaderWrapper
 			justifyContent="space-between"
 			alignItems={['center', 'center', 'flex-start']}
 			p={[space[4]]}
 		>
-			<WhiteLogo />
+			<WhiteLogo isDark={isOpen} />
 			<NavMenuWrapper>
-				<HamburgerMenu display={['block', 'block', 'none']} />
+				<HamburgerMenu
+					isOpen={isOpen}
+					toggleMobileNav={() => toggleIsOpen()}
+					display={['block', 'block', 'none']}
+				/>
 				<DesktopMenu display={['none', 'none', 'flex']} flexDirection="column">
 					<Top alignItems="center" justifyContent="flex-end" pb={[space[3]]}>
 						<MenuItem title="App" />
@@ -47,6 +61,6 @@ export const Header = () => {
 					</Bottom>
 				</DesktopMenu>
 			</NavMenuWrapper>
-		</Flex>
+		</HeaderWrapper>
 	);
 };

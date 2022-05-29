@@ -29,6 +29,13 @@ const variants = {
 	h4: {},
 	h5: {},
 	h6: {},
+	linkDisplay: {
+		fontSize: rem(40),
+		fontWeight: 'normal',
+		lineHeight: rem(48.15),
+		color: theme.colors.slate,
+		textTransform: 'uppercase',
+	},
 	link1: {
 		fontSize: rem(15),
 		fontWeight: 'normal',
