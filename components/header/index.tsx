@@ -12,7 +12,6 @@ import { useMobileMenu } from 'components/mobile-menu';
 
 const LogoContainer = styled(Box)`
 	width: 100%;
-	max-width: ${({ maxWidth }) => maxWidth || rem(150)};
 	img {
 		width: 100%;
 	}
@@ -39,10 +38,11 @@ export const Header = () => {
 	return (
 		<HeaderWrapper
 			justifyContent="space-between"
-			alignItems={['center', 'center', 'flex-start']}
+			alignItems={['flex-start']}
 			p={[space[4]]}
+			pt={[space[5]]}
 		>
-			<WhiteLogo isDark={isOpen} />
+			<WhiteLogo maxWidth={[rem(130), rem(150)]} isDark={isOpen} />
 			<NavMenuWrapper>
 				<HamburgerMenu
 					isOpen={isOpen}

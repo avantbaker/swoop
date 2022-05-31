@@ -1,3 +1,5 @@
+import { rem } from 'polished';
+
 const theme = {
 	logos: {},
 	typography: {
@@ -10,13 +12,14 @@ const theme = {
 		orange: '#FF8B00',
 		brown: '#D8D8D8',
 		black: '#252525',
-		calcite: '#ffffff',
+		white: '#ffffff',
+		calcite: '#E7E2DA',
 		lightGray: '#989898',
 		slate: '#505050',
 		darkGray: 'rgba(152, 152, 152, .25)',
 	},
 	space: [0, 4, 8, 16, 20, 32, 64, 128, 256],
-	breakpoints: ['40em', '52em', '64em'],
+	breakpoints: [rem(768), rem(1024), rem(1440)],
 };
 
 theme['space' as any].xs = theme.space[1];
