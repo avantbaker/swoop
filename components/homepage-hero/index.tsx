@@ -34,10 +34,10 @@ export const useWidthObserver = (maxWidth?) => {
 export const KeepPlayingHero = () => {
 	return (
 		<Flex position="relative">
-			<Circles />
 			<Flex position="relative" minHeight="95vh" width="100%">
-				<Flex flexDirection={['column', 'column', 'row']}>
-					<Background />
+				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
+					<Circles />
+					<Background zIndex={1} />
 					<Foreground />
 				</Flex>
 			</Flex>

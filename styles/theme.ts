@@ -4,8 +4,9 @@ const theme = {
 	logos: {},
 	typography: {
 		fonts: {
-			primary: "'Syne', sans-serif",
-			secondary: "'Brygada 1918', serif",
+			primary: "'Zen Antique', serif",
+			secondary: "'Shippori Antique', sans-serif",
+			tertiary: "'JetBrains Mono', monospace",
 		},
 	},
 	colors: {

@@ -35,9 +35,9 @@ export const Foreground = ({ ...rest }) => {
 					textAlign="right"
 					mb={[4, 4, 5]}
 				>
-					Have your next course on the course.
+					Have your next course, on the course.
 				</Text>
-				<Text maxWidth={['90%', '90%', '65%']} variant="h4" textAlign="right" mb={6}>
+				<Text maxWidth={['90%', '90%', '55%']} variant="h4" textAlign="right" mb={6}>
 					Leave your lunchbox at home. Order fresh provisions and cocktails from the
 					clubhouse, delivered to your exact location on the course.
 				</Text>

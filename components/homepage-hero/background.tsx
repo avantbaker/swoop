@@ -1,5 +1,7 @@
 import { rem } from 'polished';
 import { Box } from 'rebass/styled-components';
+import styled from 'styled-components';
+
 import {
 	useWidthObserver,
 	MAX_CONTAINER_WIDTH,
@@ -7,11 +9,14 @@ import {
 	CustomImage,
 } from './index';
 
+const BackgroundWrapper = styled(Box)`
+	z-index: 1;
+`;
 export const Background = ({ ...rest }) => {
 	const [boxRef, width] = useWidthObserver(MAX_CONTAINER_WIDTH);
 	const currentHeight = rem(width || MAX_CONTAINER_WIDTH);
 	return (
-		<Box
+		<BackgroundWrapper
 			ref={boxRef}
 			width={['100%', '100%', '70%']}
 			height={[currentHeight, currentHeight, '100%']}
@@ -21,6 +26,6 @@ export const Background = ({ ...rest }) => {
 			{...rest}
 		>
 			<CustomImage src="/images/byrdi-phones.png" />
-		</Box>
+		</BackgroundWrapper>
 	);
 };
