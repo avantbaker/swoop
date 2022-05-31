@@ -31,9 +31,9 @@ export const useWidthObserver = (maxWidth?) => {
 	}, [boxRef]);
 	return [boxRef, width];
 };
-export const KeepPlayingHero = () => {
+export const KeepPlayingHero = ({ ...rest }) => {
 	return (
-		<Flex position="relative">
+		<Flex position="relative" {...rest}>
 			<Flex position="relative" minHeight="95vh" width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
 					<Circles />

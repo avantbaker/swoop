@@ -2,10 +2,10 @@ import { useTheme } from 'styled-components';
 import { Flex } from 'rebass/styled-components';
 import Text from 'components/common/text';
 
-export const TextBanner = ({ title }) => {
+export const TextBanner = ({ title, ...rest }) => {
 	const { space } = useTheme();
 	return (
-		<Flex pt={[space[4], space[4], space[6]]} px={space[4]} mb={6}>
+		<Flex pt={[space[4], space[4], space[6]]} px={space[4]} mb={6} {...rest}>
 			<Text variant="display">{title}</Text>
 		</Flex>
 	);

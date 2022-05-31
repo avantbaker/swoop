@@ -4,9 +4,9 @@ import theme from 'styles/theme';
 import styled from 'styled-components';
 import { Header } from 'components/header';
 import Footer from 'components/footer';
-import Text from 'components/common/text';
 import { MenuProvider, MobileMenu } from 'components/mobile-menu';
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
+
+import 'styles/scss/styles.scss';
 
 const PageWrapper = styled('div')`
 	min-height: 100vh;

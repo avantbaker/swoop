@@ -24,6 +24,7 @@
     "react-player": "^2.10.1",
     "react-portal": "^4.2.2",
     "rebass": "^4.0.7",
+    "sass": "^1.52.1",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },
