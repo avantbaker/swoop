@@ -19,6 +19,7 @@ export default function Footer({ ...rest }) {
 			flexDirection="column"
 			justifySelf="flex-end"
 			bg="black"
+			boxSizing="none"
 			p={[space[4]]}
 			pt={[space[5]]}
 			{...rest}
