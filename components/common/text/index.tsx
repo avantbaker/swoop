@@ -18,9 +18,9 @@ import {
 const variants = {
 	display: {
 		fontFamily: theme.typography.fonts.primary,
-		fontSize: rem(115.07),
+		fontSize: [rem(115.07), rem(140)],
 		fontWeight: 'normal',
-		lineHeight: rem(100),
+		lineHeight: [rem(100), rem(130)],
 		color: theme.colors.calcite,
 		textAlign: 'right',
 		wordBreak: 'break-word',
@@ -76,6 +76,16 @@ const variants = {
 		color: theme.colors.lightGray,
 		fontFamily: theme.typography.fonts.tertiary,
 		fontWeight: 700,
+	},
+	link3: {
+		fontSize: [rem(14)],
+		lineHeight: rem(21.5),
+		letterSpacing: rem(1),
+		color: theme.colors.orange,
+		fontFamily: theme.typography.fonts.tertiary,
+		fontWeight: 700,
+		textTransform: 'uppercase',
+		textDecoration: 'underline',
 	},
 	p: {},
 	body: {

@@ -26,7 +26,7 @@ export const Foreground = ({ ...rest }) => {
 				<Box mb={4}>
 					<Pin />
 				</Box>
-				<Text maxWidth={['60%']} variant="h1" textAlign="right" mb={[5, 5, 6]}>
+				<Text maxWidth={['70%']} variant="h1" textAlign="right" mb={[5, 5, 6]}>
 					Keep Playing
 				</Text>
 				<Text
