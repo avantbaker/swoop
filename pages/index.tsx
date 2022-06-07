@@ -10,7 +10,7 @@ import { rem } from 'polished';
 
 const TitleText = styled(Text)`
 	position: relative;
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		&:after {
 			display: block;
 			content: '';
@@ -26,10 +26,11 @@ const TitleText = styled(Text)`
 
 const LogoWrapper = styled(Box)`
 	display: flex;
-	flex: 1 / 2;
+	justify-content: center;
 	margin-bottom: ${({ theme }) => rem(theme.space[6])};
 	img {
 		max-width: 100%;
+		height: auto;
 	}
 `;
 
@@ -39,15 +40,51 @@ const Link = styled(Text)`
 	padding-left: 20px;
 	width: 100%;
 `;
-const AffiliateWrapper = styled(Box)``;
+const AffiliateWrapper = styled(Box)`
+	padding-top: ${({ theme }) => rem(theme.space[6])};
+	@media screen and (min-width: ${rem(900)}) {
+		padding-top: ${({ theme }) => 0};
+	}
+	@media screen and (min-width: ${rem(1024)}) {
+		padding-top: ${({ theme }) => rem(theme.space[6])};
+	}
+`;
 const LogoContainer = styled(Flex)`
 	position: relative;
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+
+	& > *:first-child {
+		grid-column: 1 / 3;
+	}
+	& > *:last-child {
+		grid-column: 1 / 3;
+	}
+
+	@media screen and (min-width: ${({ theme }) => rem(516)}) {
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+
+		& > *:first-child {
+			grid-column: unset;
+		}
+		& > *:last-child {
+			grid-column: unset;
+		}
+	}
+
+	@media screen and (min-width: ${({ theme }) => rem(1200)}) {
+		display: flex;
+		justify-content: space-around;
+	}
+
 	&:after {
 		display: block;
 		content: '';
 		position: absolute;
 		bottom: 0;
-		left: ${({ theme }) => theme.space[4]};
+		left: ${({ theme }) => '-20px'};
 		width: 100vw;
 		background-color: ${({ theme }) => theme.colors.orange};
 		height: 2px;
@@ -80,15 +117,11 @@ export default function Home() {
 			<VideoSection />
 			<DriveRevenue />
 			<AffiliateContainer>
-				<AffiliateWrapper pt={[6]} mb={4} px={4}>
-					<TitleText maxWidth={['100%', '60%']} variant="h1" mb={[6, 6, 7]}>
+				<AffiliateWrapper mb={4} px={4}>
+					<TitleText maxWidth={['80%', '60%']} variant="h1" mb={[6]}>
 						Swoop Affiliate Courses
 					</TitleText>
-					<LogoContainer
-						flexDirection="row"
-						flexWrap="wrap"
-						justifyContent={['space-around', 'space-around', 'space-between']}
-					>
+					<LogoContainer pt={[5]} pb={[6]}>
 						<LogoWrapper>
 							<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
 						</LogoWrapper>
@@ -102,7 +135,7 @@ export default function Home() {
 							<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
 						</LogoWrapper>
 					</LogoContainer>
-					<Link maxWidth={['60%']} variant="link3" mt={6} mb={6}>
+					<Link maxWidth={['60%']} variant="link3" mt={[6, 6, 0]} mb={6}>
 						<Text color="orange">Become a Byrdi Affiliate Course</Text>
 					</Link>
 				</AffiliateWrapper>

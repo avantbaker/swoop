@@ -110,22 +110,45 @@ const DesktopPhoneImage = styled('img')`
 	position: absolute;
 	flex-shrink: 0;
 	top: -60px;
-	right: -42px;
+	right: -92px;
 `;
 const SpiritsImage = styled('img')`
 	position: absolute;
 	top: -120px;
-	left: 45px;
+	left: 85px;
 `;
 const WrapsImage = styled('img')`
 	position: absolute;
 	top: 160px;
-	left: 200px;
+	left: 240px;
 `;
 const RectangleFlagImage = styled('img')`
 	position: absolute;
 	top: 240px;
-	left: 0;
+	left: 40px;
+`;
+
+const CustomSection = styled(Section)`
+	flex-direction: column;
+	@media screen and (min-width: ${rem(900)}) {
+		flex-direction: row;
+	}
+	& > *:first-child {
+		flex: 1;
+	}
+	& > *:last-child {
+		flex: 1;
+	}
+	@media screen and (min-width: ${rem(1024)}) {
+		& > *:last-child {
+			flex: 2;
+		}
+	}
+	@media screen and (min-width: ${rem(1200)}) {
+		& > *:first-child {
+			flex: 1.5;
+		}
+	}
 `;
 const DesktopMockupGallery = ({ ...rest }) => {
 	return (
@@ -146,12 +169,8 @@ const DesktopMockupGallery = ({ ...rest }) => {
 export const DriveRevenue = () => {
 	const { space } = useTheme();
 	return (
-		<Section
-			flexDirection={['column', 'row']}
-			mt={[space[4], space[6], space[7]]}
-			mb={[space[6], space[7]]}
-		>
-			<Flex flex="1" flexDirection="column" pl={2} pr={2}>
+		<CustomSection mt={[space[4], space[6], space[7]]} mb={[space[5], space[5]]}>
+			<Flex flexDirection="column" pl={2} pr={2} mb={[6]}>
 				<Text maxWidth={['60%']} variant="h1" mb={[5, 5, 6]}>
 					Drive Revenue
 				</Text>
@@ -180,18 +199,17 @@ export const DriveRevenue = () => {
 					title="Learn More"
 					color="orange"
 					textAlign="center"
-					maxWidth={['100%', '50%']}
+					maxWidth={['100%', '70%']}
 				/>
 			</Flex>
 			<Flex
-				flex={['1', '2', '1.5']}
-				pt={[rem(space[7]), 0]}
+				pt={[rem(space[6]), rem(space[6]), 0]}
 				pb={rem(space[7])}
 				justifyContent="center"
 			>
 				<MobileRevenueGallery />
 				<DesktopMockupGallery />
 			</Flex>
-		</Section>
+		</CustomSection>
 	);
 };
