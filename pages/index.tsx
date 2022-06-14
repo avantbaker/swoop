@@ -1,8 +1,11 @@
-import { AffiliateSection } from 'components/affiliates';
-import { DriveRevenue } from 'components/drive-revenue';
+import { useRef } from 'react';
+import { Block } from 'components/common/container';
 import { KeepPlayingHero } from 'components/homepage-hero';
 import { TextBanner } from 'components/text-banner';
 import { VideoSection } from 'components/video-section';
+import { DriveRevenue } from 'components/drive-revenue';
+import { AffiliateSection } from 'components/affiliates';
+import { TestimonialsCarousel } from '../components/testimonials';
 
 export default function Home() {
 	return (
@@ -12,6 +15,7 @@ export default function Home() {
 			<VideoSection />
 			<DriveRevenue />
 			<AffiliateSection />
+			<TestimonialsCarousel />
 		</>
 	);
 }

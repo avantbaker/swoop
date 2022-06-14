@@ -95,6 +95,13 @@ const variants = {
 		color: theme.colors.lightGray,
 		fontFamily: theme.typography.fonts.tertiary,
 	},
+	bodySecondary: {
+		fontSize: rem(14),
+		fontWeight: 'normal',
+		lineHeight: rem(20),
+		color: theme.colors.calcite,
+		fontFamily: theme.typography.fonts.secondary,
+	},
 };
 
 type TextProps = SpaceProps &

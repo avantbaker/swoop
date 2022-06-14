@@ -9,6 +9,9 @@ export const Section = styled(Flex)`
 	padding-bottom: 50px;
 	margin-right: auto !important;
 	margin-left: auto !important;
+	overflow: visible;
+	position: relative;
+
 	@media (min-width: 1024px) {
 		max-width: 980px;
 	}

@@ -51,7 +51,7 @@ const SandwichIcon = styled(Sandwhiches)`
 	right: 0;
 	top: -35px;
 `;
-const LittleCircleWithDot = ({ ...rest }) => {
+export const LittleCircleWithDot = ({ ...rest }) => {
 	return (
 		<LittleCircle {...rest}>
 			<SolidCircle />
