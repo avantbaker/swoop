@@ -7,21 +7,21 @@ import { TestimonialsCarousel } from '../components/testimonials';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
 
-export default function Home() {
+export default function Brand() {
 	return (
 		<>
 			<KeepPlayingHero
-				subtext={`Leave your lunchbox at home. Order fresh provisions and cocktails from the clubhouse, delivered to your exact location on the course.`}
-				title={'Keep Playing'}
-				subtitle={'Have your next course, on the course.'}
-				hasIcons={true}
+				title={'The missing link in golf’s food and drink.'}
+				hasIcons={false}
+				hasCircles={false}
+				bgImage="/elements/putting.png"
+				titleMaxWidth={['70%', '50%']}
+				contentJustify={['center', 'flex-end']}
 			/>
-			<TextBanner title="More Memorable Rounds" />
-			<VideoSection />
-			<DriveRevenue />
-			<AffiliateSection />
 			<TestimonialsCarousel />
-			<InstagramSection />
+			<AffiliateSection />
+			<TextBanner title="Byrdi Ambassadors" />
+			<TextBanner title="Loyalty Rewards" />
 			<NewsletterSection />
 		</>
 	);

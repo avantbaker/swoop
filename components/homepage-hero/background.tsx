@@ -12,7 +12,7 @@ import {
 const BackgroundWrapper = styled(Box)`
 	z-index: 1;
 `;
-export const Background = ({ ...rest }) => {
+export const Background = ({ src, ...rest }) => {
 	const [boxRef, width] = useWidthObserver(MAX_CONTAINER_WIDTH);
 	const currentHeight = rem(width || MAX_CONTAINER_WIDTH);
 	return (
@@ -25,7 +25,7 @@ export const Background = ({ ...rest }) => {
 			pt={[rem(MOBILE_HEADER_HEIGHT), rem(MOBILE_HEADER_HEIGHT), 0]}
 			{...rest}
 		>
-			<CustomImage src="/images/byrdi-phones.png" />
+			<CustomImage src={src || '/images/byrdi-phones.png'} />
 		</BackgroundWrapper>
 	);
 };

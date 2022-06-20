@@ -31,14 +31,32 @@ export const useWidthObserver = (maxWidth?) => {
 	}, [boxRef]);
 	return [boxRef, width];
 };
-export const KeepPlayingHero = ({ ...rest }) => {
+export const KeepPlayingHero = ({
+	subtext = '',
+	title = 'Keep Playing',
+	subtitle = '',
+	hasIcons = true,
+	hasCircles = true,
+	bgImage = '',
+	titleMaxWidth = null,
+	contentJustify = null,
+	...rest
+}) => {
 	return (
 		<Flex position="relative" {...rest}>
 			<Flex position="relative" minHeight="95vh" width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
-					<Circles />
-					<Background zIndex={1} />
-					<Foreground />
+					{hasCircles && <Circles />}
+					<Background src={bgImage} zIndex={1} />
+					<Foreground
+						subtext={subtext}
+						title={title}
+						subtitle={subtitle}
+						hasIcons={hasIcons}
+						zIndex={2}
+						titleMaxWidth={titleMaxWidth}
+						contentJustify={contentJustify}
+					/>
 				</Flex>
 			</Flex>
 		</Flex>
