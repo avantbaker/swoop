@@ -27,9 +27,9 @@ const InstaGrid = styled('div')`
 const GridItem = styled('div')`
 	display: grid;
 `;
-export const InstagramSection = () => {
+export const InstagramSection = ({ children, ...rest }: { children? }) => {
 	return (
-		<Section flexDirection="column" mb={[6, 7]}>
+		<Section flexDirection="column" mb={[6, 7]} {...rest}>
 			<Flex mb={[6]} flexDirection={['column', 'row']}>
 				<Text variant={'h4Uppercase'} mr="7">
 					Byrdi ON THE ‘GRAM
@@ -55,6 +55,7 @@ export const InstagramSection = () => {
 					</GridItem>
 				</InstaGrid>
 			</Flex>
+			{children}
 		</Section>
 	);
 };

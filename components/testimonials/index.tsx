@@ -34,6 +34,10 @@ const Card = styled(Flex)`
 `;
 const CustomSection = styled(Section)`
 	overflow: visible;
+
+	&.expanded {
+		padding-top: 0 !important;
+	}
 `;
 const ImageWrapper = styled('div')`
 	img {
@@ -50,11 +54,11 @@ const ContentWrapper = styled(Flex)`
 		padding: 10%;
 	}
 `;
-const LeftControl = styled(ArrowControl)`
+export const LeftControl = styled(ArrowControl)`
 	transform: rotate(180deg);
 	margin-right: ${rem(20)};
 `;
-const RightControl = styled(ArrowControl)``;
+export const RightControl = styled(ArrowControl)``;
 const DesktopCWD = styled(LittleCircleWithDot)`
 	top: -55px;
 	left: 0;
@@ -74,7 +78,7 @@ const MobileCWD = styled(LittleCircleWithDot)`
 		display: none;
 	}
 `;
-const ControlContainer = styled(Flex)`
+export const ControlContainer = styled(Flex)`
 	position: relative;
 `;
 const CustomTitle = styled(Text)`
@@ -107,7 +111,7 @@ const TestimonialCard = () => {
 		</Card>
 	);
 };
-const useCustomCarousel = () => {
+export const useCustomCarousel = () => {
 	const [currentIndex, setSelectedIndex] = useState(0);
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -147,10 +151,10 @@ const useCustomCarousel = () => {
 	};
 };
 const dummyCards = [1, 2, 3, 4, 5, 6];
-export const TestimonialsCarousel = () => {
+export const TestimonialsCarousel = ({ ...rest }) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
-		<CustomSection flexDirection={['column']}>
+		<CustomSection flexDirection={['column']} {...rest}>
 			<ControlContainer mb={[5]}>
 				<LeftControl onClick={scrollPrev} />
 				<RightControl onClick={scrollNext} />

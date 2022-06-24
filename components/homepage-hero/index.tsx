@@ -40,6 +40,8 @@ export const KeepPlayingHero = ({
 	bgImage = '',
 	titleMaxWidth = null,
 	contentJustify = null,
+	imgMaxWidth = null,
+	mobileHeaderPadding = true,
 	...rest
 }) => {
 	return (
@@ -47,8 +49,14 @@ export const KeepPlayingHero = ({
 			<Flex position="relative" minHeight="95vh" width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
 					{hasCircles && <Circles />}
-					<Background src={bgImage} zIndex={1} />
+					<Background
+						headerPadding={mobileHeaderPadding}
+						src={bgImage}
+						maxWidth={imgMaxWidth}
+						zIndex={1}
+					/>
 					<Foreground
+						headerPadding={mobileHeaderPadding}
 						subtext={subtext}
 						title={title}
 						subtitle={subtitle}
