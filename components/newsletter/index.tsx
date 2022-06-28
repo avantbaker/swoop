@@ -19,8 +19,10 @@ const ImageWrapper = styled('div')`
 	background-image: url(${({ src }) => src});
 	background-position: center;
 	background-size: cover;
+	height: 100%;
 	img {
 		display: none;
+		height: 100%;
 	}
 `;
 const ContentWrapper = styled(Flex)`
@@ -54,29 +56,42 @@ const CustomInput = styled('input')`
 		margin-right: ${({ theme }) => rem(theme.space[4])};
 	}
 `;
-export const NewsletterSection = () => {
+export const NewsletterSection = ({
+	imgSrc = '/elements/burger.png',
+	title = 'Keep Up',
+	body = `Join the Byrdi blast list get the latest news, find events, and recieve deals.`,
+	hasCTA = false,
+	...rest
+}) => {
 	return (
-		<NewsletterWrapper>
-			<ImageWrapper src="/elements/burger.png">
-				<img src="/elements/burger.png" alt="" />
+		<NewsletterWrapper {...rest}>
+			<ImageWrapper src={imgSrc}>
+				<img src={imgSrc} alt="Newsletter Profile Image" />
 			</ImageWrapper>
 			<ContentWrapper py={6} px={[4, 6, 7]} flexDirection={['column']}>
 				<Flex mb={[5]} flexDirection={['column']}>
 					<Text variant="h1" mb={[4]} color="calcite">
-						Keep Up
+						{title}
 					</Text>
 					<Text color="calcite" maxWidth={[, '60%']}>
-						Join the Byrdi blast list get the latest news, find events, and recieve deals.
+						{body}
 					</Text>
 				</Flex>
-				<Flex flexDirection={['column', 'row']}>
-					<CustomInput
-						color={theme.colors.calcite}
-						type="text"
-						placeholder="Email Address"
-					/>
-					<MenuButton color={theme.colors.calcite}>Submit</MenuButton>
-				</Flex>
+				{!hasCTA && (
+					<Flex flexDirection={['column', 'row']}>
+						<CustomInput
+							color={theme.colors.calcite}
+							type="text"
+							placeholder="Email Address"
+						/>
+						<MenuButton color={theme.colors.calcite}>Submit</MenuButton>
+					</Flex>
+				)}
+				{hasCTA && (
+					<Flex>
+						<MenuButton color={theme.colors.calcite}>Get In Touch</MenuButton>
+					</Flex>
+				)}
 			</ContentWrapper>
 		</NewsletterWrapper>
 	);

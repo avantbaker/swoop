@@ -42,11 +42,12 @@ export const KeepPlayingHero = ({
 	contentJustify = null,
 	imgMaxWidth = null,
 	mobileHeaderPadding = true,
+	minHeight = '95vh',
 	...rest
 }) => {
 	return (
 		<Flex position="relative" {...rest}>
-			<Flex position="relative" minHeight="95vh" width="100%">
+			<Flex position="relative" minHeight={minHeight} width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
 					{hasCircles && <Circles />}
 					<Background

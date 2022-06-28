@@ -12,7 +12,9 @@ export const TextBanner = ({ title, ...rest }) => {
 			mb={6}
 			{...rest}
 		>
-			<Text variant="display">{title}</Text>
+			<Text variant="display" maxWidth={['100%', '80%']}>
+				{title}
+			</Text>
 		</Flex>
 	);
 };
