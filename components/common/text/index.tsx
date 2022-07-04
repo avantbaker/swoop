@@ -15,7 +15,7 @@ import {
 	ColorProps,
 } from 'styled-system';
 
-const variants = {
+export const variants = {
 	display: {
 		fontFamily: theme.typography.fonts.primary,
 		fontSize: [rem(115.07), rem(140)],
@@ -131,6 +131,13 @@ const variants = {
 		fontSize: [rem(14)],
 		fontWeight: 'normal',
 		lineHeight: rem(21),
+		color: theme.colors.calcite,
+		fontFamily: theme.typography.fonts.secondary,
+	},
+	accordionTitle: {
+		fontSize: [rem(19), rem(22)],
+		fontWeight: 'normal',
+		lineHeight: [rem(24), rem(28)],
 		color: theme.colors.calcite,
 		fontFamily: theme.typography.fonts.secondary,
 	},

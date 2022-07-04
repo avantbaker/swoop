@@ -6,13 +6,14 @@ type Props = {
 	fill?: string;
 };
 
-export const Pin: FC<Props> = ({ size = 24, fill = theme.colors.black, ...rest }) => (
+export const Pin = ({ size = 24, fill = theme.colors.black, ...rest }) => (
 	<svg
 		width="48px"
 		height="63px"
 		viewBox="0 0 48 63"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
+		{...rest}
 	>
 		<g id="UI-Design" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
 			<g
