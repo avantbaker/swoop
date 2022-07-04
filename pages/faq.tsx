@@ -36,7 +36,7 @@ const StyledAccordion = styled(Accordion)`
 `;
 const StyledAccordionItem = styled(AccordionItem)`
 	flex: 0 1 100%;
-	margin-bottom: ${rem(40)};
+	margin-bottom: ${rem(60)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		flex: 0 1 calc(50% - 40px);
 
