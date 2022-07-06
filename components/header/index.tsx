@@ -24,7 +24,7 @@ const HeaderWrapper = styled(Flex)`
 	right: 0;
 `;
 
-export const WhiteLogo = ({ isDark = false, ...rest }) => {
+export const Logo = ({ isDark = false, ...rest }) => {
 	const logoType = isDark ? 'Black' : 'White';
 	return (
 		<LogoContainer position="relative" {...rest}>
@@ -32,8 +32,8 @@ export const WhiteLogo = ({ isDark = false, ...rest }) => {
 		</LogoContainer>
 	);
 };
-export const Header = () => {
-	const { space } = useTheme();
+export const Header = ({ ...rest }) => {
+	const { space, type } = useTheme();
 	const { isOpen, toggleIsOpen } = useMobileMenu();
 	return (
 		<HeaderWrapper
@@ -41,8 +41,9 @@ export const Header = () => {
 			alignItems={['flex-start']}
 			p={[space[4]]}
 			pt={[space[5]]}
+			{...rest}
 		>
-			<WhiteLogo maxWidth={[rem(130), rem(150)]} isDark={isOpen} />
+			<Logo maxWidth={[rem(130), rem(150)]} isDark={type === 'light' ? true : isOpen} />
 			<NavMenuWrapper>
 				<HamburgerMenu
 					isOpen={isOpen}

@@ -2,7 +2,6 @@ import { rem } from 'polished';
 
 const theme = {
 	logos: {},
-	type: 'dark',
 	typography: {
 		fonts: {
 			primary: "'Zen Antique', serif",
@@ -13,8 +12,8 @@ const theme = {
 	colors: {
 		orange: '#FF8B00',
 		brown: '#D8D8D8',
-		black: '#252525',
-		white: '#ffffff',
+		white: '#252525',
+		black: '#ffffff',
 		calcite: '#E7E2DA',
 		sage: '#1B1814',
 		lightGray: '#989898',

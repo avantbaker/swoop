@@ -105,7 +105,7 @@ export default function Brand() {
 				contentJustify={['center', 'flex-end']}
 				imgMaxWidth="140%"
 				mobileHeaderPadding={false}
-				minHeight={'80vh'}
+				minHeight={['80vh']}
 				mb={[0, 7]}
 			/>
 			<TestimonialsCarousel className="expanded" />

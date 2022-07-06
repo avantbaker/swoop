@@ -4,7 +4,7 @@ import { MenuItem } from 'components/common/menu-item';
 import Twitter from 'components/common/icons/twitter';
 import Instagram from 'components/common/icons/instagram';
 import LinkedIn from 'components/common/icons/linkedin';
-import { WhiteLogo } from 'components/header';
+import { Logo } from 'components/header';
 import Text from 'components/common/text';
 import { rem } from 'polished';
 
@@ -12,13 +12,13 @@ const FooterContainer = styled(Flex)`
 	border-top: 2px solid ${({ theme }) => theme.colors.orange};
 `;
 
-export default function Footer({ ...rest }) {
-	const { space, colors } = useTheme();
+export default function Footer({ isLight = false, ...rest }) {
+	const { space, colors, type } = useTheme();
 	return (
 		<FooterContainer
 			flexDirection="column"
 			justifySelf="flex-end"
-			bg="black"
+			bg={type === 'light' ? 'white' : 'black'}
 			boxSizing="none"
 			p={[space[4]]}
 			pt={[space[5]]}
@@ -86,7 +86,7 @@ export default function Footer({ ...rest }) {
 				flexDirection={['column', 'row']}
 				justifyContent={['inherit', 'space-between']}
 			>
-				<WhiteLogo maxWidth={rem(130)} mb={[space[4], 0]} />
+				<Logo maxWidth={rem(130)} mb={[space[4], 0]} isDark={type === 'light'} />
 				<Flex
 					flexDirection={['column-reverse', 'row']}
 					alignItems={['inherit', 'center']}
