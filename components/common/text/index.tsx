@@ -201,6 +201,15 @@ export const variants = {
 		color: theme.colors.sage,
 		fontFamily: theme.typography.fonts.secondary,
 	},
+	termsTitle: {
+		fontSize: [rem(46)],
+		fontWeight: 'bold',
+		lineHeight: [rem(46)],
+		letterSpacing: [rem(3)],
+		color: theme.colors.sage,
+		fontFamily: theme.typography.fonts.tertiary,
+		textTransform: 'uppercase',
+	},
 };
 
 type TextProps = SpaceProps &
