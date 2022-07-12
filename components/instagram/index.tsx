@@ -1,7 +1,7 @@
 import { Section } from 'components/common/container';
 import Text from 'components/common/text';
 import Instagram from 'components/common/icons/instagram';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { Flex } from 'rebass/styled-components';
 import { rem } from 'polished';
 
@@ -28,13 +28,21 @@ const GridItem = styled('div')`
 	display: grid;
 `;
 export const InstagramSection = ({ children, ...rest }: { children? }) => {
+	const { type } = useTheme();
+	let addColor = { color: undefined };
+
+	if (type === 'light') {
+		addColor.color = 'black';
+	}
 	return (
 		<Section flexDirection="column" mb={[6, 7]} {...rest}>
 			<Flex mb={[6]} flexDirection={['column', 'row']}>
-				<Text variant={'h4Uppercase'} mr="7">
+				<Text variant={'h4Uppercase'} mr="7" {...addColor}>
 					Byrdi ON THE ‘GRAM
 				</Text>
-				<Text variant={'h4Uppercase'}>LOREM IPSUM DOLOR SIC AMET</Text>
+				<Text variant={'h4Uppercase'} {...addColor}>
+					LOREM IPSUM DOLOR SIC AMET
+				</Text>
 			</Flex>
 			<Flex flexDirection={['column', 'row']}>
 				<Flex mb={[5]} mr={6}>

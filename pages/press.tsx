@@ -211,7 +211,7 @@ function Press() {
 	);
 }
 
-export async function getStaticProps(ctx) {
+export async function getStaticProps() {
 	return {
 		props: {
 			theme: 'light',

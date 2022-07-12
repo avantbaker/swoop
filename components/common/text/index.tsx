@@ -186,6 +186,21 @@ export const variants = {
 		color: theme.colors.sage,
 		fontFamily: theme.typography.fonts.secondary,
 	},
+	careersTitle: {
+		fontSize: [rem(29.82), rem(41.82), rem(61.05)],
+		fontWeight: 'bold',
+		lineHeight: [rem(29.82), rem(41.82), rem(61.05)],
+		textTransform: 'uppercase',
+		color: theme.colors.sage,
+		fontFamily: theme.typography.fonts.primary,
+	},
+	careersSubtitle: {
+		fontSize: [rem(19.3)],
+		fontWeight: 'bold',
+		lineHeight: [rem(20.93)],
+		color: theme.colors.sage,
+		fontFamily: theme.typography.fonts.secondary,
+	},
 };
 
 type TextProps = SpaceProps &
