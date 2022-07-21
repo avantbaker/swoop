@@ -34,3 +34,20 @@ export const GlobalStylesLight = createGlobalStyle`
     text-decoration: none;
   }
 `;
+export const GlobalStyles404 = createGlobalStyle`
+  body {
+    font-family: ${({ theme }) => theme.typography.fonts.primary};
+    background: ${({ theme }) => theme.colors.orange};
+    color: ${({ theme }) => theme.colors.calcite};
+    font-weight: 400;
+    transition: all 0.50s linear; 
+    margin: 0;
+    overflow-x: hidden;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+  }
+`;

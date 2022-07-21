@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, GlobalStylesLight } from 'styles/globalStyles';
+import { GlobalStyles, GlobalStylesLight, GlobalStyles404 } from 'styles/globalStyles';
 import theme from 'styles/theme';
 import themeLight from 'styles/theme.light';
 import styled from 'styled-components';
@@ -19,15 +19,20 @@ const PageWrapper = styled('div')`
 function MyApp({ Component, pageProps }) {
 	const { theme: pageTheme } = pageProps;
 	const isLight = pageTheme === 'light';
+	const isOrange = pageTheme === 'orange';
 
 	if (isLight) {
 		theme.type = 'light';
+	} else if (isOrange) {
+		theme.type = 'orange';
 	}
 
 	return (
 		<ThemeProvider theme={theme}>
 			<MenuProvider>
-				{isLight ? <GlobalStylesLight /> : <GlobalStyles />}
+				{isLight && <GlobalStylesLight />}
+				{!isOrange && !isLight && <GlobalStyles />}
+				{isOrange && <GlobalStyles404 />}
 				<PageWrapper>
 					<Header />
 					<Component {...pageProps} />

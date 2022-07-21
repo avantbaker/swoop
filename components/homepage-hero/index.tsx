@@ -31,6 +31,19 @@ export const useWidthObserver = (maxWidth?) => {
 	}, [boxRef]);
 	return [boxRef, width];
 };
+
+function arrayEquals(a, b) {
+	return (
+		Array.isArray(a) &&
+		Array.isArray(b) &&
+		a.length === b.length &&
+		a.every((val, index) => val === b[index])
+	);
+}
+type Container = {
+	height?: string | any[];
+	minHeight?: string | any[];
+};
 export const KeepPlayingHero = ({
 	subtext = '',
 	title = 'Keep Playing',
@@ -45,9 +58,15 @@ export const KeepPlayingHero = ({
 	minHeight = ['95vh'],
 	...rest
 }) => {
+	const IS_STRING = typeof minHeight === 'string';
+	const IS_DEFAULT = IS_STRING ? false : arrayEquals(minHeight, ['95vh']);
+	const CONTAINER_PROPS: Container = {};
+	IS_DEFAULT
+		? (CONTAINER_PROPS.height = minHeight)
+		: (CONTAINER_PROPS.minHeight = minHeight);
 	return (
 		<Flex position="relative" {...rest}>
-			<Flex position="relative" height={minHeight} width="100%">
+			<Flex position="relative" {...CONTAINER_PROPS} width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
 					{hasCircles && <Circles />}
 					<Background

@@ -7,7 +7,6 @@ const DesktopMenu = styled(Box)``;
 const Top = styled(Flex)``;
 const Bottom = styled(Flex)``;
 const NavMenuWrapper = styled(Box)``;
-import { PortalWithState } from 'react-portal';
 import { useMobileMenu } from 'components/mobile-menu';
 
 const LogoContainer = styled(Box)`
@@ -33,7 +32,7 @@ export const Logo = ({ isDark = false, ...rest }) => {
 	);
 };
 export const Header = ({ ...rest }) => {
-	const { space, type } = useTheme();
+	const { colors, space, type } = useTheme();
 	const { isOpen, toggleIsOpen } = useMobileMenu();
 	return (
 		<HeaderWrapper
@@ -54,11 +53,22 @@ export const Header = ({ ...rest }) => {
 					<Top alignItems="center" justifyContent="flex-end" pb={[space[3]]}>
 						<MenuItem title="App" />
 						<MenuItem title="Brand" />
-						<MenuButton title="Get a Demo" color="orange" />
+						<MenuButton
+							title="Get a Demo"
+							color={type === 'orange' ? colors.calcite : 'orange'}
+						/>
 					</Top>
 					<Bottom justifyContent="flex-end">
-						<MenuItem variant="link2" title="Contact" />
-						<MenuItem variant="link2" title="Sign In" color="darkGray" />
+						<MenuItem
+							variant="link2"
+							title="Contact"
+							color={type === 'orange' && colors.calcite}
+						/>
+						<MenuItem
+							variant="link2"
+							title="Sign In"
+							color={type === 'orange' ? colors.calcite : 'darkGray'}
+						/>
 					</Bottom>
 				</DesktopMenu>
 			</NavMenuWrapper>

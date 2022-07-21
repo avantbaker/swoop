@@ -38,6 +38,7 @@ export default function Home() {
 				title={'Keep Playing'}
 				subtitle={'Have your next course, on the course.'}
 				hasIcons={true}
+				minHeight={['auto']}
 			/>
 			<TextBanner title="More Memorable Rounds" />
 			<VideoSection />

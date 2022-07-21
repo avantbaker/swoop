@@ -210,6 +210,39 @@ export const variants = {
 		fontFamily: theme.typography.fonts.tertiary,
 		textTransform: 'uppercase',
 	},
+	termsSubtitle: {
+		fontSize: [rem(46)],
+		fontWeight: 'bold',
+		lineHeight: [rem(46)],
+		letterSpacing: [rem(3)],
+		color: theme.colors.sage,
+		fontFamily: theme.typography.fonts.tertiary,
+		textTransform: 'uppercase',
+	},
+	four0fourTitle: {
+		fontSize: [rem(79)],
+		fontWeight: 'bold',
+		lineHeight: [rem(84)],
+		letterSpacing: [rem(6)],
+		color: theme.colors.calcite,
+		fontFamily: theme.typography.fonts.tertiary,
+		textTransform: 'uppercase',
+	},
+	four0fourSubtitle: {
+		fontSize: [rem(47)],
+		fontWeight: 'bold',
+		lineHeight: [rem(49)],
+		letterSpacing: [rem(6)],
+		color: theme.colors.calcite,
+		fontFamily: theme.typography.fonts.primary,
+	},
+	four0fourBody: {
+		fontSize: [rem(19)],
+		fontWeight: 'bold',
+		lineHeight: [rem(25)],
+		color: theme.colors.calcite,
+		fontFamily: theme.typography.fonts.secondary,
+	},
 };
 
 type TextProps = SpaceProps &

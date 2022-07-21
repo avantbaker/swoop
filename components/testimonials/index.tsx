@@ -7,22 +7,12 @@ import { rem } from 'polished';
 import ArrowControl from 'components/common/icons/arrow';
 import Text from 'components/common/text';
 import useEmblaCarousel from 'embla-carousel-react';
+import { Block } from 'components/common/container';
+import { PhotoCarousel } from 'components/byrdi-in-action';
 
-const EmblaParent = styled.div`
-	overflow-x: scroll;
-	position: relative;
-	margin-right: ${({ theme }) => `${-theme.space[4]}px`};
+const EmblaParent = styled.div``;
+const EmblaContainer = styled(PhotoCarousel)``;
 
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		margin-right: ${({ mr }) => mr};
-	}
-`;
-const EmblaContainer = styled.div`
-	display: flex;
-	margin-bottom: ${rem(15)};
-	width: 100%;
-	position: relative;
-`;
 const Card = styled(Flex)`
 	flex: 1;
 	position: relative;
@@ -32,13 +22,7 @@ const Card = styled(Flex)`
 		flex: 0 0 75%;
 	}
 `;
-const CustomSection = styled(Section)`
-	overflow: visible;
 
-	&.expanded {
-		padding-top: 0 !important;
-	}
-`;
 const ImageWrapper = styled('div')`
 	img {
 		max-width: 150px;
@@ -89,7 +73,6 @@ const TestimonialCard = () => {
 		<Card>
 			<Flex>
 				<ImageWrapper>
-					{/* <img src="/elements/putting-man.png" /> */}
 					<img src="/elements/golf-balls.png" />
 				</ImageWrapper>
 				<ContentWrapper pl={3} pr={4} flex="1" flexDirection={['column']}>
@@ -151,22 +134,32 @@ export const useCustomCarousel = () => {
 	};
 };
 const dummyCards = [1, 2, 3, 4, 5, 6];
+
+const TestimonialsCarouselWrapper = styled(Block)`
+	padding-left: 0;
+	padding-right: 0;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		padding-left: ${rem(40)};
+	}
+`;
 export const TestimonialsCarousel = ({ ...rest }) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
-		<CustomSection flexDirection={['column']} {...rest}>
-			<ControlContainer mb={[5]}>
-				<LeftControl onClick={scrollPrev} />
-				<RightControl onClick={scrollNext} />
-				<MobileCWD />
-			</ControlContainer>
-			<EmblaParent ref={emblaRef}>
-				<EmblaContainer>
-					{dummyCards.map((item, idx) => {
-						return <TestimonialCard key={`idx-${idx}`} />;
-					})}
-				</EmblaContainer>
-			</EmblaParent>
-		</CustomSection>
+		<>
+			<TestimonialsCarouselWrapper>
+				<ControlContainer mb={[5]}>
+					<LeftControl onClick={scrollPrev} />
+					<RightControl onClick={scrollNext} />
+					<MobileCWD />
+				</ControlContainer>
+				<EmblaParent ref={emblaRef}>
+					<EmblaContainer>
+						{dummyCards.map((item, idx) => {
+							return <TestimonialCard key={`idx-${idx}`} />;
+						})}
+					</EmblaContainer>
+				</EmblaParent>
+			</TestimonialsCarouselWrapper>
+		</>
 	);
 };

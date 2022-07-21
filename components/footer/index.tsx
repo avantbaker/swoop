@@ -9,19 +9,33 @@ import Text from 'components/common/text';
 import { rem } from 'polished';
 
 const FooterContainer = styled(Flex)`
-	border-top: 2px solid ${({ theme }) => theme.colors.orange};
+	border-top: 2px solid
+		${({ theme }) =>
+			theme.type === 'orange' ? theme.colors.calcite : theme.colors.orange};
 `;
 
 export default function Footer({ isLight = false, ...rest }) {
 	const { space, colors, type } = useTheme();
+	let backgroundColor = 'black';
+	switch (type) {
+		case 'light':
+			backgroundColor = 'white';
+			break;
+		case 'orange':
+			backgroundColor = 'orange';
+			break;
+		default:
+			break;
+	}
 	return (
 		<FooterContainer
 			flexDirection="column"
 			justifySelf="flex-end"
-			bg={type === 'light' ? 'white' : 'black'}
+			bg={backgroundColor}
 			boxSizing="none"
 			p={[space[4]]}
 			pt={[space[5]]}
+			type={backgroundColor}
 			{...rest}
 		>
 			<Flex
@@ -33,13 +47,19 @@ export default function Footer({ isLight = false, ...rest }) {
 					<Box mb={2}>KEEP UP.</Box>
 					<Flex alignItems="center">
 						<Box mr={4}>
-							<Twitter fill={colors.orange} />
+							<Twitter
+								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+							/>
 						</Box>
 						<Box mr={4}>
-							<Instagram fill={colors.orange} />
+							<Instagram
+								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+							/>
 						</Box>
 						<Box>
-							<LinkedIn fill={colors.orange} />
+							<LinkedIn
+								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+							/>
 						</Box>
 					</Flex>
 				</Flex>
@@ -92,12 +112,26 @@ export default function Footer({ isLight = false, ...rest }) {
 					alignItems={['inherit', 'center']}
 					justifyContent={['inherit', 'center']}
 				>
-					<Text variant="link2" mr={[0, 5]}>
+					<Text
+						variant="link2"
+						mr={[0, 5]}
+						color={backgroundColor === 'orange' || colors.calcite}
+					>
 						Copyright &copy; 2022 - Swoop App
 					</Text>
 					<Flex alignItems="center" mb={[rem(space.xs)]}>
-						<MenuItem pb={[1, 0]} variant="link2" title="Privacy"></MenuItem>
-						<MenuItem pb={[1, 0]} variant="link2" title="Terms"></MenuItem>
+						<MenuItem
+							pb={[1, 0]}
+							variant="link2"
+							title="Privacy"
+							color={backgroundColor === 'orange' || colors.calcite}
+						></MenuItem>
+						<MenuItem
+							pb={[1, 0]}
+							variant="link2"
+							title="Terms"
+							color={backgroundColor === 'orange' || colors.calcite}
+						></MenuItem>
 					</Flex>
 				</Flex>
 			</Flex>
