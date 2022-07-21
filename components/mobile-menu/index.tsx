@@ -38,18 +38,19 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 	return (
 		<MobileMenuWrapper flexDirection="column" pt={rem(132)} px={4} pb={4} {...rest}>
 			<Flex flexDirection="column" mb={4}>
-				<MenuItem variant="linkDisplay" title="App" />
-				<MenuItem variant="linkDisplay" title="Brand" />
+				<MenuItem variant="linkDisplay" title="App" href="/app" />
+				<MenuItem variant="linkDisplay" title="Brand" href="/brand" />
 			</Flex>
 			<Flex flexDirection="column" mb={4}>
-				<MenuItem color="black" variant="link1" title="Contact" />
-				<MenuItem color="black" variant="link1" title="Sign In" />
+				<MenuItem color="black" variant="link1" title="Contact" href="/contact" />
+				<MenuItem color="black" variant="link1" title="Sign In" href="/signin" />
 			</Flex>
 			<MenuButton
 				textAlign={'center'}
 				mr={['0 !important']}
 				color="orange"
 				title="Get a Demo"
+				href="/contact"
 			/>
 			<Flex flex={1} alignItems="flex-end" mb={5}>
 				<Flex flexDirection={['row-reverse', 'row']} justifyContent="flex-end">
@@ -59,18 +60,21 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 							mr={['0 !important']}
 							color="darkGray"
 							title="Shop"
+							href="/shop"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Support"
+							href="/support"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Careers"
+							href="/careers"
 						/>
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
@@ -79,18 +83,21 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 							mr={['0 !important']}
 							color="slate"
 							title="Press"
+							href="/press"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="slate"
 							title="FAQ"
+							href="/faq"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Loyalty"
+							href="/loyalty"
 						/>
 					</Flex>
 				</Flex>
@@ -104,8 +111,13 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 					Copyright c 2022 - Swoop App
 				</Text>
 				<Flex alignItems="center" mb={[rem(space.xs)]}>
-					<MenuItem pb={[1, 0]} variant="link2" title="Privacy"></MenuItem>
-					<MenuItem pb={[1, 0]} variant="link2" title="Terms"></MenuItem>
+					<MenuItem
+						pb={[1, 0]}
+						variant="link2"
+						title="Privacy"
+						href="/privacy"
+					></MenuItem>
+					<MenuItem pb={[1, 0]} variant="link2" title="Terms" href="/terms"></MenuItem>
 				</Flex>
 			</Flex>
 		</MobileMenuWrapper>

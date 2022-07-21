@@ -7,7 +7,7 @@ import LinkedIn from 'components/common/icons/linkedin';
 import { Logo } from 'components/header';
 import Text from 'components/common/text';
 import { rem } from 'polished';
-
+import Link from 'next/link';
 const FooterContainer = styled(Flex)`
 	border-top: 2px solid
 		${({ theme }) =>
@@ -47,19 +47,25 @@ export default function Footer({ isLight = false, ...rest }) {
 					<Box mb={2}>KEEP UP.</Box>
 					<Flex alignItems="center">
 						<Box mr={4}>
-							<Twitter
-								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
-							/>
+							<Link href="https://twitter.com">
+								<Twitter
+									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+								/>
+							</Link>
 						</Box>
 						<Box mr={4}>
-							<Instagram
-								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
-							/>
+							<Link href="https://instagram.com">
+								<Instagram
+									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+								/>
+							</Link>
 						</Box>
 						<Box>
-							<LinkedIn
-								fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
-							/>
+							<Link href="https://linkedin.com">
+								<LinkedIn
+									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+								/>
+							</Link>
 						</Box>
 					</Flex>
 				</Flex>
@@ -70,24 +76,28 @@ export default function Footer({ isLight = false, ...rest }) {
 							mr={['0 !important']}
 							color="darkGray"
 							title="Loyalty"
+							href="/loyalty"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Shop"
+							href="/shop"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Support"
+							href="/support"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Careers"
+							href="/careers"
 						/>
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
@@ -95,10 +105,26 @@ export default function Footer({ isLight = false, ...rest }) {
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							title="Brands"
+							href="/brands"
 						/>
-						<MenuItem textAlign={['left', 'right']} mr={['0 !important']} title="App" />
-						<MenuItem textAlign={['left', 'right']} mr={['0 !important']} title="Press" />
-						<MenuItem textAlign={['left', 'right']} mr={['0 !important']} title="FAQ" />
+						<MenuItem
+							textAlign={['left', 'right']}
+							mr={['0 !important']}
+							title="App"
+							href="/app"
+						/>
+						<MenuItem
+							textAlign={['left', 'right']}
+							mr={['0 !important']}
+							title="Press"
+							href="/press"
+						/>
+						<MenuItem
+							textAlign={['left', 'right']}
+							mr={['0 !important']}
+							title="FAQ"
+							href="/faq"
+						/>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -125,12 +151,14 @@ export default function Footer({ isLight = false, ...rest }) {
 							variant="link2"
 							title="Privacy"
 							color={backgroundColor === 'orange' || colors.calcite}
+							href="/terms"
 						></MenuItem>
 						<MenuItem
 							pb={[1, 0]}
 							variant="link2"
 							title="Terms"
 							color={backgroundColor === 'orange' || colors.calcite}
+							href="/terms"
 						></MenuItem>
 					</Flex>
 				</Flex>

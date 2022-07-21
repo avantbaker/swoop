@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Box } from 'rebass/styled-components';
 import { rem } from 'polished';
 import Text from 'components/common/text';
+import Link from 'next/link';
 
 const StyledMenuItem = styled(Box)`
 	padding-top: ${({ theme }) => rem(theme.space[1])};
@@ -44,9 +45,9 @@ export const MenuItem = ({
 
 	return (
 		<StyledMenuItem {...rest}>
-			<a href={href}>
+			<Link href={href}>
 				<Text {...textProps}>{title || children}</Text>
-			</a>
+			</Link>
 		</StyledMenuItem>
 	);
 };

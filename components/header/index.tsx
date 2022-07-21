@@ -8,6 +8,7 @@ const Top = styled(Flex)``;
 const Bottom = styled(Flex)``;
 const NavMenuWrapper = styled(Box)``;
 import { useMobileMenu } from 'components/mobile-menu';
+import Link from 'next/link';
 
 const LogoContainer = styled(Box)`
 	width: 100%;
@@ -27,7 +28,9 @@ export const Logo = ({ isDark = false, ...rest }) => {
 	const logoType = isDark ? 'Black' : 'White';
 	return (
 		<LogoContainer position="relative" {...rest}>
-			<img src={`/logos/Swoop-Logo-${logoType}@3x.svg`} />
+			<Link href="/">
+				<img src={`/logos/Swoop-Logo-${logoType}@3x.svg`} />
+			</Link>
 		</LogoContainer>
 	);
 };
@@ -51,11 +54,12 @@ export const Header = ({ ...rest }) => {
 				/>
 				<DesktopMenu display={['none', 'none', 'flex']} flexDirection="column">
 					<Top alignItems="center" justifyContent="flex-end" pb={[space[3]]}>
-						<MenuItem title="App" />
-						<MenuItem title="Brand" />
+						<MenuItem title="App" href="/app" />
+						<MenuItem title="Brand" href="/brand" />
 						<MenuButton
 							title="Get a Demo"
 							color={type === 'orange' ? colors.calcite : 'orange'}
+							href="/contact"
 						/>
 					</Top>
 					<Bottom justifyContent="flex-end">
@@ -63,11 +67,13 @@ export const Header = ({ ...rest }) => {
 							variant="link2"
 							title="Contact"
 							color={type === 'orange' && colors.calcite}
+							href="/contact"
 						/>
 						<MenuItem
 							variant="link2"
 							title="Sign In"
 							color={type === 'orange' ? colors.calcite : 'darkGray'}
+							href="/#"
 						/>
 					</Bottom>
 				</DesktopMenu>
