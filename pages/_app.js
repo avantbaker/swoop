@@ -1,12 +1,9 @@
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, GlobalStylesLight, GlobalStyles404 } from 'styles/globalStyles';
-import theme from 'styles/theme';
-import themeLight from 'styles/theme.light';
-import styled from 'styled-components';
-import { Header } from 'components/header';
 import Footer from 'components/footer';
+import { Header } from 'components/header';
 import { MenuProvider, MobileMenu } from 'components/mobile-menu';
-
+import { useCurrentTheme } from 'hooks/useCurrentTheme';
+import styled, { ThemeProvider } from 'styled-components';
+import { GlobalStyles, GlobalStyles404, GlobalStylesLight } from 'styles/globalStyles';
 import 'styles/scss/styles.scss';
 
 const PageWrapper = styled('div')`
@@ -17,18 +14,10 @@ const PageWrapper = styled('div')`
 `;
 
 function MyApp({ Component, pageProps }) {
-	const { theme: pageTheme } = pageProps;
-	const isLight = pageTheme === 'light';
-	const isOrange = pageTheme === 'orange';
-
-	if (isLight) {
-		theme.type = 'light';
-	} else if (isOrange) {
-		theme.type = 'orange';
-	}
+	const { isLight, isOrange, currentTheme } = useCurrentTheme(pageProps);
 
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={currentTheme}>
 			<MenuProvider>
 				{isLight && <GlobalStylesLight />}
 				{!isOrange && !isLight && <GlobalStyles />}

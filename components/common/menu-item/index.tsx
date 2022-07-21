@@ -45,8 +45,10 @@ export const MenuItem = ({
 
 	return (
 		<StyledMenuItem {...rest}>
-			<Link href={href}>
-				<Text {...textProps}>{title || children}</Text>
+			<Link href={href} passHref>
+				<a>
+					<Text {...textProps}>{title || children}</Text>
+				</a>
 			</Link>
 		</StyledMenuItem>
 	);

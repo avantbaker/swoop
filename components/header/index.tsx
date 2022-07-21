@@ -28,8 +28,10 @@ export const Logo = ({ isDark = false, ...rest }) => {
 	const logoType = isDark ? 'Black' : 'White';
 	return (
 		<LogoContainer position="relative" {...rest}>
-			<Link href="/">
-				<img src={`/logos/Swoop-Logo-${logoType}@3x.svg`} />
+			<Link href="/" passHref>
+				<a>
+					<img src={`/logos/Swoop-Logo-${logoType}@3x.svg`} />
+				</a>
 			</Link>
 		</LogoContainer>
 	);

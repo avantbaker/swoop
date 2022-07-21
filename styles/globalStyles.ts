@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    cursor: pointer !important;
   }
 `;
 export const GlobalStylesLight = createGlobalStyle`

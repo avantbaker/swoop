@@ -105,7 +105,7 @@ export default function Footer({ isLight = false, ...rest }) {
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							title="Brands"
-							href="/brands"
+							href="/brand"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
