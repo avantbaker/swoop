@@ -52,25 +52,33 @@ const LogoContainer = styled(Flex)`
 	& > *:first-child {
 		grid-column: 1 / 3;
 	}
-	& > *:last-child {
-		grid-column: 1 / 3;
-	}
 
 	@media screen and (min-width: ${({ theme }) => rem(516)}) {
 		grid-template-rows: repeat(2, 1fr);
 		grid-template-columns: repeat(2, 1fr);
 
 		& > *:first-child {
-			grid-column: unset;
+			grid-column: 1/ 3;
+			grid-row: 3 / -1;
 		}
 		& > *:last-child {
-			grid-column: unset;
+			grid-column: 1 / 2;
+			grid-row: 1/ 2;
 		}
 	}
 
 	@media screen and (min-width: ${rem(1200)}) {
 		display: flex;
 		justify-content: space-around;
+
+		& > *:first-child {
+			grid-column: unset;
+			grid-row: unset;
+		}
+		& > *:last-child {
+			grid-column: unset;
+			grid-row: unset;
+		}
 	}
 
 	&:after {
@@ -166,20 +174,25 @@ export const AffiliateSection = () => {
 
 				<LogoContainer pt={[5]} pb={[6]}>
 					<LogoWrapper>
-						<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
+						<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
 					</LogoWrapper>
 					<LogoWrapper>
-						<img src="/images/logos/logo-sticky-2.png" alt="1st Logo" />
+						<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
 					</LogoWrapper>
 					<LogoWrapper>
-						<img src="/images/logos/logo-sticky-3.png" alt="1st Logo" />
+						<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
 					</LogoWrapper>
 					<LogoWrapper>
-						<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
+						<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
+					</LogoWrapper>
+					<LogoWrapper>
+						<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
 					</LogoWrapper>
 				</LogoContainer>
-				<Link maxWidth={['60%']} variant="link3" mt={[6, 6, 0]} mb={6}>
-					<Text color="orange">Become a Byrdi Affiliate Course</Text>
+				<Link mt={[6, 6, 0]} mb={6}>
+					<Text color="orange" variant="link3">
+						More Affilate Courses
+					</Text>
 				</Link>
 			</AffiliateWrapper>
 		</AffiliateContainer>
@@ -251,7 +264,7 @@ export const AffiliateSectionExpanded = () => {
 						<Link flex={1} mt={[2, 6, 5]} mb={6} maxWidth={['70%', , '100%']}>
 							<a href="">
 								<Text variant="link3" color="orange">
-									Become a Byrdi Affiliate Course
+									Become a Swoop Affiliate Course
 								</Text>
 							</a>
 						</Link>

@@ -10,7 +10,7 @@ export const TextIntro = () => {
 			<Flex flexDirection="column" alignItems="center" mt={[6]}>
 				<Pin />
 				<Text variant="h2" textAlign="center" maxWidth={rem(573)} mt={[4]}>
-					Byrdi is giving courses and golfers control over concessions from the tee to the
+					Swoop is giving courses and golfers control over concessions from the tee to the
 					turn, and on.
 				</Text>
 			</Flex>

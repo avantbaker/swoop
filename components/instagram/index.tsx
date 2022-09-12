@@ -27,7 +27,14 @@ const InstaGrid = styled('div')`
 const GridItem = styled('div')`
 	display: grid;
 `;
-export const InstagramSection = ({ children, ...rest }: { children? }) => {
+export const InstagramSection = ({
+	children,
+	title = '',
+	...rest
+}: {
+	children?;
+	title?;
+}) => {
 	const { type } = useTheme();
 	let addColor = { color: undefined };
 
@@ -41,7 +48,7 @@ export const InstagramSection = ({ children, ...rest }: { children? }) => {
 					Byrdi ON THE ‘GRAM
 				</Text>
 				<Text variant={'h4Uppercase'} {...addColor}>
-					LOREM IPSUM DOLOR SIC AMET
+					CHEERS TO ANOTHER GOOD CHIP
 				</Text>
 			</Flex>
 			<Flex flexDirection={['column', 'row']}>
@@ -50,16 +57,16 @@ export const InstagramSection = ({ children, ...rest }: { children? }) => {
 				</Flex>
 				<InstaGrid>
 					<GridItem>
-						<img src="/elements/ig-square-1.png" alt="" />
+						<img src="/swoop/home/instagram-modelo.png" alt="" />
 					</GridItem>
 					<GridItem>
-						<img src="/elements/ig-square-2.png" alt="" />
+						<img src="/swoop/home/instagram-fairway.png" alt="" />
 					</GridItem>
 					<GridItem>
-						<img src="/elements/ig-square-3.png" alt="" />
+						<img src="/swoop/home/instagram-sandwich.png" alt="" />
 					</GridItem>
 					<GridItem>
-						<img src="/elements/ig-square-4.png" alt="" />
+						<img src="/swoop/home/instagram-cup.png" alt="" />
 					</GridItem>
 				</InstaGrid>
 			</Flex>

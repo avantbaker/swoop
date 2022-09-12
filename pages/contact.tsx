@@ -170,8 +170,30 @@ const item = {
 	}),
 };
 
-const inquiryItems = Array(5).fill({ value: 'value', label: 'Item' });
+// const inquiryItems = Array(5).fill({ value: 'value', label: 'Item' });
 
+const inquiryItems = [
+	{
+		value: 'support',
+		label: 'Support',
+	},
+	{
+		value: 'ambassadors',
+		label: 'Ambassadors',
+	},
+	{
+		value: 'press',
+		label: 'Press',
+	},
+	{
+		value: 'careers',
+		label: 'Careers',
+	},
+	{
+		value: 'general-inquiries',
+		label: 'General Inquiries',
+	},
+];
 const DropdownMenu = ({ ...rest }) => {
 	const controls = useAnimation();
 	const itemControls = useAnimation();
@@ -213,7 +235,7 @@ const DropdownMenu = ({ ...rest }) => {
 								custom={(idx + 1) * 0.1}
 								animate={itemControls}
 							>
-								Item
+								{inquiry.label}
 							</DropdownListItem>
 						);
 					})}
@@ -348,10 +370,10 @@ function Contact() {
 							general inquiries
 						</Text>
 						<Text variant="h2" color="sage" mb={[4]}>
-							Enabling proficiency– both for courses and golfers.
+							If you’ve got a question, we’ve got an answer.
 						</Text>
 						<Text variant="h4" color="sage">
-							For general inquiries, support, or to learn more about parntering with Byrdi
+							For general inquiries, support, or to learn more about parntering with Swoop
 							for your course, please fill out the form.
 						</Text>
 					</Flex>
@@ -444,14 +466,14 @@ function Contact() {
 				<Flex className="third" alignItems={['flex-end', 'flex-start']} pl={[5]} pr={2}>
 					<Flex flexDirection="column">
 						<Text variant="careersTitle" mb={[5, 6]}>
-							Byrdi Careers
+							Swoop Careers
 						</Text>
 						<Text
 							variant="careersSubtitle"
 							mb={[4, 5]}
 							fontFamily="'Shippori Antique', sans-serif"
 						>
-							Lorem ipsum dolor sic amet.
+							Want to join the Swoop team?
 						</Text>
 						<Text
 							variant="bodySecondary"
@@ -461,9 +483,9 @@ function Contact() {
 							pr={[, 4, 4]}
 							fontFamily="'JetBrains Mono', monospace"
 						>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in arcu sit
-							amet velit tristique tempor at eu dui. Phasellus efficitur sapien a urna
-							tristique suscipit. Praesent et commodo lectus, quis..
+							We’re on the lookout for talented, foodie, golf enthusiasts with backgrounds
+							in marketing & sales, product development, and social media management. If
+							this sounds like you, get in touch
 						</Text>
 					</Flex>
 				</Flex>

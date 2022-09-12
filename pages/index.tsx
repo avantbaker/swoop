@@ -11,23 +11,32 @@ import { rem } from 'polished';
 
 const LeftCircle = styled('div')`
 	position: absolute;
-	left: -30%;
+	left: -10%;
 	top: -5%;
 	height: ${rem(210)};
 	width: ${rem(210)};
 	border: 0.5px solid ${({ theme }) => theme.colors.calcite};
 	border-radius: 50%;
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		left: -20%;
+	}
 `;
 
 const RightCircle = styled('div')`
+	display: none;
 	position: absolute;
 	right: -42%;
-	top: -40%;
+	top: -10%;
 	height: ${rem(610)};
 	width: ${rem(610)};
 	border: 0.5px solid ${({ theme }) => theme.colors.calcite};
 	border-radius: 50%;
 	z-index: -1;
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		display: block;
+	}
 `;
 
 export default function Home() {

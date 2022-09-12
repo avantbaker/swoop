@@ -26,11 +26,13 @@
     "react-motion": "^0.5.2",
     "react-player": "^2.10.1",
     "react-portal": "^4.2.2",
+    "react-waypoint": "^10.3.0",
     "rebass": "^4.0.7",
     "sass": "^1.52.1",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5",
-    "use-breakpoint": "^3.0.3"
+    "use-breakpoint": "^3.0.3",
+    "use-viewport": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.1",

@@ -49,13 +49,13 @@ export const Foreground = ({
 						textAlign="right"
 						mb={[4, 4, 5]}
 					>
-						Have your next course, on the course.
+						Worry about the speed of your greens, not the speed of your club cart.
 					</Text>
 				)}
 				{subtext && (
 					<Text maxWidth={['90%', '90%', '55%']} variant="h4" textAlign="right" mb={6}>
-						Leave your lunchbox at home. Order fresh provisions and cocktails from the
-						clubhouse, delivered to your exact location on the course.
+						The boom of on-demand delivery, swipe-enabled service, and remotely-accessible
+						accommodation has reached the golf course, and Swoop is here to help.
 					</Text>
 				)}
 				{hasIcons && (

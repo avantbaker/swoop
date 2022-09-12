@@ -43,10 +43,59 @@ const cardTestData = {
 	comment: `	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquid
 	voluptates voluptatem veritatis excepturi provident natus sunt laborum
 	optio fugit temporibus, dolorum quasi aut!`,
-	instagram: 'persons_tag',
-	twitter: 'persons_tag',
-	linkedIn: 'persons_tag',
+	instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
+	twitter: 'https://twitter.com/olajuwon',
+	linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
 };
+const cardData = [
+	{
+		title: 'Olajuwon Ajanaku',
+		location: 'Eastside Golf',
+		tag: '@oooolajuwon',
+		comment: `Professional golfer and founder of Eastside Golf,  a lifestyle golf brand developed to raise awareness about golf among youth and non golfers`,
+		instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
+		twitter: 'https://twitter.com/olajuwon',
+		linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
+	},
+	{
+		title: 'Jen Clyde',
+		location: 'ForeAll',
+		tag: '@jenstyles',
+		comment: `Co-Founder/CO-CEO of ForeAll, a golf lifestyle brand fore ladies`,
+		instagram: 'https://www.instagram.com/jenstyles/?hl=en',
+		twitter: 'https://twitter.com/golf_fore_all',
+		linkedIn: 'https://www.linkedin.com/in/jen-clyde/',
+	},
+	{
+		title: 'Hannah B. Leiner',
+		location: 'Golf Influencer',
+		tag: '@hannahbleiner',
+		comment: `Golf enthusiast and PxG Ambassador`,
+		instagram: 'https://www.instagram.com/hannahbleiner/?hl=en',
+		twitter:
+			'https://twitter.com/hannahbleiner?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+		linkedIn: '',
+	},
+	{
+		title: 'Jon "HAPPY" Gilmore',
+		location: 'Avid Golfer',
+		tag: '@the_original_happy_gilmore',
+		comment: `Pro Long Drive Athlete`,
+		instagram: 'https://www.instagram.com/the_original_happy_gilmore/?hl=en',
+		twitter: 'https://twitter.com/mericanbadasses',
+		linkedIn: '',
+	},
+	{
+		title: 'Suzi Stanley',
+		location: 'Avid Golfer',
+		tag: '@suzigolf',
+		comment: `Professional Long Drive Athlete`,
+		instagram: 'https://www.instagram.com/suzigolf/?hl=en',
+		twitter: 'https://twitter.com/SuziGolf',
+		linkedIn: '',
+	},
+];
+
 const dummyCards = Array(6).fill(cardTestData);
 const EmblaParent = styled('div')``;
 const EmblaChild = styled(PhotoCarousel)``;
@@ -73,7 +122,7 @@ export const AmbassadorCarousel = () => {
 		<AmassadorsCarouselWrapper>
 			<EmblaParent ref={emblaRef}>
 				<EmblaChild>
-					{dummyCards.map(({ title, tag, location, comment }, idx) => {
+					{cardData.map(({ title, tag, location, comment }, idx) => {
 						return (
 							<Card key={`ambassador-card-${idx}`}>
 								<CardImageWrapper className="img-wrapper">
@@ -110,7 +159,7 @@ export const AmbassadorCarousel = () => {
 				</ControlContainer>
 				<a href="">
 					<Text maxWidth={['60%']} variant="link3">
-						Become a Byrdi Affiliate Course
+						Become a Swoop Ambassador
 					</Text>
 				</a>
 			</ControlWrapper>

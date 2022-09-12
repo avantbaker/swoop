@@ -6,9 +6,9 @@ import { Section } from '../common/container';
 
 const ReactPlayerWrapper = styled(Box)`
 	position: relative;
-	padding-top: 56.25%;
-	min-height: 500px;
-	max-height: 500px;
+	padding-top: 40%;
+	min-height: 400px;
+	max-height: 400px;
 	width: 100%;
 	.react-player {
 		position: absolute;
@@ -37,7 +37,7 @@ const VideoSectionContainer = styled(Section)`
 	padding-right: 0 !important;
 `;
 export const VideoSection = ({
-	imgSrc = '/images/hp-buddies.jpeg',
+	imgSrc = '/swoop/home/home-video-placeholder.png',
 	videoSrc = 'https://www.youtube.com/watch?v=ysz5S6PUM-U',
 	...rest
 }) => {

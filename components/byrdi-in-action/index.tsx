@@ -1,15 +1,11 @@
-import {
-	ControlContainer,
-	LeftControl,
-	RightControl,
-	useCustomCarousel,
-} from '../testimonials';
+import { ControlContainer, LeftControl, RightControl } from '../testimonials';
 import styled from 'styled-components';
 import { Section } from 'components/common/container';
 import Text from 'components/common/text';
 import { rem } from 'polished';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Box } from 'rebass/styled-components';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const ByrdiInActionWrapper = styled(Box)``;
 export const PhotoCarousel = styled('div')`
@@ -41,7 +37,50 @@ const ImageWrapper = styled('div')`
 	}
 `;
 const ContentWrapper = styled('div')``;
-export const ByrdiInAction = () => {
+
+export const useCustomCarousel = () => {
+	const [currentIndex, setSelectedIndex] = useState(0);
+
+	const [emblaRef, emblaApi] = useEmblaCarousel({
+		align: 'start',
+		skipSnaps: false,
+	});
+	const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+	const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+	const onSelect = useCallback(() => {
+		if (!emblaApi) return;
+		setPrevBtnEnabled(emblaApi.canScrollPrev());
+		setNextBtnEnabled(emblaApi.canScrollNext());
+		setSelectedIndex(emblaApi.selectedScrollSnap());
+	}, [emblaApi]);
+
+	useEffect(() => {
+		if (!emblaApi) return;
+		emblaApi.on('select', onSelect);
+		onSelect();
+	}, [emblaApi, onSelect]);
+
+	return {
+		currentIndex,
+		setSelectedIndex,
+		prevBtnEnabled,
+		setPrevBtnEnabled,
+		nextBtnEnabled,
+		setNextBtnEnabled,
+		scrollPrev,
+		scrollNext,
+		onSelect,
+		emblaRef,
+		emblaApi,
+	};
+};
+export const ByrdiInAction = ({
+	title = 'For the love of the sport, and sandwiches.',
+	body = 'Swoop is bringing modern culinary convenience and speed to a timeless sport.',
+}) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
 		<ByrdiInActionWrapper mb={6}>
@@ -52,12 +91,9 @@ export const ByrdiInAction = () => {
 			>
 				<ContentWrapper>
 					<Text variant="h2" mb={4}>
-						Byrdi in Action
+						{title}
 					</Text>
-					<Text maxWidth={rem(580)}>
-						Leave your lunchbox at home. Order fresh provisions and cocktails from the
-						clubhouse, delivered to your exact location on the course.
-					</Text>
+					<Text maxWidth={rem(580)}>{body}</Text>
 				</ContentWrapper>
 				<ControlContainer mt={[5]}>
 					<LeftControl onClick={scrollPrev} />

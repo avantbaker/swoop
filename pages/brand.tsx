@@ -93,6 +93,41 @@ const SmallCircle = styled('div')`
 	}
 `;
 
+export const ByrdiLoyaltySection = () => {
+	return (
+		<LoyaltySectionContainer>
+			<LoyaltySection flexDirection={['column', 'row']} mb={[6]}>
+				<LoyaltyContent flex={1} mb={[6]}>
+					<Text variant="h1" mb={[6]}>
+						Order a burger, earn a beer.
+					</Text>
+					<Text variant="h2" mb={[4]} maxWidth={['60%']}>
+						Sometimes it pays to play.
+					</Text>
+					<Text variant="h4">
+						Dial into the loyalty program in the Swoop app. The more you order at your
+						favorite course, the more points you’ll earn towards your next reward. This is
+						the only time you’ll want to score higher than your friends.
+					</Text>
+				</LoyaltyContent>
+				<LoyaltyImages flex={1}>
+					<LoyaltyImageWrapper>
+						<img className="back" src="/elements/little-dots.svg" alt="" />
+						<img className="middle" src="/elements/botella.png" alt="Bottle Image" />
+						<img
+							className="front"
+							src="/elements/twisted-phone.png"
+							alt="Loyalty Screen"
+						/>
+					</LoyaltyImageWrapper>
+				</LoyaltyImages>
+			</LoyaltySection>
+			<BigCircle />
+			<SmallCircle />
+		</LoyaltySectionContainer>
+	);
+};
+
 export default function Brand() {
 	return (
 		<>
@@ -110,42 +145,17 @@ export default function Brand() {
 			/>
 			<TestimonialsCarousel className="expanded" />
 			<AffiliateSectionExpanded />
-			<ByrdiInAction />
-			<TextBanner title="Byrdi Ambassadors" />
+			<ByrdiInAction
+				title="The distinguished game, dinner, and drinks"
+				body="Swoop is a staple of the golfing experience, bridging the gap between some of the best things in life."
+			/>
+			<TextBanner title="THE SWOOP KIT" />
 			<AmbassadorCarousel />
 			<TextBanner title="Loyalty Rewards" />
-			<LoyaltySectionContainer>
-				<LoyaltySection flexDirection={['column', 'row']} mb={[6]}>
-					<LoyaltyContent flex={1} mb={[6]}>
-						<Text variant="h1" mb={[6]}>
-							Order a burger, earn a beer.
-						</Text>
-						<Text variant="h2" mb={[4]} maxWidth={['60%']}>
-							Order a burger, earn a beer.
-						</Text>
-						<Text variant="h4">
-							Leave your lunchbox at home. Order fresh provisions and cocktails from the
-							clubhouse, delivered to your exact location on the course.
-						</Text>
-					</LoyaltyContent>
-					<LoyaltyImages flex={1}>
-						<LoyaltyImageWrapper>
-							<img className="back" src="/elements/little-dots.svg" alt="" />
-							<img className="middle" src="/elements/botella.png" alt="Bottle Image" />
-							<img
-								className="front"
-								src="/elements/twisted-phone.png"
-								alt="Loyalty Screen"
-							/>
-						</LoyaltyImageWrapper>
-					</LoyaltyImages>
-				</LoyaltySection>
-				<BigCircle />
-				<SmallCircle />
-			</LoyaltySectionContainer>
+			<ByrdiLoyaltySection />
 			<NewsletterSection
 				title="Tee Off."
-				body="Get the ball rolling. Reach out to Byrdi to learn more about becoming a course affiliate, ambassador, or team member."
+				body="Join the Swoop scoop. Get the latest news, find events, and receive deals."
 				imgSrc="/elements/old-fashioned.png"
 				hasCTA={true}
 			/>

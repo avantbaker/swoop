@@ -104,12 +104,64 @@ const AccordionPanel = ({ title, body, ...rest }) => {
 	);
 };
 
-const dummyItems = Array(11).fill({
-	title: 'Is free will real or just an illusion?',
-	body: `	Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut
-	occaecat consequat est minim minim esse tempor laborum consequat esse
-	adipisicing eu reprehenderit enim.`,
-});
+const dummyItems = [
+	{
+		title: 'How do I receive orders from Swoop?',
+		body: `Swoop will send you a 5G-enabled Samsung tablet to use as the station, which your team will use to process orders and communicate them to your kitchen.`,
+	},
+	{
+		title: 'Can I change or update my menu on Swoop?',
+		body: `You can change and update your menu on Swoop at any time. To learn more about managing your menu on Swoop, read our article Managing Your Menu Within the Swoop Admin Portal.`,
+	},
+	{
+		title: 'Can I refuse or modify orders I receive from Swoop?',
+		body: `Yes, you can modify existing orders through the Swoop app, and Swoop will notify the golfers about the updates. Our 24/7 customer service team can also assist you with live orders.`,
+	},
+	{
+		title: 'Can I pause incoming orders if our kitchen becomes too busy?',
+		body: `Yes, you can "start/stop" received orders within the Swoop Admin Portal.`,
+	},
+	{
+		title: 'Does Swoop offer the option for golfers to pick their order up at the turn?',
+		body: `Yes, golfers can choose to have their order delivered or to pick it up at the turn.`,
+	},
+	{
+		title: "What is Swoop's payment process?",
+		body: `Swoop does not offer in-app payments. You can continue to accept payments the way you currently process transactions.`,
+	},
+	{
+		title: 'Can we integrate Swoop with our POS system?',
+		body: `No. Orders are received and processed using the Swoop-provided "Station" tablet.`,
+	},
+	{
+		title:
+			'Our carts do not have GPS tracking. How will we be able to find the golfers to deliver the orders?',
+		body: `Swoop provides real-time GPS tracking of the golfers that placed the order, making on-course delivery seamless for your team.`,
+	},
+	{
+		title: 'Does Swoop charge account cancellation fees?',
+		body: `No. There are no cancellation fees for Swoop.`,
+	},
+	{
+		title: 'How long does it take to get set up and start using Swoop?',
+		body: `Send us your menu (pdf, jpg, or png), and we can have your course will be added within 24-48 hours. Swoop's onboarding team will reach out to you to create a roll-out plan that makes sense for your club.`,
+	},
+	{
+		title: 'How do I contact Swoop to learn more about becoming a partner?',
+		body: `If you are interested in using Swoop for your course, please fill out our contact form. A member of our team will reach out to you to answer any questions you may have about partnering with Swoop Golf.`,
+	},
+	{
+		title:
+			'The Swoop Customer Care Team supports you and our other Swoop partners, which will assist you in managing your Swoop account, including:',
+		body: `
+		- Assistance with any billing inquiries
+		- Contract interpretation questions
+		- Account settings
+		- Troubleshooting technological issues
+		- Updating menus
+		`,
+	},
+];
 
 const SearchWrapper = styled(BoxWithPosition)`
 	box-sizing: border-box;

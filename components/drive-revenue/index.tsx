@@ -81,7 +81,7 @@ const CocktailIcon = styled(Cocktails)`
 	top: 35%;
 	left: -22%;
 `;
-const MobileRevenueGallery = ({ ...rest }) => {
+export const MobileRevenueGallery = ({ ...rest }) => {
 	return (
 		<Circle {...rest}>
 			<LittleCircleWithDot />
@@ -90,7 +90,7 @@ const MobileRevenueGallery = ({ ...rest }) => {
 				<img src="/elements/hp-whiskey-drink.png" alt="golfer holding whiskey drink" />
 			</WhiskeyImageWrapper>
 			<PhoneImageWrapper>
-				<img src="/elements/hp-mobile-app.png" alt="Image of the Swoop App" />
+				<img src="/swoop/home/home-mobile-phone.png" alt="Image of the Swoop App" />
 				<CocktailIcon />
 			</PhoneImageWrapper>
 		</Circle>
@@ -112,12 +112,12 @@ const DesktopPhoneImage = styled('img')`
 	top: -60px;
 	right: -92px;
 `;
-const SpiritsImage = styled('img')`
+export const SpiritsImage = styled('img')`
 	position: absolute;
 	top: -120px;
 	left: 85px;
 `;
-const WrapsImage = styled('img')`
+export const WrapsImage = styled('img')`
 	position: absolute;
 	top: 160px;
 	left: 240px;
@@ -179,21 +179,27 @@ export const DriveRevenue = () => {
 				</Text>
 				<Text maxWidth={['80%']} variant="h4" mb={4}>
 					<Text color="orange" display="inline-block">
-						$620M
+						Boost
 					</Text>{' '}
-					value claim point data for course.
+					Revenue
 				</Text>
 				<Text maxWidth={['80%']} variant="h4" mb={4}>
 					<Text color="orange" display="inline-block">
-						$620M
+						Increase
 					</Text>{' '}
-					value claim point data for course.
+					Margins
+				</Text>
+				<Text maxWidth={['80%']} variant="h4" mb={4}>
+					<Text color="orange" display="inline-block">
+						Enhance
+					</Text>{' '}
+					Experience
 				</Text>
 				<Text maxWidth={['80%']} variant="h4" mb={6}>
 					<Text color="orange" display="inline-block">
-						$620M
+						Integrate
 					</Text>{' '}
-					value claim point data for course.
+					Seamlessly
 				</Text>
 				<MenuButton
 					title="Learn More"

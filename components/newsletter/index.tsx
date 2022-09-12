@@ -56,10 +56,16 @@ const CustomInput = styled('input')`
 		margin-right: ${({ theme }) => rem(theme.space[4])};
 	}
 `;
+
+const SubmitButton = styled(MenuButton)`
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		flex: 0.5;
+	}
+`;
 export const NewsletterSection = ({
 	imgSrc = '/elements/burger.png',
-	title = 'Keep Up',
-	body = `Join the Byrdi blast list get the latest news, find events, and recieve deals.`,
+	title = 'KEEP UP',
+	body = `Join the Swoop scoop. Get the latest news, find events, and receive deals`,
 	hasCTA = false,
 	...rest
 }) => {
@@ -84,7 +90,7 @@ export const NewsletterSection = ({
 							type="text"
 							placeholder="Email Address"
 						/>
-						<MenuButton color={theme.colors.calcite}>Submit</MenuButton>
+						<SubmitButton color={theme.colors.calcite}>Submit</SubmitButton>
 					</Flex>
 				)}
 				{hasCTA && (

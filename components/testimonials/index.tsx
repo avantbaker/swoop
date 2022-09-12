@@ -8,7 +8,11 @@ import ArrowControl from 'components/common/icons/arrow';
 import Text from 'components/common/text';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Block } from 'components/common/container';
-import { PhotoCarousel } from 'components/byrdi-in-action';
+export const PhotoCarousel = styled('div')`
+	display: flex;
+	flex-wrap: nowrap;
+	-webkit-overflow-scrolling: touch;
+`;
 
 const EmblaParent = styled.div``;
 const EmblaContainer = styled(PhotoCarousel)``;
@@ -64,31 +68,42 @@ const MobileCWD = styled(LittleCircleWithDot)`
 `;
 export const ControlContainer = styled(Flex)`
 	position: relative;
+	padding-left: ${rem(20)};
 `;
 const CustomTitle = styled(Text)`
 	position: relative;
 `;
-const TestimonialCard = () => {
+const TestimonialCard = ({
+	title = 'Trilogy at Vistancia',
+	location = 'Vistancia, AZ',
+	body = `Spending more than 20+ years in the Country Club business and as a golfer that
+has played throughout the nation, I am keenly aware of the pain points of the
+golfer's voice. These can be at a high end country club, resort course,
+or a daily fee course, but the major issue is accessibility to a beverage.`,
+	name = 'Marcus Paulson',
+	occupation = 'Course Member',
+	imgSrc = '/elements/golf-balls.png',
+}) => {
 	return (
 		<Card>
 			<Flex>
 				<ImageWrapper>
-					<img src="/elements/golf-balls.png" />
+					<img src={imgSrc} />
 				</ImageWrapper>
 				<ContentWrapper pl={3} pr={4} flex="1" flexDirection={['column']}>
 					<CustomTitle mb={[4, 6]}>
 						<DesktopCWD />
-						Hamilton Mill Golf Club | Atlanta, GA
+						{title} | {location}
 					</CustomTitle>
 					<Text mb={5} variant="bodySecondary">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in arcu sit
-						amet velit tristique tempor at eu dui. Phasellus efficitur sapien a urna
-						tristique suscipit. Praesent et commodo lectus, quis.
+						{body}
 					</Text>
-					<Text mb={[4, 6]}>ERIN SMITH | Food & Beverage Director</Text>
-					<Text variant="bodySecondary">
+					<Text mb={[4, 6]}>
+						{name} | {occupation}
+					</Text>
+					{/* <Text variant="bodySecondary">
 						lorem ipsum dolor sic amet. Consectetuc adipiscing.
-					</Text>
+					</Text> */}
 				</ContentWrapper>
 			</Flex>
 		</Card>
@@ -133,7 +148,30 @@ export const useCustomCarousel = () => {
 		emblaApi,
 	};
 };
-const dummyCards = [1, 2, 3, 4, 5, 6];
+const dummyCards = [
+	{
+		title: 'Trilogy at Vistancia',
+		location: 'Vistancia, AZ',
+		body: `Spending more than 20+ years in the Country Club business and as a golfer that
+	has played throughout the nation, I am keenly aware of the pain points of the
+	golfer's voice. These can be at a high end country club, resort course,
+	or a daily fee course, but the major issue is accessibility to a beverage.`,
+		name: 'Marcus Paulson',
+		occupation: 'Course Member',
+		imgSrc: '/elements/golf-balls.png',
+	},
+	{
+		title: 'Trilogy at Vistancia',
+		location: 'Vistancia, AZ',
+		body: `Spending more than 20+ years in the Country Club business and as a golfer that
+	has played throughout the nation, I am keenly aware of the pain points of the
+	golfer's voice. These can be at a high end country club, resort course,
+	or a daily fee course, but the major issue is accessibility to a beverage.`,
+		name: 'Marcus Paulson',
+		occupation: 'Course Member',
+		imgSrc: '/swoop/home/testimonial-follow-thru.png',
+	},
+];
 
 const TestimonialsCarouselWrapper = styled(Block)`
 	padding-left: 0;
@@ -155,7 +193,7 @@ export const TestimonialsCarousel = ({ ...rest }) => {
 				<EmblaParent ref={emblaRef}>
 					<EmblaContainer>
 						{dummyCards.map((item, idx) => {
-							return <TestimonialCard key={`idx-${idx}`} />;
+							return <TestimonialCard {...item} key={`idx-${idx}`} />;
 						})}
 					</EmblaContainer>
 				</EmblaParent>
