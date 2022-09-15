@@ -11,12 +11,14 @@ import {
 	MainFloatingHero,
 	MobileSection,
 	SectionDetails,
-	ValueSection,
-	ValueSection2,
+	BoostRevenueSection,
+	EnhanceSection,
 } from 'components/value-section';
-import { CheersSection, ValueSectionAlt } from 'components/value-section/alternate';
 import {
-	DragControls,
+	IncreaseMarginsSection,
+	IntegrateSection,
+} from 'components/value-section/alternate';
+import {
 	motion,
 	useAnimationControls,
 	useMotionValue,
@@ -135,20 +137,14 @@ export default function App() {
 		const anchorBottom = window.pageYOffset + startAnchorRef.bottom;
 		const trueBottom = height / 2 + floatingImgRef.height;
 		const delta = anchorBottom - trueBottom;
-		const floatingYAsPercent = Math.ceil((delta / height) * 100) * 1.8;
+		const floatingYAsPercent = Math.ceil((delta / height) * 100);
 		const currentYPosition = `${floatingYAsPercent}%`;
 		setyStartPosition(currentYPosition);
 	}, [height, setyStartPosition, floatingImageRef, floatingImageAnchorStartRef]);
 
 	useEffect(() => {
-		// if (width >= 768 && width < 1023) {
-		// 	setXTransform(['-28%', '-60%', '-60%']);
-		// 	// setyStartPosition([yStartPosition, '-50%', '-50%'])
-		// 	setScaleTransform([1, 1.15, 1.15]);
-		// }
 		if (width >= 1024) {
 			setXTransform(['-44%', '-60%', '-60%']);
-			// setyStartPosition([yStartPosition, '-50%', '-50%'])
 			setScaleTransform([1, 1.3, 1.3]);
 		}
 	}, [width, setXTransform, setScaleTransform, yStartPosition, setyStartPosition]);
@@ -209,7 +205,7 @@ export default function App() {
 					onEnter={() => {
 						(async () => {
 							await controls.start({ opacity: 0 });
-							await setImageSrc('/elements/app-golfers-desktop.png');
+							await setImageSrc('/elements/app-courses-desktop.png');
 							await controls.start({ opacity: 1 });
 						})();
 					}}
@@ -231,11 +227,11 @@ export default function App() {
 										variant="displayVertical"
 										mb={[2]}
 									>
-										Golfers
+										Courses
 									</VerticalTextL>
 									<img
 										className="hidden"
-										src="/elements/app-golfers-desktop.png"
+										src="/elements/app-courses-desktop.png"
 										alt=""
 									/>
 								</SectionDetails>
@@ -246,7 +242,7 @@ export default function App() {
 									className="mobile-section--desktop"
 								>
 									<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
-										We’ll drive the drinks, you drive the ball.
+										Worry about the speed of your greens, not the speed of your club cart.
 									</Text>
 									<Text mb={6}>
 										The days of waiting for the food + bev cart or the turn for a cocktail
@@ -271,7 +267,7 @@ export default function App() {
 							className="mobile-section"
 						>
 							<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
-								We’ll drive the drinks, you drive the ball.
+								Worry about the speed of your greens, not the speed of your club cart.
 							</Text>
 							<Text maxWidth="75%" mb={6}>
 								The days of waiting for the food + bev cart or the turn for a cocktail and
@@ -290,62 +286,62 @@ export default function App() {
 						</MobileSection>
 					</MainFloatingHeroContainer>
 				</Waypoint>
-				<ValueSection
+				<BoostRevenueSection
 					mt={[8]}
 					mb={[6, rem(440)]}
-					title="ELEVATE YOUR GAME"
-					body="Perfect your pitch. Eliminate mid-round hanger with food + drink delivered to your exact location."
+					title="BOOST REVENUE"
+					body="Monetize every food and beverage impulse by allowing customers to order more frequently and conveniently."
 					onEnter={() => {
 						(async () => {
 							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-1.png');
+							await setImageSrc('/swoop/courses/courses-sandwich-screen.png');
 							await controls.start({ opacity: 1 });
 						})();
 					}}
 				>
 					<Circle1 />
-				</ValueSection>
-				<ValueSectionAlt
+				</BoostRevenueSection>
+				<IncreaseMarginsSection
 					pt={[8]}
 					mb={[6, rem(560)]}
-					title="ORDER MORE"
+					title="INCREASE MARGINS"
 					body="Enjoy all of the culinary comforts for the club grill, on the greens."
 					onEnter={() => {
 						(async () => {
 							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-2.png');
+							await setImageSrc('/swoop/courses/courses-turkey-club.png');
 							await controls.start({ opacity: 1 });
 						})();
 					}}
 				>
 					<Circle2 />
-				</ValueSectionAlt>
-				<ValueSection2
-					title="KEEP PLAYING"
-					body="On-demand, on the course. Fuel your game with refreshments, and don’t stop playing."
+				</IncreaseMarginsSection>
+				<EnhanceSection
+					title="ENHANCE EXPERIENCES"
+					body="Create loyal guests and out-gain competitors by offering a superior on-course food & beverage experience."
 					pt={[8]}
 					mb={[6, rem(500)]}
 					onEnter={() => {
 						(async () => {
 							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-3.png');
+							await setImageSrc('/swoop/courses/courses-black-screen.png');
 							await controls.start({ opacity: 1 });
 						})();
 					}}
 				>
 					<Circle1 />
 					<Circle3 />
-				</ValueSection2>
-				<CheersSection
+				</EnhanceSection>
+				<IntegrateSection
 					pt={[8]}
-					mb={[6, rem(310)]}
+					mb={[6, rem(410)]}
 					anchorRef={floatingImageAnchorFinishRef}
-					title="CHEERS"
-					body="Make more memorable rounds by having a round of drinks delivered during your game."
+					title="INTEGRATE SEAMLESSLY"
+					body="Realize the benefits of on-course purchase without additional overhead and without setup complexity."
 					onEnter={() => {
 						(async () => {
 							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-4.png');
+							await setImageSrc('/swoop/courses/courses-order-placed.png');
 							await controls.start({ opacity: 1 });
 						})();
 					}}

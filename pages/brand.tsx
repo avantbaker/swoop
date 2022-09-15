@@ -112,7 +112,7 @@ export const ByrdiLoyaltySection = () => {
 				</LoyaltyContent>
 				<LoyaltyImages flex={1}>
 					<LoyaltyImageWrapper>
-						<img className="back" src="/elements/little-dots.svg" alt="" />
+						<img className="back" src="/swoop/golfers/golfers-checker-bg.png" alt="" />
 						<img className="middle" src="/elements/botella.png" alt="Bottle Image" />
 						<img
 							className="front"

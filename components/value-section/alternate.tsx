@@ -12,6 +12,7 @@ import {
 	MainImage,
 	ValueSectionWrapper,
 } from 'components/value-section';
+import { SwoopImage } from 'components/image';
 
 const TextContent = styled(Box)`
 	grid-column: 1 / 10;
@@ -39,7 +40,7 @@ export const SandwichImg = styled(motion.img)`
 	z-index: 0;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		max-width: ${rem(220)};
-		top: ${rem(50)};
+		top: ${rem(100)};
 		right: ${rem(-160)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
@@ -57,7 +58,7 @@ export const ModeloImg = styled(motion.img)`
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		max-height: ${rem(400)};
 		left: ${rem(-160)};
-		bottom: ${rem(-300)};
+		bottom: ${rem(-440)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		max-height: ${rem(400)};
@@ -73,6 +74,80 @@ export const ValueSectionAlt = ({
 	bottomOffset = '0px',
 	children = null,
 	debug = false,
+	title = '',
+	body = '',
+	...rest
+}) => {
+	return (
+		<ValueSectionWrapper>
+			<Waypoint
+				onEnter={onEnter}
+				debug={debug}
+				topOffset={topOffset}
+				bottomOffset={bottomOffset}
+			>
+				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+					<ContentContainer
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: false }}
+						transition={{ duration: 1 }}
+						variants={{
+							visible: { opacity: 1 },
+							hidden: { opacity: 0 },
+						}}
+					>
+						<AnimatePresence>
+							<>
+								<TextContent mb={6}>
+									<Text variant="h1" mb={6}>
+										{title}
+									</Text>
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+									>
+										{body}
+									</Text>
+								</TextContent>
+								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+									<ValueImageContainer>
+										<MainImage
+											className="hidden"
+											src="/elements/trilogy-screen.png"
+											alt=""
+											ref={anchorRef}
+										/>
+										<SandwichImg
+											src="/elements/sandwich.png"
+											alt="golfer holding whiskey drink"
+										/>
+										<ModeloImg
+											src="/elements/modelo.png"
+											alt="golfer holding whiskey drink"
+										/>
+									</ValueImageContainer>
+								</ImgContent>
+							</>
+						</AnimatePresence>
+					</ContentContainer>
+				</ValueSectionContainer>
+			</Waypoint>
+			{children}
+		</ValueSectionWrapper>
+	);
+};
+
+export const ValueSectionAlt2 = ({
+	anchorRef = null,
+	onEnter = () => {},
+	topOffset = '0px',
+	bottomOffset = '0px',
+	children = null,
+	debug = false,
+	title = '',
+	body = '',
 	...rest
 }) => {
 	return (
@@ -98,11 +173,15 @@ export const ValueSectionAlt = ({
 							<>
 								{/* <Flex flexDirection={['column', 'row']}> */}
 								<TextContent mb={6}>
-									<Text variant="h1" mb={4}>
-										Value to Golfer
+									<Text variant="h1" mb={6}>
+										{title}
 									</Text>
-									<Text variant="h2" width={[, rem(340)]}>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+									>
+										{body}
 									</Text>
 								</TextContent>
 								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
@@ -124,6 +203,249 @@ export const ValueSectionAlt = ({
 									</ValueImageContainer>
 								</ImgContent>
 								{/* </Flex> */}
+							</>
+						</AnimatePresence>
+					</ContentContainer>
+				</ValueSectionContainer>
+			</Waypoint>
+			{children}
+		</ValueSectionWrapper>
+	);
+};
+
+const CheersImg1 = styled(SwoopImage)`
+	position: absolute;
+	top: 0;
+	right: ${rem(-20)};
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		top: ${rem(-60)};
+		right: ${rem(-180)};
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		top: ${rem(-200)};
+		right: ${rem(-60)};
+	}
+`;
+
+const CheersImg2 = styled(SwoopImage)`
+	position: absolute;
+	bottom: ${rem(-50)};
+	left: ${rem(-20)};
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		bottom: ${rem(-220)};
+		left: ${rem(-160)};
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		top: ${rem(80)};
+		left: ${rem(-40)};
+	}
+`;
+export const CheersSection = ({
+	anchorRef = null,
+	onEnter = () => {},
+	topOffset = '0px',
+	bottomOffset = '0px',
+	children = null,
+	debug = false,
+	title = '',
+	body = '',
+	...rest
+}) => {
+	return (
+		<ValueSectionWrapper>
+			<Waypoint
+				onEnter={onEnter}
+				debug={debug}
+				topOffset={topOffset}
+				bottomOffset={bottomOffset}
+			>
+				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+					<ContentContainer
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: false }}
+						transition={{ duration: 1 }}
+						variants={{
+							visible: { opacity: 1 },
+							hidden: { opacity: 0 },
+						}}
+					>
+						<AnimatePresence>
+							<>
+								<TextContent mb={[6, 8]}>
+									<Text variant="h1" mb={6}>
+										{title}
+									</Text>
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+									>
+										{body}
+									</Text>
+								</TextContent>
+								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+									<ValueImageContainer>
+										<MainImage
+											className="hidden"
+											src="/elements/trilogy-screen.png"
+											alt=""
+											ref={anchorRef}
+										/>
+										<CheersImg1
+											width={[140, 230]}
+											src="/swoop/golfers/golfers-green-aerial.png"
+										/>
+										<CheersImg2
+											width={[120, 230]}
+											src="/swoop/golfers/golfers-toast.png"
+										/>
+									</ValueImageContainer>
+								</ImgContent>
+							</>
+						</AnimatePresence>
+					</ContentContainer>
+				</ValueSectionContainer>
+			</Waypoint>
+			{children}
+		</ValueSectionWrapper>
+	);
+};
+
+export const IncreaseMarginsSection = ({
+	anchorRef = null,
+	onEnter = () => {},
+	topOffset = '0px',
+	bottomOffset = '0px',
+	children = null,
+	debug = false,
+	title = '',
+	body = '',
+	...rest
+}) => {
+	return (
+		<ValueSectionWrapper>
+			<Waypoint
+				onEnter={onEnter}
+				debug={debug}
+				topOffset={topOffset}
+				bottomOffset={bottomOffset}
+			>
+				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+					<ContentContainer
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: false }}
+						transition={{ duration: 1 }}
+						variants={{
+							visible: { opacity: 1 },
+							hidden: { opacity: 0 },
+						}}
+					>
+						<AnimatePresence>
+							<>
+								<TextContent mb={6}>
+									<Text variant="h1" mb={6}>
+										{title}
+									</Text>
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+									>
+										{body}
+									</Text>
+								</TextContent>
+								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+									<ValueImageContainer>
+										<MainImage
+											className="hidden"
+											src="/elements/trilogy-screen.png"
+											alt=""
+											ref={anchorRef}
+										/>
+										<SandwichImg
+											src="/swoop/courses/courses-sandwich.png"
+											alt="golfer holding whiskey drink"
+										/>
+										<ModeloImg
+											src="/swoop/courses/courses-kiosk.png"
+											alt="golfer holding whiskey drink"
+										/>
+									</ValueImageContainer>
+								</ImgContent>
+							</>
+						</AnimatePresence>
+					</ContentContainer>
+				</ValueSectionContainer>
+			</Waypoint>
+			{children}
+		</ValueSectionWrapper>
+	);
+};
+
+export const IntegrateSection = ({
+	anchorRef = null,
+	onEnter = () => {},
+	topOffset = '0px',
+	bottomOffset = '0px',
+	children = null,
+	debug = false,
+	title = '',
+	body = '',
+	...rest
+}) => {
+	return (
+		<ValueSectionWrapper>
+			<Waypoint
+				onEnter={onEnter}
+				debug={debug}
+				topOffset={topOffset}
+				bottomOffset={bottomOffset}
+			>
+				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+					<ContentContainer
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: false }}
+						transition={{ duration: 1 }}
+						variants={{
+							visible: { opacity: 1 },
+							hidden: { opacity: 0 },
+						}}
+					>
+						<AnimatePresence>
+							<>
+								<TextContent mb={[6, 8]}>
+									<Text variant="h1" mb={6}>
+										{title}
+									</Text>
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+									>
+										{body}
+									</Text>
+								</TextContent>
+								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+									<ValueImageContainer>
+										<MainImage
+											className="hidden"
+											src="/elements/trilogy-screen.png"
+											alt=""
+											ref={anchorRef}
+										/>
+										<CheersImg1
+											width={[140, 230]}
+											src="/swoop/courses/courses-putting.png"
+										/>
+										<CheersImg2
+											width={[120, 230]}
+											src="/swoop/courses/courses-golf-carts.png"
+										/>
+									</ValueImageContainer>
+								</ImgContent>
 							</>
 						</AnimatePresence>
 					</ContentContainer>

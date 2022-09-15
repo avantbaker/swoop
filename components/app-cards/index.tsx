@@ -2,6 +2,7 @@ import { Section } from 'components/common/container';
 import styled from 'styled-components';
 import { Flex } from 'rebass/styled-components';
 import Text from 'components/common/text';
+import Link from 'next/link';
 
 export const DualPathSection = styled('div')`
 	background: url(/elements/dotted-bg.svg);
@@ -14,6 +15,7 @@ export const DualSection = styled(Flex)`
 	border-left: 2px solid ${({ theme }) => theme.colors.orange};
 	border-right: 2px solid ${({ theme }) => theme.colors.orange};
 	align-items: flex-end;
+	cursor: pointer;
 	flex: 1;
 	img {
 		height: 100%;
@@ -45,18 +47,24 @@ export const AppCards = () => {
 			<Section
 				p={'0 !important'}
 				justifyContent="center"
-				flexDirection={['column', 'row']}
+				flexDirection={['column', 'column', 'row']}
 			>
-				<DualSection justifyContent={['center']} py={[5, 6]}>
-					<VerticalTextL pl={4} variant="displayVertical">
-						Golfers
-					</VerticalTextL>
-					<img src="/elements/app-golfers-desktop.png" alt="" />
-				</DualSection>
-				<DualSection justifyContent={['center']} py={[5, 6]}>
-					<img src="/elements/app-courses-desktop.png" alt="" />
-					<VerticalTextL variant="displayVertical">Courses</VerticalTextL>
-				</DualSection>
+				<Link href="/app/golfers">
+					<DualSection justifyContent={['center']} py={[5, 6]}>
+						<VerticalTextL pl={4} variant="displayVertical" mb={[5, ,]}>
+							Golfers
+						</VerticalTextL>
+						<img src="/elements/app-golfers-desktop.png" alt="" />
+					</DualSection>
+				</Link>
+				<Link href="/app/courses">
+					<DualSection justifyContent={['center']} py={[5, 6]}>
+						<img src="/elements/app-courses-desktop.png" alt="" />
+						<VerticalTextL variant="displayVertical" mb={[5, ,]}>
+							Courses
+						</VerticalTextL>
+					</DualSection>
+				</Link>
 			</Section>
 		</DualPathSection>
 	);

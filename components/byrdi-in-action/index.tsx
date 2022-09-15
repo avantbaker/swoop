@@ -7,7 +7,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Box } from 'rebass/styled-components';
 import useEmblaCarousel from 'embla-carousel-react';
 
-const ByrdiInActionWrapper = styled(Box)``;
+const ByrdiInActionWrapper = styled(Box)`
+	border-top: 2px solid ${({ theme }) => theme.colors.orange};
+`;
 export const PhotoCarousel = styled('div')`
 	display: flex;
 	flex-wrap: nowrap;
@@ -103,6 +105,15 @@ export const ByrdiInAction = ({
 			<PhotoCarousel ref={emblaRef}>
 				<PhotoCarousel>
 					<ImageWrapper>
+						<img src="/swoop/golfers/golfers-golf-bag.png" alt="" />
+					</ImageWrapper>
+					<ImageWrapper>
+						<img src="/swoop/golfers/golfers-sandwich.png" alt="" />
+					</ImageWrapper>
+					<ImageWrapper>
+						<img src="/swoop/golfers/golfers-pin.png" alt="" />
+					</ImageWrapper>
+					{/* <ImageWrapper>
 						<img src="/elements/catching-club.png" alt="" />
 					</ImageWrapper>
 					<ImageWrapper>
@@ -110,16 +121,7 @@ export const ByrdiInAction = ({
 					</ImageWrapper>
 					<ImageWrapper>
 						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
+					</ImageWrapper> */}
 				</PhotoCarousel>
 			</PhotoCarousel>
 		</ByrdiInActionWrapper>

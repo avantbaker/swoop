@@ -40,7 +40,7 @@ export const variants = {
 	},
 	displayVertical: {
 		fontFamily: theme.typography.fonts.primary,
-		fontSize: [rem(70), rem(105)],
+		fontSize: [rem(70), rem(98)],
 		fontWeight: 'normal',
 		lineHeight: [rem(75), rem(113)],
 		color: theme.colors.calcite,
