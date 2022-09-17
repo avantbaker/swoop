@@ -95,7 +95,9 @@ export const NewsletterSection = ({
 				)}
 				{hasCTA && (
 					<Flex>
-						<MenuButton color={theme.colors.calcite}>Get In Touch</MenuButton>
+						<MenuButton href="/contact" color={theme.colors.calcite}>
+							Get In Touch
+						</MenuButton>
 					</Flex>
 				)}
 			</ContentWrapper>

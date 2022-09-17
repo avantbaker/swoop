@@ -496,6 +496,8 @@ const EnhanceBottle = styled(SwoopImage)`
 	right: ${rem(0)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		right: unset;
+		top: ${rem(-200)};
+		left: ${rem(0)};
 	}
 `;
 const EnhanceTee1 = styled(SwoopImage)`
@@ -523,6 +525,10 @@ const EnhanceTee2 = styled(SwoopImage)`
 const FollowThruWrapper = styled(ElevateBigImg)`
 	bottom: ${rem(-40)};
 	left: ${rem(0)};
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		left: ${rem(-200)};
+	}
 `;
 export const EnhanceSection = ({
 	anchorRef = null,

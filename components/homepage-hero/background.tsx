@@ -20,7 +20,7 @@ export const Background = ({ src, headerPadding = true, maxWidth = '70%', ...res
 			ref={boxRef}
 			width={['100%', '100%', maxWidth]}
 			height={[currentHeight, currentHeight, '100%']}
-			maxHeight={[rem(MAX_CONTAINER_WIDTH), rem(MAX_CONTAINER_WIDTH), '100%']}
+			maxHeight={rem(MAX_CONTAINER_WIDTH)}
 			minHeight={rem(500)}
 			pt={[
 				headerPadding && rem(MOBILE_HEADER_HEIGHT),

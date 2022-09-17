@@ -180,7 +180,7 @@ const TestimonialsCarouselWrapper = styled(Block)`
 		padding-left: ${rem(40)};
 	}
 `;
-export const TestimonialsCarousel = ({ ...rest }) => {
+export const TestimonialsCarousel = ({ cards = dummyCards, ...rest }) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
 		<>
@@ -192,7 +192,7 @@ export const TestimonialsCarousel = ({ ...rest }) => {
 				</ControlContainer>
 				<EmblaParent ref={emblaRef}>
 					<EmblaContainer>
-						{dummyCards.map((item, idx) => {
+						{cards.map((item, idx) => {
 							return <TestimonialCard {...item} key={`idx-${idx}`} />;
 						})}
 					</EmblaContainer>

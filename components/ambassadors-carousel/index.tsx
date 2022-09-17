@@ -56,6 +56,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
 		twitter: 'https://twitter.com/olajuwon',
 		linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
+		imgSrc: '/swoop/brand/brand-ambassador-1.png',
 	},
 	{
 		title: 'Jen Clyde',
@@ -65,6 +66,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/jenstyles/?hl=en',
 		twitter: 'https://twitter.com/golf_fore_all',
 		linkedIn: 'https://www.linkedin.com/in/jen-clyde/',
+		imgSrc: '/swoop/brand/brand-ambassador-2.png',
 	},
 	{
 		title: 'Hannah B. Leiner',
@@ -75,6 +77,7 @@ const cardData = [
 		twitter:
 			'https://twitter.com/hannahbleiner?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
 		linkedIn: '',
+		imgSrc: '/swoop/brand/brand-ambassador-3.png',
 	},
 	{
 		title: 'Jon "HAPPY" Gilmore',
@@ -84,6 +87,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/the_original_happy_gilmore/?hl=en',
 		twitter: 'https://twitter.com/mericanbadasses',
 		linkedIn: '',
+		imgSrc: '/swoop/brand/brand-ambassador-1.png',
 	},
 	{
 		title: 'Suzi Stanley',
@@ -93,6 +97,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/suzigolf/?hl=en',
 		twitter: 'https://twitter.com/SuziGolf',
 		linkedIn: '',
+		imgSrc: '/swoop/brand/brand-ambassador-2.png',
 	},
 ];
 
@@ -116,17 +121,17 @@ const CardImageWrapper = styled('div')`
 	}
 `;
 const ControlWrapper = styled(Flex)``;
-export const AmbassadorCarousel = () => {
+export const AmbassadorCarousel = ({ cards = cardData, ...rest }) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
 		<AmassadorsCarouselWrapper>
 			<EmblaParent ref={emblaRef}>
 				<EmblaChild>
-					{cardData.map(({ title, tag, location, comment }, idx) => {
+					{cards.map(({ title, tag, location, comment, imgSrc }, idx) => {
 						return (
 							<Card key={`ambassador-card-${idx}`}>
 								<CardImageWrapper className="img-wrapper">
-									<img src="/elements/chip-in.png" alt="" />
+									<img src={imgSrc} alt="" />
 								</CardImageWrapper>
 								<Flex className="card__content" px={[4, 5, 6]} flexDirection="column">
 									<Text mb={[5]} variant="h2" className="card__title">

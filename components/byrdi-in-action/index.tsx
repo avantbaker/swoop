@@ -79,7 +79,21 @@ export const useCustomCarousel = () => {
 		emblaApi,
 	};
 };
+
+const dummyCards = [
+	{
+		imgSrc: '/swoop/golfers/golfers-golf-bag.png',
+	},
+	{
+		imgSrc: '/swoop/golfers/golfers-sandwich.png',
+	},
+	{
+		imgSrc: '/swoop/golfers/golfers-pin.png',
+	},
+];
+
 export const ByrdiInAction = ({
+	cards = dummyCards,
 	title = 'For the love of the sport, and sandwiches.',
 	body = 'Swoop is bringing modern culinary convenience and speed to a timeless sport.',
 }) => {
@@ -104,24 +118,13 @@ export const ByrdiInAction = ({
 			</Section>
 			<PhotoCarousel ref={emblaRef}>
 				<PhotoCarousel>
-					<ImageWrapper>
-						<img src="/swoop/golfers/golfers-golf-bag.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/swoop/golfers/golfers-sandwich.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/swoop/golfers/golfers-pin.png" alt="" />
-					</ImageWrapper>
-					{/* <ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper>
-					<ImageWrapper>
-						<img src="/elements/catching-club.png" alt="" />
-					</ImageWrapper> */}
+					{cards.map(({ imgSrc }, idx) => {
+						return (
+							<ImageWrapper key={`img-carousel-${idx}`}>
+								<img src={imgSrc} alt="" />
+							</ImageWrapper>
+						);
+					})}
 				</PhotoCarousel>
 			</PhotoCarousel>
 		</ByrdiInActionWrapper>

@@ -29,7 +29,9 @@ const ContentWithSidebar = ({ ...rest }) => {
 		<Section {...rest}>
 			<ContentWithSidebarWrapper>
 				<Sidebar>
-					<Text variant="termsTitle">Last updated August 26, 2022</Text>
+					<Text variant="termsTitle" maxWidth="80%">
+						Last updated August 26, 2022
+					</Text>
 				</Sidebar>
 				<Content>
 					<Text>
@@ -625,7 +627,7 @@ const ContentWithSidebar = ({ ...rest }) => {
 							clicking here.
 						</Text>
 					</Text>
-					<Text variant="cardLocation" color="sage" fontWeight="bold" mb={4}>
+					{/* <Text variant="cardLocation" color="sage" fontWeight="bold" mb={4}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, veniam!
 					</Text>
 					<Text mb={4}>
@@ -657,7 +659,7 @@ const ContentWithSidebar = ({ ...rest }) => {
 						architecto libero. Architecto dolore iusto eos quaerat facilis doloribus
 						officiis consequuntur, mollitia temporibus veniam, deleniti similique neque
 						recusandae!
-					</Text>
+					</Text> */}
 				</Content>
 			</ContentWithSidebarWrapper>
 		</Section>
@@ -668,7 +670,7 @@ function TermsAndConditions() {
 		<>
 			<TextBanner pt={[7, 8]} isLight title="Privacy Notice" />
 			<ContentWithSidebar />
-			<ContentWithSidebar mb={6} />
+			{/* <ContentWithSidebar mb={6} /> */}
 		</>
 	);
 }

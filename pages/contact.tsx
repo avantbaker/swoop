@@ -458,10 +458,10 @@ function Contact() {
 			</Section>
 			<CareerSection mb={[6, 7]}>
 				<Box className="first">
-					<img src="/elements/chip-it-in.png" alt="" />
+					<img src="/swoop/contact/contact-putt.png" alt="" />
 				</Box>
 				<Box className="second">
-					<img src="/elements/chip-it-in.png" alt="" />
+					<img src="/swoop/contact/contact-cart.png" alt="" />
 				</Box>
 				<Flex className="third" alignItems={['flex-end', 'flex-start']} pl={[5]} pr={2}>
 					<Flex flexDirection="column">
@@ -490,7 +490,7 @@ function Contact() {
 					</Flex>
 				</Flex>
 				<Box className="fourth">
-					<img src="/elements/chip-it-in.png" alt="" />
+					<img src="/swoop/contact/contact-place-ball.png" alt="" />
 				</Box>
 				<Box className="fifth" mt={5} px={[4, 5]}>
 					<MenuButton color="orange">Career Inquiries</MenuButton>

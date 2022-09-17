@@ -8,10 +8,25 @@ import { Logo } from 'components/header';
 import Text from 'components/common/text';
 import { rem } from 'polished';
 import Link from 'next/link';
+import theme from 'styles/theme';
+
+const getBorderColor = (type) => {
+	let backgroundColor = theme.colors.orange;
+	switch (type) {
+		case 'light':
+			backgroundColor = 'none';
+			break;
+		case 'orange':
+			backgroundColor = theme.colors.calcite;
+			break;
+		default:
+			break;
+	}
+	return backgroundColor;
+};
+
 const FooterContainer = styled(Flex)`
-	border-top: 2px solid
-		${({ theme }) =>
-			theme.type === 'orange' ? theme.colors.calcite : theme.colors.orange};
+	border-top: 2px solid ${({ theme }) => getBorderColor(theme.type)};
 `;
 
 export default function Footer({ isLight = false, ...rest }) {

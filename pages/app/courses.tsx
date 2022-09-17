@@ -241,7 +241,7 @@ export default function App() {
 									position="absolute"
 									className="mobile-section--desktop"
 								>
-									<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
+									<Text variant="careersSubtitle" color="calcite" mb={4}>
 										Worry about the speed of your greens, not the speed of your club cart.
 									</Text>
 									<Text mb={6}>

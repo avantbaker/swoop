@@ -243,22 +243,19 @@ export const AffiliateSectionExpanded = () => {
 					<AffiliateContentWrapper flexDirection={['column', 'column', 'row-reverse']}>
 						<LogoContainerExpanded flex={1} pt={[5, , 0]} pb={[, , 5]}>
 							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
+								<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
 							</LogoWrapper>
 							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-2.png" alt="1st Logo" />
+								<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
 							</LogoWrapper>
 							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-3.png" alt="1st Logo" />
+								<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
 							</LogoWrapper>
 							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
+								<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
 							</LogoWrapper>
 							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-1.png" alt="1st Logo" />
-							</LogoWrapper>
-							<LogoWrapper>
-								<img src="/images/logos/logo-sticky-2.png" alt="1st Logo" />
+								<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
 							</LogoWrapper>
 						</LogoContainerExpanded>
 						<Link flex={1} mt={[2, 6, 5]} mb={6} maxWidth={['70%', , '100%']}>
