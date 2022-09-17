@@ -670,7 +670,6 @@ function TermsAndConditions() {
 		<>
 			<TextBanner pt={[7, 8]} isLight title="Privacy Notice" />
 			<ContentWithSidebar />
-			{/* <ContentWithSidebar mb={6} /> */}
 		</>
 	);
 }
