@@ -61,10 +61,14 @@ export const Foreground = ({
 				{hasIcons && (
 					<Flex width="100%" justifyContent="flex-end">
 						<Box mr={4}>
-							<img src="/elements/apple-store.png" />
+							<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+								<img src="/elements/apple-store.png" />
+							</a>
 						</Box>
 						<Box>
-							<img src="/elements/google-play.png" />
+							<a href="https://play.google.com/store/apps/details?id=io.swoop">
+								<img src="/elements/google-play.png" />
+							</a>
 						</Box>
 					</Flex>
 				)}

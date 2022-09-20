@@ -16,12 +16,19 @@ const InstaGrid = styled('div')`
 		padding-top: 100%;
 		grid-area: 1 / 1 / 2 / 2;
 	}
+	div {
+		position: relative;
+	}
 	& > div > img {
 		width: 100%;
 		grid-area: 1 / 1 / 2 / 2;
 		object-fit: cover;
 		object-position: center;
-		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 `;
 const GridItem = styled('div')`

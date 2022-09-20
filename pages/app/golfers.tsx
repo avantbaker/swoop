@@ -135,20 +135,15 @@ export default function App() {
 		const anchorBottom = window.pageYOffset + startAnchorRef.bottom;
 		const trueBottom = height / 2 + floatingImgRef.height;
 		const delta = anchorBottom - trueBottom;
-		const floatingYAsPercent = Math.ceil((delta / height) * 100) * 1.8;
+		const floatingYAsPercent = Math.ceil((delta / height) * 100);
 		const currentYPosition = `${floatingYAsPercent}%`;
+		console.log('Current Y Position: ', currentYPosition);
 		setyStartPosition(currentYPosition);
-	}, [height, setyStartPosition, floatingImageRef, floatingImageAnchorStartRef]);
+	}, []);
 
 	useEffect(() => {
-		// if (width >= 768 && width < 1023) {
-		// 	setXTransform(['-28%', '-60%', '-60%']);
-		// 	// setyStartPosition([yStartPosition, '-50%', '-50%'])
-		// 	setScaleTransform([1, 1.15, 1.15]);
-		// }
 		if (width >= 1024) {
 			setXTransform(['-44%', '-60%', '-60%']);
-			// setyStartPosition([yStartPosition, '-50%', '-50%'])
 			setScaleTransform([1, 1.3, 1.3]);
 		}
 	}, [width, setXTransform, setScaleTransform, yStartPosition, setyStartPosition]);
@@ -157,18 +152,16 @@ export default function App() {
 		const handleScroll = () => {
 			const lastImg = floatingImageAnchorFinishRef.current.getBoundingClientRect();
 			const floatImg = floatingImageRef.current.getBoundingClientRect();
-
-			const lastImgBottom = window.pageYOffset + lastImg.bottom;
-			const floatImgBottom = window.pageYOffset + floatImg.bottom;
-			const trueImgBottom = lastImgBottom - (lastImg.height + 100) * 1.8;
+			const lastImgBottom = window.pageYOffset + (lastImg.bottom - 50);
+			const floatImgBottom = window.pageYOffset + (floatImg.bottom + 20);
+			const trueImgBottom = lastImgBottom - lastImg.height;
 			const isAboveAnchorPoint = window.pageYOffset < trueImgBottom;
-
 			if (isAboveAnchorPoint) {
 				POSITION.set('fixed');
 				TOP.set('50%');
 			} else if (floatImgBottom >= lastImgBottom) {
 				POSITION.set('absolute');
-				TOP.set(`${lastImgBottom - (lastImg.height + 24)}px`);
+				TOP.set(`${lastImgBottom - (lastImg.height + 20)}px`);
 			}
 		};
 		window.addEventListener('scroll', handleScroll, { passive: true });
@@ -229,7 +222,7 @@ export default function App() {
 									<VerticalTextL
 										ref={floatingImageAnchorStartRef}
 										variant="displayVertical"
-										mb={[2]}
+										// mb={[2]}
 									>
 										Golfers
 									</VerticalTextL>
@@ -256,10 +249,14 @@ export default function App() {
 									</Text>
 									<Flex width="100%" flexDirection="column" alignItems="flex-end">
 										<Box mb={3}>
-											<img src="/elements/apple-store.png" />
+											<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+												<img src="/elements/apple-store.png" />
+											</a>
 										</Box>
 										<Box>
-											<img src="/elements/google-play.png" />
+											<a href="https://play.google.com/store/apps/details?id=io.swoop">
+												<img src="/elements/google-play.png" />
+											</a>
 										</Box>
 									</Flex>
 								</MobileSection>
@@ -281,10 +278,14 @@ export default function App() {
 							</Text>
 							<Flex width="100%" flexDirection="column" alignItems="flex-end">
 								<Box mb={3}>
-									<img src="/elements/apple-store.png" />
+									<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+										<img src="/elements/apple-store.png" />
+									</a>
 								</Box>
 								<Box>
-									<img src="/elements/google-play.png" />
+									<a href="https://play.google.com/store/apps/details?id=io.swoop">
+										<img src="/elements/google-play.png" />
+									</a>
 								</Box>
 							</Flex>
 						</MobileSection>
@@ -338,7 +339,7 @@ export default function App() {
 				</ValueSection2>
 				<CheersSection
 					pt={[8]}
-					mb={[6, rem(310)]}
+					mb={[7, rem(310)]}
 					anchorRef={floatingImageAnchorFinishRef}
 					title="CHEERS"
 					body="Make more memorable rounds by having a round of drinks delivered during your game."

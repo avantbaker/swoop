@@ -158,7 +158,8 @@ export default function App() {
 			const floatImgBottom = window.pageYOffset + floatImg.bottom;
 			const trueImgBottom = lastImgBottom - (lastImg.height + 100) * 1.8;
 			const isAboveAnchorPoint = window.pageYOffset < trueImgBottom;
-
+			console.log('Page Offset', window.pageYOffset);
+			console.log('Last Image Bottom', lastImgBottom);
 			if (isAboveAnchorPoint) {
 				POSITION.set('fixed');
 				TOP.set('50%');
@@ -252,10 +253,14 @@ export default function App() {
 									</Text>
 									<Flex width="100%" flexDirection="column" alignItems="flex-end">
 										<Box mb={3}>
-											<img src="/elements/apple-store.png" />
+											<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+												<img src="/elements/apple-store.png" />
+											</a>
 										</Box>
 										<Box>
-											<img src="/elements/google-play.png" />
+											<a href="https://play.google.com/store/apps/details?id=io.swoop">
+												<img src="/elements/google-play.png" />
+											</a>
 										</Box>
 									</Flex>
 								</MobileSection>
@@ -277,10 +282,14 @@ export default function App() {
 							</Text>
 							<Flex width="100%" flexDirection="column" alignItems="flex-end">
 								<Box mb={3}>
-									<img src="/elements/apple-store.png" />
+									<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+										<img src="/elements/apple-store.png" />
+									</a>
 								</Box>
 								<Box>
-									<img src="/elements/google-play.png" />
+									<a href="https://play.google.com/store/apps/details?id=io.swoop">
+										<img src="/elements/google-play.png" />
+									</a>
 								</Box>
 							</Flex>
 						</MobileSection>

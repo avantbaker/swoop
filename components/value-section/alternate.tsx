@@ -80,60 +80,59 @@ export const ValueSectionAlt = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<Waypoint
-				onEnter={onEnter}
-				debug={debug}
-				topOffset={topOffset}
-				bottomOffset={bottomOffset}
-			>
-				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<AnimatePresence>
-							<>
-								<TextContent mb={6}>
-									<Text variant="h1" mb={6}>
-										{title}
-									</Text>
-									<Text
-										variant="h2"
-										fontFamily="'Shippori Antique Regular',sans-serif"
-										maxWidth={rem(400)}
-									>
-										{body}
-									</Text>
-								</TextContent>
-								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
-									<ValueImageContainer>
-										<MainImage
-											className="hidden"
-											src="/elements/trilogy-screen.png"
-											alt=""
-											ref={anchorRef}
-										/>
-										<SandwichImg
-											src="/elements/sandwich.png"
-											alt="golfer holding whiskey drink"
-										/>
-										<ModeloImg
-											src="/elements/modelo.png"
-											alt="golfer holding whiskey drink"
-										/>
-									</ValueImageContainer>
-								</ImgContent>
-							</>
-						</AnimatePresence>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
+				>
+					<AnimatePresence>
+						<>
+							<TextContent mb={6}>
+								<Text variant="h1" mb={6}>
+									{title}
+								</Text>
+								<Text
+									variant="h2"
+									fontFamily="'Shippori Antique Regular',sans-serif"
+									maxWidth={rem(400)}
+								>
+									{body}
+								</Text>
+							</TextContent>
+							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+								<ValueImageContainer>
+									<MainImage
+										className="hidden"
+										src="/elements/trilogy-screen.png"
+										alt=""
+										ref={anchorRef}
+									/>
+									<SandwichImg
+										src="/elements/sandwich.png"
+										alt="golfer holding whiskey drink"
+									/>
+									<ModeloImg
+										src="/elements/modelo.png"
+										alt="golfer holding whiskey drink"
+									/>
+								</ValueImageContainer>
+							</ImgContent>
+						</>
+					</AnimatePresence>
+				</ContentContainer>
+				<Waypoint
+					onEnter={onEnter}
+					debug={debug}
+					topOffset={topOffset}
+					bottomOffset={bottomOffset}
+				/>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -152,62 +151,61 @@ export const ValueSectionAlt2 = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<Waypoint
-				onEnter={onEnter}
-				debug={debug}
-				topOffset={topOffset}
-				bottomOffset={bottomOffset}
-			>
-				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<AnimatePresence>
-							<>
-								{/* <Flex flexDirection={['column', 'row']}> */}
-								<TextContent mb={6}>
-									<Text variant="h1" mb={6}>
-										{title}
-									</Text>
-									<Text
-										variant="h2"
-										fontFamily="'Shippori Antique Regular',sans-serif"
-										maxWidth={rem(400)}
-									>
-										{body}
-									</Text>
-								</TextContent>
-								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
-									<ValueImageContainer>
-										<MainImage
-											className="hidden"
-											src="/elements/trilogy-screen.png"
-											alt=""
-											ref={anchorRef}
-										/>
-										<SandwichImg
-											src="/elements/sandwich.png"
-											alt="golfer holding whiskey drink"
-										/>
-										<ModeloImg
-											src="/elements/modelo.png"
-											alt="golfer holding whiskey drink"
-										/>
-									</ValueImageContainer>
-								</ImgContent>
-								{/* </Flex> */}
-							</>
-						</AnimatePresence>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
+				>
+					<AnimatePresence>
+						<>
+							{/* <Flex flexDirection={['column', 'row']}> */}
+							<TextContent mb={6}>
+								<Text variant="h1" mb={6}>
+									{title}
+								</Text>
+								<Text
+									variant="h2"
+									fontFamily="'Shippori Antique Regular',sans-serif"
+									maxWidth={rem(400)}
+								>
+									{body}
+								</Text>
+							</TextContent>
+							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+								<ValueImageContainer>
+									<MainImage
+										className="hidden"
+										src="/elements/trilogy-screen.png"
+										alt=""
+										ref={anchorRef}
+									/>
+									<SandwichImg
+										src="/elements/sandwich.png"
+										alt="golfer holding whiskey drink"
+									/>
+									<ModeloImg
+										src="/elements/modelo.png"
+										alt="golfer holding whiskey drink"
+									/>
+								</ValueImageContainer>
+							</ImgContent>
+							{/* </Flex> */}
+						</>
+					</AnimatePresence>
+				</ContentContainer>
+				<Waypoint
+					onEnter={onEnter}
+					debug={debug}
+					topOffset={topOffset}
+					bottomOffset={bottomOffset}
+				/>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -253,60 +251,56 @@ export const CheersSection = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<Waypoint
-				onEnter={onEnter}
-				debug={debug}
-				topOffset={topOffset}
-				bottomOffset={bottomOffset}
-			>
-				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<AnimatePresence>
-							<>
-								<TextContent mb={[6, 8]}>
-									<Text variant="h1" mb={6}>
-										{title}
-									</Text>
-									<Text
-										variant="h2"
-										fontFamily="'Shippori Antique Regular',sans-serif"
-										maxWidth={rem(400)}
-									>
-										{body}
-									</Text>
-								</TextContent>
-								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
-									<ValueImageContainer>
-										<MainImage
-											className="hidden"
-											src="/elements/trilogy-screen.png"
-											alt=""
-											ref={anchorRef}
-										/>
-										<CheersImg1
-											width={[140, 230]}
-											src="/swoop/golfers/golfers-green-aerial.png"
-										/>
-										<CheersImg2
-											width={[120, 230]}
-											src="/swoop/golfers/golfers-toast.png"
-										/>
-									</ValueImageContainer>
-								</ImgContent>
-							</>
-						</AnimatePresence>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
+				>
+					<AnimatePresence>
+						<>
+							<TextContent mb={[6, 8]}>
+								<Text variant="h1" mb={6}>
+									{title}
+								</Text>
+								<Text
+									variant="h2"
+									fontFamily="'Shippori Antique Regular',sans-serif"
+									maxWidth={rem(400)}
+								>
+									{body}
+								</Text>
+							</TextContent>
+							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+								<ValueImageContainer>
+									<MainImage
+										className="hidden"
+										src="/elements/trilogy-screen.png"
+										alt=""
+										ref={anchorRef}
+									/>
+									<CheersImg1
+										width={[140, 230]}
+										src="/swoop/golfers/golfers-green-aerial.png"
+									/>
+									<CheersImg2 width={[120, 230]} src="/swoop/golfers/golfers-toast.png" />
+								</ValueImageContainer>
+							</ImgContent>
+						</>
+					</AnimatePresence>
+				</ContentContainer>
+				<Waypoint
+					onEnter={onEnter}
+					debug={debug}
+					topOffset={topOffset}
+					bottomOffset={bottomOffset}
+				/>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -325,60 +319,59 @@ export const IncreaseMarginsSection = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<Waypoint
-				onEnter={onEnter}
-				debug={debug}
-				topOffset={topOffset}
-				bottomOffset={bottomOffset}
-			>
-				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<AnimatePresence>
-							<>
-								<TextContent mb={6}>
-									<Text variant="h1" mb={6}>
-										{title}
-									</Text>
-									<Text
-										variant="h2"
-										fontFamily="'Shippori Antique Regular',sans-serif"
-										maxWidth={rem(400)}
-									>
-										{body}
-									</Text>
-								</TextContent>
-								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
-									<ValueImageContainer>
-										<MainImage
-											className="hidden"
-											src="/elements/trilogy-screen.png"
-											alt=""
-											ref={anchorRef}
-										/>
-										<SandwichImg
-											src="/swoop/courses/courses-sandwich.png"
-											alt="golfer holding whiskey drink"
-										/>
-										<ModeloImg
-											src="/swoop/courses/courses-kiosk.png"
-											alt="golfer holding whiskey drink"
-										/>
-									</ValueImageContainer>
-								</ImgContent>
-							</>
-						</AnimatePresence>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
+				>
+					<AnimatePresence>
+						<>
+							<TextContent mb={6}>
+								<Text variant="h1" mb={6}>
+									{title}
+								</Text>
+								<Text
+									variant="h2"
+									fontFamily="'Shippori Antique Regular',sans-serif"
+									maxWidth={rem(400)}
+								>
+									{body}
+								</Text>
+							</TextContent>
+							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+								<ValueImageContainer>
+									<MainImage
+										className="hidden"
+										src="/elements/trilogy-screen.png"
+										alt=""
+										ref={anchorRef}
+									/>
+									<SandwichImg
+										src="/swoop/courses/courses-sandwich.png"
+										alt="golfer holding whiskey drink"
+									/>
+									<ModeloImg
+										src="/swoop/courses/courses-kiosk.png"
+										alt="golfer holding whiskey drink"
+									/>
+								</ValueImageContainer>
+							</ImgContent>
+						</>
+					</AnimatePresence>
+				</ContentContainer>
+				<Waypoint
+					onEnter={onEnter}
+					debug={debug}
+					topOffset={topOffset}
+					bottomOffset={bottomOffset}
+				/>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -397,60 +390,59 @@ export const IntegrateSection = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<Waypoint
-				onEnter={onEnter}
-				debug={debug}
-				topOffset={topOffset}
-				bottomOffset={bottomOffset}
-			>
-				<ValueSectionContainer {...rest} position="relative" flexDirection="column">
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<AnimatePresence>
-							<>
-								<TextContent mb={[6, 8]}>
-									<Text variant="h1" mb={6}>
-										{title}
-									</Text>
-									<Text
-										variant="h2"
-										fontFamily="'Shippori Antique Regular',sans-serif"
-										maxWidth={rem(400)}
-									>
-										{body}
-									</Text>
-								</TextContent>
-								<ImgContent justifyContent={['center', 'center', 'flex-end']}>
-									<ValueImageContainer>
-										<MainImage
-											className="hidden"
-											src="/elements/trilogy-screen.png"
-											alt=""
-											ref={anchorRef}
-										/>
-										<CheersImg1
-											width={[140, 230]}
-											src="/swoop/courses/courses-putting.png"
-										/>
-										<CheersImg2
-											width={[120, 230]}
-											src="/swoop/courses/courses-golf-carts.png"
-										/>
-									</ValueImageContainer>
-								</ImgContent>
-							</>
-						</AnimatePresence>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
+				>
+					<AnimatePresence>
+						<>
+							<TextContent mb={[6, 8]}>
+								<Text variant="h1" mb={6}>
+									{title}
+								</Text>
+								<Text
+									variant="h2"
+									fontFamily="'Shippori Antique Regular',sans-serif"
+									maxWidth={rem(400)}
+								>
+									{body}
+								</Text>
+							</TextContent>
+							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
+								<ValueImageContainer>
+									<MainImage
+										className="hidden"
+										src="/elements/trilogy-screen.png"
+										alt=""
+										ref={anchorRef}
+									/>
+									<CheersImg1
+										width={[140, 230]}
+										src="/swoop/courses/courses-putting.png"
+									/>
+									<CheersImg2
+										width={[120, 230]}
+										src="/swoop/courses/courses-golf-carts.png"
+									/>
+								</ValueImageContainer>
+							</ImgContent>
+						</>
+					</AnimatePresence>
+				</ContentContainer>
+				<Waypoint
+					onEnter={onEnter}
+					debug={debug}
+					topOffset={topOffset}
+					bottomOffset={bottomOffset}
+				/>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);

@@ -70,7 +70,7 @@ export const SectionDetails = styled(DualSection)`
 		background: none;
 	}
 	img {
-		transform: translateY(${rem(20)});
+		// transform: translateY(${rem(20)});
 		max-height: ${rem(340)};
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 			max-height: unset;
@@ -206,60 +206,54 @@ export const ValueSection = ({
 	const DEFAULT_REF = useRef(null);
 	return (
 		<ValueSectionWrapper>
-			<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-				<ValueSectionContainer
-					{...rest}
-					position="relative"
-					flexDirection="column"
-					mt={[]}
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column" mt={[]}>
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1.5 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
 				>
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1.5 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-							>
-								{body}
-							</Text>
-						</TextContent>
-						<ImgContent flex={[1, 'auto']} justifyContent="center">
-							<ValueImageContainer>
-								<MainImage
-									className="hidden"
-									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
-									alt=""
-								/>
-								<NewSpiritIcon
-									src="/elements/spirits.png"
-									alt="golfer holding whiskey drink"
-								/>
-								<NewWrapIcon
-									src="/elements/wraps-icon.png"
-									alt="golfer holding whiskey drink"
-								/>
-								<FairwayPicture
-									src="/elements/fairway.png"
-									alt="golfer holding whiskey drink"
-								/>
-							</ValueImageContainer>
-						</ImgContent>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+					<TextContent flex={[1, 1]} mb={7}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+						>
+							{body}
+						</Text>
+					</TextContent>
+					<ImgContent flex={[1, 'auto']} justifyContent="center">
+						<ValueImageContainer>
+							<MainImage
+								className="hidden"
+								ref={anchorRef || DEFAULT_REF}
+								src="/elements/hello-john.png"
+								alt=""
+							/>
+							<NewSpiritIcon
+								src="/elements/spirits.png"
+								alt="golfer holding whiskey drink"
+							/>
+							<NewWrapIcon
+								src="/elements/wraps-icon.png"
+								alt="golfer holding whiskey drink"
+							/>
+							<FairwayPicture
+								src="/elements/fairway.png"
+								alt="golfer holding whiskey drink"
+							/>
+						</ValueImageContainer>
+					</ImgContent>
+				</ContentContainer>
+				<Waypoint onEnter={onEnter} bottomOffset={topOffset}></Waypoint>
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -318,57 +312,51 @@ export const ValueSection2 = ({
 	const DEFAULT_REF = useRef(null);
 	return (
 		<ValueSectionWrapper>
-			<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-				<ValueSectionContainer
-					{...rest}
-					position="relative"
-					flexDirection="column"
-					mt={[]}
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column" mt={[]}>
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1.5 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
 				>
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1.5 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-							>
-								{body}
-							</Text>
-						</TextContent>
-						<ImgContent flex={[1, 'auto']} justifyContent="center">
-							<ValueImageContainer>
-								<MainImage
-									className="hidden"
-									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
-									alt=""
-								/>
-								<ElevateSmallImg>
-									<SwoopImage width={[130, 220]} src="/swoop/golfers/elevate-small.png" />
-								</ElevateSmallImg>
-								<ElevateBigImg>
-									<SwoopImage width={[105, 170]} src="/swoop/golfers/elevate-big.png" />
-								</ElevateBigImg>
-								<Golfball>
-									<SwoopImage width={[105, 170]} src="/swoop/golfers/golfball.png" />
-								</Golfball>
-							</ValueImageContainer>
-						</ImgContent>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+					<TextContent flex={[1, 1]} mb={7}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+						>
+							{body}
+						</Text>
+					</TextContent>
+					<ImgContent flex={[1, 'auto']} justifyContent="center">
+						<ValueImageContainer>
+							<MainImage
+								className="hidden"
+								ref={anchorRef || DEFAULT_REF}
+								src="/elements/hello-john.png"
+								alt=""
+							/>
+							<ElevateSmallImg>
+								<SwoopImage width={[130, 220]} src="/swoop/golfers/elevate-small.png" />
+							</ElevateSmallImg>
+							<ElevateBigImg>
+								<SwoopImage width={[105, 170]} src="/swoop/golfers/elevate-big.png" />
+							</ElevateBigImg>
+							<Golfball>
+								<SwoopImage width={[105, 170]} src="/swoop/golfers/golfball.png" />
+							</Golfball>
+						</ValueImageContainer>
+					</ImgContent>
+				</ContentContainer>
+				<Waypoint onEnter={onEnter} bottomOffset={topOffset} />
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -428,63 +416,57 @@ export const BoostRevenueSection = ({
 	const DEFAULT_REF = useRef(null);
 	return (
 		<ValueSectionWrapper>
-			<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-				<ValueSectionContainer
-					{...rest}
-					position="relative"
-					flexDirection="column"
-					mt={[]}
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column" mt={[]}>
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1.5 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
 				>
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1.5 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-							>
-								{body}
-							</Text>
-						</TextContent>
-						<ImgContent flex={[1, 'auto']} justifyContent="center">
-							<ValueImageContainer>
-								<MainImage
-									className="hidden"
-									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
-									alt=""
-								/>
-								<BoostRevenueSandwich
-									width={[130, 200]}
-									src="/swoop/courses/courses-sandwich-badge.png"
-									alt="golfer holding whiskey drink"
-								/>
-								<BoostRevenueAddToCart
-									width={[280, 380, 420]}
-									src="/swoop/courses/courses-add-to-cart.png"
-									alt="golfer holding whiskey drink"
-								/>
-								<BoostRevenueLemonade
-									width={[90, 130, 160]}
-									src="/swoop/courses/courses-lemonade.png"
-									alt="golfer holding whiskey drink"
-								/>
-							</ValueImageContainer>
-						</ImgContent>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+					<TextContent flex={[1, 1]} mb={7}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+						>
+							{body}
+						</Text>
+					</TextContent>
+					<ImgContent flex={[1, 'auto']} justifyContent="center">
+						<ValueImageContainer>
+							<MainImage
+								className="hidden"
+								ref={anchorRef || DEFAULT_REF}
+								src="/elements/hello-john.png"
+								alt=""
+							/>
+							<BoostRevenueSandwich
+								width={[130, 200]}
+								src="/swoop/courses/courses-sandwich-badge.png"
+								alt="golfer holding whiskey drink"
+							/>
+							<BoostRevenueAddToCart
+								width={[280, 380, 420]}
+								src="/swoop/courses/courses-add-to-cart.png"
+								alt="golfer holding whiskey drink"
+							/>
+							<BoostRevenueLemonade
+								width={[90, 130, 160]}
+								src="/swoop/courses/courses-lemonade.png"
+								alt="golfer holding whiskey drink"
+							/>
+						</ValueImageContainer>
+					</ImgContent>
+				</ContentContainer>
+				<Waypoint onEnter={onEnter} bottomOffset={topOffset} />
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
@@ -542,57 +524,51 @@ export const EnhanceSection = ({
 	const DEFAULT_REF = useRef(null);
 	return (
 		<ValueSectionWrapper>
-			<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-				<ValueSectionContainer
-					{...rest}
-					position="relative"
-					flexDirection="column"
-					mt={[]}
+			<ValueSectionContainer {...rest} position="relative" flexDirection="column" mt={[]}>
+				<ContentContainer
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: false }}
+					transition={{ duration: 1.5 }}
+					variants={{
+						visible: { opacity: 1 },
+						hidden: { opacity: 0 },
+					}}
 				>
-					<ContentContainer
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: false }}
-						transition={{ duration: 1.5 }}
-						variants={{
-							visible: { opacity: 1 },
-							hidden: { opacity: 0 },
-						}}
-					>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-							>
-								{body}
-							</Text>
-						</TextContent>
-						<ImgContent flex={[1, 'auto']} justifyContent="center">
-							<ValueImageContainer>
-								<MainImage
-									className="hidden"
-									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
-									alt=""
+					<TextContent flex={[1, 1]} mb={7}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+						>
+							{body}
+						</Text>
+					</TextContent>
+					<ImgContent flex={[1, 'auto']} justifyContent="center">
+						<ValueImageContainer>
+							<MainImage
+								className="hidden"
+								ref={anchorRef || DEFAULT_REF}
+								src="/elements/hello-john.png"
+								alt=""
+							/>
+							<EnhanceBottle width={[90, 130]} src="/swoop/courses/course-huerca.png" />
+							<EnhanceTee1 width={[100]} src="/swoop/courses/course-tee.png" />
+							<EnhanceTee2 width={[140]} src="/swoop/courses/course-tee.png" />
+							<FollowThruWrapper>
+								<SwoopImage
+									width={[85, 170]}
+									src="/swoop/courses/courses-follow-thru.png"
 								/>
-								<EnhanceBottle width={[90, 130]} src="/swoop/courses/course-huerca.png" />
-								<EnhanceTee1 width={[100]} src="/swoop/courses/course-tee.png" />
-								<EnhanceTee2 width={[140]} src="/swoop/courses/course-tee.png" />
-								<FollowThruWrapper>
-									<SwoopImage
-										width={[85, 170]}
-										src="/swoop/courses/courses-follow-thru.png"
-									/>
-								</FollowThruWrapper>
-							</ValueImageContainer>
-						</ImgContent>
-					</ContentContainer>
-				</ValueSectionContainer>
-			</Waypoint>
+							</FollowThruWrapper>
+						</ValueImageContainer>
+					</ImgContent>
+				</ContentContainer>
+				<Waypoint onEnter={onEnter} bottomOffset={topOffset} />
+			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
 	);
