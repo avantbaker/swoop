@@ -173,27 +173,37 @@ export const AffiliateSection = () => {
 				</TitleText>
 
 				<LogoContainer pt={[5]} pb={[6]}>
-					<LogoWrapper>
-						<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
-					</LogoWrapper>
-					<LogoWrapper>
-						<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
-					</LogoWrapper>
-					<LogoWrapper>
-						<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
-					</LogoWrapper>
-					<LogoWrapper>
-						<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
-					</LogoWrapper>
-					<LogoWrapper>
-						<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
-					</LogoWrapper>
+					<a href="https://www.hamiltonmillcc.com/">
+						<LogoWrapper>
+							<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
+						</LogoWrapper>
+					</a>
+					<a href="https://www.mytrilogylife.com/vistancia/golf/">
+						<LogoWrapper>
+							<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
+						</LogoWrapper>
+					</a>
+					<a href="https://www.mytrilogylife.com/encanterra/golf/">
+						<LogoWrapper>
+							<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
+						</LogoWrapper>
+					</a>
+					<a href="https://golftca.com/">
+						<LogoWrapper>
+							<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
+						</LogoWrapper>
+					</a>
+					<a href="https://www.schaffersmill.com/">
+						<LogoWrapper>
+							<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
+						</LogoWrapper>
+					</a>
 				</LogoContainer>
-				<Link mt={[6, 6, 0]} mb={6}>
+				{/* <Link mt={[6, 6, 0]} mb={6}>
 					<Text color="orange" variant="link3">
 						More Affilate Courses
 					</Text>
-				</Link>
+				</Link> */}
 			</AffiliateWrapper>
 		</AffiliateContainer>
 	);
@@ -242,24 +252,41 @@ export const AffiliateSectionExpanded = () => {
 					</TitleText>
 					<AffiliateContentWrapper flexDirection={['column', 'column', 'row-reverse']}>
 						<LogoContainerExpanded flex={1} pt={[5, , 0]} pb={[, , 5]}>
-							<LogoWrapper>
-								<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
-							</LogoWrapper>
-							<LogoWrapper>
-								<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
-							</LogoWrapper>
-							<LogoWrapper>
-								<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
-							</LogoWrapper>
-							<LogoWrapper>
-								<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
-							</LogoWrapper>
-							<LogoWrapper>
-								<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
-							</LogoWrapper>
+							<a href="https://www.hamiltonmillcc.com/">
+								<LogoWrapper>
+									<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
+								</LogoWrapper>
+							</a>
+							<a href="https://www.mytrilogylife.com/vistancia/golf/">
+								<LogoWrapper>
+									<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
+								</LogoWrapper>
+							</a>
+							<a href="https://www.mytrilogylife.com/encanterra/golf/">
+								<LogoWrapper>
+									<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
+								</LogoWrapper>
+							</a>
+							<a href="https://golftca.com/">
+								<LogoWrapper>
+									<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
+								</LogoWrapper>
+							</a>
+							<a href="https://www.schaffersmill.com/">
+								<LogoWrapper>
+									<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
+								</LogoWrapper>
+							</a>
 						</LogoContainerExpanded>
-						<Link flex={1} mt={[2, 6, 5]} mb={6} maxWidth={['70%', , '100%']}>
-							<a href="">
+						<Link
+							href="/contact"
+							passHref
+							flex={1}
+							mt={[2, 6, 5]}
+							mb={6}
+							maxWidth={['70%', , '100%']}
+						>
+							<a>
 								<Text variant="link3" color="orange">
 									Become a Swoop Affiliate Course
 								</Text>

@@ -202,6 +202,7 @@ export const DriveRevenue = () => {
 					Seamlessly
 				</Text>
 				<MenuButton
+					href="/app/courses"
 					title="Learn More"
 					color="orange"
 					textAlign="center"

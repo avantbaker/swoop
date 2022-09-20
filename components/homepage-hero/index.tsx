@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import { useRef, useEffect, useState } from 'react';
 import { Background } from './background';
 import { Foreground } from './foreground';
+import { SwoopImage } from 'components/image';
 
 export const MAX_CONTAINER_WIDTH = 700;
 export const MOBILE_HEADER_HEIGHT = 110;
-export const CustomImage = styled('img')`
+export const CustomImage = styled(SwoopImage)`
 	object-fit: cover;
 	object-position: center;
 	width: 100%;

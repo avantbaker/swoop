@@ -127,34 +127,51 @@ export const AmbassadorCarousel = ({ cards = cardData, ...rest }) => {
 		<AmassadorsCarouselWrapper>
 			<EmblaParent ref={emblaRef}>
 				<EmblaChild>
-					{cards.map(({ title, tag, location, comment, imgSrc }, idx) => {
-						return (
-							<Card key={`ambassador-card-${idx}`}>
-								<CardImageWrapper className="img-wrapper">
-									<img src={imgSrc} alt="" />
-								</CardImageWrapper>
-								<Flex className="card__content" px={[4, 5, 6]} flexDirection="column">
-									<Text mb={[5]} variant="h2" className="card__title">
-										{title}
-									</Text>
-									<Text mb={[1]} variant="cardLocation" className="card__location">
-										{location}
-									</Text>
-									<Text mb={[5]} color="orange" className="card__tag">
-										{tag}
-									</Text>
-									<Text mb={[4]} variant="cardBody" className="card__body">
-										{comment}
-									</Text>
-									<SocialsContainer>
-										<Instagram fill={theme.colors.orange} />
-										<Twitter fill={theme.colors.orange} />
-										<LinkedIn fill={theme.colors.orange} />
-									</SocialsContainer>
-								</Flex>
-							</Card>
-						);
-					})}
+					{cards.map(
+						(
+							{ title, tag, location, comment, imgSrc, instagram, twitter, linkedIn },
+							idx
+						) => {
+							return (
+								<Card key={`ambassador-card-${idx}`}>
+									<CardImageWrapper className="img-wrapper">
+										<img src={imgSrc} alt="" />
+									</CardImageWrapper>
+									<Flex className="card__content" px={[4, 5, 6]} flexDirection="column">
+										<Text mb={[5]} variant="h2" className="card__title">
+											{title}
+										</Text>
+										<Text mb={[1]} variant="cardLocation" className="card__location">
+											{location}
+										</Text>
+										<Text mb={[5]} color="orange" className="card__tag">
+											{tag}
+										</Text>
+										<Text mb={[4]} variant="cardBody" className="card__body">
+											{comment}
+										</Text>
+										<SocialsContainer>
+											{instagram && (
+												<a href={instagram}>
+													<Instagram fill={theme.colors.orange} />
+												</a>
+											)}
+											{twitter && (
+												<a href={twitter}>
+													<Twitter fill={theme.colors.orange} />
+												</a>
+											)}
+											{linkedIn && (
+												<a href={linkedIn}>
+													<LinkedIn fill={theme.colors.orange} />
+												</a>
+											)}
+										</SocialsContainer>
+									</Flex>
+								</Card>
+							);
+						}
+					)}
 				</EmblaChild>
 			</EmblaParent>
 			<ControlWrapper flexDirection="column" pl={[4, , 0]} mt={[5, 6]}>

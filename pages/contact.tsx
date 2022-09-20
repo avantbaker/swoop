@@ -67,10 +67,10 @@ const FormInput = styled(ExtendendInput)`
 	font-size: ${rem(15)};
 	line-height: ${rem(20)};
 	letter-spacing: ${rem(0.38)};
-	color: ${({ theme }) => theme.colors.calcite};
+	color: ${({ theme }) => theme.colors.orange} !important;
 	text-transform: uppercase;
 	font-family: ${({ theme }) => theme.typography.fonts.tertiary};
-	font-weight: bold;
+	font-weight: bold !important;
 
 	::placeholder {
 		color: black;
@@ -88,6 +88,7 @@ const FormInputWrapper = styled(Box)`
 const ExtendendMotionDiv = styled(motion.div)(space);
 
 const DropdownContainer = styled(ExtendendMotionDiv)`
+	cursor: pointer;
 	background: white;
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	border-radius: ${({ theme }) => rem(theme.space.xl)};
@@ -119,6 +120,13 @@ const DropdownListContainer = styled(ExtendendMotionDiv)`
 	}
 `;
 const DropdownListItem = styled(ExtendendMotionDiv)`
+	cursor: pointer;
+	${({ active, theme }) =>
+		active &&
+		`
+		font-weight: bold !important;
+		color: ${theme.colors.orange} !important;
+	`}
 	&:last-of-type {
 		padding-bottom: ${({ theme }) => theme.space[4]};
 	}
@@ -139,7 +147,7 @@ const list = {
 		opacity: 1,
 		paddingBottom: rem(theme.space[4]),
 		transition: {
-			duration: 1,
+			duration: 0.4,
 		},
 	},
 	hidden: {
@@ -147,7 +155,7 @@ const list = {
 		opacity: 0,
 		paddingBottom: 0,
 		transition: {
-			duration: 0.5,
+			duration: 0.2,
 		},
 	},
 };
@@ -198,6 +206,12 @@ const DropdownMenu = ({ ...rest }) => {
 	const controls = useAnimation();
 	const itemControls = useAnimation();
 	const [isOpen, setIsOpen] = useState(false);
+
+	const [selectedOption, setSelectedOption] = useState({
+		value: 'inquiry',
+		label: 'Inquiry',
+	});
+
 	const toggleDropdown = async () => {
 		if (isOpen) {
 			await itemControls.start('hidden');
@@ -208,11 +222,18 @@ const DropdownMenu = ({ ...rest }) => {
 		}
 		setIsOpen(!isOpen);
 	};
+
 	return (
 		<DropdownContainer initial="hidden" animate={controls} variants={listContainer}>
 			<DropdownHeader {...rest} onClick={toggleDropdown}>
-				<Text variant="h4" color="black" fontWeight="bold">
-					Inquiry
+				<Text
+					variant="h4"
+					color={
+						selectedOption.value !== 'inquiry' ? theme.colors.orange : theme.colors.black
+					}
+					fontWeight="bold"
+				>
+					{selectedOption.label}
 				</Text>
 				<DownArrow />
 			</DropdownHeader>
@@ -234,6 +255,11 @@ const DropdownMenu = ({ ...rest }) => {
 								layoutId={`${inquiry.value}-${idx}`}
 								custom={(idx + 1) * 0.1}
 								animate={itemControls}
+								active={inquiry.value === selectedOption.value}
+								onClick={() => {
+									setSelectedOption(inquiry);
+									toggleDropdown();
+								}}
 							>
 								{inquiry.label}
 							</DropdownListItem>
@@ -387,6 +413,8 @@ function Contact() {
 									py={3}
 									placeholder="Name"
 									maxWidth={['100%']}
+									onFocus={(e) => (e.target.placeholder = '')}
+									onBlur={(e) => (e.target.placeholder = 'Name')}
 								/>
 							</FormInputWrapper>
 							<FormInputWrapper className="second">
@@ -397,6 +425,8 @@ function Contact() {
 									py={3}
 									placeholder="Email"
 									maxWidth={['100%']}
+									onFocus={(e) => (e.target.placeholder = '')}
+									onBlur={(e) => (e.target.placeholder = 'Email')}
 								/>
 							</FormInputWrapper>
 							<FormInputWrapper className="third">
@@ -407,6 +437,8 @@ function Contact() {
 									py={3}
 									placeholder="Phone"
 									maxWidth={['100%']}
+									onFocus={(e) => (e.target.placeholder = '')}
+									onBlur={(e) => (e.target.placeholder = 'Phone')}
 								/>
 							</FormInputWrapper>
 							<Box position="relative" width="100%" className="fourth">

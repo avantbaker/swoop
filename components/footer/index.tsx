@@ -62,25 +62,25 @@ export default function Footer({ isLight = false, ...rest }) {
 					<Box mb={2}>KEEP UP.</Box>
 					<Flex alignItems="center">
 						<Box mr={4}>
-							<Link href="https://twitter.com">
+							<a href="https://twitter.com/swoopgolf">
 								<Twitter
 									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
 								/>
-							</Link>
+							</a>
 						</Box>
 						<Box mr={4}>
-							<Link href="https://instagram.com">
+							<a href="https://www.instagram.com/swoopgolf/">
 								<Instagram
 									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
 								/>
-							</Link>
+							</a>
 						</Box>
 						<Box>
-							<Link href="https://linkedin.com">
+							<a href="https://www.linkedin.com/company/swoopgolf/">
 								<LinkedIn
 									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
 								/>
-							</Link>
+							</a>
 						</Box>
 					</Flex>
 				</Flex>
@@ -119,7 +119,7 @@ export default function Footer({ isLight = false, ...rest }) {
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
-							title="Brands"
+							title="Brand"
 							href="/brand"
 						/>
 						<MenuItem

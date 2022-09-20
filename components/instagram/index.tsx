@@ -60,21 +60,31 @@ export const InstagramSection = ({
 			</Flex>
 			<Flex flexDirection={['column', 'row']}>
 				<Flex mb={[5]} mr={6}>
-					<Instagram fill="orange" />
+					<a href="https://www.instagram.com/swoopgolf/">
+						<Instagram fill="orange" />
+					</a>
 				</Flex>
 				<InstaGrid>
-					<GridItem>
-						<img src="/swoop/home/instagram-modelo.png" alt="" />
-					</GridItem>
-					<GridItem>
-						<img src="/swoop/home/instagram-fairway.png" alt="" />
-					</GridItem>
-					<GridItem>
-						<img src="/swoop/home/instagram-sandwich.png" alt="" />
-					</GridItem>
-					<GridItem>
-						<img src="/swoop/home/instagram-cup.png" alt="" />
-					</GridItem>
+					<a href="https://www.instagram.com/p/Cf92Wutvl7u/">
+						<GridItem>
+							<img src="/swoop/home/instagram-modelo.png" alt="" />
+						</GridItem>
+					</a>
+					<a href="https://www.instagram.com/p/Cf92QL9PPR4/">
+						<GridItem>
+							<img src="/swoop/home/instagram-fairway.png" alt="" />
+						</GridItem>
+					</a>
+					<a href="https://www.instagram.com/p/Cf92FKQPjTi/">
+						<GridItem>
+							<img src="/swoop/home/instagram-sandwich.png" alt="" />
+						</GridItem>
+					</a>
+					<a href="https://www.instagram.com/p/Cf90f1Cvb3q/">
+						<GridItem>
+							<img src="/swoop/home/instagram-cup.png" alt="" />
+						</GridItem>
+					</a>
 				</InstaGrid>
 			</Flex>
 			{children}

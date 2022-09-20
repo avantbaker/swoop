@@ -75,7 +75,7 @@ const CustomTitle = styled(Text)`
 `;
 const TestimonialCard = ({
 	title = 'Trilogy at Vistancia',
-	location = 'Vistancia, AZ',
+	location = 'Peoria, AZ',
 	body = `Spending more than 20+ years in the Country Club business and as a golfer that
 has played throughout the nation, I am keenly aware of the pain points of the
 golfer's voice. These can be at a high end country club, resort course,
@@ -151,7 +151,7 @@ export const useCustomCarousel = () => {
 const dummyCards = [
 	{
 		title: 'Trilogy at Vistancia',
-		location: 'Vistancia, AZ',
+		location: 'Peoria, AZ',
 		body: `Spending more than 20+ years in the Country Club business and as a golfer that
 	has played throughout the nation, I am keenly aware of the pain points of the
 	golfer's voice. These can be at a high end country club, resort course,
@@ -162,7 +162,7 @@ const dummyCards = [
 	},
 	{
 		title: 'Trilogy at Vistancia',
-		location: 'Vistancia, AZ',
+		location: 'Peoria, AZ',
 		body: `Spending more than 20+ years in the Country Club business and as a golfer that
 	has played throughout the nation, I am keenly aware of the pain points of the
 	golfer's voice. These can be at a high end country club, resort course,

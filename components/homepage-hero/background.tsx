@@ -29,7 +29,7 @@ export const Background = ({ src, headerPadding = true, maxWidth = '70%', ...res
 			]}
 			{...rest}
 		>
-			<CustomImage src={src || '/images/byrdi-phones.png'} />
+			<CustomImage width={1000} src={src || '/swoop/home/home-phones.png'} />
 		</BackgroundWrapper>
 	);
 };
