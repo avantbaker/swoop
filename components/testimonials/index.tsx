@@ -68,7 +68,10 @@ const MobileCWD = styled(LittleCircleWithDot)`
 `;
 export const ControlContainer = styled(Flex)`
 	position: relative;
-	padding-left: ${rem(20)};
+	// padding-left: ${rem(20)};
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		padding-left: 0;
+	}
 `;
 const CustomTitle = styled(Text)`
 	position: relative;

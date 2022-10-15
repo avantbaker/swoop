@@ -3,7 +3,8 @@ import Text from 'components/common/text';
 import Instagram from 'components/common/icons/instagram';
 import styled, { useTheme } from 'styled-components';
 import { Flex } from 'rebass/styled-components';
-import { rem } from 'polished';
+import { rem, toColorString } from 'polished';
+import theme from 'styles/theme';
 
 const InstaGrid = styled('div')`
 	display: grid;
@@ -19,7 +20,7 @@ const InstaGrid = styled('div')`
 	div {
 		position: relative;
 	}
-	& > div > img {
+	& > div img {
 		width: 100%;
 		grid-area: 1 / 1 / 2 / 2;
 		object-fit: cover;
@@ -52,7 +53,7 @@ export const InstagramSection = ({
 		<Section flexDirection="column" mb={[6, 7]} {...rest}>
 			<Flex mb={[6]} flexDirection={['column', 'row']}>
 				<Text variant={'h4Uppercase'} mr="7" {...addColor}>
-					Byrdi ON THE ‘GRAM
+					SWOOP ON THE ‘GRAM
 				</Text>
 				<Text variant={'h4Uppercase'} {...addColor}>
 					CHEERS TO ANOTHER GOOD CHIP
@@ -61,30 +62,30 @@ export const InstagramSection = ({
 			<Flex flexDirection={['column', 'row']}>
 				<Flex mb={[5]} mr={6}>
 					<a href="https://www.instagram.com/swoopgolf/">
-						<Instagram fill="orange" />
+						<Instagram fill={theme.colors.orange} />
 					</a>
 				</Flex>
 				<InstaGrid>
-					<a href="https://www.instagram.com/p/Cf92Wutvl7u/">
-						<GridItem>
+					<GridItem>
+						<a href="https://www.instagram.com/p/Cf92Wutvl7u/">
 							<img src="/swoop/home/instagram-modelo.png" alt="" />
-						</GridItem>
-					</a>
-					<a href="https://www.instagram.com/p/Cf92QL9PPR4/">
-						<GridItem>
+						</a>
+					</GridItem>
+					<GridItem>
+						<a href="https://www.instagram.com/p/Cf92QL9PPR4/">
 							<img src="/swoop/home/instagram-fairway.png" alt="" />
-						</GridItem>
-					</a>
-					<a href="https://www.instagram.com/p/Cf92FKQPjTi/">
-						<GridItem>
+						</a>
+					</GridItem>
+					<GridItem>
+						<a href="https://www.instagram.com/p/Cf92FKQPjTi/">
 							<img src="/swoop/home/instagram-sandwich.png" alt="" />
-						</GridItem>
-					</a>
-					<a href="https://www.instagram.com/p/Cf90f1Cvb3q/">
-						<GridItem>
+						</a>
+					</GridItem>
+					<GridItem>
+						<a href="https://www.instagram.com/p/Cf90f1Cvb3q/">
 							<img src="/swoop/home/instagram-cup.png" alt="" />
-						</GridItem>
-					</a>
+						</a>
+					</GridItem>
 				</InstaGrid>
 			</Flex>
 			{children}

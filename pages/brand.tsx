@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import Text from 'components/common/text';
 import { Box } from 'rebass/styled-components';
 import { rem } from 'polished';
+import { Hero } from 'components/homepage-hero-simple';
 
 const LoyaltySectionContainer = styled('div')`
 	position: relative;
@@ -18,11 +19,19 @@ const LoyaltySectionContainer = styled('div')`
 const LoyaltySection = styled(Section)``;
 const LoyaltyContent = styled(Box)``;
 const LoyaltyImages = styled(Box)``;
+
 const LoyaltyImageWrapper = styled(Box)`
 	position: relative;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	padding-right: ${({ theme }) => rem(theme.space[4])};
+
+	.reference-point {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
 	img {
 		max-height: ${rem(400)};
 		object-fit: cover;
@@ -32,21 +41,24 @@ const LoyaltyImageWrapper = styled(Box)`
 	.front {
 		position: absolute;
 		max-width: ${rem(340)};
-		right: 30px;
+		right: 0;
+		bottom: -20px;
 	}
+
 	.middle {
-		justify-self: flex-end;
+		position: relative;
 	}
 
 	.back {
 		position: absolute;
 		max-width: ${rem(340)};
-		top: 40px;
-		right: -80px;
+		top: 20px;
+		right: -180px;
 		z-index: -1;
 	}
 
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		justify-content: flex-end;
 		img {
 			max-height: ${rem(580)};
 		}
@@ -93,33 +105,39 @@ const SmallCircle = styled('div')`
 	}
 `;
 
-export const ByrdiLoyaltySection = () => {
+const DefaultLoyaltyImages = () => {
+	return (
+		<LoyaltyImageWrapper>
+			<div className="reference-point">
+				<img className="back" src="/swoop/golfers/golfers-checker-bg.png" alt="" />
+				<img className="middle" src="/elements/botella.png" alt="Bottle Image" />
+				<img className="front" src="/elements/twisted-phone.png" alt="Loyalty Screen" />
+			</div>
+		</LoyaltyImageWrapper>
+	);
+};
+export const ByrdiLoyaltySection = ({
+	title = `Order a burger, earn a beer.`,
+	subtitle = `Sometimes it pays to play.`,
+	body = `Dial into the loyalty program in the Swoop app. The more you order at your
+						favorite course, the more points you’ll earn towards your next reward. This is
+						the only time you’ll want to score higher than your friends.`,
+	children = undefined,
+}) => {
 	return (
 		<LoyaltySectionContainer>
-			<LoyaltySection flexDirection={['column', 'row']} mb={[6]}>
+			<LoyaltySection flexDirection={['column', 'column', 'row']} mb={[6]}>
 				<LoyaltyContent flex={1} mb={[6]}>
 					<Text variant="h1" mb={[6]}>
-						Order a burger, earn a beer.
+						{title}
 					</Text>
-					<Text variant="h2" mb={[4]} maxWidth={['60%']}>
-						Sometimes it pays to play.
+					<Text variant="h2" mb={[5]} maxWidth={['60%']}>
+						{subtitle}
 					</Text>
-					<Text variant="h4">
-						Dial into the loyalty program in the Swoop app. The more you order at your
-						favorite course, the more points you’ll earn towards your next reward. This is
-						the only time you’ll want to score higher than your friends.
-					</Text>
+					<Text variant="h4">{body}</Text>
 				</LoyaltyContent>
 				<LoyaltyImages flex={1}>
-					<LoyaltyImageWrapper>
-						<img className="back" src="/swoop/golfers/golfers-checker-bg.png" alt="" />
-						<img className="middle" src="/elements/botella.png" alt="Bottle Image" />
-						<img
-							className="front"
-							src="/elements/twisted-phone.png"
-							alt="Loyalty Screen"
-						/>
-					</LoyaltyImageWrapper>
+					{children ? children : <DefaultLoyaltyImages />}
 				</LoyaltyImages>
 			</LoyaltySection>
 			<BigCircle />
@@ -168,17 +186,13 @@ const brandsDummyCards = [
 export default function Brand() {
 	return (
 		<>
-			<KeepPlayingHero
-				title={'The missing link in golf’s food and drink.'}
-				hasIcons={false}
+			<Hero
+				title="The missing link in golf’s food and drink."
+				subtitle={null}
+				body={null}
+				hasCta={false}
 				hasCircles={false}
-				bgImage="/elements/putting.png"
-				titleMaxWidth={['70%']}
-				contentJustify={['center', 'flex-end']}
-				imgMaxWidth="140%"
-				mobileHeaderPadding={false}
-				minHeight={['80vh']}
-				mb={[0, 7]}
+				src="/elements/putting.png"
 			/>
 			<TestimonialsCarousel cards={brandsDummyTestimonials} className="expanded" />
 			<AffiliateSectionExpanded />
@@ -187,7 +201,7 @@ export default function Brand() {
 				title="The distinguished game, dinner, and drinks"
 				body="Swoop is a staple of the golfing experience, bridging the gap between some of the best things in life."
 			/>
-			<TextBanner title="THE SWOOP KIT" />
+			<TextBanner title="SWOOP AMBASSADORS" />
 			<AmbassadorCarousel />
 			<TextBanner title="Loyalty Rewards" />
 			<ByrdiLoyaltySection />

@@ -16,7 +16,6 @@ import {
 } from 'components/value-section';
 import { CheersSection, ValueSectionAlt } from 'components/value-section/alternate';
 import {
-	DragControls,
 	motion,
 	useAnimationControls,
 	useMotionValue,

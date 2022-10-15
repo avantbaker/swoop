@@ -17,7 +17,7 @@ const getBorderColor = (type) => {
 			backgroundColor = 'none';
 			break;
 		case 'orange':
-			backgroundColor = theme.colors.calcite;
+			backgroundColor = theme.colors.white;
 			break;
 		default:
 			break;
@@ -30,11 +30,14 @@ const FooterContainer = styled(Flex)`
 `;
 
 export default function Footer({ isLight = false, ...rest }) {
-	const { space, colors, type } = useTheme();
+	const { space, colors, type, typography } = useTheme();
 	let backgroundColor = 'black';
+	let textColor = 'white';
+
 	switch (type) {
 		case 'light':
 			backgroundColor = 'white';
+			textColor = 'black';
 			break;
 		case 'orange':
 			backgroundColor = 'orange';
@@ -46,7 +49,7 @@ export default function Footer({ isLight = false, ...rest }) {
 		<FooterContainer
 			flexDirection="column"
 			justifySelf="flex-end"
-			bg={backgroundColor}
+			bg={backgroundColor === 'black' ? colors.sage : backgroundColor}
 			boxSizing="none"
 			p={[space[4]]}
 			pt={[space[5]]}
@@ -59,26 +62,30 @@ export default function Footer({ isLight = false, ...rest }) {
 				mb={[space[5]]}
 			>
 				<Flex flexDirection="column" pb={[space[5]]}>
-					<Box mb={2}>KEEP UP.</Box>
+					<Box mb={3}>
+						<Text color={textColor} fontSize={[rem(20)]}>
+							KEEP UP.
+						</Text>
+					</Box>
 					<Flex alignItems="center">
-						<Box mr={4}>
+						{/* <Box mr={4}>
 							<a href="https://twitter.com/swoopgolf">
 								<Twitter
-									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+									fill={backgroundColor === 'orange' ? colors.white : colors.orange}
 								/>
 							</a>
-						</Box>
+						</Box> */}
 						<Box mr={4}>
 							<a href="https://www.instagram.com/swoopgolf/">
 								<Instagram
-									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+									fill={backgroundColor === 'orange' ? colors.white : colors.orange}
 								/>
 							</a>
 						</Box>
 						<Box>
 							<a href="https://www.linkedin.com/company/swoopgolf/">
 								<LinkedIn
-									fill={backgroundColor === 'orange' ? colors.calcite : colors.orange}
+									fill={backgroundColor === 'orange' ? colors.white : colors.orange}
 								/>
 							</a>
 						</Box>
@@ -118,24 +125,28 @@ export default function Footer({ isLight = false, ...rest }) {
 					<Flex flexDirection="column" ml={[0, 5]}>
 						<MenuItem
 							textAlign={['left', 'right']}
+							color={textColor}
 							mr={['0 !important']}
 							title="Brand"
 							href="/brand"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
+							color={textColor}
 							mr={['0 !important']}
 							title="App"
 							href="/app"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
+							color={textColor}
 							mr={['0 !important']}
 							title="Press"
 							href="/press"
 						/>
 						<MenuItem
 							textAlign={['left', 'right']}
+							color={textColor}
 							mr={['0 !important']}
 							title="FAQ"
 							href="/faq"
@@ -153,11 +164,7 @@ export default function Footer({ isLight = false, ...rest }) {
 					alignItems={['inherit', 'center']}
 					justifyContent={['inherit', 'center']}
 				>
-					<Text
-						variant="link2"
-						mr={[0, 5]}
-						color={backgroundColor === 'orange' || colors.calcite}
-					>
+					<Text variant="link2" mr={[0, 5]} color={textColor}>
 						Copyright &copy; 2022 - Swoop App
 					</Text>
 					<Flex alignItems="center" mb={[rem(space.xs)]}>
@@ -165,14 +172,14 @@ export default function Footer({ isLight = false, ...rest }) {
 							pb={[1, 0]}
 							variant="link2"
 							title="Privacy"
-							color={backgroundColor === 'orange' || colors.calcite}
+							color={textColor}
 							href="/terms"
 						></MenuItem>
 						<MenuItem
 							pb={[1, 0]}
 							variant="link2"
 							title="Terms"
-							color={backgroundColor === 'orange' || colors.calcite}
+							color={textColor}
 							href="/terms"
 						></MenuItem>
 					</Flex>

@@ -22,6 +22,7 @@ type MenuItem = {
 	pb?: any;
 	textAlign?: any;
 	mr?: any;
+	onClick?: any;
 };
 export const MenuItem = ({
 	variant,
@@ -29,6 +30,7 @@ export const MenuItem = ({
 	children,
 	title,
 	href = '#',
+	onClick,
 	...rest
 }: MenuItem) => {
 	let textProps = {
@@ -44,12 +46,16 @@ export const MenuItem = ({
 	}
 
 	return (
-		<StyledMenuItem {...rest}>
-			<Link href={href} passHref>
-				<a>
-					<Text {...textProps}>{title || children}</Text>
-				</a>
-			</Link>
+		<StyledMenuItem {...rest} onClick={onClick}>
+			{onClick ? (
+				<Text {...textProps}>{title || children}</Text>
+			) : (
+				<Link href={href} passHref>
+					<a>
+						<Text {...textProps}>{title || children}</Text>
+					</a>
+				</Link>
+			)}
 		</StyledMenuItem>
 	);
 };

@@ -45,10 +45,10 @@ const ContactFormWrapper = styled(Box)`
 			grid-column: 4 / 7;
 		}
 		.third {
-			grid-column: 1 / 3;
+			grid-column: 1 / 4;
 		}
 		.fourth {
-			grid-column: 3 /7;
+			grid-column: 4 /7;
 		}
 		.fifth {
 			grid-column: 1 /4;
@@ -398,7 +398,12 @@ function Contact() {
 						<Text variant="h2" color="sage" mb={[4]}>
 							If you’ve got a question, we’ve got an answer.
 						</Text>
-						<Text variant="h4" color="sage">
+						<Text
+							variant="h4"
+							color="sage"
+							fontSize={[`${rem(15)} !important`]}
+							lineHeight={[rem(20), rem(24)]}
+						>
 							For general inquiries, support, or to learn more about parntering with Swoop
 							for your course, please fill out the form.
 						</Text>
@@ -474,7 +479,12 @@ function Contact() {
 						<Text variant="h2" color="sage" mb={[4]}>
 							Book a demo to lorem ipsum dolor sic amet consectetur.
 						</Text>
-						<Text variant="h4" color="sage">
+						<Text
+							variant="h4"
+							fontSize={[`${rem(15)} !important`]}
+							lineHeight={[rem(20), rem(24)]}
+							color="sage"
+						>
 							You’re ready to create avenues for growth and optimization within your
 							course.
 						</Text>
@@ -510,8 +520,9 @@ function Contact() {
 						<Text
 							variant="bodySecondary"
 							color="sage"
-							fontWeight={['100', 'bold']}
+							fontWeight={['100', 'normal']}
 							fontSize={[rem(14)]}
+							lineHeight={[rem(20), rem(24)]}
 							pr={[, 4, 4]}
 							fontFamily="'JetBrains Mono', monospace"
 						>

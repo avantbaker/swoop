@@ -13,16 +13,16 @@ function Error404() {
 		<>
 			<Section mb={7} flexDirection="column" pt={[`${rem(theme.space[7])} !important`]}>
 				<Pin />
-				<Text mt={4} mb={6} variant="four0fourTitle">
+				<Text mt={4} color={colors.white} mb={6} variant="four0fourTitle">
 					404 Error
 				</Text>
-				<Text mb={5} variant="four0fourSubtitle">
+				<Text color={colors.white} mb={5} variant="four0fourSubtitle">
 					SHANKED WHIFFED FLUBBED SLICED BLADED TOPPED
 				</Text>
-				<Text mb={6} variant="four0fourBody">
+				<Text color={colors.white} mb={6} variant="four0fourBody">
 					Something went wrong.. Let’s get you back to a page that exists.
 				</Text>
-				<MenuButton maxWidth="400px" color={colors.calcite}>
+				<MenuButton maxWidth="400px" color={colors.white}>
 					Go Back
 				</MenuButton>
 			</Section>

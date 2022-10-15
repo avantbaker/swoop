@@ -1,6 +1,7 @@
 import { VerticalTextL } from 'components/app-cards';
 import { ByrdiInAction } from 'components/byrdi-in-action';
 import Text from 'components/common/text';
+import { SwoopImage } from 'components/image';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
 import { TextBanner } from 'components/text-banner';
@@ -110,6 +111,43 @@ const FloatingHero = styled(CustomSection)`
 	}
 `;
 
+const LoyaltyImgWrapper = styled(Box)`
+	position: relative;
+	display: flex;
+	min-height: ${rem(360)};
+	justify-content: center;
+	.reference-point {
+		width: 50%;
+		position: relative;
+	}
+	.front {
+		position: absolute;
+		top: ${rem(120)};
+		left: ${rem(0)};
+		width: ${rem(230)};
+	}
+	.back {
+		position: absolute;
+		top: ${rem(20)};
+		left: ${rem(120)};
+		width: ${rem(250)};
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		.front {
+			position: absolute;
+			top: ${rem(160)};
+			left: ${rem(-60)};
+			width: ${rem(280)};
+		}
+		.back {
+			position: absolute;
+			top: ${rem(20)};
+			left: ${rem(120)};
+			width: ${rem(300)};
+		}
+	}
+`;
+
 export default function App() {
 	const controls = useAnimationControls();
 	const { scrollYProgress } = useViewportScroll();
@@ -211,7 +249,8 @@ export default function App() {
 						})();
 					}}
 				>
-					<MainFloatingHeroContainer mb={[6, 8]} style={{ opacity }}>
+					<MainFloatingHeroContainer mb={[6, 8]}>
+						{/* <MainFloatingHeroContainer mb={[6, 8]} style={{ opacity }}> */}
 						<MainFloatingHero>
 							<FloatingHero
 								p={'0 !important'}
@@ -357,8 +396,19 @@ export default function App() {
 				/>
 			</FloatingAppContainer>
 			<ByrdiInAction />
-			<TextBanner title="SWOOP LOYALTY REWARDS" />
-			<ByrdiLoyaltySection />
+			<TextBanner title="THE SWOOP KIT" />
+			<ByrdiLoyaltySection
+				title="Advancing course amenities"
+				subtitle="Swoop implements flexible, scalable solutions that adapt to existing infrastructure, rather than changing them."
+				body="The technology is not limited by which golf cart fleet is used, which POS system is implemented, or which management company is running the operations."
+			>
+				<LoyaltyImgWrapper>
+					<div className="reference-point">
+						<SwoopImage className="back" src="/swoop/courses/swoop-kit-box.png" />
+						<SwoopImage className="front" src="/swoop/courses/swoop-kit-tablet.png" />
+					</div>
+				</LoyaltyImgWrapper>
+			</ByrdiLoyaltySection>
 			<InstagramSection />
 			<NewsletterSection imgSrc="/swoop/golfers/golfer-green.png" />
 		</>

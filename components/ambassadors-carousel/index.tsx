@@ -56,7 +56,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
 		twitter: 'https://twitter.com/olajuwon',
 		linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
-		imgSrc: '/swoop/brand/brand-ambassador-1.png',
+		imgSrc: '/swoop/ambassadors/olajuwon.jpeg',
 	},
 	{
 		title: 'Jen Clyde',
@@ -66,7 +66,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/jenstyles/?hl=en',
 		twitter: 'https://twitter.com/golf_fore_all',
 		linkedIn: 'https://www.linkedin.com/in/jen-clyde/',
-		imgSrc: '/swoop/brand/brand-ambassador-2.png',
+		imgSrc: '/swoop/ambassadors/jen.jpeg',
 	},
 	{
 		title: 'Hannah B. Leiner',
@@ -77,7 +77,7 @@ const cardData = [
 		twitter:
 			'https://twitter.com/hannahbleiner?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
 		linkedIn: '',
-		imgSrc: '/swoop/brand/brand-ambassador-3.png',
+		imgSrc: '/swoop/ambassadors/hannah.jpeg',
 	},
 	{
 		title: 'Jon "HAPPY" Gilmore',
@@ -87,7 +87,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/the_original_happy_gilmore/?hl=en',
 		twitter: 'https://twitter.com/mericanbadasses',
 		linkedIn: '',
-		imgSrc: '/swoop/brand/brand-ambassador-1.png',
+		imgSrc: '/swoop/ambassadors/happy.jpeg',
 	},
 	{
 		title: 'Suzi Stanley',
@@ -97,7 +97,7 @@ const cardData = [
 		instagram: 'https://www.instagram.com/suzigolf/?hl=en',
 		twitter: 'https://twitter.com/SuziGolf',
 		linkedIn: '',
-		imgSrc: '/swoop/brand/brand-ambassador-2.png',
+		imgSrc: '/swoop/ambassadors/suzi.jpeg',
 	},
 ];
 
@@ -111,10 +111,11 @@ const SocialsContainer = styled(Flex)`
 	}
 `;
 const CardImageWrapper = styled('div')`
-	max-width: ${rem(220)};
+	max-width: ${rem(190)};
 	max-height: ${rem(400)};
 	width: 100%;
 	img {
+		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center;

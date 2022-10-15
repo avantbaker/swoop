@@ -32,29 +32,40 @@ import Hourglass from 'components/common/icons/search';
 
 const StyledAccordion = styled(Accordion)`
 	display: flex;
-	flex-wrap: wrap;
-`;
-const StyledAccordionItem = styled(AccordionItem)`
-	flex: 0 1 100%;
-	margin-bottom: ${rem(60)};
+	flex-direction: column;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		flex: 0 1 calc(50% - 40px);
+		flex-direction: row;
+	}
+`;
 
-		&:nth-of-type(odd) {
+const StyledAccordionRowContainer = styled('div')`
+	width: 100%;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		width: 50%;
+		&:first-of-type {
 			margin-right: 40px;
 		}
-		&:nth-of-type(even) {
+		&:last-of-type {
 			margin-left: 40px;
 		}
 	}
 `;
+const StyledAccordionItem = styled(AccordionItem)`
+	flex: 0 1 100%;
+	margin-bottom: ${rem(44)};
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		flex: 0 1 calc(50% - 40px);
+	}
+`;
 const StyledAccordionHeading = styled(AccordionItemHeading)`
-	padding-bottom: ${({ theme }) => rem(theme.space[4])};
-	border-bottom: 2px solid ${({ theme }) => theme.colors.orange};
+	display: flex;
 `;
 const StyledAccordionBtn = styled(AccordionItemButton)`
 	display: flex;
+	flex: 1;
 	justify-content: space-between;
+	padding-bottom: ${({ theme }) => rem(theme.space[5])};
+	border-bottom: 2px solid ${({ theme }) => theme.colors.orange};
 `;
 const StyledAccordionPanel = styled(AccordionItemPanel)``;
 
@@ -104,63 +115,70 @@ const AccordionPanel = ({ title, body, ...rest }) => {
 	);
 };
 
-const dummyItems = [
-	{
-		title: 'How do I receive orders from Swoop?',
-		body: `Swoop will send you a 5G-enabled Samsung tablet to use as the station, which your team will use to process orders and communicate them to your kitchen.`,
-	},
-	{
-		title: 'Can I change or update my menu on Swoop?',
-		body: `You can change and update your menu on Swoop at any time. To learn more about managing your menu on Swoop, read our article Managing Your Menu Within the Swoop Admin Portal.`,
-	},
-	{
-		title: 'Can I refuse or modify orders I receive from Swoop?',
-		body: `Yes, you can modify existing orders through the Swoop app, and Swoop will notify the golfers about the updates. Our 24/7 customer service team can also assist you with live orders.`,
-	},
-	{
-		title: 'Can I pause incoming orders if our kitchen becomes too busy?',
-		body: `Yes, you can "start/stop" received orders within the Swoop Admin Portal.`,
-	},
-	{
-		title: 'Does Swoop offer the option for golfers to pick their order up at the turn?',
-		body: `Yes, golfers can choose to have their order delivered or to pick it up at the turn.`,
-	},
-	{
-		title: "What is Swoop's payment process?",
-		body: `Swoop does not offer in-app payments. You can continue to accept payments the way you currently process transactions.`,
-	},
-	{
-		title: 'Can we integrate Swoop with our POS system?',
-		body: `No. Orders are received and processed using the Swoop-provided "Station" tablet.`,
-	},
-	{
-		title:
-			'Our carts do not have GPS tracking. How will we be able to find the golfers to deliver the orders?',
-		body: `Swoop provides real-time GPS tracking of the golfers that placed the order, making on-course delivery seamless for your team.`,
-	},
-	{
-		title: 'Does Swoop charge account cancellation fees?',
-		body: `No. There are no cancellation fees for Swoop.`,
-	},
-	{
-		title: 'How long does it take to get set up and start using Swoop?',
-		body: `Send us your menu (pdf, jpg, or png), and we can have your course will be added within 24-48 hours. Swoop's onboarding team will reach out to you to create a roll-out plan that makes sense for your club.`,
-	},
-	{
-		title: 'How do I contact Swoop to learn more about becoming a partner?',
-		body: `If you are interested in using Swoop for your course, please fill out our contact form. A member of our team will reach out to you to answer any questions you may have about partnering with Swoop Golf.`,
-	},
-	{
-		title:
-			'The Swoop Customer Care Team supports you and our other Swoop partners, which will assist you in managing your Swoop account, including:',
-		body: `
-		- Assistance with any billing inquiries
-		- Contract interpretation questions
-		- Account settings
-		- Troubleshooting technological issues
-		- Updating menus
-		`,
-	},
+const dummyItems = [];
+
+const dummyItemsRows = [
+	[
+		{
+			title: 'How do I receive orders from Swoop?',
+			body: `Swoop will send you a 5G-enabled Samsung tablet to use as the station, which your team will use to process orders and communicate them to your kitchen.`,
+		},
+		{
+			title: 'Can I change or update my menu on Swoop?',
+			body: `You can change and update your menu on Swoop at any time. To learn more about managing your menu on Swoop, read our article Managing Your Menu Within the Swoop Admin Portal.`,
+		},
+		{
+			title: 'Can I refuse or modify orders I receive from Swoop?',
+			body: `Yes, you can modify existing orders through the Swoop app, and Swoop will notify the golfers about the updates. Our 24/7 customer service team can also assist you with live orders.`,
+		},
+		{
+			title: 'Can I pause incoming orders if our kitchen becomes too busy?',
+			body: `Yes, you can "start/stop" received orders within the Swoop Admin Portal.`,
+		},
+		{
+			title:
+				'Does Swoop offer the option for golfers to pick their order up at the turn?',
+			body: `Yes, golfers can choose to have their order delivered or to pick it up at the turn.`,
+		},
+		{
+			title: "What is Swoop's payment process?",
+			body: `Swoop does not offer in-app payments. You can continue to accept payments the way you currently process transactions.`,
+		},
+	],
+	[
+		{
+			title: 'Can we integrate Swoop with our POS system?',
+			body: `No. Orders are received and processed using the Swoop-provided "Station" tablet.`,
+		},
+		{
+			title:
+				'Our carts do not have GPS tracking. How will we be able to find the golfers to deliver the orders?',
+			body: `Swoop provides real-time GPS tracking of the golfers that placed the order, making on-course delivery seamless for your team.`,
+		},
+		{
+			title: 'Does Swoop charge account cancellation fees?',
+			body: `No. There are no cancellation fees for Swoop.`,
+		},
+		{
+			title: 'How long does it take to get set up and start using Swoop?',
+			body: `Send us your menu (pdf, jpg, or png), and we can have your course will be added within 24-48 hours. Swoop's onboarding team will reach out to you to create a roll-out plan that makes sense for your club.`,
+		},
+		{
+			title: 'How do I contact Swoop to learn more about becoming a partner?',
+			body: `If you are interested in using Swoop for your course, please fill out our contact form. A member of our team will reach out to you to answer any questions you may have about partnering with Swoop Golf.`,
+		},
+		// {
+		// 	title:
+		// 		'The Swoop Customer Care Team supports you and our other Swoop partners, which will assist you in managing your Swoop account, including:',
+		// 	body: `
+		// - Assistance with any billing inquiries
+		// - Contract interpretation questions
+		// - Account settings
+		// - Troubleshooting technological issues
+		// - Updating menus
+		// `,
+		// },
+	],
 ];
 
 const SearchWrapper = styled(BoxWithPosition)`
@@ -252,9 +270,15 @@ export default function FAQ() {
 					/>
 				</SearchWrapper>
 				<StyledAccordion allowMultipleExpanded={true} allowZeroExpanded={true}>
-					{dummyItems.map((item, idx) => (
-						<AccordionPanel key={`accordion-panel-${idx}`} {...item} />
-					))}
+					{dummyItemsRows.map((rows, ridx) => {
+						return (
+							<StyledAccordionRowContainer key={`faq-items-row-${ridx}`}>
+								{rows.map((item, idx) => (
+									<AccordionPanel key={`accordion-panel-${ridx}-${idx}`} {...item} />
+								))}
+							</StyledAccordionRowContainer>
+						);
+					})}
 				</StyledAccordion>
 			</Section>
 		</>

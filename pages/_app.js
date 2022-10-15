@@ -1,12 +1,12 @@
 import Footer from 'components/footer';
 import { Header } from 'components/header';
-import { MenuProvider, MobileMenu } from 'components/mobile-menu';
+import { MenuProvider, MobileMenu, useMobileMenu } from 'components/mobile-menu';
 import { useCurrentTheme } from 'hooks/useCurrentTheme';
+import Head from 'next/head';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles, GlobalStyles404, GlobalStylesLight } from 'styles/globalStyles';
-import { ViewportProvider } from 'use-viewport';
-
 import 'styles/scss/styles.scss';
+import { ViewportProvider } from 'use-viewport';
 
 const PageWrapper = styled('div')`
 	min-height: 100vh;
@@ -17,9 +17,14 @@ const PageWrapper = styled('div')`
 
 function MyApp({ Component, pageProps }) {
 	const { isLight, isOrange, currentTheme } = useCurrentTheme(pageProps);
-
 	return (
 		<ThemeProvider theme={currentTheme}>
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1, viewport-fit=cover"
+				/>
+			</Head>
 			<ViewportProvider>
 				<MenuProvider>
 					{isLight && <GlobalStylesLight />}

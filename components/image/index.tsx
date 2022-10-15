@@ -1,5 +1,5 @@
 import { rem } from 'polished';
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import theme from 'styles/theme';
@@ -49,8 +49,9 @@ type SwoopImageProps = {
 	width?: number | string | number[] | string[];
 	maxWidth?: number | string | number[] | string[];
 	imgProps?: any;
+	className?: string;
 };
-export const SwoopImage = ({
+export const SwoopImage: FC<SwoopImageProps> = ({
 	src,
 	width = '100%',
 	maxWidth,

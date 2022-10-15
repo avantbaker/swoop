@@ -7,6 +7,7 @@ import { rem } from 'polished';
 import { useTheme } from 'styled-components';
 import Cocktails from 'components/common/icons/badges/cocktails';
 import Sandwhiches from 'components/common/icons/badges/sandwiches';
+import theme from 'styles/theme';
 
 const Circle = styled(Box)`
 	position: relative;
@@ -46,11 +47,7 @@ const SolidCircle = styled('div')`
 	transform: translate(-50%, -50%);
 	background-color: ${({ theme }) => theme.colors.orange};
 `;
-const SandwichIcon = styled(Sandwhiches)`
-	position: absolute;
-	right: 0;
-	top: -35px;
-`;
+
 export const LittleCircleWithDot = ({ ...rest }) => {
 	return (
 		<LittleCircle {...rest}>
@@ -58,79 +55,37 @@ export const LittleCircleWithDot = ({ ...rest }) => {
 		</LittleCircle>
 	);
 };
-const WhiskeyImageWrapper = styled(Box)`
-	position: absolute;
-	right: -30%;
-	bottom: -40%;
-	max-width: 60%;
-	img {
-		max-width: 100%;
-	}
-`;
-const PhoneImageWrapper = styled(Box)`
-	position: absolute;
-	left: -20%;
-	bottom: -85%;
-	img {
-		max-width: 100%;
-		height: 351px;
-	}
-`;
-const CocktailIcon = styled(Cocktails)`
-	position: absolute;
-	top: 35%;
-	left: -22%;
-`;
-export const MobileRevenueGallery = ({ ...rest }) => {
-	return (
-		<Circle {...rest}>
-			<LittleCircleWithDot />
-			<SandwichIcon />
-			<WhiskeyImageWrapper>
-				<img src="/elements/hp-whiskey-drink.png" alt="golfer holding whiskey drink" />
-			</WhiskeyImageWrapper>
-			<PhoneImageWrapper>
-				<img src="/swoop/home/home-mobile-phone.png" alt="Image of the Swoop App" />
-				<CocktailIcon />
-			</PhoneImageWrapper>
-		</Circle>
-	);
-};
+
 const DesktopMockupGalleryContainer = styled(Box)`
 	position: relative;
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	height: 100%;
-	display: none;
-
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		display: block !important;
-	}
 `;
+
 const DesktopPhoneImage = styled('img')`
-	position: absolute;
 	flex-shrink: 0;
 	top: -60px;
-	right: -92px;
+	right: -50px;
+	width: 100%;
+	max-width: ${rem(340)};
 `;
 export const SpiritsImage = styled('img')`
 	position: absolute;
-	top: -120px;
-	left: 85px;
+	max-width: 65%;
 `;
 export const WrapsImage = styled('img')`
 	position: absolute;
-	top: 160px;
-	left: 240px;
 `;
 const RectangleFlagImage = styled('img')`
 	position: absolute;
-	top: 240px;
-	left: 40px;
+	max-width: ${rem(160)};
 `;
 
 const CustomSection = styled(Section)`
 	flex-direction: column;
-	@media screen and (min-width: ${rem(900)}) {
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		flex-direction: row;
 	}
 	& > *:first-child {
@@ -139,30 +94,66 @@ const CustomSection = styled(Section)`
 	& > *:last-child {
 		flex: 1;
 	}
-	@media screen and (min-width: ${rem(1024)}) {
-		& > *:last-child {
-			flex: 2;
+	// @media screen and (min-width: ${rem(1024)}) {
+	// 	& > *:last-child {
+	// 		flex: 2;
+	// 	}
+	// }
+	// @media screen and (min-width: ${rem(1200)}) {
+	// 	& > *:first-child {
+	// 		flex: 1.5;
+	// 	}
+	// }
+`;
+
+const MockupGalleryPointOfReference = styled('div')`
+	position: relative;
+	${SpiritsImage} {
+		top: 25%;
+		left: -${rem(20)};
+		max-width: ${rem(140)};
+		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+			top: -${rem(80)};
+			left: -${rem(40)};
+			max-width: ${rem(170)};
 		}
 	}
-	@media screen and (min-width: ${rem(1200)}) {
-		& > *:first-child {
-			flex: 1.5;
+	${WrapsImage} {
+		top: -${rem(60)};
+		right: -${rem(30)};
+		max-width: ${rem(140)};
+		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+			top: 160px;
+			left: 240px;
+			max-width: ${rem(170)};
+		}
+	}
+	${RectangleFlagImage} {
+		bottom: -${rem(50)};
+		right: ${rem(0)};
+		max-width: ${rem(100)};
+		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+			top: ${rem(320)};
+			left: -${rem(70)};
+			max-width: ${rem(130)};
 		}
 	}
 `;
 const DesktopMockupGallery = ({ ...rest }) => {
 	return (
 		<DesktopMockupGalleryContainer position="relative" {...rest}>
-			<DesktopPhoneImage
-				src="/elements/hello-john.png"
-				alt="golfer holding whiskey drink"
-			/>
-			<SpiritsImage src="/elements/spirits.png" alt="golfer holding whiskey drink" />
-			<WrapsImage src="/elements/wraps-icon.png" alt="golfer holding whiskey drink" />
-			<RectangleFlagImage
-				src="/elements/rectangle-flag.png"
-				alt="golfer holding whiskey drink"
-			/>
+			<MockupGalleryPointOfReference>
+				<DesktopPhoneImage
+					src="/elements/hello-john.png"
+					alt="golfer holding whiskey drink"
+				/>
+				<SpiritsImage src="/elements/spirits.png" alt="golfer holding whiskey drink" />
+				<WrapsImage src="/elements/wraps-icon.png" alt="golfer holding whiskey drink" />
+				<RectangleFlagImage
+					src="/elements/rectangle-flag.png"
+					alt="golfer holding whiskey drink"
+				/>
+			</MockupGalleryPointOfReference>
 		</DesktopMockupGalleryContainer>
 	);
 };
@@ -174,29 +165,29 @@ export const DriveRevenue = () => {
 				<Text maxWidth={['60%']} variant="h1" mb={[5, 5, 6]}>
 					Drive Revenue
 				</Text>
-				<Text maxWidth={['70%', '70%', '50%']} variant="h2" mb={[5]}>
-					Have your next course, on the course.
+				<Text maxWidth={['80%']} variant="h2" mb={[5]}>
+					Extend the hospitality and craft of the clubhouse to the course.
 				</Text>
-				<Text maxWidth={['80%']} variant="h4" mb={4}>
-					<Text color="orange" display="inline-block">
+				<Text maxWidth={['80%']} variant="h4" mb={2}>
+					<Text color="orange" fontWeight="bold" display="inline-block">
 						Boost
 					</Text>{' '}
 					Revenue
 				</Text>
-				<Text maxWidth={['80%']} variant="h4" mb={4}>
-					<Text color="orange" display="inline-block">
+				<Text maxWidth={['80%']} variant="h4" mb={2}>
+					<Text color="orange" fontWeight="bold" display="inline-block">
 						Increase
 					</Text>{' '}
 					Margins
 				</Text>
-				<Text maxWidth={['80%']} variant="h4" mb={4}>
-					<Text color="orange" display="inline-block">
+				<Text maxWidth={['80%']} variant="h4" mb={2}>
+					<Text color="orange" fontWeight="bold" display="inline-block">
 						Enhance
 					</Text>{' '}
 					Experience
 				</Text>
 				<Text maxWidth={['80%']} variant="h4" mb={6}>
-					<Text color="orange" display="inline-block">
+					<Text color="orange" fontWeight="bold" display="inline-block">
 						Integrate
 					</Text>{' '}
 					Seamlessly
@@ -204,17 +195,16 @@ export const DriveRevenue = () => {
 				<MenuButton
 					href="/app/courses"
 					title="Learn More"
-					color="orange"
+					color={theme.colors.orange}
 					textAlign="center"
 					maxWidth={['100%', '70%']}
 				/>
 			</Flex>
 			<Flex
 				pt={[rem(space[6]), rem(space[6]), 0]}
-				pb={rem(space[7])}
+				pb={[rem(space[5]), 0]}
 				justifyContent="center"
 			>
-				<MobileRevenueGallery />
 				<DesktopMockupGallery />
 			</Flex>
 		</CustomSection>

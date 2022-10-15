@@ -18,7 +18,7 @@ import {
 export const variants = {
 	display: {
 		fontFamily: theme.typography.fonts.primary,
-		fontSize: [rem(115.07), rem(140)],
+		fontSize: [rem(104), rem(140)],
 		fontWeight: 'normal',
 		lineHeight: [rem(100), rem(130)],
 		color: theme.colors.calcite,
@@ -29,7 +29,7 @@ export const variants = {
 	},
 	displayLight: {
 		fontFamily: theme.typography.fonts.primary,
-		fontSize: [rem(115.07), rem(140)],
+		fontSize: [rem(104), rem(140)],
 		fontWeight: 'normal',
 		lineHeight: [rem(100), rem(130)],
 		color: theme.colors.sage,

@@ -2,10 +2,13 @@ import Text from 'components/common/text';
 import styled from 'styled-components';
 import { Flex } from 'rebass/styled-components';
 import { rem } from 'polished';
-import { MenuButton } from 'components/common/menu-item';
+import { MenuButton as MenuItem } from 'components/common/menu-item';
 import theme from 'styles/theme';
+import { useForm } from '@formspree/react';
+import { useRef } from 'react';
+import { space } from 'styled-system';
 
-const NewsletterWrapper = styled('div')`
+let NewsletterWrapper = styled('form')`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: ${rem(260)} 1fr;
@@ -15,6 +18,9 @@ const NewsletterWrapper = styled('div')`
 		grid-template-rows: 1fr;
 	}
 `;
+
+NewsletterWrapper = styled(NewsletterWrapper)(space);
+
 const ImageWrapper = styled('div')`
 	background-image: url(${({ src }) => src});
 	background-position: center;
@@ -51,13 +57,31 @@ const CustomInput = styled('input')`
 		color: ${({ theme, color }) => color || theme.colors.calcite};
 	}
 
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		margin-bottom: 0;
 		margin-right: ${({ theme }) => rem(theme.space[4])};
 	}
 `;
 
+const StyledMenuItem = styled('button')`
+	padding-top: ${({ theme }) => rem(theme.space[1])};
+	padding-bottom: ${({ theme, pb }) => pb || rem(theme.space[1])};
+	&:not(:last-of-type) {
+		margin-right: ${({ theme }) => rem(theme.space[5])};
+	}
+`;
+
+const MenuButton = styled(StyledMenuItem)`
+	border: 2px solid ${({ theme, color }) => color || theme.colors.orange};
+	border-radius: ${({ theme }) => rem(theme.space.xl)};
+	padding: ${({ theme }) => `${rem(theme.space.md)} ${rem(theme.space.lg)}`};
+	& div {
+		text-align: center;
+	}
+`;
+
 const SubmitButton = styled(MenuButton)`
+	background: transparent;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		flex: 0.5;
 	}
@@ -69,8 +93,16 @@ export const NewsletterSection = ({
 	hasCTA = false,
 	...rest
 }) => {
+	const [state, handleSubmit] = useForm('mvoyanwr');
+	const formRef = useRef(null);
+	let textProps = {
+		color: theme.colors.calcite,
+		variant: 'link1',
+		textAlign: rest.textAlign || 'left',
+		mr: rest.mr,
+	};
 	return (
-		<NewsletterWrapper {...rest}>
+		<NewsletterWrapper mb={[7]} ref={formRef} {...rest} onSubmit={handleSubmit}>
 			<ImageWrapper src={imgSrc}>
 				<img src={imgSrc} alt="Newsletter Profile Image" />
 			</ImageWrapper>
@@ -88,16 +120,21 @@ export const NewsletterSection = ({
 						<CustomInput
 							color={theme.colors.calcite}
 							type="text"
+							name="email"
 							placeholder="Email Address"
 						/>
-						<SubmitButton color={theme.colors.calcite}>Submit</SubmitButton>
+						<SubmitButton type="submit" color={theme.colors.calcite}>
+							<Text {...textProps}>
+								{state.succeeded ? 'Thanks for joining!' : 'Submit'}
+							</Text>
+						</SubmitButton>
 					</Flex>
 				)}
 				{hasCTA && (
 					<Flex>
-						<MenuButton href="/contact" color={theme.colors.calcite}>
+						<MenuItem href="/contact" color={theme.colors.calcite}>
 							Get In Touch
-						</MenuButton>
+						</MenuItem>
 					</Flex>
 				)}
 			</ContentWrapper>

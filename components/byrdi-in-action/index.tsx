@@ -8,7 +8,7 @@ import { Box } from 'rebass/styled-components';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const ByrdiInActionWrapper = styled(Box)`
-	border-top: 2px solid ${({ theme }) => theme.colors.orange};
+	border-top: ${rem(0.5)} solid ${({ theme }) => theme.colors.orange};
 `;
 export const PhotoCarousel = styled('div')`
 	display: flex;

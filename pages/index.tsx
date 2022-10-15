@@ -1,13 +1,14 @@
 import { AffiliateSection } from 'components/affiliates';
 import { DriveRevenue } from 'components/drive-revenue';
-import { KeepPlayingHero } from 'components/homepage-hero';
-import { TextBanner } from 'components/text-banner';
-import { VideoSection } from 'components/video-section';
-import { TestimonialsCarousel } from '../components/testimonials';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
-import styled from 'styled-components';
+import { TextBanner } from 'components/text-banner';
+import { VideoSection } from 'components/video-section';
 import { rem } from 'polished';
+import React from 'react';
+import styled from 'styled-components';
+import { Hero } from '../components/homepage-hero-simple';
+import { TestimonialsCarousel } from '../components/testimonials';
 
 const LeftCircle = styled('div')`
 	position: absolute;
@@ -17,7 +18,11 @@ const LeftCircle = styled('div')`
 	width: ${rem(210)};
 	border: 0.5px solid ${({ theme }) => theme.colors.calcite};
 	border-radius: 50%;
+	display: none;
 
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		display: block;
+	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		left: -20%;
 	}
@@ -42,15 +47,9 @@ const RightCircle = styled('div')`
 export default function Home() {
 	return (
 		<>
-			<KeepPlayingHero
-				subtext={`Leave your lunchbox at home. Order fresh provisions and cocktails from the clubhouse, delivered to your exact location on the course.`}
-				title={'Keep Playing'}
-				subtitle={'Have your next course, on the course.'}
-				hasIcons={true}
-				minHeight={['auto']}
-			/>
+			<Hero />
 			<TextBanner title="More Memorable Rounds" />
-			<VideoSection />
+			{/* <VideoSection /> */}
 			<DriveRevenue />
 			<AffiliateSection />
 			<TestimonialsCarousel />

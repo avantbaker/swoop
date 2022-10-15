@@ -5,9 +5,11 @@ import { useRef, useEffect, useState } from 'react';
 import { Background } from './background';
 import { Foreground } from './foreground';
 import { SwoopImage } from 'components/image';
+import { Box } from 'rebass/styled-components';
+import { rem } from 'polished';
 
 export const MAX_CONTAINER_WIDTH = 700;
-export const MOBILE_HEADER_HEIGHT = 110;
+export const MOBILE_HEADER_HEIGHT = 140;
 export const CustomImage = styled(SwoopImage)`
 	object-fit: cover;
 	object-position: center;
@@ -45,6 +47,14 @@ type Container = {
 	height?: string | any[];
 	minHeight?: string | any[];
 };
+
+const BackgroundImage = styled(SwoopImage)`
+	img {
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+`;
 export const KeepPlayingHero = ({
 	subtext = '',
 	title = 'Keep Playing',
@@ -66,16 +76,16 @@ export const KeepPlayingHero = ({
 		? (CONTAINER_PROPS.height = minHeight)
 		: (CONTAINER_PROPS.minHeight = minHeight);
 	return (
-		<Flex position="relative" {...rest}>
+		<Flex position="relative" {...rest} mb={[, , 8]}>
 			<Flex position="relative" {...CONTAINER_PROPS} width="100%">
 				<Flex position="relative" flexDirection={['column', 'column', 'row']}>
 					{hasCircles && <Circles />}
-					<Background
-						headerPadding={mobileHeaderPadding}
-						src={bgImage}
-						maxWidth={imgMaxWidth}
-						zIndex={1}
-					/>
+					<Box
+						width={['100%', '100%']}
+						pt={[rem(MOBILE_HEADER_HEIGHT), rem(MOBILE_HEADER_HEIGHT), 0]}
+					>
+						<BackgroundImage src={'/swoop/home/home-phones.png'} />
+					</Box>
 					<Foreground
 						headerPadding={mobileHeaderPadding}
 						subtext={subtext}
@@ -86,6 +96,14 @@ export const KeepPlayingHero = ({
 						titleMaxWidth={titleMaxWidth}
 						contentJustify={contentJustify}
 					/>
+					{/* <Box width={['100%', '100%']}></Box> */}
+					{/* <Background
+						headerPadding={mobileHeaderPadding}
+						src={bgImage}
+						maxWidth={imgMaxWidth}
+						zIndex={1}
+					/>
+					 */}
 				</Flex>
 			</Flex>
 		</Flex>
