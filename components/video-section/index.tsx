@@ -10,6 +10,9 @@ const ReactPlayerWrapper = styled(Box)`
 	min-height: 400px;
 	max-height: 400px;
 	width: 100%;
+	background: url(/swoop/home/home-video-placeholder.png);
+	background-size: cover;
+	background-position: center;
 	.react-player {
 		position: absolute;
 		top: 0;
@@ -42,15 +45,15 @@ export const VideoSection = ({
 	...rest
 }) => {
 	return (
-		<VideoSectionContainer {...rest}>
+		<VideoSectionContainer {...rest} onClick={(e) => e.preventDefault()}>
 			<ReactPlayerWrapper>
-				<ReactPlayer
+				{/* <ReactPlayer
 					light={imgSrc}
 					className="react-player"
 					url={videoSrc}
 					width="100%"
 					height="100%"
-				/>
+				/> */}
 			</ReactPlayerWrapper>
 		</VideoSectionContainer>
 	);

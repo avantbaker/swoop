@@ -94,16 +94,6 @@ const CustomSection = styled(Section)`
 	& > *:last-child {
 		flex: 1;
 	}
-	// @media screen and (min-width: ${rem(1024)}) {
-	// 	& > *:last-child {
-	// 		flex: 2;
-	// 	}
-	// }
-	// @media screen and (min-width: ${rem(1200)}) {
-	// 	& > *:first-child {
-	// 		flex: 1.5;
-	// 	}
-	// }
 `;
 
 const MockupGalleryPointOfReference = styled('div')`

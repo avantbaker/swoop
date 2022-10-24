@@ -49,7 +49,7 @@ export default function Home() {
 		<>
 			<Hero />
 			<TextBanner title="More Memorable Rounds" />
-			{/* <VideoSection /> */}
+			<VideoSection />
 			<DriveRevenue />
 			<AffiliateSection />
 			<TestimonialsCarousel />

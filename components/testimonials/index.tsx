@@ -14,8 +14,8 @@ export const PhotoCarousel = styled('div')`
 	-webkit-overflow-scrolling: touch;
 `;
 
-const EmblaParent = styled.div``;
-const EmblaContainer = styled(PhotoCarousel)``;
+export const EmblaParent = styled.div``;
+export const EmblaContainer = styled(PhotoCarousel)``;
 
 const Card = styled(Flex)`
 	flex: 1;
@@ -33,6 +33,7 @@ const ImageWrapper = styled('div')`
 
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 			max-width: unset;
+			max-height: ${rem(480)};
 		}
 	}
 `;
@@ -68,9 +69,15 @@ const MobileCWD = styled(LittleCircleWithDot)`
 `;
 export const ControlContainer = styled(Flex)`
 	position: relative;
-	// padding-left: ${rem(20)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		padding-left: 0;
+		z-index: 10;
+	}
+`;
+
+const TestimonialControlContainer = styled(ControlContainer)`
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		transform: translate(-160px, 60px);
 	}
 `;
 const CustomTitle = styled(Text)`
@@ -96,13 +103,13 @@ or a daily fee course, but the major issue is accessibility to a beverage.`,
 				<ContentWrapper pl={3} pr={4} flex="1" flexDirection={['column']}>
 					<CustomTitle mb={[4, 6]}>
 						<DesktopCWD />
-						{title} | {location}
+						{title} | <CustomTitle fontWeight="bold">{location}</CustomTitle>
 					</CustomTitle>
 					<Text mb={5} variant="bodySecondary">
 						{body}
 					</Text>
 					<Text mb={[4, 6]}>
-						{name} | {occupation}
+						{name} {'|'} {occupation}
 					</Text>
 					{/* <Text variant="bodySecondary">
 						lorem ipsum dolor sic amet. Consectetuc adipiscing.
@@ -163,17 +170,6 @@ const dummyCards = [
 		occupation: 'Course Member',
 		imgSrc: '/elements/golf-balls.png',
 	},
-	{
-		title: 'Trilogy at Vistancia',
-		location: 'Peoria, AZ',
-		body: `Spending more than 20+ years in the Country Club business and as a golfer that
-	has played throughout the nation, I am keenly aware of the pain points of the
-	golfer's voice. These can be at a high end country club, resort course,
-	or a daily fee course, but the major issue is accessibility to a beverage.`,
-		name: 'Marcus Paulson',
-		occupation: 'Course Member',
-		imgSrc: '/swoop/home/testimonial-follow-thru.png',
-	},
 ];
 
 const TestimonialsCarouselWrapper = styled(Block)`
@@ -181,6 +177,7 @@ const TestimonialsCarouselWrapper = styled(Block)`
 	padding-right: 0;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		padding-left: ${rem(40)};
+		margin-bottom: ${({ theme }) => rem(theme.space[6])};
 	}
 `;
 export const TestimonialsCarousel = ({ cards = dummyCards, ...rest }) => {
@@ -188,11 +185,11 @@ export const TestimonialsCarousel = ({ cards = dummyCards, ...rest }) => {
 	return (
 		<>
 			<TestimonialsCarouselWrapper>
-				<ControlContainer mb={[5]}>
+				<TestimonialControlContainer mb={[5]}>
 					<LeftControl onClick={scrollPrev} />
 					<RightControl onClick={scrollNext} />
 					<MobileCWD />
-				</ControlContainer>
+				</TestimonialControlContainer>
 				<EmblaParent ref={emblaRef}>
 					<EmblaContainer>
 						{cards.map((item, idx) => {

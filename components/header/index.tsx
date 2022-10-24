@@ -26,8 +26,8 @@ const HeaderWrapper = styled(Flex)`
 	background: rgb(0, 0, 0);
 	background: linear-gradient(
 		180deg,
-		rgba(0, 0, 0, 0.2623643207282913) 0%,
-		rgba(0, 0, 0, 0.11390493697478987) 33%,
+		rgba(0, 0, 0, 0.7) 0%,
+		rgba(0, 0, 0, 0.4) 33%,
 		rgba(0, 0, 0, 0) 100%
 	);
 `;
@@ -87,18 +87,19 @@ export const Header = ({ ...rest }) => {
 					</Top>
 					<Bottom justifyContent="flex-end">
 						<MenuItem
+							mr={2}
 							variant="link2"
 							title="Contact"
 							color={type === 'orange' && colors.white}
 							href="/contact"
 						/>
-						<MenuItem
+						{/* <MenuItem
 							mr={3}
 							variant="link2"
 							title="Sign In"
 							color={type === 'orange' ? colors.white : 'darkGray'}
 							href="/#"
-						/>
+						/> */}
 					</Bottom>
 				</DesktopMenu>
 			</NavMenuWrapper>

@@ -3,6 +3,29 @@ import styled from 'styled-components';
 import { Flex, Box } from 'rebass/styled-components';
 import { rem } from 'polished';
 import theme from 'styles/theme';
+import { useCustomCarousel } from 'components/testimonials';
+
+export const PhotoCarousel = styled('div')`
+	display: flex;
+	flex-wrap: nowrap;
+	-webkit-overflow-scrolling: touch;
+`;
+
+export const EmblaParent = styled.div`
+	min-width: 1400px;
+	padding-left: ${({ theme }) => rem(theme.space[4])};
+`;
+export const EmblaContainer = styled(PhotoCarousel)`
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		width: ${rem(1300)};
+		display: flex;
+		justify-content: space-between;
+	}
+	a {
+		flex: 1;
+		max-width: 230px;
+	}
+`;
 
 const TitleText = styled(Text)`
 	position: relative;
@@ -119,11 +142,7 @@ const LogoContainerExpanded = styled(LogoContainer)`
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background: linear-gradient(
-			180deg,
-			rgba(255, 255, 255, 0) 0%,
-			rgba(37, 37, 37, 1) 87%
-		);
+		background: linear-gradient(180deg, transparent, #1b1814 85%, #1b1814 100%);
 	}
 
 	&:after {
@@ -165,14 +184,16 @@ const AffiliateContainer = styled('div')`
 const AffiliateContentWrapper = styled(Flex)``;
 
 export const AffiliateSection = () => {
+	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
 		<AffiliateContainer>
-			<AffiliateWrapper mb={4} px={4}>
+			<AffiliateWrapper mb={[5]} pb={[3, 5]} px={4}>
 				<TitleText maxWidth={['80%', '60%']} variant="h1" mb={[6]}>
 					Swoop Affiliate Courses
 				</TitleText>
-
-				<LogoContainer pt={[5]} pb={[6]}>
+			</AffiliateWrapper>
+			<EmblaParent ref={emblaRef}>
+				<EmblaContainer>
 					<a href="https://www.hamiltonmillcc.com/">
 						<LogoWrapper>
 							<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
@@ -198,13 +219,13 @@ export const AffiliateSection = () => {
 							<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
 						</LogoWrapper>
 					</a>
-				</LogoContainer>
-				{/* <Link mt={[6, 6, 0]} mb={6}>
-					<Text color="orange" variant="link3">
-						More Affilate Courses
-					</Text>
-				</Link> */}
-			</AffiliateWrapper>
+				</EmblaContainer>
+			</EmblaParent>
+			<Link mt={[4, 6, 5]} mb={6} href="/brand">
+				<Text pl={[4]} color="orange" variant="link3">
+					More Affilate Courses
+				</Text>
+			</Link>
 		</AffiliateContainer>
 	);
 };

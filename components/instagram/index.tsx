@@ -68,22 +68,28 @@ export const InstagramSection = ({
 				<InstaGrid>
 					<GridItem>
 						<a href="https://www.instagram.com/p/Cf92Wutvl7u/">
-							<img src="/swoop/home/instagram-modelo.png" alt="" />
+							<img src="/elements/insta-tee.png" alt="Golball on Tee" />
 						</a>
 					</GridItem>
 					<GridItem>
 						<a href="https://www.instagram.com/p/Cf92QL9PPR4/">
-							<img src="/swoop/home/instagram-fairway.png" alt="" />
+							<img src="/elements/insta-sandwich.png" alt="Sandwich" />
 						</a>
 					</GridItem>
 					<GridItem>
 						<a href="https://www.instagram.com/p/Cf92FKQPjTi/">
-							<img src="/swoop/home/instagram-sandwich.png" alt="" />
+							<img
+								src="/elements/insta-swing.png"
+								alt="Girl following through on swing"
+							/>
 						</a>
 					</GridItem>
 					<GridItem>
 						<a href="https://www.instagram.com/p/Cf90f1Cvb3q/">
-							<img src="/swoop/home/instagram-cup.png" alt="" />
+							<img
+								src="/elements/insta-cooler.png"
+								alt="Cooler with Beer, Ice and Lime"
+							/>
 						</a>
 					</GridItem>
 				</InstaGrid>

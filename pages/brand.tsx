@@ -158,17 +158,6 @@ const brandsDummyTestimonials = [
 		occupation: 'Course Member',
 		imgSrc: '/swoop/brand/brand-testimonial-1.png',
 	},
-	{
-		title: 'Trilogy at Vistancia',
-		location: 'Vistancia, AZ',
-		body: `Spending more than 20+ years in the Country Club business and as a golfer that
-	has played throughout the nation, I am keenly aware of the pain points of the
-	golfer's voice. These can be at a high end country club, resort course,
-	or a daily fee course, but the major issue is accessibility to a beverage.`,
-		name: 'Marcus Paulson',
-		occupation: 'Course Member',
-		imgSrc: '/swoop/brand/brand-golfball.png',
-	},
 ];
 
 const brandsDummyCards = [

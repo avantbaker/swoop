@@ -39,22 +39,49 @@ const CustomInput = styled('input')`
 	border-radius: ${({ theme }) => rem(theme.space.xl)};
 	padding: ${({ theme }) => `${rem(theme.space.md)} ${rem(theme.space.lg)}`};
 	background: transparent;
-	color: ${({ theme, color }) => color || theme.colors.calcite};
+	color: ${({ theme, color }) => color || theme.colors.white};
 	margin-bottom: ${({ theme }) => rem(theme.space[4])};
 	flex: 1;
+	font-size: ${rem(15)};
+	line-height: ${rem(20)};
+	letters-pacing: ${rem(0.38)};
+	text-transform: 'uppercase';
+	font-family: ${({ theme }) => theme.typography.fonts.tertiary};
+	font-weight: 700;
 
 	::placeholder {
 		text-transform: uppercase;
-		color: ${({ theme, color }) => color || theme.colors.calcite};
+		color: ${({ theme, color }) => color || theme.colors.white};
 		opacity: 0.8;
+		font-size: ${rem(15)};
+		line-height: ${rem(20)};
+		letter-spacing: ${rem(0.38)};
+		text-transform: 'uppercase';
+		font-family: ${({ theme }) => theme.typography.fonts.tertiary};
+		font-weight: 700;
+		opacity: 0.5;
 	}
 	:-ms-input-placeholder {
 		text-transform: uppercase;
-		color: ${({ theme, color }) => color || theme.colors.calcite};
+		color: ${({ theme, color }) => color || theme.colors.white};
+		font-size: ${rem(15)};
+		line-height: ${rem(20)};
+		letter-spacing: ${rem(0.38)};
+		text-transform: 'uppercase';
+		font-family: ${({ theme }) => theme.typography.fonts.tertiary};
+		font-weight: 700;
+		opacity: 0.5;
 	}
 	::-ms-input-placeholder {
 		text-transform: uppercase;
-		color: ${({ theme, color }) => color || theme.colors.calcite};
+		color: ${({ theme, color }) => color || theme.colors.white};
+		font-size: ${rem(15)};
+		line-height: ${rem(20)};
+		letter-spacing: ${rem(0.38)};
+		text-transform: 'uppercase';
+		font-family: ${({ theme }) => theme.typography.fonts.tertiary};
+		font-weight: 700;
+		opacity: 0.5;
 	}
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
@@ -88,7 +115,7 @@ const SubmitButton = styled(MenuButton)`
 `;
 export const NewsletterSection = ({
 	imgSrc = '/elements/burger.png',
-	title = 'KEEP UP',
+	title = 'KEEP UP.',
 	body = `Join the Swoop scoop. Get the latest news, find events, and receive deals`,
 	hasCTA = false,
 	...rest
@@ -96,7 +123,7 @@ export const NewsletterSection = ({
 	const [state, handleSubmit] = useForm('mvoyanwr');
 	const formRef = useRef(null);
 	let textProps = {
-		color: theme.colors.calcite,
+		color: theme.colors.white,
 		variant: 'link1',
 		textAlign: rest.textAlign || 'left',
 		mr: rest.mr,
@@ -108,22 +135,22 @@ export const NewsletterSection = ({
 			</ImageWrapper>
 			<ContentWrapper py={6} px={[4, 6, 7]} flexDirection={['column']}>
 				<Flex mb={[5]} flexDirection={['column']}>
-					<Text variant="h1" mb={[4]} color="calcite">
+					<Text variant="h1" mb={[4]} color="white">
 						{title}
 					</Text>
-					<Text color="calcite" maxWidth={[, '60%']}>
+					<Text color="white" fontWeight="bold" maxWidth={[, '60%']}>
 						{body}
 					</Text>
 				</Flex>
 				{!hasCTA && (
 					<Flex flexDirection={['column', 'row']}>
 						<CustomInput
-							color={theme.colors.calcite}
+							color={theme.colors.white}
 							type="text"
 							name="email"
 							placeholder="Email Address"
 						/>
-						<SubmitButton type="submit" color={theme.colors.calcite}>
+						<SubmitButton type="submit" color={theme.colors.white}>
 							<Text {...textProps}>
 								{state.succeeded ? 'Thanks for joining!' : 'Submit'}
 							</Text>
@@ -132,7 +159,7 @@ export const NewsletterSection = ({
 				)}
 				{hasCTA && (
 					<Flex>
-						<MenuItem href="/contact" color={theme.colors.calcite}>
+						<MenuItem href="/contact" color={theme.colors.white}>
 							Get In Touch
 						</MenuItem>
 					</Flex>

@@ -93,7 +93,7 @@ export default function Footer({ isLight = false, ...rest }) {
 				</Flex>
 				<Flex flexDirection={['row-reverse', 'row']} justifyContent="flex-end">
 					<Flex flexDirection="column" ml={[5, 0]}>
-						<MenuItem
+						{/* <MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
@@ -120,7 +120,7 @@ export default function Footer({ isLight = false, ...rest }) {
 							color="darkGray"
 							title="Careers"
 							href="/careers"
-						/>
+						/> */}
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
 						<MenuItem

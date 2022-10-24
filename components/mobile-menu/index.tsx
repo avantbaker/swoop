@@ -67,12 +67,12 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 					title="Contact"
 					onClick={goToPage('/contact')}
 				/>
-				<MenuItem
+				{/* <MenuItem
 					color="black"
 					variant="link1"
 					title="Sign In"
 					onClick={goToPage('/signin')}
-				/>
+				/> */}
 			</Flex>
 			<MenuButton
 				textAlign={'center'}
@@ -84,7 +84,7 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 			<Flex flex={1} alignItems="flex-end" mb={5}>
 				<Flex flexDirection={['row-reverse', 'row']} justifyContent="flex-end">
 					<Flex flexDirection="column" ml={[5, 0]}>
-						<MenuItem
+						{/* <MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
@@ -104,7 +104,7 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 							color="darkGray"
 							title="Careers"
 							onClick={goToPage('/careers')}
-						/>
+						/> */}
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
 						<MenuItem
@@ -121,13 +121,13 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 							title="FAQ"
 							onClick={goToPage('/faq')}
 						/>
-						<MenuItem
+						{/* <MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="darkGray"
 							title="Loyalty"
 							onClick={goToPage('/loyalty')}
-						/>
+						/> */}
 					</Flex>
 				</Flex>
 			</Flex>
