@@ -120,7 +120,7 @@ export const NewsletterSection = ({
 	hasCTA = false,
 	...rest
 }) => {
-	const [state, handleSubmit] = useForm('mvoyanwr');
+	const [state, handleSubmit] = useForm('xqkjyarw');
 	const formRef = useRef(null);
 	let textProps = {
 		color: theme.colors.white,

@@ -12,7 +12,7 @@ import { SwoopImage } from 'components/image';
 import Sandwhiches from 'components/common/icons/badges/sandwiches';
 
 export const FloatingAppContainer = styled(DualPathSection)`
-	background: ${({ theme }) => theme.colors.black};
+	background: ${({ theme }) => theme.colors.sage};
 	border-top: none !important;
 	position: relative;
 	.mobile-section--desktop {
@@ -44,7 +44,7 @@ export const MainFloatingHero = styled(DualPathSection)`
 	}
 `;
 export const CustomSection = styled(Section)`
-	background: ${({ theme }) => theme.colors.black};
+	background: ${({ theme }) => theme.colors.sage};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		border-left: 2px solid ${({ theme }) => theme.colors.orange};
 		border-right: 2px solid ${({ theme }) => theme.colors.orange};

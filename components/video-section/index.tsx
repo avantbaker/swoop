@@ -13,6 +13,7 @@ const ReactPlayerWrapper = styled(Box)`
 	background: url(/swoop/home/home-video-placeholder.png);
 	background-size: cover;
 	background-position: center;
+
 	.react-player {
 		position: absolute;
 		top: 0;
