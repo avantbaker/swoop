@@ -192,8 +192,8 @@ export default function Brand() {
 			/>
 			<TextBanner title="SWOOP AMBASSADORS" />
 			<AmbassadorCarousel />
-			<TextBanner title="Loyalty Rewards" />
-			<ByrdiLoyaltySection />
+			{/* <TextBanner title="Loyalty Rewards" />
+			<ByrdiLoyaltySection /> */}
 			<NewsletterSection
 				title="Tee Off."
 				body="Join the Swoop scoop. Get the latest news, find events, and receive deals."

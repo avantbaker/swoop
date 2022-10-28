@@ -8,8 +8,7 @@ const Top = styled(Flex)``;
 const Bottom = styled(Flex)``;
 const NavMenuWrapper = styled(Box)``;
 import { useMobileMenu } from 'components/mobile-menu';
-import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
+import theme from 'styles/theme';
 
 const LogoContainer = styled(Box)`
 	width: 100%;
@@ -23,6 +22,9 @@ const HeaderWrapper = styled(Flex)`
 	z-index: 1000000000000;
 	left: 0;
 	right: 0;
+	${({ isDark }) =>
+		isDark &&
+		`
 	background: rgb(0, 0, 0);
 	background: linear-gradient(
 		180deg,
@@ -30,6 +32,7 @@ const HeaderWrapper = styled(Flex)`
 		rgba(0, 0, 0, 0.4) 33%,
 		rgba(0, 0, 0, 0) 100%
 	);
+	`}
 `;
 
 export const Logo = ({ isDark = false, ...rest }) => {
@@ -43,6 +46,23 @@ export const Logo = ({ isDark = false, ...rest }) => {
 		</LogoContainer>
 	);
 };
+
+const HeaderMenuItem = styled(MenuItem)`
+	&:hover {
+		div {
+			color: ${({ theme }) => theme.colors.orange};
+		}
+	}
+`;
+const HeaderMenuButton = styled(MenuButton)`
+	cursor: pointer;
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.orange};
+		div {
+			color: ${({ theme }) => theme.colors.white};
+		}
+	}
+`;
 export const Header = ({ ...rest }) => {
 	const { colors, space, type } = useTheme();
 	const { isOpen, toggleIsOpen } = useMobileMenu();
@@ -66,6 +86,7 @@ export const Header = ({ ...rest }) => {
 			alignItems={['flex-start']}
 			p={[space[4]]}
 			pt={[space[5]]}
+			isDark={backgroundColor === 'black' && !isOpen}
 			{...rest}
 		>
 			<Logo maxWidth={[rem(130), rem(150)]} isDark={type === 'light' ? true : isOpen} />
@@ -77,9 +98,9 @@ export const Header = ({ ...rest }) => {
 				/>
 				<DesktopMenu display={['none', 'none', 'flex']} flexDirection="column">
 					<Top alignItems="center" justifyContent="flex-end" pb={[space[3]]}>
-						<MenuItem title="App" color={textColor} href="/app" />
-						<MenuItem title="Brand" color={textColor} href="/brand" />
-						<MenuButton
+						<HeaderMenuItem title="App" color={textColor} href="/app" />
+						<HeaderMenuItem title="Brand" color={textColor} href="/brand" />
+						<HeaderMenuButton
 							title="Get a Demo"
 							color={type === 'orange' ? colors.white : colors.orange}
 							href="/contact"

@@ -61,10 +61,18 @@ export const MenuItem = ({
 };
 
 export const MenuButton = styled(MenuItem)`
-	border: 2px solid ${({ theme, color }) => color || theme.colors.orange};
+	border: 2px solid
+		${({ theme, color, borderColor }) => borderColor || color || theme.colors.orange};
 	border-radius: ${({ theme }) => rem(theme.space.xl)};
 	padding: ${({ theme }) => `${rem(theme.space.md)} ${rem(theme.space.lg)}`};
+	cursor: pointer;
 	& div {
 		text-align: center;
+	}
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.orange};
+		div {
+			color: ${({ theme }) => theme.colors.white};
+		}
 	}
 `;

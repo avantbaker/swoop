@@ -7,13 +7,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles, GlobalStyles404, GlobalStylesLight } from 'styles/globalStyles';
 import 'styles/scss/styles.scss';
 import { ViewportProvider } from 'use-viewport';
-
-const PageWrapper = styled('div')`
-	min-height: 100vh;
-	height: 100%;
-	width: 100%;
-	min-width: 100%;
-`;
+import PageWrapper from 'components/page-wrapper';
 
 function MyApp({ Component, pageProps }) {
 	const { isLight, isOrange, currentTheme } = useCurrentTheme(pageProps);

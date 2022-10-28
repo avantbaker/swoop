@@ -12,6 +12,9 @@ import { space, variant, color, compose, layout } from 'styled-system';
 import { MenuButton } from 'components/common/menu-item';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import DownArrow from 'components/common/icons/down-arrow';
+import { useMobileMenu } from 'components/mobile-menu';
+import { faCentercode } from '@fortawesome/free-brands-svg-icons';
+import { useRouter } from 'next/router';
 
 const DualSection = styled(Box)`
 	display: grid;
@@ -134,7 +137,7 @@ const DropdownListItem = styled(ExtendendMotionDiv)`
 
 const listContainer = {
 	visible: {
-		height: 200,
+		height: 220,
 	},
 	hidden: {
 		height: 'auto',
@@ -190,6 +193,10 @@ const inquiryItems = [
 		label: 'Ambassadors',
 	},
 	{
+		value: 'affiliates',
+		label: 'Affiliates',
+	},
+	{
 		value: 'press',
 		label: 'Press',
 	},
@@ -202,15 +209,27 @@ const inquiryItems = [
 		label: 'General Inquiries',
 	},
 ];
+
 const DropdownMenu = ({ ...rest }) => {
 	const controls = useAnimation();
 	const itemControls = useAnimation();
 	const [isOpen, setIsOpen] = useState(false);
+	const router = useRouter();
 
-	const [selectedOption, setSelectedOption] = useState({
+	let initialState = {
 		value: 'inquiry',
 		label: 'Inquiry',
-	});
+	};
+
+	if (router.query?.inquiry) {
+		inquiryItems.forEach((item) => {
+			if (item.value === router.query?.inquiry) {
+				initialState = item;
+			}
+		});
+	}
+
+	const [selectedOption, setSelectedOption] = useState(initialState);
 
 	const toggleDropdown = async () => {
 		if (isOpen) {
@@ -380,6 +399,8 @@ const BigCircle = styled('div')`
 	border-radius: 50%;
 `;
 function Contact() {
+	const { goToPage } = useMobileMenu();
+
 	return (
 		<>
 			<TextBanner pt={[7, 8]} isLight title="Contact" />
@@ -458,7 +479,9 @@ function Contact() {
 								</FormInputWrapper>
 							</Box>
 							<FormInputWrapper className="fifth">
-								<MenuButton color="orange">Submit</MenuButton>
+								<MenuButton borderColor={theme.colors.orange} color={theme.colors.orange}>
+									Submit
+								</MenuButton>
 							</FormInputWrapper>
 						</ContactFormWrapper>
 					</Flex>
@@ -492,7 +515,11 @@ function Contact() {
 					<Flex
 						mx={[-20]}
 						minHeight={[rem(260), rem(400)]}
-						backgroundColor="orange"
+						style={{
+							background: `url(/swoop/contact/contact-demo.jpeg)`,
+							backgroundPosition: '0 -100px',
+							backgroundSize: 'cover',
+						}}
 					></Flex>
 				</DualSection>
 				<BigCircle />
@@ -536,7 +563,13 @@ function Contact() {
 					<img src="/swoop/contact/contact-place-ball.png" alt="" />
 				</Box>
 				<Box className="fifth" mt={5} px={[4, 5]}>
-					<MenuButton color="orange">Career Inquiries</MenuButton>
+					<MenuButton
+						borderColor={theme.colors.orange}
+						color={theme.colors.orange}
+						onClick={() => goToPage('/contact', { inquiry: 'careers' })}
+					>
+						Career Inquiries
+					</MenuButton>
 				</Box>
 			</CareerSection>
 			<InstagramSection>

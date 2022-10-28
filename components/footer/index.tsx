@@ -14,7 +14,7 @@ const getBorderColor = (type) => {
 	let backgroundColor = theme.colors.orange;
 	switch (type) {
 		case 'light':
-			backgroundColor = 'none';
+			// backgroundColor = 'none';
 			break;
 		case 'orange':
 			backgroundColor = theme.colors.white;
@@ -27,6 +27,14 @@ const getBorderColor = (type) => {
 
 const FooterContainer = styled(Flex)`
 	border-top: 2px solid ${({ theme }) => getBorderColor(theme.type)};
+`;
+
+const FooterMenuItem = styled(MenuItem)`
+	&:hover {
+		div {
+			color: ${({ theme }) => theme.colors.orange};
+		}
+	}
 `;
 
 export default function Footer({ isLight = false, ...rest }) {
@@ -123,28 +131,28 @@ export default function Footer({ isLight = false, ...rest }) {
 						/> */}
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
-						<MenuItem
+						<FooterMenuItem
 							textAlign={['left', 'right']}
 							color={textColor}
 							mr={['0 !important']}
 							title="Brand"
 							href="/brand"
 						/>
-						<MenuItem
+						<FooterMenuItem
 							textAlign={['left', 'right']}
 							color={textColor}
 							mr={['0 !important']}
 							title="App"
 							href="/app"
 						/>
-						<MenuItem
+						{/* <MenuItem
 							textAlign={['left', 'right']}
 							color={textColor}
 							mr={['0 !important']}
 							title="Press"
 							href="/press"
-						/>
-						<MenuItem
+						/> */}
+						<FooterMenuItem
 							textAlign={['left', 'right']}
 							color={textColor}
 							mr={['0 !important']}
@@ -168,20 +176,20 @@ export default function Footer({ isLight = false, ...rest }) {
 						Copyright &copy; 2022 - Swoop App
 					</Text>
 					<Flex alignItems="center" mb={[rem(space.xs)]}>
-						<MenuItem
+						<FooterMenuItem
 							pb={[1, 0]}
 							variant="link2"
 							title="Privacy"
 							color={textColor}
-							href="/terms"
-						></MenuItem>
-						<MenuItem
+							href="/privacy"
+						></FooterMenuItem>
+						<FooterMenuItem
 							pb={[1, 0]}
 							variant="link2"
 							title="Terms"
 							color={textColor}
 							href="/terms"
-						></MenuItem>
+						></FooterMenuItem>
 					</Flex>
 				</Flex>
 			</Flex>

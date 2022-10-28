@@ -31,6 +31,7 @@ import { rem } from 'polished';
 import { useEffect, useRef, useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { Box, Flex } from 'rebass/styled-components';
+import { text } from 'stream/consumers';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 import { useViewport } from 'use-viewport';
@@ -213,32 +214,38 @@ export default function App() {
 		};
 	}, [height]);
 
+	const [textHeight, setTextHeight] = useState(0);
+
+	useEffect(() => {
+		setTextHeight(floatingImageAnchorStartRef.current.clientHeight);
+	}, [floatingImageAnchorStartRef]);
+
 	return (
 		<>
 			<TextIntro />
 			<FloatingAppContainer>
 				<motion.img
 					ref={floatingImageRef}
-					style={{
-						left: '50%',
-						top: TOP,
-						bottom: BOTTOM,
-						x,
-						y,
-						scale,
-						position: POSITION,
-						zIndex: 1,
-					}}
-					initial={false}
-					animate={controls}
-					transition={{
-						opacity: {
-							duration: 0.7,
-							ease: 'easeInOut',
-						},
-					}}
-					className="fixed"
-					src={imageSrc}
+					// style={{
+					// 	left: '50%',
+					// 	top: TOP,
+					// 	bottom: BOTTOM,
+					// 	x,
+					// 	y,
+					// 	scale,
+					// 	position: POSITION,
+					// 	zIndex: 1,
+					// }}
+					// initial={false}
+					// animate={controls}
+					// transition={{
+					// 	opacity: {
+					// 		duration: 0.7,
+					// 		ease: 'easeInOut',
+					// 	},
+					// }}
+					// className="fixed"
+					// src={imageSrc}
 				/>
 				<Waypoint
 					onEnter={() => {
@@ -250,7 +257,6 @@ export default function App() {
 					}}
 				>
 					<MainFloatingHeroContainer mb={[6, 8]}>
-						{/* <MainFloatingHeroContainer mb={[6, 8]} style={{ opacity }}> */}
 						<MainFloatingHero>
 							<FloatingHero
 								p={'0 !important'}
@@ -266,12 +272,15 @@ export default function App() {
 										ref={floatingImageAnchorStartRef}
 										variant="displayVertical"
 										mb={[2]}
+										mr={[5]}
 									>
 										Courses
 									</VerticalTextL>
 									<img
-										className="hidden"
-										src="/elements/app-courses-desktop.png"
+										style={{
+											height: textHeight,
+										}}
+										src="/elements/app-courses-desktop-cropped.png"
 										alt=""
 									/>
 								</SectionDetails>
@@ -293,12 +302,12 @@ export default function App() {
 									<Flex width="100%" flexDirection="column" alignItems="flex-end">
 										<Box mb={3}>
 											<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
-												<img src="/elements/apple-store.png" />
+												<img src="/elements/apple-store.svg" />
 											</a>
 										</Box>
 										<Box>
 											<a href="https://play.google.com/store/apps/details?id=io.swoop">
-												<img src="/elements/google-play.png" />
+												<img src="/elements/google-play.svg" />
 											</a>
 										</Box>
 									</Flex>
@@ -322,12 +331,12 @@ export default function App() {
 							<Flex width="100%" flexDirection="column" alignItems="flex-end">
 								<Box mb={3}>
 									<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
-										<img src="/elements/apple-store.png" />
+										<img src="/elements/apple-store.svg" />
 									</a>
 								</Box>
 								<Box>
 									<a href="https://play.google.com/store/apps/details?id=io.swoop">
-										<img src="/elements/google-play.png" />
+										<img src="/elements/google-play.svg" />
 									</a>
 								</Box>
 							</Flex>
@@ -396,8 +405,8 @@ export default function App() {
 				/>
 			</FloatingAppContainer>
 			<ByrdiInAction />
-			<TextBanner title="THE SWOOP KIT" />
-			<ByrdiLoyaltySection
+			{/* <TextBanner title="THE SWOOP KIT" /> */}
+			{/* <ByrdiLoyaltySection
 				title="Advancing course amenities"
 				subtitle="Swoop implements flexible, scalable solutions that adapt to existing infrastructure, rather than changing them."
 				body="The technology is not limited by which golf cart fleet is used, which POS system is implemented, or which management company is running the operations."
@@ -408,7 +417,7 @@ export default function App() {
 						<SwoopImage className="front" src="/swoop/courses/swoop-kit-tablet.png" />
 					</div>
 				</LoyaltyImgWrapper>
-			</ByrdiLoyaltySection>
+			</ByrdiLoyaltySection> */}
 			<InstagramSection />
 			<NewsletterSection imgSrc="/swoop/golfers/golfer-green.png" />
 		</>

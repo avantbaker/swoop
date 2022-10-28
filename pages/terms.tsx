@@ -22,6 +22,10 @@ const Sidebar = styled(motion.div)`
 const Content = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
+
+	${Text} {
+		margin-bottom: 24px;
+	}
 `;
 
 const ContentWithSidebar = ({ ...rest }) => {
@@ -34,632 +38,723 @@ const ContentWithSidebar = ({ ...rest }) => {
 					</Text>
 				</Sidebar>
 				<Content>
+					<Text>TERMS OF USE</Text>
+
+					<Text>Last updated August 26, 2022</Text>
+
+					<Text>TABLE OF CONTENTS</Text>
+
 					<Text>
-						This privacy notice for Swoop Golf LLC (&apos;Company,&apos; &apos;we,&apos;
-						&apos;us,&apos; or &apos;our&apos;), describes how and why we might collect,
-						store, use, and/or share (&apos;process&apos;) your information when you use
-						our services (&apos;Services&apos;), such as when you: Visit our website at
-						https://www.swoopgolf.com, or any website of ours that links to this privacy
-						notice Engage with us in other related ways, including any sales, marketing,
-						or events Questions or concerns? Reading this privacy notice will help you
-						understand your privacy rights and choices. If you do not agree with our
-						policies and practices, please do not use our Services. If you still have any
-						questions or concerns, please contact us at info@swoopgolf.com.
+						<ol>
+							<li>AGREEMENT TO TERMS </li>
+							<li>INTELLECTUAL PROPERTY RIGHTS </li>
+							<li>USER REPRESENTATIONS</li>
+							<li>PROHIBITED ACTIVITIES </li>
+							<li>USER GENERATED CONTRIBUTIONS </li>
+							<li>CONTRIBUTION LICENSE </li>
+							<li>MOBILE APPLICATION LICENSE </li>
+							<li>SUBMISSIONS </li>
+							<li>THIRD-PARTY WEBSITE AND CONTENT </li>
+							<li>SITE MANAGEMENT </li>
+							<li>PRIVACY POLICY </li>
+							<li>TERM AND TERMINATION</li>
+							<li>MODIFICATIONS AND INTERRUPTIONS </li>
+							<li>GOVERNING LAW </li>
+							<li>DISPUTE RESOLUTION</li>
+							<li>CORRECTIONS </li>
+							<li>DISCLAIMER </li>
+							<li>LIMITATIONS OF LIABILITY </li>
+							<li>INDEMNIFICATION </li>
+							<li>USER DATA </li>
+							<li>ELECTRONIC COMMUNICATIONS, TRANSACTIONS, ANDSIGNATURES </li>
+							<li>CALIFORNIA USERS AND RESIDENTS </li>
+							<li>MISCELLANEOUS </li>
+							<li>CONTACT US</li>
+						</ol>
 					</Text>
 
-					<Text>SUMMARY OF KEY POINTS</Text>
+					<Text> 1. AGREEMENT TO TERMS</Text>
+
 					<Text>
-						This summary provides key points from our privacy notice, but you can find out
-						more details about any of these topics by clicking the link following each key
-						point or by using our table of contents below to find the section you are
-						looking for. You can also click here to go directly to our table of contents.
+						These Terms of Use constitute a legally binding agreement made between you,
+						whether personally or on behalf of an entity (&ldquo;you&rdquo;) and Swoop
+						Golf LLC (&quot;Company,&quot; &ldquo;we,&quot; &ldquo;us,&quot; or
+						&ldquo;our&rdquo;), concerning your access to and use of the
+						https://www.swoopgolf.com website as well as any other media form, media
+						channel, mobile website or mobile application related, linked, or otherwise
+						connected thereto (collectively, the &ldquo;Site&rdquo;). You agree that by
+						accessing the Site, you have read, understood, and agreed to be bound by all
+						of these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE,
+						THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SITE AND YOU MUST DISCONTINUE
+						USE IMMEDIATELY.
 					</Text>
+
 					<Text>
-						<Text>
-							What personal information do we process? When you visit, use, or navigate
-							our Services, we may process personal information depending on how you
-							interact with Swoop Golf LLC and the Services, the choices you make, and the
-							products and features you use. Click here to learn more.
-						</Text>{' '}
-						<Text>
-							Do we process any sensitive personal information? We do not process
-							sensitive personal information.
-						</Text>
-						<Text>
-							Do we receive any information from third parties? We do not receive any
-							information from third parties.
-						</Text>
-						<Text>
-							How do we process your information? We process your information to provide,
-							improve, and administer our Services, communicate with you, for security and
-							fraud prevention, and to comply with law. We may also process your
-							information for other purposes with your consent. We process your
-							information only when we have a valid legal reason to do so. Click here to
-							learn more.
-						</Text>
-						<Text>
-							In what situations and with which parties do we share personal information?
-							We may share information in specific situations and with specific third
-							parties. Click here to learn more.
-						</Text>
-						<Text>
-							How do we keep your information safe? We have organizational and technical
-							processes and procedures in place to protect your personal information.
-							However, no electronic transmission over the internet or information storage
-							technology can be guaranteed to be 100% secure, so we cannot promise or
-							guarantee that hackers, cybercriminals, or other unauthorized third parties
-							will not be able to defeat our security and improperly collect, access,
-							steal, or modify your information. Click here to learn more.
-						</Text>
-						<Text>
-							What are your rights? Depending on where you are located geographically, the
-							applicable privacy law may mean you have certain rights regarding your
-							personal information. Click here to learn more.
-						</Text>
-						<Text>
-							How do you exercise your rights? The easiest way to exercise your rights is
-							by filling out our data subject request form available here, or by
-							contacting us. We will consider and act upon any request in accordance with
-							applicable data protection laws.
-						</Text>
-						<Text>
-							Want to learn more about what Swoop Golf LLC does with any information we
-							collect? Click here to review the notice in full.
-						</Text>
-						<Text>TABLE OF CONTENTS</Text>
-						<Text>
-							1. WHAT INFORMATION DO WE COLLECT? 2. HOW DO WE PROCESS YOUR INFORMATION? 3.
-							WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION? 4. DO WE USE
-							COOKIES AND OTHER TRACKING TECHNOLOGIES? 5. HOW LONG DO WE KEEP YOUR
-							INFORMATION? 6. HOW DO WE KEEP YOUR INFORMATION SAFE? 7. WHAT ARE YOUR
-							PRIVACY RIGHTS? 8. CONTROLS FOR DO-NOT-TRACK FEATURES 9. DO CALIFORNIA
-							RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS? 10. DO WE MAKE UPDATES TO THIS
-							NOTICE? 11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE? 12. HOW CAN YOU
-							REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
-						</Text>
-						<Text>1. WHAT INFORMATION DO WE COLLECT?</Text>
-						<Text>Personal information you disclose to us</Text>
-						<Text>In Short: We collect personal information that you provide to us.</Text>
-						<Text>
-							We collect personal information that you voluntarily provide to us when you
-							express an interest in obtaining information about us or our products and
-							Services, when you participate in activities on the Services, or otherwise
-							when you contact us.
-						</Text>
-						<Text>
-							Personal Information Provided by You. The personal information that we
-							collect depends on the context of your interactions with us and the
-							Services, the choices you make, and the products and features you use. The
-							personal information we collect may include the following:
-						</Text>
-						<Text>email addresses</Text>
-						<Text>names</Text>
-						<Text>phone numbers</Text>
-						<Text>job titles</Text>
-						<Text>Sensitive Information. We do not process sensitive information.</Text>
-						<Text>
-							All personal information that you provide to us must be true, complete, and
-							accurate, and you must notify us of any changes to such personal
-							information.
-						</Text>
-						<Text>Information automatically collected</Text>
-						<Text>
-							In Short: Some information — such as your Internet Protocol (IP) address
-							and/or browser and device characteristics — is collected automatically when
-							you visit our Services.
-						</Text>
-						<Text>
-							We automatically collect certain information when you visit, use, or
-							navigate the Services. This information does not reveal your specific
-							identity (like your name or contact information) but may include device and
-							usage information, such as your IP address, browser and device
-							characteristics, operating system, language preferences, referring URLs,
-							device name, country, location, information about how and when you use our
-							Services, and other technical information. This information is primarily
-							needed to maintain the security and operation of our Services, and for our
-							internal analytics and reporting purposes.
-						</Text>
-						<Text>
-							Like many businesses, we also collect information through cookies and
-							similar technologies.
-						</Text>
-						<Text>
-							The information we collect includes: Log and Usage Data. Log and usage data
-							is service-related, diagnostic, usage, and performance information our
-							servers automatically collect when you access or use our Services and which
-							we record in log files. Depending on how you interact with us, this log data
-							may include your IP address, device information, browser type, and settings
-							and information about your activity in the Services (such as the date/time
-							stamps associated with your usage, pages and files viewed, searches, and
-							other actions you take such as which features you use), device event
-							information (such as system activity, error reports (sometimes called
-							&apos;crash dumps&apos;), and hardware settings). Device Data. We collect
-							device data such as information about your computer, phone, tablet, or other
-							device you use to access the Services. Depending on the device used, this
-							device data may include information such as your IP address (or proxy
-							server), device and application identification numbers, location, browser
-							type, hardware model, Internet service provider and/or mobile carrier,
-							operating system, and system configuration information. Location Data. We
-							collect location data such as information about your device&apos;s location,
-							which can be either precise or imprecise. How much information we collect
-							depends on the type and settings of the device you use to access the
-							Services. For example, we may use GPS and other technologies to collect
-							geolocation data that tells us your current location (based on your IP
-							address). You can opt out of allowing us to collect this information either
-							by refusing access to the information or by disabling your Location setting
-							on your device. However, if you choose to opt out, you may not be able to
-							use certain aspects of the Services.
-						</Text>
-						<Text>2. HOW DO WE PROCESS YOUR INFORMATION?</Text>
-						<Text>
-							In Short: We process your information to provide, improve, and administer
-							our Services, communicate with you, for security and fraud prevention, and
-							to comply with law. We may also process your information for other purposes
-							with your consent.
-						</Text>
-						<Text>
-							We process your personal information for a variety of reasons, depending on
-							how you interact with our Services, including: To deliver and facilitate
-							delivery of services to the user. We may process your information to provide
-							you with the requested service.
-						</Text>
-						<Text>
-							To send you marketing and promotional communications. We may process the
-							personal information you send to us for our marketing purposes, if this is
-							in accordance with your marketing preferences. You can opt out of our
-							marketing emails at any time. For more information, see &apos;WHAT ARE YOUR
-							PRIVACY RIGHTS?&apos; below).
-						</Text>
-						<Text>
-							To deliver targeted advertising to you. We may process your information to
-							develop and display personalized content and advertising tailored to your
-							interests, location, and more.
-						</Text>
-						<Text>
-							To evaluate and improve our Services, products, marketing, and your
-							experience. We may process your information when we believe it is necessary
-							to identify usage trends, determine the effectiveness of our promotional
-							campaigns, and to evaluate and improve our Services, products, marketing,
-							and your experience.
-						</Text>
-						<Text>
-							To identify usage trends. We may process information about how you use our
-							Services to better understand how they are being used so we can improve
-							them.
-						</Text>
-						<Text>
-							To determine the effectiveness of our marketing and promotional campaigns.
-							We may process your information to better understand how to provide
-							marketing and promotional campaigns that are most relevant to you.
-						</Text>
-						<Text>3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</Text>
-						<Text>
-							In Short: We may share information in specific situations described in this
-							section and/or with the following third parties.
-						</Text>
-						<Text>
-							We may need to share your personal information in the following situations:
-							Business Transfers. We may share or transfer your information in connection
-							with, or during negotiations of, any merger, sale of company assets,
-							financing, or acquisition of all or a portion of our business to another
-							company.
-						</Text>
-						<Text>4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</Text>
-						<Text>
-							In Short: We may use cookies and other tracking technologies to collect and
-							store your information.
-						</Text>
-						<Text>
-							We may use cookies and similar tracking technologies (like web beacons and
-							pixels) to access or store information. Specific information about how we
-							use such technologies and how you can refuse certain cookies is set out in
-							our Cookie Notice.
-						</Text>
-						<Text>5. HOW LONG DO WE KEEP YOUR INFORMATION?</Text>
-						<Text>
-							In Short: We keep your information for as long as necessary to fulfill the
-							purposes outlined in this privacy notice unless otherwise required by law.
-						</Text>
-						<Text>
-							We will only keep your personal information for as long as it is necessary
-							for the purposes set out in this privacy notice, unless a longer retention
-							period is required or permitted by law (such as tax, accounting, or other
-							legal requirements). No purpose in this notice will require us keeping your
-							personal information for longer than 1 year.
-						</Text>
-						<Text>
-							When we have no ongoing legitimate business need to process your personal
-							information, we will either delete or anonymize such information, or, if
-							this is not possible (for example, because your personal information has
-							been stored in backup archives), then we will securely store your personal
-							information and isolate it from any further processing until deletion is
-							possible.
-						</Text>
-						<Text>6. HOW DO WE KEEP YOUR INFORMATION SAFE?</Text>
-						<Text>
-							In Short: We aim to protect your personal information through a system of
-							organizational and technical security measures.
-						</Text>
-						<Text>
-							We have implemented appropriate and reasonable technical and organizational
-							security measures designed to protect the security of any personal
-							information we process. However, despite our safeguards and efforts to
-							secure your information, no electronic transmission over the Internet or
-							information storage technology can be guaranteed to be 100% secure, so we
-							cannot promise or guarantee that hackers, cybercriminals, or other
-							unauthorized third parties will not be able to defeat our security and
-							improperly collect, access, steal, or modify your information. Although we
-							will do our best to protect your personal information, transmission of
-							personal information to and from our Services is at your own risk. You
-							should only access the Services within a secure environment.
-						</Text>
-						<Text>7. WHAT ARE YOUR PRIVACY RIGHTS?</Text>
-						<Text>
-							In Short: You may review, change, or terminate your account at any time.
-						</Text>
-						<Text>
-							If you are located in the EEA or UK and you believe we are unlawfully
-							processing your personal information, you also have the right to complain to
-							your local data protection supervisory authority. You can find their contact
-							details here:
-							https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm.
-						</Text>{' '}
-						<Text>
-							If you are located in Switzerland, the contact details for the data
-							protection authorities are available here:
-							https://www.edoeb.admin.ch/edoeb/en/home.html.
-						</Text>
-						<Text>
-							Withdrawing your consent: If we are relying on your consent to process your
-							personal information, which may be express and/or implied consent depending
-							on the applicable law, you have the right to withdraw your consent at any
-							time. You can withdraw your consent at any time by contacting us by using
-							the contact details provided in the section &apos;HOW CAN YOU CONTACT US
-							ABOUT THIS NOTICE?&apos; below.
-						</Text>
-						<Text>
-							However, please note that this will not affect the lawfulness of the
-							processing before its withdrawal nor, when applicable law allows, will it
-							affect the processing of your personal information conducted in reliance on
-							lawful processing grounds other than consent.
-						</Text>
-						<Text>
-							Opting out of marketing and promotional communications: You can unsubscribe
-							from our marketing and promotional communications at any time by clicking on
-							the unsubscribe link in the emails that we send, or by contacting us using
-							the details provided in the section &apos;HOW CAN YOU CONTACT US ABOUT THIS
-							NOTICE?&apos; below. You will then be removed from the marketing lists.
-							However, we may still communicate with you — for example, to send you
-							service-related messages that are necessary for the administration and use
-							of your account, to respond to service requests, or for other non-marketing
-							purposes.
-						</Text>
-						<Text>
-							Cookies and similar technologies: Most Web browsers are set to accept
-							cookies by default. If you prefer, you can usually choose to set your
-							browser to remove cookies and to reject cookies. If you choose to remove
-							cookies or reject cookies, this could affect certain features or services of
-							our Services. To opt out of interest-based advertising by advertisers on our
-							Services visit http://www.aboutads.info/choices/.
-						</Text>
-						<Text>
-							If you have questions or comments about your privacy rights, you may email
-							us at info@swoopgolf.com.
-						</Text>
-						<Text>8. CONTROLS FOR DO-NOT-TRACK FEATURES</Text>
-						<Text>
-							Most web browsers and some mobile operating systems and mobile applications
-							include a Do-Not-Track (&apos;DNT&apos;) feature or setting you can activate
-							to signal your privacy preference not to have data about your online
-							browsing activities monitored and collected. At this stage no uniform
-							technology standard for recognizing and implementing DNT signals has been
-							finalized. As such, we do not currently respond to DNT browser signals or
-							any other mechanism that automatically communicates your choice not to be
-							tracked online. If a standard for online tracking is adopted that we must
-							follow in the future, we will inform you about that practice in a revised
-							version of this privacy notice.
-						</Text>
-						<Text>9. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</Text>
-						<Text>
-							In Short: Yes, if you are a resident of California, you are granted specific
-							rights regarding access to your personal information.
-						</Text>
-						<Text>
-							California Civil Code Section 1798.83, also known as the &apos;Shine The
-							Light&apos; law, permits our users who are California residents to request
-							and obtain from us, once a year and free of charge, information about
-							categories of personal information (if any) we disclosed to third parties
-							for direct marketing purposes and the names and addresses of all third
-							parties with which we shared personal information in the immediately
-							preceding calendar year. If you are a California resident and would like to
-							make such a request, please submit your request in writing to us using the
-							contact information provided below.
-						</Text>
-						<Text>
-							If you are under 18 years of age, reside in California, and have a
-							registered account with Services, you have the right to request removal of
-							unwanted data that you publicly post on the Services. To request removal of
-							such data, please contact us using the contact information provided below
-							and include the email address associated with your account and a statement
-							that you reside in California. We will make sure the data is not publicly
-							displayed on the Services, but please be aware that the data may not be
-							completely or comprehensively removed from all our systems (e.g., backups,
-							etc.).
-						</Text>
-						<Text>CCPA Privacy Notice</Text>
-						<Text>
-							The California Code of Regulations defines a &apos;resident&apos; as:
-						</Text>
-						<Text>
-							(1) every individual who is in the State of California for other than a
-							temporary or transitory purpose and (2) every individual who is domiciled in
-							the State of California who is outside the State of California for a
-							temporary or transitory purpose
-						</Text>
-						<Text>All other individuals are defined as &apos;non-residents.&apos;</Text>
-						<Text>
-							If this definition of &apos;resident&apos; applies to you, we must adhere to
-							certain rights and obligations regarding your personal information.
-						</Text>
-						<Text>What categories of personal information do we collect?</Text>
-						<Text>
-							We have collected the following categories of personal information in the
-							past twelve (12) months:
-						</Text>
-						<Text>Category Examples Collected</Text>
-						<Text>
-							A. Identifiers Contact details, such as real name, alias, postal address,
-							telephone or mobile contact number, unique personal identifier, online
-							identifier, Internet Protocol address, email address, and account name
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							B. Personal information categories listed in the California Customer Records
-							statute Name, contact information, education, employment, employment
-							history, and financial information
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							C. Protected classification characteristics under California or federal law
-							Gender and date of birth
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							D. Commercial information Transaction information, purchase history,
-							financial details, and payment information
-						</Text>
-						<Text>NO</Text>
-						<Text>E. Biometric information Fingerprints and voiceprints</Text>
-						<Text>NO</Text>
-						<Text>
-							F. Internet or other similar network activity Browsing history, search
-							history, online behavior, interest data, and interactions with our and other
-							websites, applications, systems, and advertisements
-						</Text>
-						<Text>NO</Text>
-						<Text>G. Geolocation data Device location</Text>
-						<Text>NO</Text>
-						<Text>
-							H. Audio, electronic, visual, thermal, olfactory, or similar information
-							Images and audio, video or call recordings created in connection with our
-							business activities
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							I. Professional or employment-related information Business contact details
-							in order to provide you our Services at a business level or job title, work
-							history, and professional qualifications if you apply for a job with us
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							J. Education Information Student records and directory information
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							K. Inferences drawn from other personal information Inferences drawn from
-							any of the collected personal information listed above to create a profile
-							or summary about, for example, an individual’s preferences and
-							characteristics
-						</Text>
-						<Text>NO</Text>
-						<Text>
-							We may also collect other personal information outside of these categories
-							through instances where you interact with us in person, online, or by phone
-							or mail in the context of:
-						</Text>
-						<Text>Receiving help through our customer support channels;</Text>
-						<Text>Participation in customer surveys or contests; and</Text>
-						<Text>
-							Facilitation in the delivery of our Services and to respond to your
-							inquiries.
-						</Text>
-						<Text>How do we use and share your personal information?</Text>
-						<Text>
-							More information about our data collection and sharing practices can be
-							found in this privacy notice.
-						</Text>
-						<Text>
-							You may contact us by email at info@swoopgolf.com, or by referring to the
-							contact details at the bottom of this document.
-						</Text>
-						<Text>
-							If you are using an authorized agent to exercise your right to opt out we
-							may deny a request if the authorized agent does not submit proof that they
-							have been validly authorized to act on your behalf.
-						</Text>
-						<Text>Will your information be shared with anyone else?</Text>
-						<Text>
-							We may disclose your personal information with our service providers
-							pursuant to a written contract between us and each service provider. Each
-							service provider is a for-profit entity that processes the information on
-							our behalf.
-						</Text>
-						<Text>
-							We may use your personal information for our own business purposes, such as
-							for undertaking internal research for technological development and
-							demonstration. This is not considered to be &apos;selling&apos; of your
-							personal information.
-						</Text>
-						<Text>
-							Swoop Golf LLC has not disclosed or sold any personal information to third
-							parties for a business or commercial purpose in the preceding twelve (12)
-							months. Swoop Golf LLC will not sell personal information in the future
-							belonging to website visitors, users, and other consumers.
-						</Text>
-						<Text>Your rights with respect to your personal data</Text>
-						<Text>Right to request deletion of the data — Request to delete</Text>
-						<Text>
-							You can ask for the deletion of your personal information. If you ask us to
-							delete your personal information, we will respect your request and delete
-							your personal information, subject to certain exceptions provided by law,
-							such as (but not limited to) the exercise by another consumer of his or her
-							right to free speech, our compliance requirements resulting from a legal
-							obligation, or any processing that may be required to protect against
-							illegal activities.
-						</Text>
-						<Text>Right to be informed — Request to know</Text>
-						<Text>Depending on the circumstances, you have a right to know:</Text>
-						<Text>whether we collect and use your personal information;</Text>
-						<Text>the categories of personal information that we collect;</Text>
-						<Text>
-							the purposes for which the collected personal information is used;
-						</Text>
-						<Text>whether we sell your personal information to third parties;</Text>
-						<Text>
-							the categories of personal information that we sold or disclosed for a
-							business purpose;
-						</Text>
-						<Text>
-							the categories of third parties to whom the personal information was sold or
-							disclosed for a business purpose; and
-						</Text>
-						<Text>
-							the business or commercial purpose for collecting or selling personal
-							information.
-						</Text>
-						<Text>
-							In accordance with applicable law, we are not obligated to provide or delete
-							consumer information that is de-identified in response to a consumer request
-							or to re-identify individual data to verify a consumer request.
-						</Text>
-						<Text>
-							Right to Non-Discrimination for the Exercise of a Consumer’s Privacy Rights
-						</Text>
-						<Text>
-							We will not discriminate against you if you exercise your privacy rights.
-						</Text>
-						<Text>Verification process</Text>
-						<Text>
-							Upon receiving your request, we will need to verify your identity to
-							determine you are the same person about whom we have the information in our
-							system. These verification efforts require us to ask you to provide
-							information so that we can match it with information you have previously
-							provided us. For instance, depending on the type of request you submit, we
-							may ask you to provide certain information so that we can match the
-							information you provide with the information we already have on file, or we
-							may contact you through a communication method (e.g., phone or email) that
-							you have previously provided to us. We may also use other verification
-							methods as the circumstances dictate.
-						</Text>
-						<Text>
-							We will only use personal information provided in your request to verify
-							your identity or authority to make the request. To the extent possible, we
-							will avoid requesting additional information from you for the purposes of
-							verification. However, if we cannot verify your identity from the
-							information already maintained by us, we may request that you provide
-							additional information for the purposes of verifying your identity and for
-							security or fraud-prevention purposes. We will delete such additionally
-							provided information as soon as we finish verifying you.
-						</Text>
-						<Text>Other privacy rights</Text>
-						<Text>You may object to the processing of your personal information.</Text>
-						<Text>
-							You may request correction of your personal data if it is incorrect or no
-							longer relevant, or ask to restrict the processing of the information.
-						</Text>
-						<Text>
-							You can designate an authorized agent to make a request under the CCPA on
-							your behalf. We may deny a request from an authorized agent that does not
-							submit proof that they have been validly authorized to act on your behalf in
-							accordance with the CCPA.
-						</Text>
-						<Text>
-							You may request to opt out from future selling of your personal information
-							to third parties. Upon receiving an opt-out request, we will act upon the
-							request as soon as feasibly possible, but no later than fifteen (15) days
-							from the date of the request submission.
-						</Text>
-						<Text>
-							To exercise these rights, you can contact us by email at info@swoopgolf.com,
-							or by referring to the contact details at the bottom of this document. If
-							you have a complaint about how we handle your data, we would like to hear
-							from you.
-						</Text>
-						<Text>10. DO WE MAKE UPDATES TO THIS NOTICE?</Text>
-						<Text>
-							In Short: Yes, we will update this notice as necessary to stay compliant
-							with relevant laws.
-						</Text>
-						<Text>
-							We may update this privacy notice from time to time. The updated version
-							will be indicated by an updated &apos;Revised&apos; date and the updated
-							version will be effective as soon as it is accessible. If we make material
-							changes to this privacy notice, we may notify you either by prominently
-							posting a notice of such changes or by directly sending you a notification.
-							We encourage you to review this privacy notice frequently to be informed of
-							how we are protecting your information.
-						</Text>
-						<Text>11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</Text>
-						<Text>
-							If you have questions or comments about this notice, you may email us at
-							info@swoopgolf.com or by post to:
-						</Text>
-						<Text>
-							Swoop Golf LLC 3185 Fox Sedge Ln Highlands Ranch, CO 80126 United States
-						</Text>
-						<Text>
-							12. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
-						</Text>
-						<Text>
-							You have the right to request access to the personal information we collect
-							from you, change that information, or delete it. To request to review,
-							update, or delete your personal information, please submit a request form by
-							clicking here.
-						</Text>
+						Supplemental terms and conditions or documents that may be posted on the Site
+						from time to time are hereby expressly incorporated herein by reference. We
+						reserve the right, in our sole discretion, to make changes or modifications to
+						these Terms of Use at any time and for any reason. We will alert you about any
+						changes by updating the &ldquo;Last updated&rdquo; date of these Terms of Use,
+						and you waive any right to receive specific notice of each such change. Please
+						ensure that you check the applicable Terms every time you use our Site so that
+						you understand which Terms apply. You will be subject to, and will be deemed
+						to have been made aware of and to have accepted, the changes in any revised
+						Terms of Use by your continued use of the Site after the date such revised
+						Terms of Use are posted.
 					</Text>
-					{/* <Text variant="cardLocation" color="sage" fontWeight="bold" mb={4}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, veniam!
-					</Text>
-					<Text mb={4}>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum accusamus modi
-						dolore, molestiae quasi rem nostrum, adipisci cupiditate accusantium incidunt
-						dolores repudiandae. Voluptatem delectus, aperiam in provident iure rem!
-						Explicabo ducimus qui odio fugit impedit quas perferendis voluptatem eligendi
-						incidunt rem culpa suscipit aperiam illo, sint atque enim facere quam.
-					</Text>
-					<Text mb={4}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. At magni odit sit
-						corporis. Odit illo voluptatem ab tempore debitis et aliquid tempora mollitia
-						est at aut, repellendus optio rem itaque inventore fuga quisquam harum hic
-						possimus. Consequatur veniam, sed id, incidunt atque eligendi libero nemo,
-						nulla non doloremque obcaecati. Tenetur.
-					</Text>
-					<Text mb={4}>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda quod dolor
-						ratione laboriosam cum minima, in quidem ipsum quasi. Similique suscipit
-						delectus explicabo assumenda ad asperiores mollitia facere? Perferendis nihil
-						voluptates deserunt quibusdam! Perspiciatis, asperiores quisquam quaerat
-						cumque ab quod deserunt aperiam, ullam earum, officiis inventore dicta
-						cupiditate dolores aspernatur.
-					</Text>
+
 					<Text>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatum
-						illum officia eum consequatur ratione cum et doloribus harum numquam ducimus
-						ipsum perferendis inventore fugiat nihil tempore, earum facere non ipsa veniam
-						architecto libero. Architecto dolore iusto eos quaerat facilis doloribus
-						officiis consequuntur, mollitia temporibus veniam, deleniti similique neque
-						recusandae!
-					</Text> */}
+						The information provided on the Site is not intended for distribution to or
+						use by any person or entity in any jurisdiction or country where such
+						distribution or use would be contrary to law or regulation or which would
+						subject us to any registration requirement within such jurisdiction or
+						country. Accordingly, those persons who choose to access the Site from other
+						locations do so on their own initiative and are solely responsible for
+						compliance with local laws, if and to the extent local laws are applicable.
+					</Text>
+
+					<Text>
+						The Site is not tailored to comply with industry-specific regulations (Health
+						Insurance Portability and Accountability Act (HIPAA), Federal Information
+						Security Management Act (FISMA), etc.), so if your interactions would be
+						subjected to such laws, you may not use this Site. You may not use the Site in
+						a way that would violate the Gramm-Leach-Bliley Act (GLBA).
+					</Text>
+
+					<Text>
+						All users who are minors in the jurisdiction in which they reside (generally
+						under the age of 18) must have the permission of, and be directly supervised
+						by, their parent or guardian to use the Site. If you are a minor, you must
+						have your parent or guardian read and agree to these Terms of Use prior to you
+						using the Site.
+					</Text>
+
+					<Text> 2. INTELLECTUAL PROPERTY RIGHTS</Text>
+
+					<Text>
+						Unless otherwise indicated, the Site is our proprietary property and all
+						source code, databases, functionality, software, website designs, audio,
+						video, text, photographs, and graphics on the Site (collectively, the
+						&ldquo;Content&rdquo;) and the trademarks, service marks, and logos contained
+						therein (the &ldquo;Marks&rdquo;) are owned or controlled by us or licensed to
+						us, and are protected by copyright and trademark laws and various other
+						intellectual property rights and unfair competition laws of the United States,
+						international copyright laws, and international conventions. The Content and
+						the Marks are provided on the Site &ldquo;AS IS&rdquo; for your information
+						and personal use only. Except as expressly provided in these Terms of Use, no
+						part of the Site and no Content or Marks may be copied, reproduced,
+						aggregated, republished, uploaded, posted, publicly displayed, encoded,
+						translated, transmitted, distributed, sold, licensed, or otherwise exploited
+						for any commercial purpose whatsoever, without our express prior written
+						permission.
+					</Text>
+
+					<Text>
+						Provided that you are eligible to use the Site, you are granted a limited
+						license to access and use the Site and to download or print a copy of any
+						portion of the Content to which you have properly gained access solely for
+						your personal, non-commercial use. We reserve all rights not expressly granted
+						to you in and to the Site, the Content and the Marks.
+					</Text>
+
+					<Text> 3. USER REPRESENTATIONS</Text>
+
+					<Text>
+						By using the Site, you represent and warrant that: (1) you have the legal
+						capacity and you agree to comply with these Terms of Use; (2) you are not a
+						minor in the jurisdiction in which you reside, or if a minor, you have
+						received parental permission to use the Site; (3) you will not access the Site
+						through automated or non-human means, whether through a bot, script, or
+						otherwise; (4) you will not use the Site for any illegal or unauthorized
+						purpose; and (5) your use of the Site will not violate any applicable law or
+						regulation.
+					</Text>
+
+					<Text>
+						If you provide any information that is untrue, inaccurate, not current, or
+						incomplete, we have the right to suspend or terminate your account and refuse
+						any and all current or future use of the Site (or any portion thereof).
+					</Text>
+
+					<Text> 4. PROHIBITED ACTIVITIES</Text>
+
+					<Text>
+						You may not access or use the Site for any purpose other than that for which
+						we make the Site available. The Site may not be used in connection with any
+						commercial endeavors except those that are specifically endorsed or approved
+						by us.
+					</Text>
+
+					<Text>
+						As a user of the Site, you agree not to: Systematically retrieve data or other
+						content from the Site to create or compile, directly or indirectly, a
+						collection, compilation, database, or directory without written permission
+						from us. Trick, defraud, or mislead us and other users, especially in any
+						attempt to learn sensitive account information such as user passwords.
+						Circumvent, disable, or otherwise interfere with security-related features of
+						the Site, including features that prevent or restrict the use or copying of
+						any Content or enforce limitations on the use of the Site and/or the Content
+						contained therein. Disparage, tarnish, or otherwise harm, in our opinion, us
+						and/or the Site. Use any information obtained from the Site in order to
+						harass, abuse, or harm another person. Make improper use of our support
+						services or submit false reports of abuse or misconduct. Use the Site in a
+						manner inconsistent with any applicable laws or regulations. Engage in
+						unauthorized framing of or linking to the Site. Upload or transmit (or attempt
+						to upload or to transmit) viruses, Trojan horses, or other material, including
+						excessive use of capital letters and spamming (continuous posting of
+						repetitive text), that interferes with any party&rsquo;s uninterrupted use and
+						enjoyment of the Site or modifies, impairs, disrupts, alters, or interferes
+						with the use, features, functions, operation, or maintenance of the Site.
+						Engage in any automated use of the system, such as using scripts to send
+						comments or messages, or using any data mining, robots, or similar data
+						gathering and extraction tools. Delete the copyright or other proprietary
+						rights notice from any Content. Attempt to impersonate another user or person
+						or use the username of another user. Upload or transmit (or attempt to upload
+						or to transmit) any material that acts as a passive or active information
+						collection or transmission mechanism, including without limitation, clear
+						graphics interchange formats (&ldquo;gifs&rdquo;), 1&times;1 pixels, web bugs,
+						cookies, or other similar devices (sometimes referred to as
+						&ldquo;spyware&rdquo; or &ldquo;passive collection mechanisms&rdquo; or
+						&ldquo;pcms&rdquo;). Interfere with, disrupt, or create an undue burden on the
+						Site or the networks or services connected to the Site. Harass, annoy,
+						intimidate, or threaten any of our employees or agents engaged in providing
+						any portion of the Site to you. Attempt to bypass any measures of the Site
+						designed to prevent or restrict access to the Site, or any portion of the
+						Site. Copy or adapt the Site&rsquo;s software, including but not limited to
+						Flash, PHP, HTML, JavaScript, or other code. Except as permitted by applicable
+						law, decipher, decompile, disassemble, or reverse engineer any of the software
+						comprising or in any way making up a part of the Site. Except as may be the
+						result of standard search engine or Internet browser usage, use, launch,
+						develop, or distribute any automated system, including without limitation, any
+						spider, robot, cheat utility, scraper, or offline reader that accesses the
+						Site, or using or launching any unauthorized script or other software. Use a
+						buying agent or purchasing agent to make purchases on the Site. Make any
+						unauthorized use of the Site, including collecting usernames and/or email
+						addresses of users by electronic or other means for the purpose of sending
+						unsolicited email, or creating user accounts by automated means or under false
+						pretenses. Use the Site as part of any effort to compete with us or otherwise
+						use the Site and/or the Content for any revenue-generating endeavor or
+						commercial enterprise. Use the Site to advertise or offer to sell goods and
+						services.
+					</Text>
+
+					<Text> 5. USER GENERATED CONTRIBUTIONS</Text>
+
+					<Text>
+						The Site does not offer users to submit or post content. We may provide you
+						with the opportunity to create, submit, post, display, transmit, perform,
+						publish, distribute, or broadcast content and materials to us or on the Site,
+						including but not limited to text, writings, video, audio, photographs,
+						graphics, comments, suggestions, or personal information or other material
+						(collectively, &quot;Contributions&quot;). Contributions may be viewable by
+						other users of the Site and through third-party websites. As such, any
+						Contributions you transmit may be treated in accordance with the Site Privacy
+						Policy. When you create or make available any Contributions, you thereby
+						represent and warrant that: The creation, distribution, transmission, public
+						display, or performance, and the accessing, downloading, or copying of your
+						Contributions do not and will not infringe the proprietary rights, including
+						but not limited to the copyright, patent, trademark, trade secret, or moral
+						rights of any third party. You are the creator and owner of or have the
+						necessary licenses, rights, consents, releases, and permissions to use and to
+						authorize us, the Site, and other users of the Site to use your Contributions
+						in any manner contemplated by the Site and these Terms of Use. You have the
+						written consent, release, and/or permission of each and every identifiable
+						individual person in your Contributions to use the name or likeness of each
+						and every such identifiable individual person to enable inclusion and use of
+						your Contributions in any manner contemplated by the Site and these Terms of
+						Use. Your Contributions are not false, inaccurate, or misleading. Your
+						Contributions are not unsolicited or unauthorized advertising, promotional
+						materials, pyramid schemes, chain letters, spam, mass mailings, or other forms
+						of solicitation. Your Contributions are not obscene, lewd, lascivious, filthy,
+						violent, harassing, libelous, slanderous, or otherwise objectionable (as
+						determined by us). Your Contributions do not ridicule, mock, disparage,
+						intimidate, or abuse anyone. Your Contributions are not used to harass or
+						threaten (in the legal sense of those terms) any other person and to promote
+						violence against a specific person or class of people. Your Contributions do
+						not violate any applicable law, regulation, or rule. Your Contributions do not
+						violate the privacy or publicity rights of any third party. Your Contributions
+						do not violate any applicable law concerning child pornography, or otherwise
+						intended to protect the health or well-being of minors. Your Contributions do
+						not include any offensive comments that are connected to race, national
+						origin, gender, sexual preference, or physical handicap. Your Contributions do
+						not otherwise violate, or link to material that violates, any provision of
+						these Terms of Use, or any applicable law or regulation. Any use of the Site
+						in violation of the foregoing violates these Terms of Use and may result in,
+						among other things, termination or suspension of your rights to use the Site.
+					</Text>
+
+					<Text> 6. CONTRIBUTION LICENSE</Text>
+
+					<Text>
+						You agree that we may access, store, process, and use any information and
+						personal data that you provide following the terms of the Privacy Policy and
+						your choices (including settings).
+					</Text>
+
+					<Text>
+						By submitting suggestions or other feedback regarding the Site, you agree that
+						we can use and share such feedback for any purpose without compensation to
+						you.
+					</Text>
+
+					<Text>
+						We do not assert any ownership over your Contributions. You retain full
+						ownership of all of your Contributions and any intellectual property rights or
+						other proprietary rights associated with your Contributions. We are not liable
+						for any statements or representations in your Contributions provided by you in
+						any area on the Site. You are solely responsible for your Contributions to the
+						Site and you expressly agree to exonerate us from any and all responsibility
+						and to refrain from any legal action against us regarding your Contributions.
+					</Text>
+
+					<Text> 7. MOBILE APPLICATION LICENSE</Text>
+
+					<Text>Use License</Text>
+
+					<Text>
+						If you access the Site via a mobile application, then we grant you a
+						revocable, non-exclusive, non-transferable, limited right to install and use
+						the mobile application on wireless electronic devices owned or controlled by
+						you, and to access and use the mobile application on such devices strictly in
+						accordance with the terms and conditions of this mobile application license
+						contained in these Terms of Use. You shall not: (1) except as permitted by
+						applicable law, decompile, reverse engineer, disassemble, attempt to derive
+						the source code of, or decrypt the application; (2) make any modification,
+						adaptation, improvement, enhancement, translation, or derivative work from the
+						application; (3) violate any applicable laws, rules, or regulations in
+						connection with your access or use of the application; (4) remove, alter, or
+						obscure any proprietary notice (including any notice of copyright or
+						trademark) posted by us or the licensors of the application; (5) use the
+						application for any revenue generating endeavor, commercial enterprise, or
+						other purpose for which it is not designed or intended; (6) make the
+						application available over a network or other environment permitting access or
+						use by multiple devices or users at the same time; (7) use the application for
+						creating a product, service, or software that is, directly or indirectly,
+						competitive with or in any way a substitute for the application; (8) use the
+						application to send automated queries to any website or to send any
+						unsolicited commercial e-mail; or (9) use any proprietary information or any
+						of our interfaces or our other intellectual property in the design,
+						development, manufacture, licensing, or distribution of any applications,
+						accessories, or devices for use with the application.
+					</Text>
+
+					<Text>Apple and Android Devices</Text>
+
+					<Text>
+						The following terms apply when you use a mobile application obtained from
+						either the Apple Store or Google Play (each an &ldquo;App Distributor&rdquo;)
+						to access the Site: (1) the license granted to you for our mobile application
+						is limited to a non-transferable license to use the application on a device
+						that utilizes the Apple iOS or Android operating systems, as applicable, and
+						in accordance with the usage rules set forth in the applicable App
+						Distributor&rsquo;s terms of service; (2) we are responsible for providing any
+						maintenance and support services with respect to the mobile application as
+						specified in the terms and conditions of this mobile application license
+						contained in these Terms of Use or as otherwise required under applicable law,
+						and you acknowledge that each App Distributor has no obligation whatsoever to
+						furnish any maintenance and support services with respect to the mobile
+						application; (3) in the event of any failure of the mobile application to
+						conform to any applicable warranty, you may notify the applicable App
+						Distributor, and the App Distributor, in accordance with its terms and
+						policies, may refund the purchase price, if any, paid for the mobile
+						application, and to the maximum extent permitted by applicable law, the App
+						Distributor will have no other warranty obligation whatsoever with respect to
+						the mobile application; (4) you represent and warrant that (i) you are not
+						located in a country that is subject to a U.S. government embargo, or that has
+						been designated by the U.S. government as a &ldquo;terrorist supporting&rdquo;
+						country and (ii) you are not listed on any U.S. government list of prohibited
+						or restricted parties; (5) you must comply with applicable third-party terms
+						of agreement when using the mobile application, e.g., if you have a VoIP
+						application, then you must not be in violation of their wireless data service
+						agreement when using the mobile application; and (6) you acknowledge and agree
+						that the App Distributors are third-party beneficiaries of the terms and
+						conditions in this mobile application license contained in these Terms of Use,
+						and that each App Distributor will have the right (and will be deemed to have
+						accepted the right) to enforce the terms and conditions in this mobile
+						application license contained in these Terms of Use against you as a
+						third-party beneficiary thereof.
+					</Text>
+
+					<Text> 8. SUBMISSIONS</Text>
+
+					<Text>
+						You acknowledge and agree that any questions, comments, suggestions, ideas,
+						feedback, or other information regarding the Site (&quot;Submissions&quot;)
+						provided by you to us are non-confidential and shall become our sole property.
+						We shall own exclusive rights, including all intellectual property rights, and
+						shall be entitled to the unrestricted use and dissemination of these
+						Submissions for any lawful purpose, commercial or otherwise, without
+						acknowledgment or compensation to you. You hereby waive all moral rights to
+						any such Submissions, and you hereby warrant that any such Submissions are
+						original with you or that you have the right to submit such Submissions. You
+						agree there shall be no recourse against us for any alleged or actual
+						infringement or misappropriation of any proprietary right in your Submissions.
+					</Text>
+
+					<Text> 9. THIRD-PARTY WEBSITE AND CONTENT</Text>
+
+					<Text>
+						The Site may contain (or you may be sent via the Site) links to other websites
+						(&quot;Third-Party Websites&quot;) as well as articles, photographs, text,
+						graphics, pictures, designs, music, sound, video, information, applications,
+						software, and other content or items belonging to or originating from third
+						parties (&quot;Third-Party Content&quot;). Such Third-Party Websites and
+						Third-Party Content are not investigated, monitored, or checked for accuracy,
+						appropriateness, or completeness by us, and we are not responsible for any
+						Third-Party Websites accessed through the Site or any Third-Party Content
+						posted on, available through, or installed from the Site, including the
+						content, accuracy, offensiveness, opinions, reliability, privacy practices, or
+						other policies of or contained in the Third-Party Websites or the Third-Party
+						Content. Inclusion of, linking to, or permitting the use or installation of
+						any Third-Party Websites or any Third-Party Content does not imply approval or
+						endorsement thereof by us. If you decide to leave the Site and access the
+						Third-Party Websites or to use or install any Third-Party Content, you do so
+						at your own risk, and you should be aware these Terms of Use no longer govern.
+						You should review the applicable terms and policies, including privacy and
+						data gathering practices, of any website to which you navigate from the Site
+						or relating to any applications you use or install from the Site. Any
+						purchases you make through Third-Party Websites will be through other websites
+						and from other companies, and we take no responsibility whatsoever in relation
+						to such purchases which are exclusively between you and the applicable third
+						party. You agree and acknowledge that we do not endorse the products or
+						services offered on Third-Party Websites and you shall hold us harmless from
+						any harm caused by your purchase of such products or services. Additionally,
+						you shall hold us harmless from any losses sustained by you or harm caused to
+						you relating to or resulting in any way from any Third-Party Content or any
+						contact with Third-Party Websites.
+					</Text>
+
+					<Text> 10. SITE MANAGEMENT</Text>
+
+					<Text>
+						We reserve the right, but not the obligation, to: (1) monitor the Site for
+						violations of these Terms of Use; (2) take appropriate legal action against
+						anyone who, in our sole discretion, violates the law or these Terms of Use,
+						including without limitation, reporting such user to law enforcement
+						authorities; (3) in our sole discretion and without limitation, refuse,
+						restrict access to, limit the availability of, or disable (to the extent
+						technologically feasible) any of your Contributions or any portion thereof;
+						(4) in our sole discretion and without limitation, notice, or liability, to
+						remove from the Site or otherwise disable all files and content that are
+						excessive in size or are in any way burdensome to our systems; and (5)
+						otherwise manage the Site in a manner designed to protect our rights and
+						property and to facilitate the proper functioning of the Site.
+					</Text>
+
+					<Text> 11. PRIVACY POLICY</Text>
+
+					<Text>
+						We care about data privacy and security. Please review our Privacy Policy:
+						https://swoopgolf.com/privacy. By using the Site, you agree to be bound by our
+						Privacy Policy, which is incorporated into these Terms of Use. Please be
+						advised the Site is hosted in the United States. If you access the Site from
+						any other region of the world with laws or other requirements governing
+						personal data collection, use, or disclosure that differ from applicable laws
+						in the United States, then through your continued use of the Site, you are
+						transferring your data to the United States, and you agree to have your data
+						transferred to and processed in the United States.
+					</Text>
+
+					<Text> 12. TERM AND TERMINATION</Text>
+
+					<Text>
+						These Terms of Use shall remain in full force and effect while you use the
+						Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS OF USE, WE RESERVE
+						THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY
+						ACCESS TO AND USE OF THE SITE (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO
+						ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR
+						BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS
+						OF USE OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR
+						PARTICIPATION IN THE SITE OR DELETE ANY CONTENT OR INFORMATION THAT YOU POSTED
+						AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.
+					</Text>
+
+					<Text>
+						If we terminate or suspend your account for any reason, you are prohibited
+						from registering and creating a new account under your name, a fake or
+						borrowed name, or the name of any third party, even if you may be acting on
+						behalf of the third party. In addition to terminating or suspending your
+						account, we reserve the right to take appropriate legal action, including
+						without limitation pursuing civil, criminal, and injunctive redress.
+					</Text>
+
+					<Text> 13. MODIFICATIONS AND INTERRUPTIONS</Text>
+
+					<Text>
+						We reserve the right to change, modify, or remove the contents of the Site at
+						any time or for any reason at our sole discretion without notice. However, we
+						have no obligation to update any information on our Site. We also reserve the
+						right to modify or discontinue all or part of the Site without notice at any
+						time. We will not be liable to you or any third party for any modification,
+						price change, suspension, or discontinuance of the Site.
+					</Text>
+
+					<Text>
+						We cannot guarantee the Site will be available at all times. We may experience
+						hardware, software, or other problems or need to perform maintenance related
+						to the Site, resulting in interruptions, delays, or errors. We reserve the
+						right to change, revise, update, suspend, discontinue, or otherwise modify the
+						Site at any time or for any reason without notice to you. You agree that we
+						have no liability whatsoever for any loss, damage, or inconvenience caused by
+						your inability to access or use the Site during any downtime or discontinuance
+						of the Site. Nothing in these Terms of Use will be construed to obligate us to
+						maintain and support the Site or to supply any corrections, updates, or
+						releases in connection therewith.
+					</Text>
+
+					<Text> 14. GOVERNING LAW</Text>
+
+					<Text>
+						These Terms of Use and your use of the Site are governed by and construed in
+						accordance with the laws of the State of Colorado applicable to agreements
+						made and to be entirely performed within the State of Colorado, without regard
+						to its conflict of law principles.
+					</Text>
+
+					<Text> 15. DISPUTE RESOLUTION</Text>
+
+					<Text>Informal Negotiations</Text>
+
+					<Text>
+						To expedite resolution and control the cost of any dispute, controversy, or
+						claim related to these Terms of Use (each &quot;Dispute&quot; and
+						collectively, the &ldquo;Disputes&rdquo;) brought by either you or us
+						(individually, a &ldquo;Party&rdquo; and collectively, the
+						&ldquo;Parties&rdquo;), the Parties agree to first attempt to negotiate any
+						Dispute (except those Disputes expressly provided below) informally for at
+						least thirty (30) days before initiating arbitration. Such informal
+						negotiations commence upon written notice from one Party to the other Party.
+					</Text>
+
+					<Text>Binding Arbitration</Text>
+
+					<Text>
+						If the Parties are unable to resolve a Dispute through informal negotiations,
+						the Dispute (except those Disputes expressly excluded below) will be finally
+						and exclusively resolved through binding arbitration. YOU UNDERSTAND THAT
+						WITHOUT THIS PROVISION, YOU WOULD HAVE THE RIGHT TO SUE IN COURT AND HAVE A
+						JURY TRIAL. The arbitration shall be commenced and conducted under the
+						Commercial Arbitration Rules of the American Arbitration Association
+						(&quot;AAA&quot;) and, where appropriate, the AAA&rsquo;s Supplementary
+						Procedures for Consumer Related Disputes (&quot;AAA Consumer Rules&quot;),
+						both of which are available at the AAA website: www.adr.org. Your arbitration
+						fees and your share of arbitrator compensation shall be governed by the AAA
+						Consumer Rules and, where appropriate, limited by the AAA Consumer Rules. If
+						such costs are determined by the arbitrator to be excessive, we will pay all
+						arbitration fees and expenses. The arbitration may be conducted in person,
+						through the submission of documents, by phone, or online. The arbitrator will
+						make a decision in writing, but need not provide a statement of reasons unless
+						requested by either Party. The arbitrator must follow applicable law, and any
+						award may be challenged if the arbitrator fails to do so. Except where
+						otherwise required by the applicable AAA rules or applicable law, the
+						arbitration will take place in Douglas County, Colorado. Except as otherwise
+						provided herein, the Parties may litigate in court to compel arbitration, stay
+						proceedings pending arbitration, or to confirm, modify, vacate, or enter
+						judgment on the award entered by the arbitrator.
+					</Text>
+
+					<Text>
+						If for any reason, a Dispute proceeds in court rather than arbitration, the
+						Dispute shall be commenced or prosecuted in the state and federal courts
+						located in Douglas County, Colorado, and the Parties hereby consent to, and
+						waive all defenses of lack of personal jurisdiction, and forum non conveniens
+						with respect to venue and jurisdiction in such state and federal courts.
+						Application of the United Nations Convention on Contracts for the
+						International Sale of Goods and the Uniform Computer Information Transaction
+						Act (UCITA) is excluded from these Terms of Use.
+					</Text>
+
+					<Text>
+						In no event shall any Dispute brought by either Party related in any way to
+						the Site be commenced more than one (1) years after the cause of action arose.
+						If this provision is found to be illegal or unenforceable, then neither Party
+						will elect to arbitrate any Dispute falling within that portion of this
+						provision found to be illegal or unenforceable, and such Dispute shall be
+						decided by a court of competent jurisdiction within the courts listed for
+						jurisdiction above, and the Parties agree to submit to the personal
+						jurisdiction of that court.
+					</Text>
+
+					<Text>Restrictions</Text>
+
+					<Text>
+						The Parties agree that any arbitration shall be limited to the Dispute between
+						the Parties individually. To the full extent permitted by law, (a) no
+						arbitration shall be joined with any other proceeding; (b) there is no right
+						or authority for any Dispute to be arbitrated on a class-action basis or to
+						utilize class action procedures; and (c) there is no right or authority for
+						any Dispute to be brought in a purported representative capacity on behalf of
+						the general public or any other persons.
+					</Text>
+
+					<Text>Exceptions to Informal Negotiations and Arbitration</Text>
+
+					<Text>
+						The Parties agree that the following Disputes are not subject to the above
+						provisions concerning informal negotiations and binding arbitration: (a) any
+						Disputes seeking to enforce or protect, or concerning the validity of, any of
+						the intellectual property rights of a Party; (b) any Dispute related to, or
+						arising from, allegations of theft, piracy, invasion of privacy, or
+						unauthorized use; and (c) any claim for injunctive relief. If this provision
+						is found to be illegal or unenforceable, then neither Party will elect to
+						arbitrate any Dispute falling within that portion of this provision found to
+						be illegal or unenforceable and such Dispute shall be decided by a court of
+						competent jurisdiction within the courts listed for jurisdiction above, and
+						the Parties agree to submit to the personal jurisdiction of that court.
+					</Text>
+
+					<Text> 16. CORRECTIONS</Text>
+
+					<Text>
+						There may be information on the Site that contains typographical errors,
+						inaccuracies, or omissions, including descriptions, pricing, availability, and
+						various other information. We reserve the right to correct any errors,
+						inaccuracies, or omissions and to change or update the information on the Site
+						at any time, without prior notice.
+					</Text>
+
+					<Text> 17. DISCLAIMER</Text>
+
+					<Text>
+						THE SITE IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR
+						USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST
+						EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN
+						CONNECTION WITH THE SITE AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION,
+						THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+						AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE
+						ACCURACY OR COMPLETENESS OF THE SITE&rsquo;S CONTENT OR THE CONTENT OF ANY
+						WEBSITES LINKED TO THE SITE AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY
+						FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2)
+						PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM
+						YOUR ACCESS TO AND USE OF THE SITE, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF
+						OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL
+						INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION
+						TO OR FROM THE SITE, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH
+						MAY BE TRANSMITTED TO OR THROUGH THE SITE BY ANY THIRD PARTY, AND/OR (6) ANY
+						ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE OF
+						ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED,
+						OR OTHERWISE MADE AVAILABLE VIA THE SITE. WE DO NOT WARRANT, ENDORSE,
+						GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR
+						OFFERED BY A THIRD PARTY THROUGH THE SITE, ANY HYPERLINKED WEBSITE, OR ANY
+						WEBSITE OR MOBILE APPLICATION FEATURED IN ANY BANNER OR OTHER ADVERTISING, AND
+						WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY
+						TRANSACTION BETWEEN YOU AND ANY THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.
+						AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY
+						ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE
+						APPROPRIATE.
+					</Text>
+
+					<Text> 18. LIMITATIONS OF LIABILITY</Text>
+
+					<Text>
+						IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR
+						ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY,
+						INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE,
+						LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SITE, EVEN IF WE
+						HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING
+						TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE
+						WHATSOEVER AND REGARDLESS OF THE FORM OF THE ACTION, WILL AT ALL TIMES BE
+						LIMITED TO THE LESSER OF THE AMOUNT PAID, IF ANY, BY YOU TO US OR $1,000.00
+						USD. CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON
+						IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE
+						LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT
+						APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.
+					</Text>
+
+					<Text> 19. INDEMNIFICATION</Text>
+
+					<Text>
+						You agree to defend, indemnify, and hold us harmless, including our
+						subsidiaries, affiliates, and all of our respective officers, agents,
+						partners, and employees, from and against any loss, damage, liability, claim,
+						or demand, including reasonable attorneys&rsquo; fees and expenses, made by
+						any third party due to or arising out of: (1) use of the Site; (2) breach of
+						these Terms of Use; (3) any breach of your representations and warranties set
+						forth in these Terms of Use; (4) your violation of the rights of a third
+						party, including but not limited to intellectual property rights; or (5) any
+						overt harmful act toward any other user of the Site with whom you connected
+						via the Site. Notwithstanding the foregoing, we reserve the right, at your
+						expense, to assume the exclusive defense and control of any matter for which
+						you are required to indemnify us, and you agree to cooperate, at your expense,
+						with our defense of such claims. We will use reasonable efforts to notify you
+						of any such claim, action, or proceeding which is subject to this
+						indemnification upon becoming aware of it.
+					</Text>
+
+					<Text> 20. USER DATA</Text>
+
+					<Text>
+						We will maintain certain data that you transmit to the Site for the purpose of
+						managing the performance of the Site, as well as data relating to your use of
+						the Site. Although we perform regular routine backups of data, you are solely
+						responsible for all data that you transmit or that relates to any activity you
+						have undertaken using the Site. You agree that we shall have no liability to
+						you for any loss or corruption of any such data, and you hereby waive any
+						right of action against us arising from any such loss or corruption of such
+						data.
+					</Text>
+
+					<Text> 21. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</Text>
+
+					<Text>
+						Visiting the Site, sending us emails, and completing online forms constitute
+						electronic communications. You consent to receive electronic communications,
+						and you agree that all agreements, notices, disclosures, and other
+						communications we provide to you electronically, via email and on the Site,
+						satisfy any legal requirement that such communication be in writing. YOU
+						HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER
+						RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF
+						TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SITE. You hereby waive
+						any rights or requirements under any statutes, regulations, rules, ordinances,
+						or other laws in any jurisdiction which require an original signature or
+						delivery or retention of non-electronic records, or to payments or the
+						granting of credits by any means other than electronic means.
+					</Text>
+
+					<Text> 22. CALIFORNIA USERS AND RESIDENTS</Text>
+
+					<Text>
+						If any complaint with us is not satisfactorily resolved, you can contact the
+						Complaint Assistance Unit of the Division of Consumer Services of the
+						California Department of Consumer Affairs in writing at 1625 North Market
+						Blvd., Suite N 112, Sacramento, California 95834 or by telephone at (800)
+						952-5210 or (916) 445-1254.
+					</Text>
+
+					<Text> 23. MISCELLANEOUS</Text>
+
+					<Text>
+						These Terms of Use and any policies or operating rules posted by us on the
+						Site or in respect to the Site constitute the entire agreement and
+						understanding between you and us. Our failure to exercise or enforce any right
+						or provision of these Terms of Use shall not operate as a waiver of such right
+						or provision. These Terms of Use operate to the fullest extent permissible by
+						law. We may assign any or all of our rights and obligations to others at any
+						time. We shall not be responsible or liable for any loss, damage, delay, or
+						failure to act caused by any cause beyond our reasonable control. If any
+						provision or part of a provision of these Terms of Use is determined to be
+						unlawful, void, or unenforceable, that provision or part of the provision is
+						deemed severable from these Terms of Use and does not affect the validity and
+						enforceability of any remaining provisions. There is no joint venture,
+						partnership, employment or agency relationship created between you and us as a
+						result of these Terms of Use or use of the Site. You agree that these Terms of
+						Use will not be construed against us by virtue of having drafted them. You
+						hereby waive any and all defenses you may have based on the electronic form of
+						these Terms of Use and the lack of signing by the parties hereto to execute
+						these Terms of Use.
+					</Text>
+
+					<Text> 24. CONTACT US</Text>
+
+					<Text>
+						In order to resolve a complaint regarding the Site or to receive further
+						information regarding use of the Site, please contact us at:
+					</Text>
+
+					<Text>
+						Swoop Golf LLC 3185 Fox Sedge Ln Highlands Ranch, CO 80126 United States
+					</Text>
+					<Text>Phone: (+1)4802259702 info@swoopgolf.com</Text>
 				</Content>
 			</ContentWithSidebarWrapper>
 		</Section>
@@ -668,7 +763,7 @@ const ContentWithSidebar = ({ ...rest }) => {
 function TermsAndConditions() {
 	return (
 		<>
-			<TextBanner pt={[7, 8]} isLight title="Privacy Notice" />
+			<TextBanner pt={[7, 8]} isLight title="Terms & Contditions" />
 			<ContentWithSidebar />
 		</>
 	);

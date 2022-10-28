@@ -101,6 +101,7 @@ export const ValueSectionAlt = ({
 									variant="h2"
 									fontFamily="'Shippori Antique Regular',sans-serif"
 									maxWidth={rem(400)}
+									fontWeight="lighter"
 								>
 									{body}
 								</Text>
@@ -173,6 +174,7 @@ export const ValueSectionAlt2 = ({
 									variant="h2"
 									fontFamily="'Shippori Antique Regular',sans-serif"
 									maxWidth={rem(400)}
+									fontWeight="lighter"
 								>
 									{body}
 								</Text>
@@ -272,6 +274,7 @@ export const CheersSection = ({
 									variant="h2"
 									fontFamily="'Shippori Antique Regular',sans-serif"
 									maxWidth={rem(400)}
+									fontWeight="lighter"
 								>
 									{body}
 								</Text>
@@ -340,6 +343,7 @@ export const IncreaseMarginsSection = ({
 									variant="h2"
 									fontFamily="'Shippori Antique Regular',sans-serif"
 									maxWidth={rem(400)}
+									fontWeight="lighter"
 								>
 									{body}
 								</Text>
@@ -411,6 +415,7 @@ export const IntegrateSection = ({
 									variant="h2"
 									fontFamily="'Shippori Antique Regular',sans-serif"
 									maxWidth={rem(400)}
+									fontWeight="lighter"
 								>
 									{body}
 								</Text>

@@ -27,13 +27,13 @@ export const MenuProvider = ({ children }) => {
 			html.style.overflow = 'hidden';
 			body.style.overflow = 'hidden';
 		} else {
-			html.style.overflow = 'unset';
-			body.style.overflow = 'unset';
+			html.style.overflow = '';
+			body.style.overflow = '';
 		}
 		setIsOpen(!isOpen);
 	};
-	const goToPage = (path) => async () => {
-		await router.push(path);
+	const goToPage = (path, queryParams) => async () => {
+		await router.push({ pathname: path, query: { ...queryParams } });
 		setIsOpen(false);
 	};
 	const goHome = async () => {
@@ -107,13 +107,13 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 						/> */}
 					</Flex>
 					<Flex flexDirection="column" ml={[0, 5]}>
-						<MenuItem
+						{/* <MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}
 							color="slate"
 							title="Press"
 							onClick={goToPage('/press')}
-						/>
+						/> */}
 						<MenuItem
 							textAlign={['left', 'right']}
 							mr={['0 !important']}

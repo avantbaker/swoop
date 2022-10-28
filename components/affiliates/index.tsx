@@ -4,7 +4,7 @@ import { Flex, Box } from 'rebass/styled-components';
 import { rem } from 'polished';
 import theme from 'styles/theme';
 import { useCustomCarousel } from 'components/testimonials';
-
+import Link from 'next/link';
 export const PhotoCarousel = styled('div')`
 	display: flex;
 	flex-wrap: nowrap;
@@ -51,11 +51,12 @@ const LogoWrapper = styled(Box)`
 		height: auto;
 	}
 `;
-const Link = styled(Box)`
+const LinkWrapper = styled(Box)`
 	margin-left: -20px;
 	margin-right: -20px;
 	padding-left: 20px;
 	width: 100%;
+	cursor: pointer;
 `;
 const AffiliateWrapper = styled(Box)`
 	padding-top: ${({ theme }) => rem(theme.space[6])};
@@ -221,10 +222,12 @@ export const AffiliateSection = () => {
 					</a>
 				</EmblaContainer>
 			</EmblaParent>
-			<Link mt={[4, 6, 5]} mb={6} href="/brand">
-				<Text pl={[4]} color="orange" variant="link3">
-					More Affilate Courses
-				</Text>
+			<Link href={{ pathname: '/brand' }}>
+				<LinkWrapper mt={[4, 6, 5]} mb={6} href="/brand">
+					<Text pl={[4]} color="orange" variant="link3">
+						More Affilate Courses
+					</Text>
+				</LinkWrapper>
 			</Link>
 		</AffiliateContainer>
 	);
@@ -299,20 +302,23 @@ export const AffiliateSectionExpanded = () => {
 								</LogoWrapper>
 							</a>
 						</LogoContainerExpanded>
-						<Link
-							href="/contact"
-							passHref
-							flex={1}
-							mt={[2, 6, 5]}
-							mb={6}
-							maxWidth={['70%', , '100%']}
-						>
-							<a>
-								<Text variant="link3" color="orange">
-									Become a Swoop Affiliate Course
-								</Text>
-							</a>
-						</Link>
+						<LinkWrapper flex={1} mt={[2, 6, 5]} mb={6} maxWidth={['70%', , '100%']}>
+							<Link
+								href={{
+									pathname: '/contact',
+									query: {
+										inquiry: 'affiliates',
+									},
+								}}
+								passHref
+							>
+								<a>
+									<Text variant="link3" color="orange">
+										Become a Swoop Affiliate Course
+									</Text>
+								</a>
+							</Link>
+						</LinkWrapper>
 					</AffiliateContentWrapper>
 				</AffiliateWrapper>
 			</AffiliateContainer>

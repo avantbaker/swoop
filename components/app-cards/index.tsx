@@ -4,6 +4,7 @@ import { Flex } from 'rebass/styled-components';
 import Text from 'components/common/text';
 import Link from 'next/link';
 import { rem } from 'polished';
+import { useState, useRef, useEffect } from 'react';
 
 export const DualPathSection = styled('div')`
 	background: url(/elements/dotted-bg.svg);
@@ -47,6 +48,18 @@ export const DualSection = styled(Flex)`
 `;
 
 export const AppCards = () => {
+	const [golfersTextHeight, setGolfersTextHeight] = useState(0);
+	const golfersText = useRef(null);
+	useEffect(() => {
+		setGolfersTextHeight(golfersText.current.clientHeight);
+	}, [golfersText]);
+
+	const [coursesTextHeight, setCoursesTextHeight] = useState(0);
+	const coursesText = useRef(null);
+	useEffect(() => {
+		setCoursesTextHeight(coursesText.current.clientHeight);
+	}, [coursesText]);
+
 	return (
 		<DualPathSection>
 			<Section
@@ -55,17 +68,31 @@ export const AppCards = () => {
 				flexDirection={['column', 'column', 'row']}
 			>
 				<Link href="/app/golfers">
-					<DualSection justifyContent={['center']} py={[5, 6]}>
-						<VerticalTextL pl={4} variant="displayVertical" mb={[5, ,]}>
+					<DualSection justifyContent={['center']} py={[6]}>
+						<VerticalTextL ref={golfersText} mr={5} variant="displayVertical">
 							Golfers
 						</VerticalTextL>
-						<img src="/elements/app-golfers-desktop.png" alt="" />
+						<img
+							style={{
+								height: golfersTextHeight,
+								width: 'auto',
+							}}
+							src="/elements/apple-golfers-desktop.png"
+							alt=""
+						/>
 					</DualSection>
 				</Link>
 				<Link href="/app/courses">
-					<DualSection justifyContent={['center']} py={[5, 6]}>
-						<img src="/elements/app-courses-desktop.png" alt="" />
-						<VerticalTextL variant="displayVertical" mb={[5, ,]}>
+					<DualSection justifyContent={['center']} py={[6]}>
+						<img
+							style={{
+								height: coursesTextHeight,
+								width: 'auto',
+							}}
+							src="/elements/app-courses-desktop-cropped.png"
+							alt=""
+						/>
+						<VerticalTextL ref={coursesText} variant="displayVertical" ml={[4]}>
 							Courses
 						</VerticalTextL>
 					</DualSection>

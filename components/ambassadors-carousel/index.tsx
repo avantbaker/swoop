@@ -15,6 +15,7 @@ import Instagram from 'components/common/icons/instagram';
 import LinkedIn from 'components/common/icons/linkedin';
 import theme from 'styles/theme';
 import { PhotoCarousel } from 'components/byrdi-in-action';
+import Link from 'next/link';
 
 const AmassadorsCarouselWrapper = styled(Block)`
 	padding-left: 0;
@@ -180,11 +181,21 @@ export const AmbassadorCarousel = ({ cards = cardData, ...rest }) => {
 					<LeftControl onClick={scrollPrev} />
 					<RightControl onClick={scrollNext} />
 				</ControlContainer>
-				<a href="">
-					<Text maxWidth={['60%']} variant="link3">
-						Become a Swoop Ambassador
-					</Text>
-				</a>
+				<Link
+					href={{
+						pathname: '/contact',
+						query: {
+							inquiry: 'ambassadors',
+						},
+					}}
+					passHref
+				>
+					<a>
+						<Text maxWidth={['60%']} variant="link3">
+							Become a Swoop Ambassador
+						</Text>
+					</a>
+				</Link>
 			</ControlWrapper>
 		</AmassadorsCarouselWrapper>
 	);

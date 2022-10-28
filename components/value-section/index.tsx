@@ -71,18 +71,18 @@ export const SectionDetails = styled(DualSection)`
 	}
 	img {
 		// transform: translateY(${rem(20)});
-		max-height: ${rem(340)};
+		// max-height: ${rem(340)};
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 			max-height: unset;
 		}
 	}
-	.hidden {
-		visibility: hidden;
-	}
-	.fixed {
-		position: fixed;
-		z-index: 10;
-	}
+	// .hidden {
+	// 	visibility: hidden;
+	// }
+	// .fixed {
+	// 	position: fixed;
+	// 	z-index: 10;
+	// }
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		border-left: none;
 	}
@@ -225,6 +225,7 @@ export const ValueSection = ({
 							variant="h2"
 							fontFamily="'Shippori Antique Regular',sans-serif"
 							maxWidth={rem(400)}
+							fontWeight="lighter"
 						>
 							{body}
 						</Text>
@@ -331,6 +332,7 @@ export const ValueSection2 = ({
 							variant="h2"
 							fontFamily="'Shippori Antique Regular',sans-serif"
 							maxWidth={rem(400)}
+							fontWeight="lighter"
 						>
 							{body}
 						</Text>
@@ -435,6 +437,7 @@ export const BoostRevenueSection = ({
 							variant="h2"
 							fontFamily="'Shippori Antique Regular',sans-serif"
 							maxWidth={rem(400)}
+							fontWeight="lighter"
 						>
 							{body}
 						</Text>
@@ -543,6 +546,7 @@ export const EnhanceSection = ({
 							variant="h2"
 							fontFamily="'Shippori Antique Regular',sans-serif"
 							maxWidth={rem(400)}
+							fontWeight="lighter"
 						>
 							{body}
 						</Text>
