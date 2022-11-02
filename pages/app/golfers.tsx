@@ -1,3 +1,4 @@
+import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 import { VerticalTextL } from 'components/app-cards';
 import { ByrdiInAction } from 'components/byrdi-in-action';
 import Text from 'components/common/text';
@@ -43,6 +44,7 @@ export const Circle1 = styled('div')`
 	border: 0.5px solid ${({ theme }) => theme.colors.calcite};
 	border-radius: 50%;
 	display: none;
+	z-index: 0;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		right: ${rem(-180)};
 		display: block;
@@ -107,110 +109,183 @@ const FloatingHero = styled(CustomSection)`
 	}
 `;
 
-export default function App() {
-	const controls = useAnimationControls();
-	const { scrollYProgress } = useViewportScroll();
-	const { width, height } = useViewport();
-	const floatingImageAnchorStartRef = useRef(null);
-	const floatingImageAnchorFinishRef = useRef(null);
-	const floatingImageRef = useRef(null);
-	const [imageSrc, setImageSrc] = useState('/elements/app-golfers-desktop.png');
-	const [yStartPosition, setyStartPosition] = useState('0%');
-	const [xTransform, setXTransform] = useState(['-28%', '-50%', '-50%']);
-	const [scaleTransform, setScaleTransform] = useState([1, 1.3, 1.3]);
-	const POSITION = useMotionValue('fixed');
-	const TOP = useMotionValue('50%');
-	const BOTTOM = useMotionValue('inherit');
+const ValueSectionFloatingImageContainer = styled('div')`
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+`;
 
-	const x = useTransform(scrollYProgress, [0, 0.1, 1], xTransform);
-	const y = useTransform(scrollYProgress, [0, 0.1, 1], [yStartPosition, '-50%', '-50%']);
-	const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [1, 0, 0]);
+const ValueSectionFloatingImage = styled('div')`
+	width: 240px;
+	position: sticky;
+	display: inline-block;
+	align-self: flex-start;
+	z-index: 1;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		width: 320px;
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		width: 320px;
+		margin-left: -80px;
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
+		width: 320px;
+		margin-left: -100px;
+	}
+`;
 
-	const scale = useTransform(scrollYProgress, [0, 0.1, 1], scaleTransform);
+const BackgroundImage = styled(motion.div)`
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: url(${({ src }) => src});
+	background-position: contain;
+	background-size: cover;
+	zindex: -1;
+`;
+
+function useOnScreen(options = {}) {
+	const [ref, setRef] = useState(null);
+	const [visible, setVisible] = useState(null);
 
 	useEffect(() => {
-		const floatingImgRef = floatingImageRef.current.getBoundingClientRect();
-		const startAnchorRef = floatingImageAnchorStartRef.current.getBoundingClientRect();
-		const anchorBottom = window.pageYOffset + startAnchorRef.bottom;
-		const trueBottom = height / 2 + floatingImgRef.height;
-		const delta = anchorBottom - trueBottom;
-		const floatingYAsPercent = Math.ceil((delta / height) * 100);
-		const currentYPosition = `${floatingYAsPercent}%`;
-		console.log('Current Y Position: ', currentYPosition);
-		setyStartPosition(currentYPosition);
-	}, []);
+		const observer = new IntersectionObserver(([entry]) => {
+			setVisible(entry.isIntersecting);
+		}, options);
 
-	useEffect(() => {
-		if (width >= 1024) {
-			setXTransform(['-44%', '-60%', '-60%']);
-			setScaleTransform([1, 1.3, 1.3]);
+		if (ref) {
+			observer.observe(ref);
 		}
-	}, [width, setXTransform, setScaleTransform, yStartPosition, setyStartPosition]);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const lastImg = floatingImageAnchorFinishRef.current.getBoundingClientRect();
-			const floatImg = floatingImageRef.current.getBoundingClientRect();
-			const lastImgBottom = window.pageYOffset + (lastImg.bottom - 50);
-			const floatImgBottom = window.pageYOffset + (floatImg.bottom + 20);
-			const trueImgBottom = lastImgBottom - lastImg.height;
-			const isAboveAnchorPoint = window.pageYOffset < trueImgBottom;
-			if (isAboveAnchorPoint) {
-				POSITION.set('fixed');
-				TOP.set('50%');
-			} else if (floatImgBottom >= lastImgBottom) {
-				POSITION.set('absolute');
-				TOP.set(`${lastImgBottom - (lastImg.height + 20)}px`);
+		return () => {
+			if (ref) {
+				observer.unobserve(ref);
 			}
 		};
-		window.addEventListener('scroll', handleScroll, { passive: true });
+	}, [ref, options]);
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, [height]);
+	return [setRef, visible];
+}
+
+export default function App() {
+	const controls = useAnimationControls();
+	const floatingImageRef = useRef(null);
+	const firstImageRef = useRef(null);
+	const floatingImageAnchorStartRef = useRef(null);
+	const floatingImageAnchorFinalRef = useRef(null);
+	const floatingImageContainerFinalRef = useRef(null);
+	const firstImageContainerRef = useRef(null);
+	const { width, height } = useViewport();
+	const [stickyImgPadding, setStickyImgPadding] = useState(0);
+	const [imageSrc, setImageSrc] = useState('/swoop/golfers/golfers-phone-1.png');
+	const [topOffset, setTopOffset] = useState(0);
+	const [bottomOffset, setBottomOffset] = useState(0);
+
+	const [firstSection, firstSectionIsVisible] = useOnScreen({
+		threshold: 0.6,
+	});
+	const [secondSection, secondSectionIsVisible] = useOnScreen({
+		threshold: 0.6,
+	});
+	const [thirdSection, thirdSectionIsVisible] = useOnScreen({
+		threshold: 0.6,
+	});
+	const [fourthSection, fourthSectionIsVisible] = useOnScreen({
+		threshold: 0.6,
+	});
+
+	useEffect(() => {
+		if (firstSectionIsVisible) {
+			(async () => {
+				await controls.start({ opacity: 0, transition: { duration: 0.5 } });
+				setImageSrc('/swoop/golfers/golfers-phone-1.png');
+				await controls.start({ opacity: 1, transition: { duration: 0.5 } });
+			})();
+		}
+	}, [firstSectionIsVisible]);
+	useEffect(() => {
+		if (secondSectionIsVisible) {
+			(async () => {
+				await controls.start({ opacity: 0 });
+				setImageSrc('/swoop/golfers/golfers-phone-2.png');
+				await controls.start({ opacity: 1 });
+			})();
+		}
+	}, [secondSectionIsVisible]);
+	useEffect(() => {
+		if (thirdSectionIsVisible) {
+			(async () => {
+				await controls.start({ opacity: 0 });
+				setImageSrc('/swoop/golfers/golfers-phone-3.png');
+				await controls.start({ opacity: 1 });
+			})();
+		}
+	}, [thirdSectionIsVisible]);
+	useEffect(() => {
+		if (fourthSectionIsVisible) {
+			(async () => {
+				await controls.start({ opacity: 0 });
+				setImageSrc('/swoop/golfers/golfers-phone-4.png');
+				await controls.start({ opacity: 1 });
+			})();
+		}
+	}, [fourthSectionIsVisible]);
+
+	useEffect(() => {
+		const html = document.getElementsByTagName('html')[0];
+		const body = document.getElementsByTagName('body')[0];
+		html.style.overflowX = 'clip';
+		body.style.overflowX = 'clip';
+	}, []);
 
 	const [textHeight, setTextHeight] = useState(0);
 
 	useEffect(() => {
-		setTextHeight(floatingImageAnchorStartRef.current.clientHeight);
-	}, [floatingImageAnchorStartRef]);
+		const containerPos = firstImageContainerRef.current.getBoundingClientRect().y;
+		const imagePos = firstImageRef.current.getBoundingClientRect().y;
+		const deltaForPadding = Math.abs(containerPos - imagePos);
+		setStickyImgPadding(deltaForPadding);
+		setTextHeight(
+			Math.abs(
+				floatingImageAnchorStartRef.current.getBoundingClientRect().top -
+					floatingImageAnchorStartRef.current.getBoundingClientRect().bottom
+			)
+		);
+	}, [
+		floatingImageAnchorStartRef.current,
+		firstImageRef.current,
+		firstImageContainerRef.current,
+	]);
+	useEffect(() => {
+		const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
+		const containerPos =
+			floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
+		const deltaForBottom = Math.abs(imagePos - containerPos);
+		setBottomOffset(deltaForBottom);
+	}, [floatingImageAnchorFinalRef.current, floatingImageContainerFinalRef.current]);
+
+	useEffect(() => {
+		const top = (height - floatingImageRef.current.clientHeight) / 2;
+		setTopOffset(top);
+	}, [height, floatingImageRef.current, setTopOffset]);
 
 	return (
 		<>
 			<TextIntro />
 			<FloatingAppContainer>
-				<motion.img
-					ref={floatingImageRef}
-					// style={{
-					// 	left: '50%',
-					// 	top: TOP,
-					// 	bottom: BOTTOM,
-					// 	x,
-					// 	y,
-					// 	scale,
-					// 	position: POSITION,
-					// 	zIndex: 1,
-					// }}
-					// initial={false}
-					// animate={controls}
-					// transition={{
-					// 	opacity: {
-					// 		duration: 0.7,
-					// 		ease: 'easeInOut',
-					// 	},
-					// }}
-					// className="fixed"
-					// src={imageSrc}
-				/>
 				<Waypoint
-					onEnter={() => {
-						(async () => {
-							await controls.start({ opacity: 0 });
-							await setImageSrc('/elements/app-golfers-desktop.png');
-							await controls.start({ opacity: 1 });
-						})();
-					}}
+				// onEnter={() => {
+				// 	(async () => {
+				// 		await controls.start({ opacity: 0 });
+				// 		await setImageSrc('/elements/app-golfers-desktop.png');
+				// 		await controls.start({ opacity: 1 });
+				// 	})();
+				// }}
 				>
 					<MainFloatingHeroContainer mb={[6, 8]}>
 						<MainFloatingHero>
@@ -233,9 +308,10 @@ export default function App() {
 										Golfers
 									</VerticalTextL>
 									<img
-										// className="hidden"
 										style={{
-											height: textHeight + 2,
+											height: textHeight,
+											maxWidth: 'unset',
+											width: 'auto',
 										}}
 										src="/elements/apple-golfers-desktop.png"
 										alt=""
@@ -300,66 +376,94 @@ export default function App() {
 						</MobileSection>
 					</MainFloatingHeroContainer>
 				</Waypoint>
-				<ValueSection
-					mt={[8]}
-					mb={[6, rem(440)]}
-					title="ELEVATE YOUR GAME"
-					body="Perfect your pitch. Eliminate mid-round hanger with food + drink delivered to your exact location."
-					onEnter={() => {
-						(async () => {
-							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-1.png');
-							await controls.start({ opacity: 1 });
-						})();
-					}}
-				>
-					<Circle1 />
-				</ValueSection>
-				<ValueSectionAlt
-					pt={[8]}
-					mb={[6, rem(560)]}
-					title="ORDER MORE"
-					body="Enjoy all of the culinary comforts for the club grill, on the greens."
-					onEnter={() => {
-						(async () => {
-							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-2.png');
-							await controls.start({ opacity: 1 });
-						})();
-					}}
-				>
-					<Circle2 />
-				</ValueSectionAlt>
-				<ValueSection2
-					title="KEEP PLAYING"
-					body="On-demand, on the course. Fuel your game with refreshments, and don’t stop playing."
-					pt={[8]}
-					mb={[6, rem(500)]}
-					onEnter={() => {
-						(async () => {
-							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-3.png');
-							await controls.start({ opacity: 1 });
-						})();
-					}}
-				>
-					<Circle1 />
-					<Circle3 />
-				</ValueSection2>
-				<CheersSection
-					pt={[8]}
-					mb={[7, rem(310)]}
-					anchorRef={floatingImageAnchorFinishRef}
-					title="CHEERS"
-					body="Make more memorable rounds by having a round of drinks delivered during your game."
-					onEnter={() => {
-						(async () => {
-							await controls.start({ opacity: 0 });
-							await setImageSrc('/swoop/golfers/golfers-phone-4.png');
-							await controls.start({ opacity: 1 });
-						})();
-					}}
-				/>
+				<div className="ValueSections" style={{ position: 'relative' }}>
+					<ValueSectionFloatingImageContainer
+						style={{
+							marginTop: `${rem(stickyImgPadding)}`,
+							bottom: `${rem(bottomOffset)}`,
+						}}
+					>
+						<ValueSectionFloatingImage ref={floatingImageRef} style={{ top: topOffset }}>
+							<BackgroundImage src={imageSrc} animate={controls} />
+							<img
+								src="/elements/blank-iphone.png"
+								alt=""
+								style={{ width: '100%', zIndex: 100000 }}
+							/>
+						</ValueSectionFloatingImage>
+					</ValueSectionFloatingImageContainer>
+					<div ref={firstSection}>
+						<ValueSection
+							mt={[8]}
+							mb={[6, rem(440)]}
+							containerRef={firstImageContainerRef}
+							anchorRef={firstImageRef}
+							title="ELEVATE YOUR GAME"
+							body="Perfect your pitch. Eliminate mid-round hanger with food + drink delivered to your exact location."
+							// onEnter={() => {
+							// 	(async () => {
+							// 		await controls.start({ opacity: 0 });
+							// 		await setImageSrc('/swoop/golfers/golfers-phone-1.png');
+							// 		await controls.start({ opacity: 1 });
+							// 	})();
+							// }}
+						>
+							<Circle1 />
+						</ValueSection>
+					</div>
+					<div ref={secondSection}>
+						<ValueSectionAlt
+							pt={[8]}
+							mb={[6, rem(560)]}
+							title="ORDER MORE"
+							body="Enjoy all of the culinary comforts for the club grill, on the greens."
+							// onEnter={() => {
+							// 	(async () => {
+							// 		await controls.start({ opacity: 0 });
+							// 		await setImageSrc('/swoop/golfers/golfers-phone-2.png');
+							// 		await controls.start({ opacity: 1 });
+							// 	})();
+							// }}
+						>
+							<Circle2 />
+						</ValueSectionAlt>
+					</div>
+					<div ref={thirdSection}>
+						<ValueSection2
+							title="KEEP PLAYING"
+							body="On-demand, on the course. Fuel your game with refreshments, and don’t stop playing."
+							pt={[8]}
+							mb={[6, rem(500)]}
+							// onEnter={() => {
+							// 	(async () => {
+							// 		await controls.start({ opacity: 0 });
+							// 		await setImageSrc('/swoop/golfers/golfers-phone-3.png');
+							// 		await controls.start({ opacity: 1 });
+							// 	})();
+							// }}
+						>
+							<Circle1 />
+							<Circle3 />
+						</ValueSection2>
+					</div>
+					<div ref={fourthSection}>
+						<CheersSection
+							pt={[8]}
+							mb={[7, rem(310)]}
+							containerRef={floatingImageContainerFinalRef}
+							anchorRef={floatingImageAnchorFinalRef}
+							title="CHEERS"
+							body="Make more memorable rounds by having a round of drinks delivered during your game."
+							// onEnter={() => {
+							// 	(async () => {
+							// 		await controls.start({ opacity: 0 });
+							// 		await setImageSrc('/swoop/golfers/golfers-phone-4.png');
+							// 		await controls.start({ opacity: 1 });
+							// 	})();
+							// }}
+						/>
+					</div>
+				</div>
 			</FloatingAppContainer>
 			<ByrdiInAction />
 			{/* <TextBanner title="SWOOP LOYALTY REWARDS" /> */}

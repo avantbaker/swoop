@@ -85,7 +85,7 @@ export const ValueSectionAlt = ({
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false }}
-					transition={{ duration: 1 }}
+					transition={{ duration: 1.5 }}
 					variants={{
 						visible: { opacity: 1 },
 						hidden: { opacity: 0 },
@@ -93,19 +93,26 @@ export const ValueSectionAlt = ({
 				>
 					<AnimatePresence>
 						<>
-							<TextContent mb={6}>
-								<Text variant="h1" mb={6}>
-									{title}
-								</Text>
-								<Text
-									variant="h2"
-									fontFamily="'Shippori Antique Regular',sans-serif"
-									maxWidth={rem(400)}
-									fontWeight="lighter"
-								>
-									{body}
-								</Text>
-							</TextContent>
+							<Waypoint
+								onEnter={onEnter}
+								debug={debug}
+								topOffset={topOffset}
+								bottomOffset={bottomOffset}
+							>
+								<TextContent mb={6}>
+									<Text variant="h1" mb={6}>
+										{title}
+									</Text>
+									<Text
+										variant="h2"
+										fontFamily="'Shippori Antique Regular',sans-serif"
+										maxWidth={rem(400)}
+										fontWeight="lighter"
+									>
+										{body}
+									</Text>
+								</TextContent>
+							</Waypoint>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
 									<MainImage
@@ -127,12 +134,6 @@ export const ValueSectionAlt = ({
 						</>
 					</AnimatePresence>
 				</ContentContainer>
-				<Waypoint
-					onEnter={onEnter}
-					debug={debug}
-					topOffset={topOffset}
-					bottomOffset={bottomOffset}
-				/>
 			</ValueSectionContainer>
 			{children}
 		</ValueSectionWrapper>
@@ -157,7 +158,7 @@ export const ValueSectionAlt2 = ({
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false }}
-					transition={{ duration: 1 }}
+					transition={{ duration: 1.5 }}
 					variants={{
 						visible: { opacity: 1 },
 						hidden: { opacity: 0 },
@@ -242,6 +243,7 @@ const CheersImg2 = styled(SwoopImage)`
 `;
 export const CheersSection = ({
 	anchorRef = null,
+	containerRef = null,
 	onEnter = () => {},
 	topOffset = '0px',
 	bottomOffset = '0px',
@@ -253,12 +255,17 @@ export const CheersSection = ({
 }) => {
 	return (
 		<ValueSectionWrapper>
-			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
+			<ValueSectionContainer
+				ref={containerRef}
+				{...rest}
+				position="relative"
+				flexDirection="column"
+			>
 				<ContentContainer
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false }}
-					transition={{ duration: 1 }}
+					transition={{ duration: 1.5 }}
 					variants={{
 						visible: { opacity: 1 },
 						hidden: { opacity: 0 },
@@ -327,7 +334,7 @@ export const IncreaseMarginsSection = ({
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false }}
-					transition={{ duration: 1 }}
+					transition={{ duration: 1.5 }}
 					variants={{
 						visible: { opacity: 1 },
 						hidden: { opacity: 0 },
@@ -399,7 +406,7 @@ export const IntegrateSection = ({
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: false }}
-					transition={{ duration: 1 }}
+					transition={{ duration: 1.5 }}
 					variants={{
 						visible: { opacity: 1 },
 						hidden: { opacity: 0 },
