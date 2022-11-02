@@ -541,13 +541,15 @@ const ValueSectionFloatingImageContainer = styled('div')`
 const ValueSectionFloatingImage = styled('div')`
 	width: 240px;
 	position: sticky;
-	display: block;
 	align-self: flex-start;
 	z-index: 1;
+	display: none;
+
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		width: 320px;
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		display: block;
 		width: 320px;
 		margin-left: -80px;
 	}
@@ -702,101 +704,98 @@ export default function App() {
 		<>
 			<TextIntro />
 			<FloatingAppContainer>
-				<Waypoint>
-					<MainFloatingHeroContainer mb={[6, 8]}>
-						<MainFloatingHero>
-							<FloatingHero
-								p={'0 !important'}
-								justifyContent="center"
-								flexDirection={['column', 'row']}
-							>
-								<SectionDetails
-									justifyContent={['center']}
-									py={[5, 6]}
-									className="section-details"
-								>
-									<VerticalTextL
-										ref={floatingImageAnchorStartRef}
-										variant="displayVertical"
-										mb={[2]}
-										mr={[5]}
-									>
-										Courses
-									</VerticalTextL>
-									<img
-										style={{
-											height: textHeight,
-											maxWidth: 'unset',
-											width: 'auto',
-										}}
-										src="/elements/app-courses-desktop-cropped.png"
-										alt=""
-									/>
-								</SectionDetails>
-								<MobileSection
-									flexDirection="column"
-									alignItems="flex-end"
-									position="absolute"
-									className="mobile-section--desktop"
-								>
-									<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
-										Worry about the speed of your greens, not the speed of your club cart.
-									</Text>
-									<Text mb={6}>
-										The days of waiting for the food + bev cart or the turn for a cocktail
-										and a bite to eat, are long gone. Let the bourbon and burgers come to
-										you, to your exact location on the course, by ordering from the
-										clubhouse grill with the Swoop App.
-									</Text>
-									<Flex width="100%" flexDirection="column" alignItems="flex-end">
-										<Box mb={3}>
-											<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
-												<img src="/elements/apple-store.svg" />
-											</a>
-										</Box>
-										<Box>
-											<a href="https://play.google.com/store/apps/details?id=io.swoop">
-												<img src="/elements/google-play.svg" />
-											</a>
-										</Box>
-									</Flex>
-								</MobileSection>
-							</FloatingHero>
-						</MainFloatingHero>
-						<MobileSection
-							flexDirection="column"
-							alignItems="flex-end"
-							className="mobile-section"
+				<MainFloatingHeroContainer mb={[6, 6, 8]}>
+					<MainFloatingHero>
+						<FloatingHero
+							p={'0 !important'}
+							justifyContent="center"
+							flexDirection={['column', 'row']}
 						>
-							<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
-								Worry about the speed of your greens, not the speed of your club cart.
-							</Text>
-							<Text maxWidth="75%" mb={6}>
-								The days of waiting for the food + bev cart or the turn for a cocktail and
-								a bite to eat, are long gone. Let the bourbon and burgers come to you, to
-								your exact location on the course, by ordering from the clubhouse grill
-								with the Swoop App.
-							</Text>
-							<Flex width="100%" flexDirection="column" alignItems="flex-end">
-								<Box mb={3}>
-									<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
-										<img src="/elements/apple-store.svg" />
-									</a>
-								</Box>
-								<Box>
-									<a href="https://play.google.com/store/apps/details?id=io.swoop">
-										<img src="/elements/google-play.svg" />
-									</a>
-								</Box>
-							</Flex>
-						</MobileSection>
-					</MainFloatingHeroContainer>
-				</Waypoint>
+							<SectionDetails
+								justifyContent={['center']}
+								py={[5, 6]}
+								className="section-details"
+							>
+								<VerticalTextL
+									ref={floatingImageAnchorStartRef}
+									variant="displayVertical"
+									mb={[2]}
+									mr={[5]}
+								>
+									Courses
+								</VerticalTextL>
+								<img
+									style={{
+										height: textHeight,
+										maxWidth: 'unset',
+										width: 'auto',
+									}}
+									src="/elements/app-courses-desktop-cropped.png"
+									alt=""
+								/>
+							</SectionDetails>
+							<MobileSection
+								flexDirection="column"
+								alignItems="flex-end"
+								position="absolute"
+								className="mobile-section--desktop"
+							>
+								<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
+									Worry about the speed of your greens, not the speed of your club cart.
+								</Text>
+								<Text mb={6}>
+									The days of waiting for the food + bev cart or the turn for a cocktail
+									and a bite to eat, are long gone. Let the bourbon and burgers come to
+									you, to your exact location on the course, by ordering from the
+									clubhouse grill with the Swoop App.
+								</Text>
+								<Flex width="100%" flexDirection="column" alignItems="flex-end">
+									<Box mb={3}>
+										<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+											<img src="/elements/apple-store.svg" />
+										</a>
+									</Box>
+									<Box>
+										<a href="https://play.google.com/store/apps/details?id=io.swoop">
+											<img src="/elements/google-play.svg" />
+										</a>
+									</Box>
+								</Flex>
+							</MobileSection>
+						</FloatingHero>
+					</MainFloatingHero>
+					<MobileSection
+						flexDirection="column"
+						alignItems="flex-end"
+						className="mobile-section"
+					>
+						<Text variant="careersSubtitle" color="calcite" maxWidth="60%" mb={4}>
+							Worry about the speed of your greens, not the speed of your club cart.
+						</Text>
+						<Text maxWidth="75%" mb={6}>
+							The days of waiting for the food + bev cart or the turn for a cocktail and a
+							bite to eat, are long gone. Let the bourbon and burgers come to you, to your
+							exact location on the course, by ordering from the clubhouse grill with the
+							Swoop App.
+						</Text>
+						<Flex width="100%" flexDirection="column" alignItems="flex-end">
+							<Box mb={3}>
+								<a href="https://apps.apple.com/us/app/swoop-golf-concierge/id1633105217">
+									<img src="/elements/apple-store.svg" />
+								</a>
+							</Box>
+							<Box>
+								<a href="https://play.google.com/store/apps/details?id=io.swoop">
+									<img src="/elements/google-play.svg" />
+								</a>
+							</Box>
+						</Flex>
+					</MobileSection>
+				</MainFloatingHeroContainer>
 				<div className="ValueSections" style={{ position: 'relative' }}>
 					<ValueSectionFloatingImageContainer
 						style={{
-							marginTop: `${rem(stickyImgPadding)}`,
-							bottom: `${rem(bottomOffset)}`,
+							bottom: `${rem(bottomOffset + 180)}`,
 						}}
 					>
 						<ValueSectionFloatingImage ref={floatingImageRef} style={{ top: topOffset }}>
@@ -808,52 +807,52 @@ export default function App() {
 							/>
 						</ValueSectionFloatingImage>
 					</ValueSectionFloatingImageContainer>
-					<div>
-						<div ref={firstSection}>
+					<MotionDivWithSpacing style={{ overflowX: 'hidden' }}>
+						<MotionDivWithSpacing ref={firstSection} mb={[6, 7, 8]}>
 							<BoostRevenueSection
 								mt={[8]}
-								mb={[6, rem(440)]}
 								containerRef={firstImageContainerRef}
 								anchorRef={firstImageRef}
 								title="BOOST REVENUE"
 								body="Monetize every food and beverage impulse by allowing customers to order more frequently and conveniently."
+								src="/swoop/courses/courses-sandwich-screen.png"
 							>
 								<Circle1 />
 							</BoostRevenueSection>
-						</div>
-						<div ref={secondSection}>
+						</MotionDivWithSpacing>
+						<MotionDivWithSpacing ref={secondSection} mb={[6, 7, 8]}>
 							<IncreaseMarginsSection
 								pt={[8]}
-								mb={[6, rem(560)]}
 								title="INCREASE MARGINS"
 								body="Enjoy all of the culinary comforts for the club grill, on the greens."
+								src="/swoop/courses/courses-turkey-club.png"
 							>
 								<Circle2 />
 							</IncreaseMarginsSection>
-						</div>
+						</MotionDivWithSpacing>
 
-						<div ref={thirdSection}>
+						<MotionDivWithSpacing ref={thirdSection} mb={[6, 7, 8]}>
 							<EnhanceSection
 								title="ENHANCE EXPERIENCES"
 								body="Create loyal guests and out-gain competitors by offering a superior on-course food & beverage experience."
 								pt={[8]}
-								mb={[6, rem(500)]}
+								src="/swoop/courses/courses-black-screen.png"
 							>
 								<Circle1 />
 								<Circle3 />
 							</EnhanceSection>
-						</div>
-						<div ref={fourthSection}>
+						</MotionDivWithSpacing>
+						<MotionDivWithSpacing ref={fourthSection} mb={[7, 8, 7]}>
 							<IntegrateSection
 								pt={[8]}
-								mb={[6, rem(410)]}
 								title="INTEGRATE SEAMLESSLY"
 								body="Realize the benefits of on-course purchase without additional overhead and without setup complexity."
 								containerRef={floatingImageContainerFinalRef}
 								anchorRef={floatingImageAnchorFinalRef}
+								src="/swoop/courses/courses-sandwich-screen.png"
 							/>
-						</div>
-					</div>
+						</MotionDivWithSpacing>
+					</MotionDivWithSpacing>
 				</div>
 			</FloatingAppContainer>
 			<ByrdiInAction cards={cards} />

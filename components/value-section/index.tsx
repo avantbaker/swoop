@@ -26,7 +26,6 @@ export const FloatingAppContainer = styled(DualPathSection)`
 			max-height: ${rem(540)};
 		}
 	}
-
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		.mobile-section--desktop {
 			display: flex;
@@ -91,9 +90,7 @@ export const MobileSection = styled(Section)`
 	position: relative;
 	text-align: right;
 `;
-export const ValueSectionContainer = styled(Section)`
-	min-height: 100vh;
-`;
+export const ValueSectionContainer = styled(Section)``;
 export const ContentContainer = styled(motion.div)`
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -123,61 +120,66 @@ const ImgContent = styled(Flex)`
 	}
 `;
 export const MainImage = styled(motion.img)`
-	max-width: 300px;
+	max-width: 260px;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		max-width: 320px;
+	}
 `;
 export const ValueImageContainer = styled(motion.div)`
 	position: relative;
 
 	.hidden {
-		visibility: hidden;
+		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+			visibility: hidden;
+		}
 	}
 `;
 const NewSpiritIcon = styled(motion.img)`
 	position: absolute;
-	top: ${rem(-10)};
-	left: ${rem(-20)};
+	top: ${rem(-50)};
+	left: ${rem(-60)};
 	max-width: ${rem(130)};
 	z-index: 5;
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		top: ${rem(0)};
-		left: ${rem(-140)};
-		max-width: ${rem(230)};
+		top: ${rem(-80)};
+		left: ${rem(-120)};
+		max-width: ${rem(190)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		right: ${rem(60)};
-		top: ${rem(-100)};
+		top: ${rem(-40)};
 		max-width: ${rem(180)};
 	}
 `;
 const NewWrapIcon = styled(motion.img)`
 	position: absolute;
-	top: ${rem(160)};
-	right: ${rem(-45)};
+	top: ${rem(120)};
+	right: ${rem(-65)};
 	max-width: ${rem(130)};
 	z-index: 1;
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		right: ${rem(-160)};
-		top: ${rem(260)};
-		max-width: ${rem(220)};
+		right: ${rem(-140)};
+		top: ${rem(140)};
+		max-width: ${rem(190)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		right: ${rem(80)};
-		top: ${rem(140)};
+		top: ${rem(200)};
 		max-width: ${rem(180)};
 	}
 `;
 const FairwayPicture = styled(motion.img)`
 	position: absolute;
-	bottom: ${rem(-40)};
-	left: ${rem(-20)};
+	bottom: ${rem(-60)};
+	left: ${rem(-34)};
 	max-height: ${rem(270)};
 	z-index: 0;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		max-height: ${rem(420)};
 		left: ${rem(-120)};
-		bottom: ${rem(-310)};
+		// bottom: ${rem(-310)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		max-height: ${rem(380)};
@@ -188,12 +190,9 @@ const FairwayPicture = styled(motion.img)`
 
 export const ValueSectionWrapper = styled('div')`
 	position: relative;
-
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		height: 100vh;
-	}
 `;
 
+export const SECTION_TITLE_MARGIN_BOTTOM = [rem(140), rem(240)];
 export const ValueSection = ({
 	anchorRef = null,
 	containerRef = null,
@@ -202,6 +201,7 @@ export const ValueSection = ({
 	children = null,
 	title = '',
 	body = '',
+	src = '/elements/hello-john.png',
 	...rest
 }) => {
 	const DEFAULT_REF = useRef(null);
@@ -225,27 +225,25 @@ export const ValueSection = ({
 						hidden: { opacity: 0 },
 					}}
 				>
-					<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-								fontWeight="lighter"
-							>
-								{body}
-							</Text>
-						</TextContent>
-					</Waypoint>
+					<TextContent flex={[1, 1]} mb={SECTION_TITLE_MARGIN_BOTTOM}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+							fontWeight="lighter"
+						>
+							{body}
+						</Text>
+					</TextContent>
 					<ImgContent flex={[1, 'auto']} justifyContent="center">
 						<ValueImageContainer>
 							<MainImage
 								className="hidden"
 								ref={anchorRef || DEFAULT_REF}
-								src="/elements/hello-john.png"
+								src={src}
 								alt=""
 							/>
 							<NewSpiritIcon
@@ -271,14 +269,14 @@ export const ValueSection = ({
 
 const ElevateSmallImg = styled(motion.div)`
 	position: absolute;
-	right: ${rem(-20)};
-	top: ${rem(-20)};
+	right: ${rem(-40)};
+	top: ${rem(-40)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		right: ${rem(-180)};
-		top: ${rem(0)};
+		top: ${rem(120)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		left: ${rem(-260)};
+		left: ${rem(-220)};
 		top: ${rem(-120)};
 	}
 `;
@@ -286,14 +284,15 @@ const ElevateSmallImg = styled(motion.div)`
 const ElevateBigImg = styled(motion.div)`
 	position: absolute;
 	bottom: 0;
-	left: ${rem(-20)};
+	left: ${rem(-40)};
+	bottom: ${rem(-60)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		bottom: ${rem(-410)};
-		left: ${rem(-160)};
+		bottom: ${rem(-100)};
+		left: ${rem(-120)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		bottom: ${rem(-60)};
-		left: ${rem(-120)};
+		bottom: ${rem(80)};
+		left: ${rem(-100)};
 	}
 `;
 const Golfball = styled(motion.div)`
@@ -302,6 +301,12 @@ const Golfball = styled(motion.div)`
 	left: ${rem(-20)};
 	display: none;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		top: ${rem(-100)};
+		left: ${rem(-100)};
+		z-index: 100000;
+		display: block;
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		top: ${rem(-210)};
 		left: unset;
 		right: ${rem(-260)};
@@ -317,6 +322,7 @@ export const ValueSection2 = ({
 	children = null,
 	title = '',
 	body = '',
+	src = '/elements/hello-john.png',
 	...rest
 }) => {
 	const DEFAULT_REF = useRef(null);
@@ -339,7 +345,7 @@ export const ValueSection2 = ({
 							hidden: { opacity: 0 },
 						}}
 					>
-						<TextContent flex={[1, 1]} mb={7}>
+						<TextContent flex={[1, 1]} mb={SECTION_TITLE_MARGIN_BOTTOM}>
 							<Text variant="h1" mb={6} maxWidth={rem(400)}>
 								{title}
 							</Text>
@@ -357,14 +363,14 @@ export const ValueSection2 = ({
 								<MainImage
 									className="hidden"
 									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
+									src={src}
 									alt=""
 								/>
 								<ElevateSmallImg>
-									<SwoopImage width={[130, 220]} src="/swoop/golfers/elevate-small.png" />
+									<SwoopImage width={[130, 200]} src="/swoop/golfers/elevate-small.png" />
 								</ElevateSmallImg>
 								<ElevateBigImg>
-									<SwoopImage width={[105, 170]} src="/swoop/golfers/elevate-big.png" />
+									<SwoopImage width={[105, 160]} src="/swoop/golfers/elevate-big.png" />
 								</ElevateBigImg>
 								<Golfball>
 									<SwoopImage width={[105, 170]} src="/swoop/golfers/golfball.png" />
@@ -382,10 +388,11 @@ export const ValueSection2 = ({
 const BoostRevenueSandwich = styled(SwoopImage)`
 	position: absolute;
 	top: ${rem(230)};
-	right: ${rem(-30)};
+	left: ${rem(-70)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		left: unset;
 		right: ${rem(-130)};
-		top: ${rem(380)};
+		top: ${rem(200)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		right: unset;
@@ -395,29 +402,28 @@ const BoostRevenueSandwich = styled(SwoopImage)`
 `;
 const BoostRevenueAddToCart = styled(SwoopImage)`
 	position: absolute;
-	bottom: ${rem(-40)};
+	bottom: ${rem(-100)};
 	left: ${rem(-40)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		left: ${rem(-130)};
-		bottom: ${rem(-320)};
+		left: ${rem(-180)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		left: ${rem(-160)};
+		left: ${rem(-200)};
 		top: ${rem(-60)};
 	}
 `;
 const BoostRevenueLemonade = styled(SwoopImage)`
 	position: absolute;
-	top: ${rem(-20)};
-	left: ${rem(-20)};
+	top: ${rem(-40)};
+	right: ${rem(-40)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		left: ${rem(-110)};
-		top: 0;
+		top: ${rem(-50)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		left: ${rem(-180)};
 		top: unset;
-		bottom: ${rem(-120)};
+		bottom: ${rem(0)};
 	}
 `;
 
@@ -429,6 +435,7 @@ export const BoostRevenueSection = ({
 	children = null,
 	title = '',
 	body = '',
+	src = '/elements/hello-john.png',
 	...rest
 }) => {
 	const DEFAULT_REF = useRef(null);
@@ -451,7 +458,7 @@ export const BoostRevenueSection = ({
 							hidden: { opacity: 0 },
 						}}
 					>
-						<TextContent flex={[1, 1]} mb={7}>
+						<TextContent flex={[1, 1]} mb={SECTION_TITLE_MARGIN_BOTTOM}>
 							<Text variant="h1" mb={6} maxWidth={rem(400)}>
 								{title}
 							</Text>
@@ -469,7 +476,7 @@ export const BoostRevenueSection = ({
 								<MainImage
 									className="hidden"
 									ref={anchorRef || DEFAULT_REF}
-									src="/elements/hello-john.png"
+									src={src}
 									alt=""
 								/>
 								<BoostRevenueSandwich
@@ -478,7 +485,7 @@ export const BoostRevenueSection = ({
 									alt="golfer holding whiskey drink"
 								/>
 								<BoostRevenueAddToCart
-									width={[280, 380, 420]}
+									width={[300, 440, 420]}
 									src="/swoop/courses/courses-add-to-cart.png"
 									alt="golfer holding whiskey drink"
 								/>
@@ -499,22 +506,30 @@ export const BoostRevenueSection = ({
 
 const EnhanceBottle = styled(SwoopImage)`
 	position: absolute;
-	top: ${rem(-60)};
-	right: ${rem(0)};
+	top: ${rem(-80)};
+	right: ${rem(-40)};
+	transform: rotate(15deg);
+
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		top: ${rem(-150)};
+		right: ${rem(-80)};
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		right: unset;
 		top: ${rem(-200)};
-		left: ${rem(0)};
+		left: ${rem(-40)};
 	}
 `;
 const EnhanceTee1 = styled(SwoopImage)`
 	position: absolute;
-	top: ${rem(40)};
-	left: ${rem(0)};
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+	bottom: ${rem(-40)};
+	right: ${rem(-40)};
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		display: block;
 		top: ${rem(-120)};
-		left: ${rem(-60)};
+		left: ${rem(-80)};
+		bottom: unset;
+		right: unset;
 	}
 `;
 const EnhanceTee2 = styled(SwoopImage)`
@@ -523,7 +538,7 @@ const EnhanceTee2 = styled(SwoopImage)`
 	left: ${rem(90)};
 	transform: rotate(70deg);
 	display: none;
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		max-height: ${rem(540)};
 		display: block;
 	}
@@ -531,10 +546,13 @@ const EnhanceTee2 = styled(SwoopImage)`
 
 const FollowThruWrapper = styled(ElevateBigImg)`
 	bottom: ${rem(-40)};
-	left: ${rem(0)};
+	left: ${rem(-40)};
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		left: ${rem(-200)};
+		left: ${rem(-100)};
+	}
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		left: ${rem(-160)};
 	}
 `;
 export const EnhanceSection = ({
@@ -544,6 +562,7 @@ export const EnhanceSection = ({
 	children = null,
 	title = '',
 	body = '',
+	src = '/elements/hello-john.png',
 	...rest
 }) => {
 	const DEFAULT_REF = useRef(null);
@@ -560,27 +579,25 @@ export const EnhanceSection = ({
 						hidden: { opacity: 0 },
 					}}
 				>
-					<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-						<TextContent flex={[1, 1]} mb={7}>
-							<Text variant="h1" mb={6} maxWidth={rem(400)}>
-								{title}
-							</Text>
-							<Text
-								variant="h2"
-								fontFamily="'Shippori Antique Regular',sans-serif"
-								maxWidth={rem(400)}
-								fontWeight="lighter"
-							>
-								{body}
-							</Text>
-						</TextContent>
-					</Waypoint>
+					<TextContent flex={[1, 1]} mb={SECTION_TITLE_MARGIN_BOTTOM}>
+						<Text variant="h1" mb={6} maxWidth={rem(400)}>
+							{title}
+						</Text>
+						<Text
+							variant="h2"
+							fontFamily="'Shippori Antique Regular',sans-serif"
+							maxWidth={rem(400)}
+							fontWeight="lighter"
+						>
+							{body}
+						</Text>
+					</TextContent>
 					<ImgContent flex={[1, 'auto']} justifyContent="center">
 						<ValueImageContainer>
 							<MainImage
 								className="hidden"
 								ref={anchorRef || DEFAULT_REF}
-								src="/elements/hello-john.png"
+								src={src}
 								alt=""
 							/>
 							<EnhanceBottle width={[90, 130]} src="/swoop/courses/course-huerca.png" />
@@ -588,7 +605,7 @@ export const EnhanceSection = ({
 							<EnhanceTee2 width={[140]} src="/swoop/courses/course-tee.png" />
 							<FollowThruWrapper>
 								<SwoopImage
-									width={[85, 170]}
+									width={[95, 140, 170]}
 									src="/swoop/courses/courses-follow-thru.png"
 								/>
 							</FollowThruWrapper>

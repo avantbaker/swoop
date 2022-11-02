@@ -15,8 +15,8 @@ export default function PageWrapper({ children }) {
 		const html = document.getElementsByTagName('html')[0];
 		const body = document.getElementsByTagName('body')[0];
 		router.events.on('routeChangeComplete', () => {
-			html.style.overflow = '';
-			body.style.overflow = '';
+			html.style.overflow = 'unset';
+			body.style.overflow = 'unset';
 		});
 		return () => {};
 	}, []);

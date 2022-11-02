@@ -11,6 +11,7 @@ import {
 	ValueImageContainer,
 	MainImage,
 	ValueSectionWrapper,
+	SECTION_TITLE_MARGIN_BOTTOM,
 } from 'components/value-section';
 import { SwoopImage } from 'components/image';
 
@@ -35,35 +36,35 @@ const ImgContent = styled(Flex)`
 export const SandwichImg = styled(motion.img)`
 	position: absolute;
 	max-width: ${rem(120)};
-	top: ${rem(50)};
-	right: ${rem(-30)};
+	top: ${rem(-40)};
+	right: ${rem(-40)};
 	z-index: 0;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		max-width: ${rem(220)};
-		top: ${rem(100)};
+		max-width: ${rem(200)};
+		top: ${rem(-80)};
 		right: ${rem(-160)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		max-width: ${rem(220)};
+		max-width: ${rem(200)};
 		top: ${rem(-40)};
-		right: ${rem(-40)};
+		right: ${rem(0)};
 	}
 `;
 export const ModeloImg = styled(motion.img)`
 	position: absolute;
 	max-height: ${rem(230)};
-	left: ${rem(-20)};
-	bottom: ${rem(-40)};
+	left: ${rem(-40)};
+	bottom: ${rem(-60)};
 	z-index: 5;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		max-height: ${rem(400)};
-		left: ${rem(-160)};
-		bottom: ${rem(-440)};
+		max-height: ${rem(360)};
+		left: ${rem(-120)};
+		bottom: ${rem(-130)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		max-height: ${rem(400)};
-		left: ${rem(-30)};
-		bottom: ${rem(-80)};
+		max-height: ${rem(360)};
+		left: ${rem(0)};
+		bottom: ${rem(100)};
 	}
 `;
 
@@ -76,6 +77,7 @@ export const ValueSectionAlt = ({
 	debug = false,
 	title = '',
 	body = '',
+	src = '/elements/trilogy-screen.png',
 	...rest
 }) => {
 	return (
@@ -99,7 +101,7 @@ export const ValueSectionAlt = ({
 								topOffset={topOffset}
 								bottomOffset={bottomOffset}
 							>
-								<TextContent mb={6}>
+								<TextContent mb={SECTION_TITLE_MARGIN_BOTTOM}>
 									<Text variant="h1" mb={6}>
 										{title}
 									</Text>
@@ -115,12 +117,7 @@ export const ValueSectionAlt = ({
 							</Waypoint>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
-									<MainImage
-										className="hidden"
-										src="/elements/trilogy-screen.png"
-										alt=""
-										ref={anchorRef}
-									/>
+									<MainImage className="hidden" src={src} alt="" ref={anchorRef} />
 									<SandwichImg
 										src="/elements/sandwich.png"
 										alt="golfer holding whiskey drink"
@@ -149,6 +146,7 @@ export const ValueSectionAlt2 = ({
 	debug = false,
 	title = '',
 	body = '',
+	src = '/elements/trilogy-screen.png',
 	...rest
 }) => {
 	return (
@@ -167,7 +165,7 @@ export const ValueSectionAlt2 = ({
 					<AnimatePresence>
 						<>
 							{/* <Flex flexDirection={['column', 'row']}> */}
-							<TextContent mb={6}>
+							<TextContent mb={SECTION_TITLE_MARGIN_BOTTOM}>
 								<Text variant="h1" mb={6}>
 									{title}
 								</Text>
@@ -182,12 +180,7 @@ export const ValueSectionAlt2 = ({
 							</TextContent>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
-									<MainImage
-										className="hidden"
-										src="/elements/trilogy-screen.png"
-										alt=""
-										ref={anchorRef}
-									/>
+									<MainImage className="hidden" src={src} alt="" ref={anchorRef} />
 									<SandwichImg
 										src="/elements/sandwich.png"
 										alt="golfer holding whiskey drink"
@@ -216,29 +209,29 @@ export const ValueSectionAlt2 = ({
 
 const CheersImg1 = styled(SwoopImage)`
 	position: absolute;
-	top: 0;
-	right: ${rem(-20)};
+	top: ${rem(-60)};
+	right: ${rem(-40)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		top: ${rem(-60)};
-		right: ${rem(-180)};
+		top: ${rem(-90)};
+		right: ${rem(-150)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		top: ${rem(-200)};
-		right: ${rem(-60)};
+		top: ${rem(-120)};
+		right: ${rem(-20)};
 	}
 `;
 
 const CheersImg2 = styled(SwoopImage)`
 	position: absolute;
-	bottom: ${rem(-50)};
-	left: ${rem(-20)};
+	bottom: ${rem(-70)};
+	left: ${rem(-40)};
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		bottom: ${rem(-220)};
-		left: ${rem(-160)};
+		bottom: ${rem(-70)};
+		left: ${rem(-150)};
 	}
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		top: ${rem(80)};
-		left: ${rem(-40)};
+		top: ${rem(120)};
+		left: ${rem(0)};
 	}
 `;
 export const CheersSection = ({
@@ -251,6 +244,7 @@ export const CheersSection = ({
 	debug = false,
 	title = '',
 	body = '',
+	src = '/elements/trilogy-screen.png',
 	...rest
 }) => {
 	return (
@@ -273,7 +267,7 @@ export const CheersSection = ({
 				>
 					<AnimatePresence>
 						<>
-							<TextContent mb={[6, 8]}>
+							<TextContent mb={SECTION_TITLE_MARGIN_BOTTOM}>
 								<Text variant="h1" mb={6}>
 									{title}
 								</Text>
@@ -288,17 +282,12 @@ export const CheersSection = ({
 							</TextContent>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
-									<MainImage
-										className="hidden"
-										src="/elements/trilogy-screen.png"
-										alt=""
-										ref={anchorRef}
-									/>
+									<MainImage className="hidden" src={src} alt="" ref={anchorRef} />
 									<CheersImg1
-										width={[140, 230]}
+										width={[140, 200]}
 										src="/swoop/golfers/golfers-green-aerial.png"
 									/>
-									<CheersImg2 width={[120, 230]} src="/swoop/golfers/golfers-toast.png" />
+									<CheersImg2 width={[120, 190]} src="/swoop/golfers/golfers-toast.png" />
 								</ValueImageContainer>
 							</ImgContent>
 						</>
@@ -325,6 +314,7 @@ export const IncreaseMarginsSection = ({
 	debug = false,
 	title = '',
 	body = '',
+	src = '/elements/trilogy-screen.png',
 	...rest
 }) => {
 	return (
@@ -342,7 +332,7 @@ export const IncreaseMarginsSection = ({
 				>
 					<AnimatePresence>
 						<>
-							<TextContent mb={6}>
+							<TextContent mb={SECTION_TITLE_MARGIN_BOTTOM}>
 								<Text variant="h1" mb={6}>
 									{title}
 								</Text>
@@ -357,12 +347,7 @@ export const IncreaseMarginsSection = ({
 							</TextContent>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
-									<MainImage
-										className="hidden"
-										src="/elements/trilogy-screen.png"
-										alt=""
-										ref={anchorRef}
-									/>
+									<MainImage className="hidden" src={src} alt="" ref={anchorRef} />
 									<SandwichImg
 										src="/swoop/courses/courses-sandwich.png"
 										alt="golfer holding whiskey drink"
@@ -398,6 +383,7 @@ export const IntegrateSection = ({
 	debug = false,
 	title = '',
 	body = '',
+	src = '/elements/trilogy-screen.png',
 	...rest
 }) => {
 	return (
@@ -415,7 +401,7 @@ export const IntegrateSection = ({
 				>
 					<AnimatePresence>
 						<>
-							<TextContent mb={[6, 8]}>
+							<TextContent mb={SECTION_TITLE_MARGIN_BOTTOM}>
 								<Text variant="h1" mb={6}>
 									{title}
 								</Text>
@@ -430,18 +416,13 @@ export const IntegrateSection = ({
 							</TextContent>
 							<ImgContent justifyContent={['center', 'center', 'flex-end']}>
 								<ValueImageContainer>
-									<MainImage
-										className="hidden"
-										src="/elements/trilogy-screen.png"
-										alt=""
-										ref={anchorRef}
-									/>
+									<MainImage className="hidden" src={src} alt="" ref={anchorRef} />
 									<CheersImg1
-										width={[140, 230]}
+										width={[140, 220, 200]}
 										src="/swoop/courses/courses-putting.png"
 									/>
 									<CheersImg2
-										width={[120, 230]}
+										width={[120, 200]}
 										src="/swoop/courses/courses-golf-carts.png"
 									/>
 								</ValueImageContainer>
