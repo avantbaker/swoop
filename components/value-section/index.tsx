@@ -422,6 +422,7 @@ const BoostRevenueLemonade = styled(SwoopImage)`
 `;
 
 export const BoostRevenueSection = ({
+	containerRef = null,
 	anchorRef = null,
 	onEnter = () => {},
 	topOffset = '0',
@@ -433,7 +434,7 @@ export const BoostRevenueSection = ({
 	const DEFAULT_REF = useRef(null);
 	return (
 		<Waypoint onEnter={onEnter} bottomOffset={topOffset}>
-			<ValueSectionWrapper>
+			<ValueSectionWrapper ref={containerRef}>
 				<ValueSectionContainer
 					{...rest}
 					position="relative"

@@ -9,6 +9,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const ByrdiInActionWrapper = styled(Box)`
 	border-top: ${rem(0.5)} solid ${({ theme }) => theme.colors.orange};
+	overflow-x: hidden;
 `;
 export const PhotoCarousel = styled('div')`
 	display: flex;

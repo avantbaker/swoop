@@ -390,6 +390,7 @@ export const IncreaseMarginsSection = ({
 
 export const IntegrateSection = ({
 	anchorRef = null,
+	containerRef = null,
 	onEnter = () => {},
 	topOffset = '0px',
 	bottomOffset = '0px',
@@ -400,7 +401,7 @@ export const IntegrateSection = ({
 	...rest
 }) => {
 	return (
-		<ValueSectionWrapper>
+		<ValueSectionWrapper ref={containerRef}>
 			<ValueSectionContainer {...rest} position="relative" flexDirection="column">
 				<ContentContainer
 					initial="hidden"
