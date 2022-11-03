@@ -335,6 +335,7 @@ export default function App() {
 										</a>
 									</Box>
 								</Flex>
+								love
 							</MobileSection>
 						</FloatingHero>
 					</MainFloatingHero>

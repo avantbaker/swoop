@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Section } from 'components/common/container';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -17,6 +17,7 @@ import {
 	compose,
 	layout,
 } from 'styled-system';
+import Fuse from 'fuse.js';
 import {
 	Accordion,
 	AccordionItem,
@@ -35,6 +36,12 @@ const StyledAccordion = styled(Accordion)`
 	flex-direction: column;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		flex-direction: row;
+	}
+
+	[aria-expanded='true'] {
+		& > svg {
+			transform: rotate(180deg);
+		}
 	}
 `;
 
@@ -200,6 +207,11 @@ const StyledHourglass = styled(Hourglass)(
 
 const ExtendendInput = styled('input')(space);
 
+const splitInHalf = (arr) => [
+	arr.slice(0, Math.ceil(arr.length / 2)),
+	arr.slice(Math.ceil(arr.length / 2)),
+];
+
 const Search = styled(ExtendendInput)`
 	background: transparent;
 	border: 1px solid ${({ theme }) => theme.colors.white};
@@ -213,7 +225,44 @@ const Search = styled(ExtendendInput)`
 	${compose(color, layout)}
 `;
 
+const fuse = new Fuse(dummyItemsRows.flat(), {
+	keys: ['title', 'body'],
+});
+
+const getSearchResults = (acc, cv, idx) => {
+	if (idx === 0 || idx % 2 === 0) {
+		acc[0].push(cv.item);
+	} else {
+		acc[1].push(cv.item);
+	}
+	return acc;
+};
 export default function FAQ() {
+	const [currentItems, setCurrentItems] = useState(dummyItemsRows);
+	const [fixedHeight, setFixedHeight] = useState(0);
+	const [rendered, setRendered] = useState(false);
+
+	const handleSearch = ({ target: { value } }) => {
+		if (value) {
+			const result = fuse.search(value);
+			const finalResult = result.reduce(getSearchResults, [[], []]);
+			setCurrentItems(finalResult);
+		} else {
+			setCurrentItems(dummyItemsRows);
+		}
+	};
+
+	const container = useRef(null);
+
+	useEffect(() => {
+		if (container.current && !rendered) {
+			const client = container.current.clientHeight;
+			setFixedHeight(client);
+			setRendered(true);
+		}
+		console.log('fixed: ', fixedHeight);
+	}, [container, rendered]);
+
 	return (
 		<>
 			<FAQHero
@@ -251,6 +300,7 @@ export default function FAQ() {
 				flexDirection="column"
 				pt={['0 !important', `${rem(theme.space[6])} !important`]}
 				mb={6}
+				// ref={container}
 			>
 				<SearchWrapper position="relative" mb={6}>
 					<StyledHourglass
@@ -267,19 +317,26 @@ export default function FAQ() {
 						py={3}
 						placeholder="Search"
 						maxWidth={['100%', rem(400)]}
+						onChange={handleSearch}
 					/>
 				</SearchWrapper>
-				<StyledAccordion allowMultipleExpanded={true} allowZeroExpanded={true}>
-					{dummyItemsRows.map((rows, ridx) => {
-						return (
-							<StyledAccordionRowContainer key={`faq-items-row-${ridx}`}>
-								{rows.map((item, idx) => (
-									<AccordionPanel key={`accordion-panel-${ridx}-${idx}`} {...item} />
-								))}
-							</StyledAccordionRowContainer>
-						);
-					})}
-				</StyledAccordion>
+				<div ref={container}>
+					<StyledAccordion
+						allowMultipleExpanded={true}
+						allowZeroExpanded={true}
+						style={{ height: `${fixedHeight}px` }}
+					>
+						{currentItems.map((rows, ridx) => {
+							return (
+								<StyledAccordionRowContainer key={`faq-items-row-${ridx}`}>
+									{rows.map((item, idx) => (
+										<AccordionPanel key={`accordion-panel-${ridx}-${idx}`} {...item} />
+									))}
+								</StyledAccordionRowContainer>
+							);
+						})}
+					</StyledAccordion>
+				</div>
 			</Section>
 		</>
 	);
