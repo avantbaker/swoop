@@ -62,12 +62,15 @@ const DesktopMockupGalleryContainer = styled(Box)`
 	justify-content: center;
 	width: 100%;
 	height: 100%;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		justify-content: flex-end;
+	}
 `;
 
 const DesktopPhoneImage = styled('img')`
 	flex-shrink: 0;
 	top: -60px;
-	right: -50px;
+	right: -80px;
 	width: 100%;
 	max-width: ${rem(340)};
 `;
@@ -104,7 +107,7 @@ const MockupGalleryPointOfReference = styled('div')`
 		max-width: ${rem(140)};
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 			top: -${rem(80)};
-			left: -${rem(40)};
+			left: -${rem(130)};
 			max-width: ${rem(170)};
 		}
 	}
@@ -114,7 +117,7 @@ const MockupGalleryPointOfReference = styled('div')`
 		max-width: ${rem(140)};
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 			top: 160px;
-			left: 240px;
+			left: ${rem(-50)};
 			max-width: ${rem(170)};
 		}
 	}
@@ -123,8 +126,8 @@ const MockupGalleryPointOfReference = styled('div')`
 		right: ${rem(0)};
 		max-width: ${rem(100)};
 		@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-			top: ${rem(320)};
-			left: -${rem(70)};
+			top: ${rem(270)};
+			left: ${rem(-190)};
 			max-width: ${rem(130)};
 		}
 	}

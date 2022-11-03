@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
 import { TextBanner } from 'components/text-banner';
@@ -15,6 +15,90 @@ import DownArrow from 'components/common/icons/down-arrow';
 import { useMobileMenu } from 'components/mobile-menu';
 import { faCentercode } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/router';
+import { useForm } from '@formspree/react';
+
+// animateScroll.js
+
+const pow = Math.pow;
+
+// The easing function that makes the scroll decelerate over time
+function easeOutQuart(x) {
+	return 1 - pow(1 - x, 4);
+}
+
+export function animateScroll({ targetPosition, initialPosition, duration }) {
+	let start;
+	let position;
+	let animationFrame;
+
+	const requestAnimationFrame = window.requestAnimationFrame;
+	const cancelAnimationFrame = window.cancelAnimationFrame;
+
+	// maximum amount of pixels we can scroll
+	const maxAvailableScroll =
+		document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+	const amountOfPixelsToScroll = initialPosition - targetPosition;
+
+	function step(timestamp) {
+		if (start === undefined) {
+			start = timestamp;
+		}
+
+		const elapsed = timestamp - start;
+
+		// this just gives us a number between 0 (start) and 1 (end)
+		const relativeProgress = elapsed / duration;
+
+		// ease out that number
+		const easedProgress = easeOutQuart(relativeProgress);
+
+		// calculate new position for every thick of the requesAnimationFrame
+		position = initialPosition - amountOfPixelsToScroll * Math.min(easedProgress, 1);
+
+		// set the scrollbar position
+		window.scrollTo(0, position);
+
+		// Stop when max scroll is reached
+		if (initialPosition !== maxAvailableScroll && window.scrollY === maxAvailableScroll) {
+			cancelAnimationFrame(animationFrame);
+			return;
+		}
+
+		// repeat until the end is reached
+		if (elapsed < duration) {
+			animationFrame = requestAnimationFrame(step);
+		}
+	}
+
+	animationFrame = requestAnimationFrame(step);
+}
+
+const logError = () =>
+	console.error(`Invalid element, are you sure you've provided element id or react ref?`);
+
+const getElementPosition = (element) => element.offsetTop;
+
+export const scrollTo = ({ id, ref = null, duration = 3000 }) => {
+	// the position of the scroll bar before the user clicks the button
+	const initialPosition = window.scrollY;
+
+	// decide what type of reference that is
+	// if neither ref or id is provided  set element to null
+	const element = ref ? ref.current : id ? document.getElementById(id) : null;
+
+	if (!element) {
+		// log error if the reference passed is invalid
+		logError();
+		return;
+	}
+
+	animateScroll({
+		targetPosition: getElementPosition(element),
+		initialPosition,
+		duration,
+	});
+};
 
 const DualSection = styled(Box)`
 	display: grid;
@@ -29,7 +113,7 @@ const DualSection = styled(Box)`
 	}
 `;
 
-const ContactFormWrapper = styled(Box)`
+const ContactFormWrapper = styled('form')`
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
@@ -210,26 +294,19 @@ const inquiryItems = [
 	},
 ];
 
-const DropdownMenu = ({ ...rest }) => {
+let initialState = {
+	value: 'inquiry',
+	label: 'Inquiry',
+};
+
+const DropdownMenu = ({
+	selectedOption = initialState,
+	setSelectedOption = (option) => {},
+	...rest
+}) => {
 	const controls = useAnimation();
 	const itemControls = useAnimation();
 	const [isOpen, setIsOpen] = useState(false);
-	const router = useRouter();
-
-	let initialState = {
-		value: 'inquiry',
-		label: 'Inquiry',
-	};
-
-	if (router.query?.inquiry) {
-		inquiryItems.forEach((item) => {
-			if (item.value === router.query?.inquiry) {
-				initialState = item;
-			}
-		});
-	}
-
-	const [selectedOption, setSelectedOption] = useState(initialState);
 
 	const toggleDropdown = async () => {
 		if (isOpen) {
@@ -254,6 +331,7 @@ const DropdownMenu = ({ ...rest }) => {
 				>
 					{selectedOption.label}
 				</Text>
+				<input type="text" name="inquiry" value={selectedOption.value} hidden />
 				<DownArrow />
 			</DropdownHeader>
 			<DropdownListContainer
@@ -399,12 +477,31 @@ const BigCircle = styled('div')`
 	border-radius: 50%;
 `;
 function Contact() {
-	const { goToPage } = useMobileMenu();
+	const router = useRouter();
+	const [state, handleSubmit] = useForm('maykpnrl');
+	if (router.query?.inquiry) {
+		inquiryItems.forEach((item) => {
+			if (item.value === router.query?.inquiry) {
+				initialState = item;
+			}
+		});
+	}
 
+	const [selectedOption, setSelectedOption] = useState(initialState);
+
+	const handleClick = () => {
+		setSelectedOption({
+			value: 'careers',
+			label: 'Careers',
+		});
+		scrollTo({ id: 'contact-form', duration: 3000 });
+	};
+
+	const [contactForm, setContactForm] = useState(null);
 	return (
 		<>
 			<TextBanner pt={[7, 8]} isLight title="Contact" />
-			<Section>
+			<Section id="contact-form">
 				<DualSection>
 					<Flex flexDirection="column" pr={[, , 7]}>
 						<Text
@@ -430,13 +527,14 @@ function Contact() {
 						</Text>
 					</Flex>
 					<Flex alignItems="flex-end">
-						<ContactFormWrapper>
+						<ContactFormWrapper ref={setContactForm} onSubmit={handleSubmit}>
 							<FormInputWrapper className="first">
 								<FormInput
 									type="text"
 									variant="h4"
 									px={4}
 									py={3}
+									name="name"
 									placeholder="Name"
 									maxWidth={['100%']}
 									onFocus={(e) => (e.target.placeholder = '')}
@@ -449,6 +547,7 @@ function Contact() {
 									variant="h4"
 									px={4}
 									py={3}
+									name="email"
 									placeholder="Email"
 									maxWidth={['100%']}
 									onFocus={(e) => (e.target.placeholder = '')}
@@ -461,6 +560,7 @@ function Contact() {
 									variant="h4"
 									px={4}
 									py={3}
+									name="phone"
 									placeholder="Phone"
 									maxWidth={['100%']}
 									onFocus={(e) => (e.target.placeholder = '')}
@@ -473,13 +573,23 @@ function Contact() {
 										variant="h4"
 										px={4}
 										py={3}
+										selectedOption={selectedOption}
+										setSelectedOption={setSelectedOption}
 										placeholder="Inquiry"
 										maxWidth={['100%']}
 									/>
 								</FormInputWrapper>
 							</Box>
 							<FormInputWrapper className="fifth">
-								<MenuButton borderColor={theme.colors.orange} color={theme.colors.orange}>
+								<MenuButton
+									onClick={() => {
+										contactForm.dispatchEvent(
+											new Event('submit', { bubbles: true, cancelable: true })
+										);
+									}}
+									borderColor={theme.colors.orange}
+									color={theme.colors.orange}
+								>
 									Submit
 								</MenuButton>
 							</FormInputWrapper>
@@ -507,10 +617,16 @@ function Contact() {
 							fontSize={[`${rem(15)} !important`]}
 							lineHeight={[rem(20), rem(24)]}
 							color="sage"
+							mb={[6]}
 						>
 							You’re ready to create avenues for growth and optimization within your
 							course.
 						</Text>
+						<FormInputWrapper className="fifth" maxWidth={['70%']}>
+							<MenuButton borderColor={theme.colors.orange} color={theme.colors.orange}>
+								Schedule a demo
+							</MenuButton>
+						</FormInputWrapper>
 					</Flex>
 					<Flex
 						mx={[-20]}
@@ -566,7 +682,7 @@ function Contact() {
 					<MenuButton
 						borderColor={theme.colors.orange}
 						color={theme.colors.orange}
-						onClick={() => goToPage('/contact', { inquiry: 'careers' })}
+						onClick={handleClick}
 					>
 						Career Inquiries
 					</MenuButton>

@@ -481,7 +481,7 @@ export const BoostRevenueSection = ({
 								/>
 								<BoostRevenueSandwich
 									width={[130, 200]}
-									src="/swoop/courses/courses-sandwich-badge.png"
+									src="/swoop/courses/courses-sandwich-badge.svg"
 									alt="golfer holding whiskey drink"
 								/>
 								<BoostRevenueAddToCart
