@@ -8,10 +8,8 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     transition: all 0.50s linear; 
     margin: 0;
-    overflow-x: hidden;
-  }
-  html {
-    overflow-x: hidden;
+    position: relative;
+    height: 100%;
   }
   a {
     text-decoration: none;
@@ -26,10 +24,8 @@ export const GlobalStylesLight = createGlobalStyle`
     font-weight: 400;
     transition: all 0.50s linear; 
     margin: 0;
-    overflow-x: hidden;
-  }
-  html {
-    overflow-x: hidden;
+    position: relative;
+    height: 100%;
   }
   a {
     text-decoration: none;
@@ -43,10 +39,8 @@ export const GlobalStyles404 = createGlobalStyle`
     font-weight: 400;
     transition: all 0.50s linear; 
     margin: 0;
-    overflow-x: hidden;
-  }
-  html {
-    overflow-x: hidden;
+    height: 100%;
+    position: relative;
   }
   a {
     text-decoration: none;

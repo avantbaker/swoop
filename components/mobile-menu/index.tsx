@@ -27,8 +27,8 @@ export const MenuProvider = ({ children }) => {
 			html.style.overflow = 'hidden';
 			body.style.overflow = 'hidden';
 		} else {
-			html.style.overflow = 'unset';
-			body.style.overflow = 'unset';
+			html.style.overflow = 'initial';
+			body.style.overflow = 'initial';
 		}
 		setIsOpen(!isOpen);
 	};

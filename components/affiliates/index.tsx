@@ -184,52 +184,59 @@ const AffiliateContainer = styled('div')`
 
 const AffiliateContentWrapper = styled(Flex)``;
 
+const CirclePositioner = styled('div')`
+	width: 100%;
+	position: relative;
+`;
+
 export const AffiliateSection = () => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (
-		<AffiliateContainer>
-			<AffiliateWrapper mb={[5]} pb={[3, 5]} px={4}>
-				<TitleText maxWidth={['80%', '60%']} variant="h1" mb={[6]}>
-					Swoop Affiliate Courses
-				</TitleText>
-			</AffiliateWrapper>
-			<EmblaParent ref={emblaRef}>
-				<EmblaContainer>
-					<a href="https://www.hamiltonmillcc.com/">
-						<LogoWrapper>
-							<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
-						</LogoWrapper>
-					</a>
-					<a href="https://www.mytrilogylife.com/vistancia/golf/">
-						<LogoWrapper>
-							<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
-						</LogoWrapper>
-					</a>
-					<a href="https://www.mytrilogylife.com/encanterra/golf/">
-						<LogoWrapper>
-							<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
-						</LogoWrapper>
-					</a>
-					<a href="https://golftca.com/">
-						<LogoWrapper>
-							<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
-						</LogoWrapper>
-					</a>
-					<a href="https://www.schaffersmill.com/">
-						<LogoWrapper>
-							<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
-						</LogoWrapper>
-					</a>
-				</EmblaContainer>
-			</EmblaParent>
-			<Link href={{ pathname: '/brand' }}>
-				<LinkWrapper mt={[4, 6, 5]} mb={6} href="/brand">
-					<Text pl={[4]} color="orange" variant="link3">
-						More Affilate Courses
-					</Text>
-				</LinkWrapper>
-			</Link>
-		</AffiliateContainer>
+		<CirclePositioner>
+			<AffiliateContainer>
+				<AffiliateWrapper mb={[5]} pb={[3, 5]} px={4}>
+					<TitleText maxWidth={['80%', '60%']} variant="h1" mb={[6]}>
+						Swoop Affiliate Courses
+					</TitleText>
+				</AffiliateWrapper>
+				<EmblaParent ref={emblaRef}>
+					<EmblaContainer>
+						<a href="https://www.hamiltonmillcc.com/">
+							<LogoWrapper>
+								<img src="/swoop/home/logo-white-hamilton.svg" alt="1st Logo" />
+							</LogoWrapper>
+						</a>
+						<a href="https://www.mytrilogylife.com/vistancia/golf/">
+							<LogoWrapper>
+								<img src="/swoop/home/logo-white-trilogy.svg" alt="1st Logo" />
+							</LogoWrapper>
+						</a>
+						<a href="https://www.mytrilogylife.com/encanterra/golf/">
+							<LogoWrapper>
+								<img src="/swoop/home/logo-white-encanterra.svg" alt="1st Logo" />
+							</LogoWrapper>
+						</a>
+						<a href="https://golftca.com/">
+							<LogoWrapper>
+								<img src="/swoop/home/logo-white-tca.svg" alt="1st Logo" />
+							</LogoWrapper>
+						</a>
+						<a href="https://www.schaffersmill.com/">
+							<LogoWrapper>
+								<img src="/swoop/home/logo-white-schaffers.svg" alt="1st Logo" />
+							</LogoWrapper>
+						</a>
+					</EmblaContainer>
+				</EmblaParent>
+				<Link href={{ pathname: '/brand' }}>
+					<LinkWrapper mt={[4, 6, 5]} mb={6} href="/brand">
+						<Text pl={[4]} color="orange" variant="link3">
+							More Affilate Courses
+						</Text>
+					</LinkWrapper>
+				</Link>
+			</AffiliateContainer>
+		</CirclePositioner>
 	);
 };
 
@@ -262,10 +269,6 @@ const SmallCircle = styled('div')`
 	}
 `;
 
-const CirclePositioner = styled('div')`
-	width: 100%;
-	position: relative;
-`;
 export const AffiliateSectionExpanded = () => {
 	return (
 		<CirclePositioner>

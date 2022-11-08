@@ -34,7 +34,14 @@ import Hourglass from 'components/common/icons/search';
 const StyledAccordion = styled(Accordion)`
 	display: flex;
 	flex-direction: column;
+	height: ${rem(1600)};
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		height: ${rem(1350)};
+	}
+
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		height: ${rem(850)};
 		flex-direction: row;
 	}
 
@@ -321,11 +328,7 @@ export default function FAQ() {
 					/>
 				</SearchWrapper>
 				<div ref={container}>
-					<StyledAccordion
-						allowMultipleExpanded={true}
-						allowZeroExpanded={true}
-						style={{ height: `${fixedHeight}px` }}
-					>
+					<StyledAccordion allowMultipleExpanded={true} allowZeroExpanded={true}>
 						{currentItems.map((rows, ridx) => {
 							return (
 								<StyledAccordionRowContainer key={`faq-items-row-${ridx}`}>

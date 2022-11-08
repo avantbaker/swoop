@@ -12,6 +12,8 @@ import Text from 'components/common/text';
 import { Box } from 'rebass/styled-components';
 import { rem } from 'polished';
 import { Hero } from 'components/homepage-hero-simple';
+import { PageSectionContainer } from 'components/page-wrapper';
+import { space } from 'styled-system';
 
 const LoyaltySectionContainer = styled('div')`
 	position: relative;
@@ -172,6 +174,16 @@ const brandsDummyCards = [
 	},
 ];
 
+export const BoxPageSectionContainer = styled(PageSectionContainer)`
+	${({ hasOverflowY }) =>
+		!hasOverflowY &&
+		`
+		padding-top: 0;
+		margin-top: 0;
+	`}
+
+	${space}
+`;
 export default function Brand() {
 	return (
 		<>
@@ -184,14 +196,18 @@ export default function Brand() {
 				src="/elements/putting.png"
 			/>
 			<TestimonialsCarousel cards={brandsDummyTestimonials} className="expanded" />
-			<AffiliateSectionExpanded />
+			<PageSectionContainer>
+				<AffiliateSectionExpanded />
+			</PageSectionContainer>
 			<ByrdiInAction
 				cards={brandsDummyCards}
 				title="The distinguished game, dinner, and drinks"
 				body="Swoop is a staple of the golfing experience, bridging the gap between some of the best things in life."
 			/>
 			<TextBanner title="SWOOP AMBASSADORS" />
-			<AmbassadorCarousel />
+			<BoxPageSectionContainer mb={[7]}>
+				<AmbassadorCarousel />
+			</BoxPageSectionContainer>
 			{/* <TextBanner title="Loyalty Rewards" />
 			<ByrdiLoyaltySection /> */}
 			<NewsletterSection

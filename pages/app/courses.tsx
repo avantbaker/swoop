@@ -3,6 +3,7 @@ import { ByrdiInAction } from 'components/byrdi-in-action';
 import Text from 'components/common/text';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
+import { PageSectionContainer } from 'components/page-wrapper';
 import { TextIntro } from 'components/text-intro';
 import {
 	BoostRevenueSection,
@@ -18,13 +19,13 @@ import {
 	IntegrateSection,
 } from 'components/value-section/alternate';
 import { motion, useAnimationControls } from 'framer-motion';
+import { BoxPageSectionContainer } from 'pages/brand';
 import { rem } from 'polished';
 import { useEffect, useRef, useState } from 'react';
 import { Box, Flex } from 'rebass/styled-components';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 import { useViewport } from 'use-viewport';
-
 const MotionDivWithSpacing = styled(motion.div)(space);
 
 const MainFloatingHeroContainer = styled(MotionDivWithSpacing)``;
@@ -110,6 +111,8 @@ const ValueSectionFloatingImageContainer = styled('div')`
 	bottom: 0;
 	display: flex;
 	justify-content: center;
+
+	${space}
 `;
 
 const ValueSectionFloatingImage = styled('div')`
@@ -236,13 +239,6 @@ export default function App() {
 		}
 	}, [fourthSectionIsVisible]);
 
-	useEffect(() => {
-		const html = document.getElementsByTagName('html')[0];
-		const body = document.getElementsByTagName('body')[0];
-		html.style.overflowX = 'unset';
-		body.style.overflowX = 'unset';
-	}, []);
-
 	const [textHeight, setTextHeight] = useState(0);
 
 	useEffect(() => {
@@ -368,11 +364,7 @@ export default function App() {
 					</MobileSection>
 				</MainFloatingHeroContainer>
 				<div className="ValueSections" style={{ position: 'relative' }}>
-					<ValueSectionFloatingImageContainer
-						style={{
-							bottom: `${rem(bottomOffset + 180)}`,
-						}}
-					>
+					<ValueSectionFloatingImageContainer mb={[, 8]}>
 						<ValueSectionFloatingImage ref={floatingImageRef} style={{ top: topOffset }}>
 							<BackgroundImage src={imageSrc} animate={controls} />
 							<img
@@ -382,7 +374,7 @@ export default function App() {
 							/>
 						</ValueSectionFloatingImage>
 					</ValueSectionFloatingImageContainer>
-					<MotionDivWithSpacing style={{ overflowX: 'hidden' }}>
+					<BoxPageSectionContainer hasOverflowY={false}>
 						<MotionDivWithSpacing ref={firstSection} mb={[6, 7, 8]}>
 							<BoostRevenueSection
 								mt={[8]}
@@ -427,7 +419,7 @@ export default function App() {
 								src="/swoop/courses/courses-sandwich-screen.png"
 							/>
 						</MotionDivWithSpacing>
-					</MotionDivWithSpacing>
+					</BoxPageSectionContainer>
 				</div>
 			</FloatingAppContainer>
 			<ByrdiInAction cards={cards} />

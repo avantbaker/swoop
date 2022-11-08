@@ -180,6 +180,7 @@ const TestimonialsCarouselWrapper = styled(Block)`
 		margin-bottom: ${({ theme }) => rem(theme.space[6])};
 	}
 `;
+
 export const TestimonialsCarousel = ({ cards = dummyCards, ...rest }) => {
 	const { scrollPrev, scrollNext, emblaRef } = useCustomCarousel();
 	return (

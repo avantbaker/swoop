@@ -2,6 +2,7 @@ import { AffiliateSection } from 'components/affiliates';
 import { DriveRevenue } from 'components/drive-revenue';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
+import { PageSectionContainer } from 'components/page-wrapper';
 import { TextBanner } from 'components/text-banner';
 import { VideoSection } from 'components/video-section';
 import { rem } from 'polished';
@@ -53,10 +54,12 @@ export default function Home() {
 			<DriveRevenue />
 			<AffiliateSection />
 			<TestimonialsCarousel />
-			<InstagramSection>
-				<LeftCircle />
-				<RightCircle />
-			</InstagramSection>
+			<PageSectionContainer>
+				<InstagramSection>
+					<LeftCircle />
+					<RightCircle />
+				</InstagramSection>
+			</PageSectionContainer>
 			<NewsletterSection />
 		</>
 	);

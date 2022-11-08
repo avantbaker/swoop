@@ -23,6 +23,7 @@ import { Box, Flex } from 'rebass/styled-components';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 import { useViewport } from 'use-viewport';
+import { BoxPageSectionContainer } from 'pages/brand';
 
 const MotionDivWithSpacing = styled(motion.div)(space);
 
@@ -109,6 +110,8 @@ const ValueSectionFloatingImageContainer = styled('div')`
 	bottom: 0;
 	display: flex;
 	justify-content: center;
+
+	${space}
 `;
 
 const ValueSectionFloatingImage = styled('div')`
@@ -231,13 +234,6 @@ export default function App() {
 			})();
 		}
 	}, [fourthSectionIsVisible]);
-
-	useEffect(() => {
-		const html = document.getElementsByTagName('html')[0];
-		const body = document.getElementsByTagName('body')[0];
-		html.style.overflowX = 'unset';
-		body.style.overflowX = 'unset';
-	}, []);
 
 	const [textHeight, setTextHeight] = useState(0);
 
@@ -365,11 +361,7 @@ export default function App() {
 				</MainFloatingHeroContainer>
 
 				<div className="ValueSections" style={{ position: 'relative' }}>
-					<ValueSectionFloatingImageContainer
-						style={{
-							bottom: `${rem(bottomOffset + 180)}`,
-						}}
-					>
+					<ValueSectionFloatingImageContainer mb={[, 8]}>
 						<ValueSectionFloatingImage ref={floatingImageRef} style={{ top: topOffset }}>
 							<BackgroundImage src={imageSrc} animate={controls} />
 							<img
@@ -379,7 +371,7 @@ export default function App() {
 							/>
 						</ValueSectionFloatingImage>
 					</ValueSectionFloatingImageContainer>
-					<MotionDivWithSpacing style={{ overflow: 'hidden' }}>
+					<BoxPageSectionContainer hasOverflowY={false}>
 						<MotionDivWithSpacing ref={firstSection} mb={[6, 7, 8]}>
 							<ValueSection
 								mt={[8]}
@@ -423,7 +415,7 @@ export default function App() {
 								src="/swoop/golfers/golfers-phone-4.png"
 							/>
 						</MotionDivWithSpacing>
-					</MotionDivWithSpacing>
+					</BoxPageSectionContainer>
 				</div>
 			</FloatingAppContainer>
 			<ByrdiInAction />
