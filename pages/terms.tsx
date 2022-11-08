@@ -10,7 +10,7 @@ import { PageSectionContainer } from 'components/page-wrapper';
 
 const ContentWithSidebarWrapper = styled(motion.div)`
 	display: grid;
-	gird-template-columns: 1fr;
+	grid-template-columns: 1fr;
 	grid-template-rows: auto;
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
 		grid-template-columns: 35% 1fr;
@@ -780,7 +780,7 @@ const ContentWithSidebar = ({ ...rest }) => {
 function TermsAndConditions() {
 	return (
 		<>
-			<TextBanner pt={[7, 8]} isLight title="Terms & Contditions" />
+			<TextBanner pt={[7, 8]} isLight title="Terms & Conditions" />
 			<ContentWithSidebar />
 		</>
 	);

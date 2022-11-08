@@ -23,6 +23,8 @@ type MenuItem = {
 	textAlign?: any;
 	mr?: any;
 	onClick?: any;
+	mb?: any;
+	mt?: any;
 };
 export const MenuItem = ({
 	variant,
