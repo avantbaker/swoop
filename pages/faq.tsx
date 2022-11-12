@@ -34,14 +34,8 @@ import Hourglass from 'components/common/icons/search';
 const StyledAccordion = styled(Accordion)`
 	display: flex;
 	flex-direction: column;
-	height: ${rem(1600)};
-
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		height: ${rem(1350)};
-	}
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		height: ${rem(850)};
 		flex-direction: row;
 	}
 
@@ -139,7 +133,7 @@ const dummyItemsRows = [
 		},
 		{
 			title: 'Can I change or update my menu on Swoop?',
-			body: `You can change and update your menu on Swoop at any time. To learn more about managing your menu on Swoop, read our article Managing Your Menu Within the Swoop Admin Portal.`,
+			body: `You can change and update your menu on Swoop at any time. Our 24/7 customer service team can also assist you with making any updates.`,
 		},
 		{
 			title: 'Can I refuse or modify orders I receive from Swoop?',
@@ -156,13 +150,13 @@ const dummyItemsRows = [
 		},
 		{
 			title: "What is Swoop's payment process?",
-			body: `Swoop does not offer in-app payments. You can continue to accept payments the way you currently process transactions.`,
+			body: `Swoop does not offer in-app payments at this time. You can continue to accept payments the way you currently process transactions`,
 		},
 	],
 	[
 		{
 			title: 'Can we integrate Swoop with our POS system?',
-			body: `No. Orders are received and processed using the Swoop-provided "Station" tablet.`,
+			body: `Not at this time. Orders are received and processed using the Swoop-provided "Station" tablet.`,
 		},
 		{
 			title:

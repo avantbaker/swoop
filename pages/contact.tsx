@@ -610,7 +610,7 @@ function Contact() {
 							GET A DEMO
 						</Text>
 						<Text variant="h2" color="sage" mb={[4]}>
-							Book a demo to lorem ipsum dolor sic amet consectetur.
+							Schedule a 30-Minute zoom meeting for a Swoop demo.
 						</Text>
 						<Text
 							variant="h4"
@@ -623,7 +623,11 @@ function Contact() {
 							course.
 						</Text>
 						<FormInputWrapper className="fifth" maxWidth={['70%']}>
-							<MenuButton borderColor={theme.colors.orange} color={theme.colors.orange}>
+							<MenuButton
+								href="https://calendly.com/swoopgolf/30min?hide_gdpr_banner=1"
+								borderColor={theme.colors.orange}
+								color={theme.colors.orange}
+							>
 								Schedule a demo
 							</MenuButton>
 						</FormInputWrapper>

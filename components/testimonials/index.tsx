@@ -123,7 +123,8 @@ export const useCustomCarousel = () => {
 	const [currentIndex, setSelectedIndex] = useState(0);
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
-		align: 'start',
+		// align: 'start',
+		loop: true,
 		skipSnaps: false,
 	});
 	const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
