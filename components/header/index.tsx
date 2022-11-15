@@ -95,6 +95,7 @@ export const Header = ({ ...rest }) => {
 					isOpen={isOpen}
 					toggleMobileNav={() => toggleIsOpen()}
 					display={['block', 'block', 'none']}
+					isDark={type === 'light' ? true : isOpen}
 				/>
 				<DesktopMenu display={['none', 'none', 'flex']} flexDirection="column">
 					<Top alignItems="center" justifyContent="flex-end" pb={[space[3]]}>
