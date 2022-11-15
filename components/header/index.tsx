@@ -103,7 +103,7 @@ export const Header = ({ ...rest }) => {
 						<HeaderMenuButton
 							title="Get a Demo"
 							color={type === 'orange' ? colors.white : colors.orange}
-							href="/contact"
+							href="/contact?demo=true"
 						/>
 					</Top>
 					<Bottom justifyContent="flex-end">

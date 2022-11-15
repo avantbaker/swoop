@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { InstagramSection } from 'components/instagram';
 import { NewsletterSection } from 'components/newsletter';
 import { TextBanner } from 'components/text-banner';
@@ -487,6 +487,12 @@ function Contact() {
 		});
 	}
 
+	useEffect(() => {
+		if (router.query?.demo) {
+			scrollTo({ id: 'demo', duration: 3000 });
+		}
+	}, []);
+
 	const [selectedOption, setSelectedOption] = useState(initialState);
 
 	const handleClick = () => {
@@ -597,7 +603,7 @@ function Contact() {
 					</Flex>
 				</DualSection>
 			</Section>
-			<Section mb={[6, 7]}>
+			<Section id="demo" mb={[6, 7]}>
 				<DualSection>
 					<Flex flexDirection="column" pr={[, , 7]}>
 						<Text

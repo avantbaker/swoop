@@ -152,6 +152,9 @@ const cards = [
 	{ imgSrc: '/swoop/courses/courses-sushi.png' },
 	{ imgSrc: '/swoop/courses/courses-putting.png' },
 	{ imgSrc: '/swoop/courses/courses-bar.png' },
+	{ imgSrc: '/swoop/brand/brand-bag.jpeg' },
+	{ imgSrc: '/swoop/brand/brand-sand-trap.jpeg' },
+	{ imgSrc: '/swoop/brand/brand-aperol.jpeg' },
 ];
 function useOnScreen(options = {}) {
 	const [ref, setRef] = useState(null);

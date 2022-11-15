@@ -50,6 +50,7 @@ export const MenuProvider = ({ children }) => {
 export const useMobileMenu = () => {
 	return useContext(MenuContext);
 };
+
 export const MobileMenu = ({ open = false, children, ...rest }) => {
 	const { isOpen, goToPage } = useMobileMenu();
 	const { space } = useTheme();
@@ -79,7 +80,7 @@ export const MobileMenu = ({ open = false, children, ...rest }) => {
 				mr={['0 !important']}
 				color="orange"
 				title="Get a Demo"
-				onClick={goToPage('/contact')}
+				onClick={goToPage('/contact?demo=true')}
 			/>
 			<Flex flex={1} alignItems="flex-end" mb={5}>
 				<Flex flexDirection={['row-reverse', 'row']} justifyContent="flex-end">

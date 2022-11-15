@@ -123,15 +123,20 @@ export const useCustomCarousel = () => {
 	const [currentIndex, setSelectedIndex] = useState(0);
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
-		// align: 'start',
-		loop: true,
+		align: 'start',
 		skipSnaps: false,
 	});
 	const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
 	const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+	const scrollPrev = useCallback(() => {
+		emblaApi && emblaApi.scrollPrev();
+		console.log('whithc');
+	}, [emblaApi]);
+	const scrollNext = useCallback(() => {
+		emblaApi && emblaApi.scrollNext();
+		console.log('whithc');
+	}, [emblaApi]);
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return;
 		setPrevBtnEnabled(emblaApi.canScrollPrev());

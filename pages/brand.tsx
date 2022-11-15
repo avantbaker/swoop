@@ -172,6 +172,15 @@ const brandsDummyCards = [
 	{
 		imgSrc: '/swoop/brand/brand-cocktail.png',
 	},
+	{
+		imgSrc: '/swoop/brand/brand-bag.jpeg',
+	},
+	{
+		imgSrc: '/swoop/brand/brand-sand-trap.jpeg',
+	},
+	{
+		imgSrc: '/swoop/brand/brand-aperol.jpeg',
+	},
 ];
 
 export const BoxPageSectionContainer = styled(PageSectionContainer)`

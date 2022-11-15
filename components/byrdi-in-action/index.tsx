@@ -41,18 +41,33 @@ const ImageWrapper = styled('div')`
 `;
 const ContentWrapper = styled('div')``;
 
+function arraysNotEqual(a1, a2) {
+	return JSON.stringify(a1) !== JSON.stringify(a2);
+}
 export const useCustomCarousel = () => {
 	const [currentIndex, setSelectedIndex] = useState(0);
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
+		loop: true,
 		align: 'start',
 		skipSnaps: false,
+		// slidesToScroll: 6,
 	});
 	const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
 	const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-	const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-	const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+	const scrollPrev = useCallback(() => {
+		console.log(arraysNotEqual(emblaApi.slidesInView(), [0, 1, 2]));
+		if (arraysNotEqual(emblaApi.slidesInView(), [0, 1, 2])) {
+			emblaApi && emblaApi.scrollPrev();
+		}
+	}, [emblaApi]);
+	const scrollNext = useCallback(() => {
+		console.log(arraysNotEqual(emblaApi.slidesInView(), [3, 4, 5]));
+		if (arraysNotEqual(emblaApi.slidesInView(), [3, 4, 5])) {
+			emblaApi && emblaApi.scrollNext();
+		}
+	}, [emblaApi]);
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return;
 		setPrevBtnEnabled(emblaApi.canScrollPrev());
@@ -90,6 +105,15 @@ const dummyCards = [
 	},
 	{
 		imgSrc: '/swoop/golfers/golfers-pin.png',
+	},
+	{
+		imgSrc: '/swoop/brand/brand-bag.jpeg',
+	},
+	{
+		imgSrc: '/swoop/brand/brand-sand-trap.jpeg',
+	},
+	{
+		imgSrc: '/swoop/brand/brand-aperol.jpeg',
 	},
 ];
 
