@@ -16,7 +16,8 @@ const Label = styled.label`
 	width: 38px;
 	height: 38px;
 	border: 1px solid
-		${({ theme, isOpen }) => (isOpen ? theme.colors.black : theme.colors.orange)};
+		${({ theme, isOpen, isDark }) =>
+			isOpen ? theme.colors.black : isDark ? theme.colors.orange : theme.colors.white};
 	margin-left: -20px;
 	position: absolute;
 	color: #ffffff;
@@ -73,8 +74,8 @@ const HiddenInput = styled.input`
 const Line = styled.span`
 	width: 25px;
 	height: 1px;
-	background: ${({ theme, isOpen }) =>
-		isOpen ? theme.colors.black : theme.colors.orange};
+	background: ${({ theme, isOpen, isDark }) =>
+		isOpen ? theme.colors.black : isDark ? theme.colors.orange : theme.colors.white};
 	display: block;
 	position: absolute;
 	top: 50%;
@@ -90,9 +91,11 @@ const Line = styled.span`
 export default function HamburgerMenu({
 	toggleMobileNav = () => {},
 	isOpen,
+	isDark,
 	...rest
 }:
 	| {
+			isDark: boolean;
 			toggleMobileNav: () => void;
 			isOpen: boolean;
 	  }
@@ -108,10 +111,10 @@ export default function HamburgerMenu({
 					checked={isOpen}
 					onChange={toggleMobileNav}
 				/>
-				<Label isOpen={isOpen} htmlFor="menu-open">
-					<Line isOpen={isOpen} className="line-1"></Line>
-					<Line isOpen={isOpen} className="line-2"></Line>
-					<Line isOpen={isOpen} className="line-3"></Line>
+				<Label isOpen={isOpen} isDark={isDark} htmlFor="menu-open">
+					<Line isOpen={isOpen} isDark={isDark} className="line-1"></Line>
+					<Line isOpen={isOpen} isDark={isDark} className="line-2"></Line>
+					<Line isOpen={isOpen} isDark={isDark} className="line-3"></Line>
 				</Label>
 			</Container>
 		</>
