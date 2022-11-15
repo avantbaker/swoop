@@ -77,7 +77,7 @@ export const AppCards = () => {
 								height: golfersTextHeight,
 								width: 'auto',
 							}}
-							src="/elements/apple-golfers-desktop.png"
+							src="/swoop/brand/apple-golfers-desktop-removed.png"
 							alt=""
 						/>
 					</DualSection>
@@ -89,7 +89,7 @@ export const AppCards = () => {
 								height: coursesTextHeight,
 								width: 'auto',
 							}}
-							src="/elements/app-courses-desktop-cropped.png"
+							src="/swoop/brand/app-courses-desktop-cropped-removed.png"
 							alt=""
 						/>
 						<VerticalTextL ref={coursesText} variant="displayVertical" ml={[4]}>
