@@ -213,6 +213,7 @@ export default function Brand() {
 				title="The distinguished game, dinner, and drinks"
 				body="Swoop is a staple of the golfing experience, bridging the gap between some of the best things in life."
 			/>
+
 			<TextBanner title="SWOOP AMBASSADORS" />
 			<BoxPageSectionContainer mb={[7]}>
 				<AmbassadorCarousel />

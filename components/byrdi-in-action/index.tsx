@@ -16,58 +16,29 @@ export const PhotoCarousel = styled('div')`
 	flex-wrap: nowrap;
 	-webkit-overflow-scrolling: touch;
 `;
-const ImageWrapper = styled('div')`
-	flex: 0 0 88%;
-	margin-right: ${rem(20)};
-	display: flex;
-	width: 88%;
-	max-height: ${rem(581)};
-	&:last-of-type {
-		margin-right: 0;
-	}
-	img {
-		object-fit: cover;
-		object-position: center;
-		width: 100%;
-	}
 
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		flex: 0 0 44%;
-	}
-
-	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-		flex: 0 0 33%;
-	}
-`;
 const ContentWrapper = styled('div')``;
 
-function arraysNotEqual(a1, a2) {
-	return JSON.stringify(a1) !== JSON.stringify(a2);
-}
 export const useCustomCarousel = () => {
 	const [currentIndex, setSelectedIndex] = useState(0);
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
 		loop: true,
 		align: 'start',
-		skipSnaps: false,
-		// slidesToScroll: 6,
+		skipSnaps: true,
 	});
+
 	const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
 	const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
 	const scrollPrev = useCallback(() => {
-		console.log(arraysNotEqual(emblaApi.slidesInView(), [0, 1, 2]));
-		if (arraysNotEqual(emblaApi.slidesInView(), [0, 1, 2])) {
-			emblaApi && emblaApi.scrollPrev();
-		}
+		emblaApi && emblaApi.scrollPrev();
 	}, [emblaApi]);
+
 	const scrollNext = useCallback(() => {
-		console.log(arraysNotEqual(emblaApi.slidesInView(), [3, 4, 5]));
-		if (arraysNotEqual(emblaApi.slidesInView(), [3, 4, 5])) {
-			emblaApi && emblaApi.scrollNext();
-		}
+		emblaApi && emblaApi.scrollNext();
 	}, [emblaApi]);
+
 	const onSelect = useCallback(() => {
 		if (!emblaApi) return;
 		setPrevBtnEnabled(emblaApi.canScrollPrev());
@@ -117,6 +88,69 @@ const dummyCards = [
 	},
 ];
 
+const Embla = styled('div')`
+	position: relative;
+	padding: 20px 0;
+	margin-left: auto;
+	margin-right: auto;
+`;
+
+const EmblaViewport = styled('div')`
+	overflow: hidden;
+	width: 100%;
+
+	.is-draggable {
+		cursor: move;
+		cursor: grab;
+	}
+
+	.is-dragging {
+		cursor: grabbing;
+	}
+`;
+
+const EmblaContainer = styled('div')`
+	display: flex;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	margin-left: -10px;
+`;
+
+const EmblaSlide = styled('div')`
+	position: relative;
+	padding-left: 10px;
+
+	min-width: 88%;
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		min-width: 44%;
+	}
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+		min-width: 33%;
+	}
+`;
+
+const EmblaSlideInner = styled('div')`
+	position: relative;
+	overflow: hidden;
+	height: 400px;
+`;
+
+const EmblaSlideImg = styled('img')`
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	min-height: 100%;
+	min-width: 100%;
+	max-width: 500px;
+	transform: translate(-50%, -50%);
+`;
+
 export const ByrdiInAction = ({
 	cards = dummyCards,
 	title = 'For the love of the sport, and sandwiches.',
@@ -141,17 +175,19 @@ export const ByrdiInAction = ({
 					<RightControl onClick={scrollNext} />
 				</ControlContainer>
 			</Section>
-			<PhotoCarousel ref={emblaRef}>
-				<PhotoCarousel>
-					{cards.map(({ imgSrc }, idx) => {
-						return (
-							<ImageWrapper key={`img-carousel-${idx}`}>
-								<img src={imgSrc} alt="" />
-							</ImageWrapper>
-						);
-					})}
-				</PhotoCarousel>
-			</PhotoCarousel>
+			<Embla>
+				<EmblaViewport ref={emblaRef}>
+					<EmblaContainer>
+						{cards.map(({ imgSrc }, idx) => (
+							<EmblaSlide key={`img-carousel-${idx}`}>
+								<EmblaSlideInner>
+									<EmblaSlideImg src={imgSrc} alt="current image" />
+								</EmblaSlideInner>
+							</EmblaSlide>
+						))}
+					</EmblaContainer>
+				</EmblaViewport>
+			</Embla>
 		</ByrdiInActionWrapper>
 	);
 };

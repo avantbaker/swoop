@@ -255,16 +255,20 @@ export default function App() {
 	]);
 
 	useEffect(() => {
-		const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
-		const containerPos =
-			floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
-		const deltaForBottom = Math.abs(imagePos - containerPos);
-		setBottomOffset(deltaForBottom);
+		setTimeout(() => {
+			const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
+			const containerPos =
+				floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
+			const deltaForBottom = Math.abs(imagePos - containerPos);
+			setBottomOffset(deltaForBottom);
+		}, 500);
 	}, [floatingImageAnchorFinalRef.current, floatingImageContainerFinalRef.current]);
 
 	useEffect(() => {
-		const top = (height - floatingImageRef.current.clientHeight) / 2;
-		setTopOffset(top);
+		setTimeout(() => {
+			const top = (height - floatingImageRef.current.clientHeight) / 2;
+			setTopOffset(top);
+		}, 500);
 	}, [height, floatingImageRef.current, setTopOffset]);
 
 	return (
