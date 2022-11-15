@@ -21,7 +21,7 @@ import {
 import { motion, useAnimationControls } from 'framer-motion';
 import { BoxPageSectionContainer } from 'pages/brand';
 import { rem } from 'polished';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Box, Flex } from 'rebass/styled-components';
 import styled from 'styled-components';
 import { space } from 'styled-system';
@@ -244,7 +244,7 @@ export default function App() {
 
 	const [textHeight, setTextHeight] = useState(0);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const containerPos = firstImageContainerRef.current.getBoundingClientRect().y;
 		const imagePos = firstImageRef.current.getBoundingClientRect().y;
 		const deltaForPadding = Math.abs(containerPos - imagePos);
@@ -260,7 +260,8 @@ export default function App() {
 		firstImageRef.current,
 		firstImageContainerRef.current,
 	]);
-	useEffect(() => {
+
+	useLayoutEffect(() => {
 		const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
 		const containerPos =
 			floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
@@ -268,7 +269,7 @@ export default function App() {
 		setBottomOffset(deltaForBottom);
 	}, [floatingImageAnchorFinalRef.current, floatingImageContainerFinalRef.current]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const top = (height - floatingImageRef.current.clientHeight) / 2;
 		setTopOffset(top);
 	}, [height, floatingImageRef.current, setTopOffset]);

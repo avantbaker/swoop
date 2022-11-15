@@ -17,7 +17,7 @@ import {
 import { CheersSection, ValueSectionAlt } from 'components/value-section/alternate';
 import { motion, useAnimationControls } from 'framer-motion';
 import { position, rem } from 'polished';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 import { Box, Flex } from 'rebass/styled-components';
 import styled from 'styled-components';
@@ -237,7 +237,7 @@ export default function App() {
 
 	const [textHeight, setTextHeight] = useState(0);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const containerPos = firstImageContainerRef.current.getBoundingClientRect().y;
 		const imagePos = firstImageRef.current.getBoundingClientRect().y;
 		const deltaForPadding = Math.abs(containerPos - imagePos);
@@ -254,21 +254,17 @@ export default function App() {
 		firstImageContainerRef.current,
 	]);
 
-	useEffect(() => {
-		setTimeout(() => {
-			const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
-			const containerPos =
-				floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
-			const deltaForBottom = Math.abs(imagePos - containerPos);
-			setBottomOffset(deltaForBottom);
-		}, 500);
+	useLayoutEffect(() => {
+		const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
+		const containerPos =
+			floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
+		const deltaForBottom = Math.abs(imagePos - containerPos);
+		setBottomOffset(deltaForBottom);
 	}, [floatingImageAnchorFinalRef.current, floatingImageContainerFinalRef.current]);
 
-	useEffect(() => {
-		setTimeout(() => {
-			const top = (height - floatingImageRef.current.clientHeight) / 2;
-			setTopOffset(top);
-		}, 500);
+	useLayoutEffect(() => {
+		const top = (height - floatingImageRef.current.clientHeight) / 2;
+		setTopOffset(top);
 	}, [height, floatingImageRef.current, setTopOffset]);
 
 	return (
