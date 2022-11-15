@@ -143,7 +143,7 @@ const LogoContainerExpanded = styled(LogoContainer)`
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background: linear-gradient(180deg, transparent, #1b1814 85%, #1b1814 100%);
+		// background: linear-gradient(180deg, transparent, #1b1814 85%, #1b1814 100%);
 	}
 
 	&:after {
