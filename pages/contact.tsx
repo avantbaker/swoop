@@ -465,6 +465,11 @@ const SmallCircle = styled('div')`
 	width: ${rem(150)};
 	border: 0.5px solid ${({ theme }) => theme.colors.sage};
 	border-radius: 50%;
+	display: none;
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		display: block;
+	}
 `;
 
 const BigCircle = styled('div')`
@@ -475,6 +480,11 @@ const BigCircle = styled('div')`
 	width: ${rem(574)};
 	border: 0.5px solid ${({ theme }) => theme.colors.sage};
 	border-radius: 50%;
+	display: none;
+
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		display: block;
+	}
 `;
 function Contact() {
 	const router = useRouter();
@@ -505,7 +515,7 @@ function Contact() {
 
 	const [contactForm, setContactForm] = useState(null);
 	return (
-		<>
+		<div style={{ overflowX: 'hidden' }}>
 			<TextBanner pt={[7, 8]} isLight title="Contact" />
 			<Section id="contact-form">
 				<DualSection>
@@ -628,7 +638,7 @@ function Contact() {
 							You’re ready to create avenues for growth and optimization within your
 							course.
 						</Text>
-						<FormInputWrapper className="fifth" maxWidth={['70%']}>
+						<FormInputWrapper className="fifth" maxWidth={['70%']} mb={[6]}>
 							<MenuButton
 								href="https://calendly.com/swoopgolf/30min?hide_gdpr_banner=1"
 								borderColor={theme.colors.orange}
@@ -702,7 +712,7 @@ function Contact() {
 				<LeftCircle />
 			</InstagramSection>
 			<NewsletterSection />
-		</>
+		</div>
 	);
 }
 

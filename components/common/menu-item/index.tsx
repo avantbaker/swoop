@@ -77,4 +77,5 @@ export const MenuButton = styled(MenuItem)`
 			color: ${({ theme }) => theme.colors.white};
 		}
 	}
+	z-index: 100000;
 `;
