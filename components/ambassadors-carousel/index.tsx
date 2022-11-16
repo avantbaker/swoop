@@ -50,16 +50,6 @@ const cardTestData = {
 };
 const cardData = [
 	{
-		title: 'Olajuwon Ajanaku',
-		location: 'Eastside Golf',
-		tag: '@oooolajuwon',
-		comment: `Professional golfer and founder of Eastside Golf,  a lifestyle golf brand developed to raise awareness about golf among youth and non golfers`,
-		instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
-		twitter: 'https://twitter.com/olajuwon',
-		linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
-		imgSrc: '/swoop/ambassadors/olajuwon.jpeg',
-	},
-	{
 		title: 'Jen Clyde',
 		location: 'ForeAll',
 		tag: '@jenstyles',
@@ -99,6 +89,16 @@ const cardData = [
 		twitter: 'https://twitter.com/SuziGolf',
 		linkedIn: '',
 		imgSrc: '/swoop/ambassadors/suzi.jpeg',
+	},
+	{
+		title: 'Olajuwon Ajanaku',
+		location: 'Eastside Golf',
+		tag: '@oooolajuwon',
+		comment: `Professional golfer and founder of Eastside Golf,  a lifestyle golf brand developed to raise awareness about golf among youth and non golfers`,
+		instagram: 'https://www.instagram.com/oooolajuwon/?hl=en',
+		twitter: 'https://twitter.com/olajuwon',
+		linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
+		imgSrc: '/swoop/ambassadors/olajuwon.jpeg',
 	},
 ];
 
