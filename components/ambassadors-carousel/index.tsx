@@ -55,7 +55,7 @@ const cardData = [
 		title: 'Jen Clyde',
 		location: 'ForeAll',
 		tag: '@jenstyles',
-		comment: `Co-Founder/CO-CEO of ForeAll, a golf lifestyle brand fore ladies`,
+		comment: `Co-Founder + CEO-Fore All Women's Golf Club Founder + CEO-TheGivBox`,
 		instagram: 'https://www.instagram.com/jenstyles/?hl=en',
 		twitter: 'https://twitter.com/golf_fore_all',
 		linkedIn: 'https://www.linkedin.com/in/jen-clyde/',
