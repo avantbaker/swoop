@@ -37,6 +37,7 @@ const Card = styled(Flex)`
 		flex: 0 0 50%;
 	}
 `;
+
 const cardTestData = {
 	title: 'Olajuwon Ajanaku',
 	location: 'Eastlake Golf',
@@ -48,6 +49,7 @@ const cardTestData = {
 	twitter: 'https://twitter.com/olajuwon',
 	linkedIn: 'https://www.linkedin.com/in/olajuwon-ajanaku-5011811a/',
 };
+
 const cardData = [
 	{
 		title: 'Jen Clyde',

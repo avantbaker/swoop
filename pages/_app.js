@@ -8,6 +8,7 @@ import { GlobalStyles, GlobalStyles404, GlobalStylesLight } from 'styles/globalS
 import 'styles/scss/styles.scss';
 import { ViewportProvider } from 'use-viewport';
 import PageWrapper from 'components/page-wrapper';
+import Script from 'next/script';
 
 function MyApp({ Component, pageProps }) {
 	const { isLight, isOrange, currentTheme } = useCurrentTheme(pageProps);
@@ -19,6 +20,20 @@ function MyApp({ Component, pageProps }) {
 					content="width=device-width, initial-scale=1, viewport-fit=cover"
 				/>
 			</Head>
+			<script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-Z3F9YVCEKR"
+			></script>
+			<Script id="google-tag-manager" strategy="afterInteractive">
+				{`
+        window.dataLayer = window.dataLayer || [];
+	
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+			
+				gtag('config', 'G-Z3F9YVCEKR');
+      `}
+			</Script>
 			<ViewportProvider>
 				<MenuProvider>
 					{isLight && <GlobalStylesLight />}
