@@ -52,9 +52,7 @@ export default function Home() {
 			<TextBanner title="More Memorable Rounds" />
 			<VideoSection />
 			<DriveRevenue />
-			<PageSectionContainer>
-				<AffiliateSection />
-			</PageSectionContainer>
+			<PageSectionContainer>{/* <AffiliateSection /> */}</PageSectionContainer>
 			<TestimonialsCarousel />
 			<PageSectionContainer>
 				<InstagramSection>

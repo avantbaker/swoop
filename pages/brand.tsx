@@ -205,9 +205,7 @@ export default function Brand() {
 				src="/elements/putting.png"
 			/>
 			<TestimonialsCarousel cards={brandsDummyTestimonials} className="expanded" />
-			<PageSectionContainer>
-				<AffiliateSectionExpanded />
-			</PageSectionContainer>
+			<PageSectionContainer>{/* <AffiliateSectionExpanded /> */}</PageSectionContainer>
 			<ByrdiInAction
 				cards={brandsDummyCards}
 				title="The distinguished game, dinner, and drinks"
