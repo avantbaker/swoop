@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
 					{isLight && <GlobalStylesLight />}
 					{!isOrange && !isLight && <GlobalStyles />}
 					{isOrange && <GlobalStyles404 />}
-					<PageWrapper>
+					<PageWrapper pageName={Component.name}>
 						<Header />
 						<Component {...pageProps} />
 						<Footer />

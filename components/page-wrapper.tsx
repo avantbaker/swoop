@@ -1,4 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -16,7 +17,7 @@ export const PageSectionContainer = styled('div')`
 	padding-top: 250px;
 	margin-top: -250px;
 `;
-export default function PageWrapper({ children }) {
+export default function PageWrapper({ children, pageName }) {
 	const router = useRouter();
 	useEffect(() => {
 		const html = document.getElementsByTagName('html')[0];
@@ -30,6 +31,9 @@ export default function PageWrapper({ children }) {
 
 	return (
 		<>
+			<Head>
+				<title>Swoop Golf | {pageName}</title>
+			</Head>
 			<PageContainer>{children}</PageContainer>
 		</>
 	);
