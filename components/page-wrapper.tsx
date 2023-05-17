@@ -27,5 +27,10 @@ export default function PageWrapper({ children }) {
 		});
 		return () => {};
 	}, []);
-	return <PageContainer>{children}</PageContainer>;
+
+	return (
+		<>
+			<PageContainer>{children}</PageContainer>
+		</>
+	);
 }

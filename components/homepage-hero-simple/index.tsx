@@ -6,6 +6,8 @@ import { Flex, Box } from 'rebass/styled-components';
 import Text from 'components/common/text';
 import { Pin } from 'components/common/icons/pin';
 import { Circles } from 'components/common/circles';
+import { MenuButton } from 'components/common/menu-item';
+import { useMobileMenu } from 'components/mobile-menu';
 
 const StyledHero = styled('div')`
 	position: relative;
@@ -26,7 +28,7 @@ const Foreground = styled('div')`
 	flex-direction: column;
 	align-items: flex-end;
 	padding: ${({ theme }) => rem(theme.space[4])}};
-
+	z-index: 1000;
 	@media screen and (min-width: ${({ theme }) => rem(1200)}) {
 		justify-content: flex-end;
 		grid-row: 2 / 9;
@@ -60,25 +62,34 @@ const HeroBackground = styled('div')`
 		margin-top: unset;
 		grid-row: 1 / 9;
 		grid-column: 1 / 10;
-		z-index: 1000000;
+		z-index: 100;
 	}
 	@media screen and (min-width: ${({ theme }) => rem(1200)}) {
 		grid-column: 1 / 11;
 	}
 `;
 
-const HeroForeground = ({ title, subtitle, body, hasCta }) => {
+const HeroForeground = ({
+	title,
+	subtitle,
+	body,
+	hasCta,
+	hasPin = true,
+	titleWidths,
+	hasModal = false,
+	bodyWidths = ['90%', '80%', '100%'],
+	handleClick = () => {},
+}) => {
+	const { goToPage } = useMobileMenu();
+
 	return (
 		<Foreground>
-			<Box mb={4}>
-				<Pin />
-			</Box>
-			<Text
-				maxWidth={['70%', '60%', '60%']}
-				variant="h1"
-				textAlign="right"
-				mb={[5, 5, 6]}
-			>
+			{hasPin && (
+				<Box mb={4}>
+					<Pin />
+				</Box>
+			)}
+			<Text maxWidth={titleWidths} variant="h1" textAlign="right" mb={[5, 5, 6]}>
 				{title}
 			</Text>
 			{subtitle && (
@@ -92,9 +103,18 @@ const HeroForeground = ({ title, subtitle, body, hasCta }) => {
 				</Text>
 			)}
 			{body && (
-				<Text maxWidth={['90%', '80%', '100%']} variant="h4" textAlign="right" mb={6}>
+				<Text maxWidth={bodyWidths} variant="h4" textAlign="right" mb={6}>
 					{body}
 				</Text>
+			)}
+			{hasModal && (
+				<MenuButton
+					textAlign={'center'}
+					mr={['0 !important']}
+					color="orange"
+					title="Integrate With Swoop"
+					onClick={handleClick}
+				/>
 			)}
 			{hasCta && (
 				<Flex width="100%" justifyContent="flex-end">
@@ -122,12 +142,30 @@ export const Hero = ({
 	accommodation has reached the golf course, and Swoop is here to help.`,
 	hasCta = true,
 	hasCircles = true,
+	hasModal = false,
+	hasPin = true,
+	titleWidths = ['70%', '60%', '60%'],
+	bodyWidths = ['90%', '80%', '100%'],
+	handleClick = () => {},
+	...rest
 }) => {
 	return (
-		<StyledHero>
-			<HeroBackground src={src} />
-			<HeroForeground title={title} subtitle={subtitle} body={body} hasCta={hasCta} />
-			{hasCircles && <Circles />}
-		</StyledHero>
+		<>
+			<StyledHero {...rest}>
+				<HeroBackground src={src} />
+				<HeroForeground
+					title={title}
+					subtitle={subtitle}
+					body={body}
+					hasCta={hasCta}
+					hasPin={hasPin}
+					titleWidths={titleWidths}
+					hasModal={hasModal}
+					bodyWidths={bodyWidths}
+					handleClick={handleClick}
+				/>
+				{hasCircles && <Circles />}
+			</StyledHero>
+		</>
 	);
 };

@@ -9,7 +9,7 @@ import { Box } from 'rebass/styled-components';
 import { rem } from 'polished';
 
 export const MAX_CONTAINER_WIDTH = 700;
-export const MOBILE_HEADER_HEIGHT = 140;
+export const MOBILE_HEADER_HEIGHT = 110;
 export const CustomImage = styled(SwoopImage)`
 	object-fit: cover;
 	object-position: center;

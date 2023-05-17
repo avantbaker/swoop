@@ -19,7 +19,7 @@ const LogoContainer = styled(Box)`
 
 const HeaderWrapper = styled(Flex)`
 	position: absolute;
-	z-index: 1000000000000;
+	z-index: 100000000000000;
 	left: 0;
 	right: 0;
 	${({ isDark }) =>

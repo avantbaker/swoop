@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from 'rebass/styled-components';
 import styled from 'styled-components';
 
-const Container = styled<Box>(Box)`
+export const Container = styled<Box>(Box)`
 	width: 38px;
 	height: 38px;
 	text-align: center;
@@ -10,7 +10,7 @@ const Container = styled<Box>(Box)`
 	font-size: 26px;
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
 	background: transparent;
 	border-radius: 100%;
 	width: 38px;
@@ -52,7 +52,7 @@ const Label = styled.label`
 	}
 `;
 
-const HiddenInput = styled.input`
+export const HiddenInput = styled.input`
 	display: none;
 
 	:checked + ${Label} .line-1 {
@@ -71,7 +71,7 @@ const HiddenInput = styled.input`
 	}
 `;
 
-const Line = styled.span`
+export const Line = styled.span`
 	width: 25px;
 	height: 1px;
 	background: ${({ theme, isOpen, isDark }) =>

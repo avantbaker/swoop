@@ -143,9 +143,9 @@ const ContactFormWrapper = styled('form')`
 	}
 `;
 
-const ExtendendInput = styled('input')(space);
+export const ExtendendInput = styled('input')(space);
 
-const FormInput = styled(ExtendendInput)`
+export const FormInput = styled(ExtendendInput)`
 	background: transparent;
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	border-radius: ${({ theme }) => rem(theme.space.xl)};
@@ -167,7 +167,7 @@ const FormInput = styled(ExtendendInput)`
 	${compose(color, layout)}
 `;
 
-const FormInputWrapper = styled(Box)`
+export const FormInputWrapper = styled(Box)`
 	width: 100%;
 	position: relative;
 `;
