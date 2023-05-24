@@ -17,6 +17,26 @@ export const PageSectionContainer = styled('div')`
 	padding-top: 250px;
 	margin-top: -250px;
 `;
+
+function getUrlLastWord(url) {
+	// Get the last slash in the URL.
+	var lastSlashIndex = url.lastIndexOf('/');
+
+	// If there is no slash in the URL, return an empty string.
+	if (lastSlashIndex === -1) {
+		return '';
+	}
+
+	// Get the last word in the URL.
+	var lastWord = url.substring(lastSlashIndex + 1);
+
+	// Capitalize the first letter of the last word.
+	lastWord = lastWord.charAt(0).toUpperCase() + lastWord.slice(1);
+
+	// Return the capitalized last word.
+	return lastWord;
+}
+
 export default function PageWrapper({ children, pageName }) {
 	const router = useRouter();
 	useEffect(() => {
@@ -32,7 +52,7 @@ export default function PageWrapper({ children, pageName }) {
 	return (
 		<>
 			<Head>
-				<title>Swoop Golf | {pageName}</title>
+				<title>Swoop Golf | {getUrlLastWord(router.pathname) || 'Home'}</title>
 				<meta property="og:image" content="/logos/Swoop-Logo-Black.png" key="ogimage" />
 				<meta
 					property="og:description"
