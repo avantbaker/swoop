@@ -129,7 +129,7 @@ export const NewsletterSection = ({
 		mr: rest.mr,
 	};
 	return (
-		<NewsletterWrapper mb={[7]} ref={formRef} {...rest} onSubmit={handleSubmit}>
+		<NewsletterWrapper mb={[6]} ref={formRef} {...rest} onSubmit={handleSubmit}>
 			<ImageWrapper src={imgSrc}>
 				<img src={imgSrc} alt="Newsletter Profile Image" />
 			</ImageWrapper>

@@ -13,7 +13,13 @@ import {
 	LayoutProps,
 	TypographyProps,
 	ColorProps,
+	system,
 } from 'styled-system';
+
+const textTransform = system({
+	prop: 'textTransform',
+	cssProperty: 'textTransform',
+});
 
 export const variants = {
 	display: {
@@ -48,17 +54,17 @@ export const variants = {
 		opacity: 0.5,
 	},
 	h1: {
-		fontSize: [rem(47.14), rem(61.05)],
+		fontSize: [rem(47.14), rem(53.05), rem(58.05)],
 		fontWeight: 'normal',
-		lineHeight: [rem(47.14), rem(61.05)],
+		lineHeight: [rem(47.14), rem(54.05), rem(61.05)],
 		textTransform: 'uppercase',
 		color: theme.colors.calcite,
 		fontFamily: theme.typography.fonts.primary,
 	},
 	h2: {
-		fontSize: [rem(19.3), rem(25)],
+		fontSize: [rem(19.3), rem(22), rem(25)],
 		fontWeight: 'normal',
-		lineHeight: [rem(20.93), rem(30)],
+		lineHeight: [rem(20.93), rem(22), rem(30)],
 		color: theme.colors.calcite,
 		fontFamily: theme.typography.fonts.secondary,
 	},
@@ -194,10 +200,25 @@ export const variants = {
 		color: theme.colors.sage,
 		fontFamily: theme.typography.fonts.primary,
 	},
+	salesTitle: {
+		fontSize: [rem(29.82), rem(41.82), rem(50)],
+		lineHeight: [rem(29.82), rem(41.82), rem(61.05)],
+		textTransform: 'uppercase',
+		color: theme.colors.calcite,
+		fontWeight: 'normal',
+		fontFamily: theme.typography.fonts.primary,
+	},
 	careersSubtitle: {
 		fontSize: [rem(19.3)],
 		fontWeight: 'bold',
 		lineHeight: [rem(20.93)],
+		color: theme.colors.sage,
+		fontFamily: theme.typography.fonts.secondary,
+	},
+	salesSubtitle: {
+		fontSize: [rem(19.3), rem(25.3)],
+		fontWeight: 'normal',
+		lineHeight: [rem(20.93), rem(32.3)],
 		color: theme.colors.sage,
 		fontFamily: theme.typography.fonts.secondary,
 	},
@@ -259,6 +280,9 @@ const Text = styled.div<TextProps>`
 
 	${variant({ variants })}
 	${compose(space, layout, color, typography)}
+	${system({
+		textTransform: true,
+	})}
 `;
 
 Text.defaultProps = {

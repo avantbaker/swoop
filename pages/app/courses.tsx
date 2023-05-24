@@ -261,7 +261,7 @@ export default function App() {
 		firstImageContainerRef.current,
 	]);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const imagePos = floatingImageAnchorFinalRef.current.getBoundingClientRect().bottom;
 		const containerPos =
 			floatingImageContainerFinalRef.current.getBoundingClientRect().bottom;
@@ -269,9 +269,11 @@ export default function App() {
 		setBottomOffset(deltaForBottom);
 	}, [floatingImageAnchorFinalRef.current, floatingImageContainerFinalRef.current]);
 
-	useLayoutEffect(() => {
-		const top = (height - floatingImageRef.current.clientHeight) / 2;
-		setTopOffset(top);
+	useEffect(() => {
+		setTimeout(() => {
+			const top = (height - floatingImageRef.current.clientHeight) / 2;
+			setTopOffset(top);
+		}, 500);
 	}, [height, floatingImageRef.current, setTopOffset]);
 
 	return (
@@ -432,4 +434,8 @@ export default function App() {
 			<NewsletterSection imgSrc="/swoop/golfers/golfer-green.png" />
 		</>
 	);
+}
+
+export async function getServerSideProps() {
+	return { props: { ssr: true } };
 }

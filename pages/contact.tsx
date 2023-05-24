@@ -163,6 +163,12 @@ export const FormInput = styled(ExtendendInput)`
 		color: black;
 		font-weight: bold;
 	}
+
+	:focus,
+	:active {
+		outline: none;
+		border: 2px solid ${({ theme }) => theme.colors.orange};
+	}
 	${variant({ variants })}
 	${compose(color, layout)}
 `;

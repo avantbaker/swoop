@@ -33,6 +33,13 @@ export default function PageWrapper({ children, pageName }) {
 		<>
 			<Head>
 				<title>Swoop Golf | {pageName}</title>
+				<meta property="og:image" content="/logos/Swoop-Logo-Black.png" key="ogimage" />
+				<meta
+					property="og:description"
+					content="Swoop Golf | Keep Playing"
+					key="ogdesc"
+				/>
+				<link rel="shortcut icon" href="/favicon.ico" />
 			</Head>
 			<PageContainer>{children}</PageContainer>
 		</>

@@ -35,7 +35,22 @@ export const Label = styled.label`
 	transform: scale(1.1, 1.1) translate3d(0, 0, 0);
 	cursor: none;
 	z-index: 2;
+	:hover {
+		cursor: pointer;
+		border: 1px solid ${({ theme }) => theme.colors.black};
+		background: ${({ theme }) => theme.colors.black};
+		.line-1 {
+			background: ${({ theme }) => theme.colors.white};
+		}
 
+		.line-2 {
+			background: ${({ theme }) => theme.colors.white};
+		}
+
+		.line-3 {
+			background: ${({ theme }) => theme.colors.white};
+		}
+	}
 	.line-1 {
 		-webkit-transform: translate3d(0, -8px, 0);
 		transform: translate3d(0, -8px, 0);

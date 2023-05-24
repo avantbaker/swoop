@@ -32,14 +32,14 @@ const Foreground = styled('div')`
 	@media screen and (min-width: ${({ theme }) => rem(1200)}) {
 		justify-content: flex-end;
 		grid-row: 2 / 9;
-		grid-column: 8 / 16;
+		grid-column: 9 / 16;
 		margin-bottom: ${({ theme }) => rem(theme.space[5])}};
 	}
 
 	@media screen and (min-width: ${({ theme }) => theme.breakpoints[2]}) {
 		justify-content: flex-end;
 		grid-row: 3 / 8;
-		grid-column: 8 / 15;
+		grid-column: 9 / 15;
 		margin-bottom: unset;
 	}
 `;
@@ -69,6 +69,12 @@ const HeroBackground = styled('div')`
 	}
 `;
 
+const ModalButton = styled(MenuButton)`
+	width: 100%;
+	@media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		width: auto;
+	}
+`;
 const HeroForeground = ({
 	title,
 	subtitle,
@@ -94,7 +100,7 @@ const HeroForeground = ({
 			</Text>
 			{subtitle && (
 				<Text
-					maxWidth={['80%', '70%', '90%']}
+					maxWidth={['80%', '70%', '80%']}
 					variant="h2"
 					textAlign="right"
 					mb={[4, 4, 5]}
@@ -108,7 +114,7 @@ const HeroForeground = ({
 				</Text>
 			)}
 			{hasModal && (
-				<MenuButton
+				<ModalButton
 					textAlign={'center'}
 					mr={['0 !important']}
 					color="orange"
@@ -144,8 +150,8 @@ export const Hero = ({
 	hasCircles = true,
 	hasModal = false,
 	hasPin = true,
-	titleWidths = ['70%', '60%', '60%'],
-	bodyWidths = ['90%', '80%', '100%'],
+	titleWidths = ['70%', '60%', '70%'],
+	bodyWidths = ['90%', '80%', '80%'],
 	handleClick = () => {},
 	...rest
 }) => {

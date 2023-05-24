@@ -36,18 +36,19 @@ const TextContainer = ({ title, subtitle, body, order = [1, 1, 0] }) => {
 	return (
 		<Box flex={[1, 5]} order={order}>
 			<Text
-				variant="careersTitle"
+				variant="salesTitle"
 				color="calcite"
 				fontWeight="bold"
+				textTransform="uppercase"
 				fontFamily={theme.typography.fonts.primary}
-				mb={[5]}
+				mb={[4]}
 			>
 				{title}
 			</Text>
-			<Text variant="careersSubtitle" color="calcite" mb={[6]}>
+			<Text variant="salesSubtitle" color="calcite" mb={[5]}>
 				{subtitle}
 			</Text>
-			<Text color="calcite" mb={4}>
+			<Text color="calcite" lineHeight={[rem(27)]} mb={4}>
 				{body}
 			</Text>
 		</Box>
@@ -189,18 +190,21 @@ const ContactModal = ({ showDialog, close }) => {
 
 	return (
 		<CustomDialog isOpen={showDialog} onDismiss={close}>
-			<Flex justifyContent="flex-end">
-				<HamburgerMenu isDark isOpen onClick={close} />
+			<Flex justifyContent="space-between">
+				<Text
+					variant="h1"
+					color="sage"
+					fontWeight="bold"
+					fontFamily={theme.typography.fonts.tertiary}
+					mb={[3]}
+				>
+					Get Started.
+				</Text>
+				<Flex justifyContent="flex-end">
+					<HamburgerMenu isDark isOpen onClick={close} />
+				</Flex>
 			</Flex>
-			<Text
-				variant="h1"
-				color="sage"
-				fontWeight="bold"
-				fontFamily={theme.typography.fonts.tertiary}
-				mb={[5]}
-			>
-				Get Started.
-			</Text>
+
 			<Text
 				variant="h2"
 				color="sage"
@@ -211,12 +215,12 @@ const ContactModal = ({ showDialog, close }) => {
 				Sign up to intergrate your course with Swoop in 24 Hours.
 			</Text>
 			<FormWrapper flexWrap="wrap" mx={-2} ref={formRef} onSubmit={handleSubmit}>
-				<Box px={2} py={2} mb={3} width={[1, 1]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="name"
 						placeholder="Name"
 						maxWidth={['100%']}
@@ -224,12 +228,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Name')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="email"
 						placeholder="Email"
 						maxWidth={['100%']}
@@ -237,12 +241,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Email')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="job"
 						placeholder="Job Title"
 						maxWidth={['100%']}
@@ -250,12 +254,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Job Title')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="course"
 						placeholder="Course Name"
 						maxWidth={['100%']}
@@ -263,12 +267,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Course Name')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="website"
 						placeholder="Course Website"
 						maxWidth={['100%']}
@@ -276,12 +280,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Course Website')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="address"
 						placeholder="Course Address"
 						maxWidth={['100%']}
@@ -289,12 +293,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Course Address')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="city"
 						placeholder="Course City"
 						maxWidth={['100%']}
@@ -302,12 +306,12 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Course City')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<CustomFormInput
 						type="text"
 						variant="h4"
 						px={4}
-						py={3}
+						py={[2, 3, 3]}
 						name="state"
 						placeholder="Course State"
 						maxWidth={['100%']}
@@ -315,7 +319,7 @@ const ContactModal = ({ showDialog, close }) => {
 						onBlur={(e) => (e.target.placeholder = 'Course State')}
 					/>
 				</Box>
-				<Box px={2} py={2} mb={3} width={[1, 1 / 2]}>
+				<Box px={2} py={[4, 2]} mb={[0, 3, 3]} width={[1, 1 / 2]}>
 					<MenuButton
 						textAlign={'center'}
 						mr={['0 !important']}
