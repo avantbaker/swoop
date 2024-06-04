@@ -173,7 +173,7 @@ export default function Footer({ isLight = false, ...rest }) {
 					justifyContent={['inherit', 'center']}
 				>
 					<Text variant="link2" mr={[0, 5]} color={textColor}>
-						Copyright &copy; 2022 - Swoop App
+						Copyright &copy; 2022 - Swoop Golf LLC
 					</Text>
 					<Flex alignItems="center" mb={[rem(space.xs)]}>
 						<FooterMenuItem
